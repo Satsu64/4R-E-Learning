@@ -94,36 +94,144 @@
       </section>
 
       <!-- ================= 2. GAME 1: TRASH SORTING ================= -->
-      <div id="game-sort-wrapper" style="display: none; width: 100%; gap: 30px">
-        <aside class="game-sidebar">
-          <div class="instructions-card">
-            <h3>How to play:</h3>
-            <ul>
-              <li>
-                <strong>Drag & Drop</strong> or
-                <strong>Click item, then click bin</strong>
-              </li>
-              <li>Normal Item = 10 Points</li>
-              <li>
-                <strong style="color: #ea580c"
-                  >Recovery Item = 20 Points!</strong
-                >
-              </li>
-            </ul>
-            <button
-              type="button"
-              class="btn-text"
-              style="margin-top: 20px; color: #64748b"
-              onclick="backToMenu()"
-            >
-              <i class="ph-bold ph-arrow-left"></i> Back to Menu
-            </button>
-          </div>
-        </aside>
+      <!-- ================= 2. GAME 1: TRASH SORTING ================= -->
+      <div
+        id="game-sort-wrapper"
+        class="game-sort-wrapper"
+        style="
+          display: none;
+          width: 100%;
+          max-width: 850px;
+          margin: 0 auto;
+          flex-direction: column;
+          align-items: center;
+          box-sizing: border-box;
+        "
+      >
+        <!-- Top Header & Back Button -->
+        <div
+          class="game-top-bar"
+          style="
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+          "
+        >
+          <button
+            type="button"
+            class="game-back-btn"
+            onclick="backToMenu()"
+            style="
+              align-self: flex-start;
+              background: rgba(15, 23, 42, 0.7);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              color: #ffffff;
+              padding: 8px 16px;
+              border-radius: 8px;
+              font-weight: 700;
+              cursor: pointer;
+              display: inline-flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 10px;
+            "
+          >
+            <i class="ph-bold ph-arrow-left"></i> Back to Menu
+          </button>
+          <h1 class="game-title" style="margin: 0 0 10px 0; text-align: center">
+            TRASH SORTING GAME
+          </h1>
+        </div>
 
-        <section class="game-board-container">
-          <h1 class="game-title">TRASH SORTING GAME</h1>
-          <div class="game-board">
+        <!-- INSTRUCTIONS ON TOP -->
+        <div
+          class="instructions-card-top"
+          style="
+            width: 100%;
+            background: #ffffff;
+            border: 2px solid #10b981;
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            box-sizing: border-box;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 8px;
+              color: #059669;
+            "
+          >
+            <i class="ph-bold ph-info" style="font-size: 20px"></i>
+            <h3 style="margin: 0; font-size: 16px; font-weight: 800">
+              How to play:
+            </h3>
+          </div>
+          <ul
+            style="
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              display: flex;
+              flex-wrap: wrap;
+              gap: 12px 20px;
+            "
+          >
+            <li
+              style="
+                font-size: 13.5px;
+                font-weight: 600;
+                color: #334155;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              <span style="color: #10b981; font-size: 18px">•</span>
+              <strong>Drag & Drop</strong> or
+              <strong>Click item, then bin</strong>
+            </li>
+            <li
+              style="
+                font-size: 13.5px;
+                font-weight: 600;
+                color: #334155;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              <span style="color: #10b981; font-size: 18px">•</span> Normal Item
+              = <strong>10 Points</strong>
+            </li>
+            <li
+              style="
+                font-size: 13.5px;
+                font-weight: 600;
+                color: #ea580c;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              <span style="color: #ea580c; font-size: 18px">•</span>
+              <strong>Recovery Item = 20 Points!</strong>
+            </li>
+          </ul>
+        </div>
+
+        <!-- GAME BOARD BELOW INSTRUCTIONS -->
+        <section
+          class="game-board-container"
+          style="width: 100%; box-sizing: border-box"
+        >
+          <div class="game-board" style="width: 100%; box-sizing: border-box">
             <div class="game-header">
               <div class="stat-box">
                 <span>Score</span
@@ -202,7 +310,7 @@
               <div class="items-grid" id="items-grid"></div>
             </div>
 
-            <!-- Game 1 Results & Mistakes Review -->
+            <!-- Results Screen -->
             <div
               class="game-results-section"
               id="game-results-section"
@@ -541,7 +649,9 @@
       function openGame(type) {
         document.getElementById("game-selection-menu").style.display = "none";
         if (type === "sort") {
-          document.getElementById("game-sort-wrapper").style.display = "flex";
+          const sortWrap = document.getElementById("game-sort-wrapper");
+          sortWrap.style.display = "flex";
+          sortWrap.style.flexDirection = "column"; // Forces top-to-bottom stack
           document.getElementById("game-reactor-wrapper").style.display =
             "none";
           initSortGame();

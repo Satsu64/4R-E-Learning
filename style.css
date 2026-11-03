@@ -3487,3 +3487,151 @@ button {
     font-size: 32px !important;
   }
 }
+
+/* ================== GAME 1: VERTICAL TOP-STACK LAYOUT ================== */
+.game-sort-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column !important; /* Forces instructions to sit on top of the game */
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.game-top-bar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.game-back-btn {
+  align-self: flex-start;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.game-back-btn:hover {
+  background: rgba(15, 23, 42, 0.9);
+  transform: translateX(-3px);
+}
+
+.sort-main-title {
+  text-align: center;
+  margin: 0 0 15px 0;
+  color: #ffffff;
+  font-size: 38px;
+  letter-spacing: 2px;
+}
+
+/* Centered Top Instructions Banner */
+.game-instructions-top {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.instructions-card-top {
+  background: #ffffff;
+  border: 2px solid #bbf7d0;
+  border-radius: 16px;
+  padding: 16px 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.instructions-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #059669;
+}
+.instructions-header i {
+  font-size: 22px;
+}
+.instructions-header h3 {
+  font-size: 17px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.instructions-list-row {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.instructions-list-row li {
+  font-size: 14px;
+  color: #334155;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.instructions-list-row li::before {
+  content: "•";
+  color: #10b981;
+  font-size: 20px;
+}
+
+/* Ensure Game Board occupies full width under instructions */
+.game-board-container {
+  width: 100%;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .sort-main-title {
+    font-size: 26px !important;
+  }
+  .instructions-card-top {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 16px;
+    gap: 10px;
+  }
+  .instructions-list-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+#game-sort-wrapper,
+.game-sort-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  max-width: 850px !important;
+  margin: 0 auto !important;
+}
+
+.game-main {
+  flex-direction: column !important;
+  align-items: center !important;
+}
