@@ -1,0 +1,1095 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4R E-Learning - Learn</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body class="learn-body">
+    <!-- Top Navigation Bar -->
+    <nav class="top-navbar">
+      <div class="nav-logo">
+        <i class="ph ph-recycle"></i>
+        <div>
+          <h1>4R E-Learning</h1>
+          <p>Reduce, Reuse, Recycle, Recover</p>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html"><i class="ph ph-house"></i> Home</a>
+        <a href="tips.html"><i class="ph ph-lightbulb"></i> Tips</a>
+        <a href="learn.html" class="active"
+          ><i class="ph ph-book-open"></i> Learn</a
+        >
+        <a href="quiz.html"><i class="ph ph-graduation-cap"></i> Quiz</a>
+        <a href="game.html"><i class="ph ph-game-controller"></i> Game</a>
+        <a href="community.html"><i class="ph ph-users"></i> Community</a>
+      </div>
+    </nav>
+
+    <main class="learn-main-container">
+      <!-- 1. TOP: REMEMBER THE HIERARCHY -->
+      <section class="hierarchy-card">
+        <h2>Remember the Hierarchy!</h2>
+        <p>The 4Rs are most effective when applied in order:</p>
+        <div class="hierarchy-flow">
+          <span class="h-step">1. Reduce</span>
+          <i class="ph-bold ph-arrow-right"></i>
+          <span class="h-step">2. Reuse</span>
+          <i class="ph-bold ph-arrow-right"></i>
+          <span class="h-step">3. Recycle</span>
+          <i class="ph-bold ph-arrow-right"></i>
+          <span class="h-step h-step-recover">4. Recover</span>
+        </div>
+      </section>
+
+      <!-- 2. MIDDLE: CHOOSE YOUR LEARNING STYLE -->
+      <section class="learning-style-selector">
+        <h2 class="style-selector-title">Choose Your Learning Style</h2>
+        <p class="style-selector-subtitle">
+          Pick how you want to explore the 4Rs—read detailed guides or watch
+          video explainers.
+        </p>
+
+        <div class="style-cards-grid">
+          <!-- Option 1: Reading Mode Card -->
+          <div
+            id="btn-mode-read"
+            class="style-card style-card-active"
+            onclick="switchLearnMode('read')"
+          >
+            <div
+              class="style-card-icon"
+              style="background: linear-gradient(135deg, #10b981, #059669)"
+            >
+              <i class="ph-fill ph-book-open-text"></i>
+            </div>
+            <div class="style-card-info">
+              <span class="style-tag">INTERACTIVE TEXT</span>
+              <h3>Reading Mode</h3>
+              <p>
+                Explore modular guides, real-world examples, and step-by-step
+                strategies.
+              </p>
+            </div>
+            <div class="style-check-indicator">
+              <i class="ph-bold ph-check"></i>
+            </div>
+          </div>
+
+          <!-- Option 2: Watch Mode Card -->
+          <div
+            id="btn-mode-watch"
+            class="style-card"
+            onclick="switchLearnMode('watch')"
+          >
+            <div
+              class="style-card-icon"
+              style="background: linear-gradient(135deg, #0d9488, #0f766e)"
+            >
+              <i class="ph-fill ph-video"></i>
+            </div>
+            <div class="style-card-info">
+              <span class="style-tag tag-teal">MEDIA LIBRARY</span>
+              <h3>Watch Mode</h3>
+              <p>
+                Watch short video breakdowns and browse curated industry case
+                study articles.
+              </p>
+            </div>
+            <div class="style-check-indicator">
+              <i class="ph-bold ph-check"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. CONTENT AREA: VIEW 1 - READING MODE (SPACIOUS 2-COLUMN ACCORDION) -->
+      <section id="view-reading-mode" class="learn-view-section">
+        <div class="accordion-list">
+          <!-- 1. REDUCE -->
+          <div class="accordion-item active-acc" id="acc-reduce">
+            <button
+              type="button"
+              class="accordion-header"
+              onclick="toggleAccordion(this)"
+            >
+              <div class="acc-title-left">
+                <div class="acc-icon-box acc-green">
+                  <i class="ph-fill ph-leaf"></i>
+                </div>
+                <div>
+                  <h3>Reduce</h3>
+                  <span class="acc-toggle-status">Click to collapse</span>
+                </div>
+              </div>
+              <i class="ph-bold ph-caret-up acc-arrow"></i>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-body-grid">
+                <div class="acc-col-main">
+                  <h4>What is Reduce?</h4>
+                  <p>
+                    Reducing means preventing waste before it even begins by
+                    making conscious consumption choices and minimizing the
+                    volume of single-use materials we bring into our daily
+                    lives.
+                  </p>
+
+                  <h4>Benefits</h4>
+                  <div class="benefits-grid">
+                    <div class="benefit-card">
+                      <div class="benefit-icon b-green">
+                        <i class="ph-bold ph-check"></i>
+                      </div>
+                      <span
+                        >Conserves virgin raw materials and natural
+                        forests</span
+                      >
+                    </div>
+                    <div class="benefit-card">
+                      <div class="benefit-icon b-green">
+                        <i class="ph-bold ph-check"></i>
+                      </div>
+                      <span
+                        >Saves personal household and grocery expenditure</span
+                      >
+                    </div>
+                    <div class="benefit-card">
+                      <div class="benefit-icon b-green">
+                        <i class="ph-bold ph-check"></i>
+                      </div>
+                      <span
+                        >Cuts manufacturing energy and industrial
+                        emissions</span
+                      >
+                    </div>
+                    <div class="benefit-card">
+                      <div class="benefit-icon b-green">
+                        <i class="ph-bold ph-check"></i>
+                      </div>
+                      <span
+                        >Significantly reduces overall municipal waste
+                        volumes</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="acc-col-side">
+                  <h4>Examples</h4>
+                  <ul class="examples-list ex-green">
+                    <li>
+                      Buy pantry staples in bulk using personal canvas tote bags
+                    </li>
+                    <li>
+                      Refuse single-use plastic cutlery, straws, and carrier
+                      bags
+                    </li>
+                    <li>
+                      Switch to paperless digital receipts and online billing
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. REUSE -->
+          <div class="accordion-item" id="acc-reuse">
+            <button
+              type="button"
+              class="accordion-header"
+              onclick="toggleAccordion(this)"
+            >
+              <div class="acc-title-left">
+                <div class="acc-icon-box acc-blue">
+                  <i class="ph-fill ph-arrows-clockwise"></i>
+                </div>
+                <div>
+                  <h3>Reuse</h3>
+                  <span class="acc-toggle-status">Click to expand</span>
+                </div>
+              </div>
+              <i class="ph-bold ph-caret-down acc-arrow"></i>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-body-grid">
+                <div class="acc-col-main">
+                  <h4>What is Reuse?</h4>
+                  <p>
+                    Reusing focuses on extending the operational lifespan of
+                    products through ongoing maintenance, repurposing, or
+                    donation rather than discarding them after initial use.
+                  </p>
+
+                  <h4>Benefits</h4>
+                  <div class="benefits-grid">
+                    <div class="benefit-card">
+                      <div class="benefit-icon b-blue">
+                        <i class="ph-bold ph-check"></i>
+                      </div>
+                      <span
+                        >Prevents items from prematurely entering disposal
+                        sites</span
+                      >
+                    </div>
+                    <div class="benefit-card">
+                      <div class="benefit-icon b-blue">
+                        <i class="ph-bold ph-check"></i>
+                      </div>
+                      <span
+                        >Reduces demand for continuous product
+                        manufacturing</span
+                      >
+                    </div>
+                    <div class="benefit-card">
+                      <div class="benefit-icon b-blue">
+                        <i class="ph-bold ph-check"></i>
+                      </div>
+                      <span
+                        >Supports community circular sharing and donation
+                        hubs</span
+                      >
+                    </div>
+                    <div class="benefit-card">
+                      <div class="benefit-icon b-blue">
+                        <i class="ph-bold ph-check"></i>
+                      </div>
+                      <span
+                        >Lowers the carbon footprint of buying
+                        replacements</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="acc-col-side">
+                  <h4>Examples</h4>
+                  <ul class="examples-list ex-blue">
+                    <li>
+                      Carry reusable insulated drink bottles and food containers
+                    </li>
+                    <li>
+                      Mend torn garments and repair damaged home furniture
+                    </li>
+                    <li>
+                      Donate outgrown clothing and working electronics to
+                      charities
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. RECYCLE -->
+          <div class="accordion-item" id="acc-recycle">
+            <button
+              type="button"
+              class="accordion-header"
+              onclick="toggleAccordion(this)"
+            >
+              <div class="acc-title-left">
+                <div class="acc-icon-box acc-teal">
+                  <i class="ph-fill ph-recycle"></i>
+                </div>
+                <div>
+                  <h3>Recycle</h3>
+                  <span class="acc-toggle-status">Click to expand</span>
+                </div>
+              </div>
+              <i class="ph-bold ph-caret-down acc-arrow"></i>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-body-grid">
+                <div class="acc-col-main">
+                  <h4>What is Recycle?</h4>
+                  <p>
+                    Recycling is the process of collecting and processing
+                    materials that would otherwise be thrown away as trash and
+                    turning them into entirely new products.
+                  </p>
+
+                  <h4>Benefits</h4>
+                  <div class="benefits-grid">
+                    <div class="benefit-card">
+                      <div class="benefit-icon b-teal">
+                        <i class="ph-bold ph-check"></i>
+                      </div>
+                      <span
+                        >Conserves natural resources like timber and water</span
+                      >
+                    </div>
+                    <div class="benefit-card">
+                      <div class="benefit-icon b-teal">
+                        <i class="ph-bold ph-check"></i>
+                      </div>
+                      <span
+                        >Saves significant amounts of manufacturing energy</span
+                      >
+                    </div>
+                    <div class="benefit-card">
+                      <div class="benefit-icon b-teal">
+                        <i class="ph-bold ph-check"></i>
+                      </div>
+                      <span
+                        >Reduces greenhouse gas emissions from refineries</span
+                      >
+                    </div>
+                    <div class="benefit-card">
+                      <div class="benefit-icon b-teal">
+                        <i class="ph-bold ph-check"></i>
+                      </div>
+                      <span
+                        >Creates sustainable jobs across the circular
+                        economy</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="acc-col-side">
+                  <h4>Examples</h4>
+                  <ul class="examples-list ex-teal">
+                    <li>
+                      Sort clean paper, plastic, glass, and metal into bins
+                    </li>
+                    <li>
+                      Compost organic vegetable peels and garden yard waste
+                    </li>
+                    <li>
+                      Buy packaging formulated from post-consumer recyclables
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. RECOVER -->
+          <div class="accordion-item accordion-recover" id="acc-recover">
+            <button
+              type="button"
+              class="accordion-header"
+              onclick="toggleAccordion(this)"
+            >
+              <div class="acc-title-left">
+                <div class="acc-icon-box acc-orange">
+                  <i class="ph-fill ph-sparkle"></i>
+                </div>
+                <div>
+                  <h3 style="color: #ea580c">Recover (The Final Step)</h3>
+                  <span class="acc-toggle-status">Click to expand</span>
+                </div>
+              </div>
+              <i class="ph-bold ph-caret-down acc-arrow"></i>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-body-grid">
+                <div class="acc-col-main">
+                  <h4>What is Recover?</h4>
+                  <p>
+                    Recovery is the critical final safety net. It involves
+                    extracting vital energy or materials from waste that cannot
+                    be reduced, reused, or recycled. This is often done through
+                    advanced biological processing or incineration with energy
+                    recovery.
+                  </p>
+
+                  <h4>Benefits</h4>
+                  <div class="benefits-grid">
+                    <div class="benefit-card benefit-card-orange">
+                      <div class="benefit-icon b-orange">
+                        <i class="ph-fill ph-lightning"></i>
+                      </div>
+                      <span
+                        >Generates renewable electricity and district heat</span
+                      >
+                    </div>
+                    <div class="benefit-card benefit-card-orange">
+                      <div class="benefit-icon b-orange">
+                        <i class="ph-fill ph-lightning"></i>
+                      </div>
+                      <span
+                        >Drastically shrinks landfill volumes by up to 90%</span
+                      >
+                    </div>
+                    <div class="benefit-card benefit-card-orange">
+                      <div class="benefit-icon b-orange">
+                        <i class="ph-fill ph-lightning"></i>
+                      </div>
+                      <span
+                        >Lowers toxic methane emissions from rotting
+                        organics</span
+                      >
+                    </div>
+                    <div class="benefit-card benefit-card-orange">
+                      <div class="benefit-icon b-orange">
+                        <i class="ph-fill ph-lightning"></i>
+                      </div>
+                      <span>Recovers valuable raw metals from bottom ash</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="acc-col-side">
+                  <h4>Examples</h4>
+                  <ul class="examples-list ex-orange">
+                    <li>
+                      Sending non-recyclable solid waste to modern
+                      Waste-to-Energy plants
+                    </li>
+                    <li>
+                      Capturing landfill methane to generate electricity for
+                      local grids
+                    </li>
+                    <li>
+                      Anaerobic digestion of sewage and food scraps for clean
+                      biogas
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. CONTENT AREA: VIEW 2 - WATCH MODE (REAL HTML5 VIDEO PLAYER) -->
+      <!-- 3. CONTENT AREA: VIEW 2 - WATCH MODE -->
+      <section
+        id="view-watch-mode"
+        class="learn-view-section"
+        style="display: none"
+      >
+        <div class="media-library-panel">
+          <div class="media-tabs-bar">
+            <button
+              type="button"
+              class="media-tab-btn active-tab"
+              onclick="switchMediaTab('reduce', this)"
+            >
+              REDUCE
+            </button>
+            <button
+              type="button"
+              class="media-tab-btn"
+              onclick="switchMediaTab('reuse', this)"
+            >
+              REUSE
+            </button>
+            <button
+              type="button"
+              class="media-tab-btn"
+              onclick="switchMediaTab('recycle', this)"
+            >
+              RECYCLE
+            </button>
+            <button
+              type="button"
+              class="media-tab-btn tab-recover"
+              onclick="switchMediaTab('recovery', this)"
+            >
+              RECOVERY ⚡
+            </button>
+          </div>
+
+          <!-- Video Player Container with Click-to-Pause Overlay -->
+          <div class="real-player-wrapper">
+            <div
+              class="video-interactive-container"
+              id="video-container"
+              onclick="toggleVideoPlayback()"
+            >
+              <video id="learn-video-player" playsinline preload="auto">
+                <source
+                  id="video-source"
+                  src="Video/REDUCE.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support HTML5 video.
+              </video>
+
+              <!-- Floating Pause/Play indicator -->
+              <div class="video-play-indicator" id="play-indicator">
+                <i class="ph-fill ph-play" id="indicator-icon"></i>
+              </div>
+            </div>
+
+            <div class="video-meta-bar">
+              <div class="video-meta-info">
+                <h3 id="video-display-title">
+                  1. REDUCE: Stop Waste Before It Starts
+                </h3>
+                <p id="video-display-desc">
+                  Learn how eliminating consumption at the source protects
+                  planetary boundaries.
+                </p>
+              </div>
+              <div class="video-voice-controls">
+                <button
+                  type="button"
+                  class="btn-voice-toggle"
+                  id="btn-voice-toggle"
+                  onclick="toggleVoiceOver(event)"
+                  title="Toggle Voice-Over Narration"
+                >
+                  <i class="ph-bold ph-speaker-high" id="voice-icon"></i>
+                  <span id="voice-label">Voice: ON</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="media-articles-grid" id="media-articles-container">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. BOTTOM: WHY LEARN ABOUT THE 4RS -->
+      <section class="why-learn-card">
+        <h2>Why Learn About the 4Rs?</h2>
+        <div class="why-grid">
+          <div class="why-col">
+            <div class="why-col-header">
+              <i class="ph-fill ph-globe-hemisphere-west text-green"></i>
+              <h3>Environmental Impact</h3>
+            </div>
+            <ul>
+              <li>
+                <i class="ph-bold ph-check-circle"></i> Reduce landfill overflow
+                and preserve natural habitats
+              </li>
+              <li>
+                <i class="ph-bold ph-check-circle"></i> Cut greenhouse gas
+                emissions to combat climate disruption
+              </li>
+              <li>
+                <i class="ph-bold ph-check-circle"></i> Protect global wildlife
+                ecosystems and marine biodiversity
+              </li>
+            </ul>
+          </div>
+          <div class="why-col">
+            <div class="why-col-header">
+              <i class="ph-fill ph-hand-heart text-blue"></i>
+              <h3>Personal Benefits</h3>
+            </div>
+            <ul>
+              <li>
+                <i class="ph-bold ph-check-circle"></i> Save household
+                expenditure through reuse and smart consumption
+              </li>
+              <li>
+                <i class="ph-bold ph-check-circle"></i> Cultivate a cleaner,
+                healthier living space for family and peers
+              </li>
+              <li>
+                <i class="ph-bold ph-check-circle"></i> Champion community
+                leadership by driving local eco-initiatives
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Global Recommended Learning Flow Guide -->
+    <section
+      class="journey-guide-section"
+      style="max-width: 950px; margin: 40px auto 30px auto; width: 100%"
+    >
+      <div class="guide-header">
+        <i class="ph-fill ph-compass"></i>
+        <h2>How to Navigate the Platform</h2>
+        <p>
+          Follow our recommended 5-step learning path to maximize your
+          understanding and test your skills.
+        </p>
+      </div>
+
+      <div class="journey-steps-container">
+        <a href="index.html" class="journey-step-node">
+          <span class="step-num">1</span>
+          <div class="step-icon"><i class="ph ph-house"></i></div>
+          <h4>Home</h4>
+          <p>Overview & Goals</p>
+        </a>
+
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+        <!-- Add class="active-node" when in learn.html -->
+        <a href="learn.html" class="journey-step-node active-node">
+          <span class="step-num">2</span>
+          <div class="step-icon"><i class="ph ph-book-open"></i></div>
+          <h4>Learn</h4>
+          <p>Read & Watch</p>
+        </a>
+
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+        <!-- Add class="active-node" when in quiz.html -->
+        <a href="quiz.html" class="journey-step-node">
+          <span class="step-num">3</span>
+          <div class="step-icon"><i class="ph ph-graduation-cap"></i></div>
+          <h4>Quiz</h4>
+          <p>Check Knowledge</p>
+        </a>
+
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+        <!-- Add class="active-node" when in game.html -->
+        <a href="game.html" class="journey-step-node">
+          <span class="step-num">4</span>
+          <div class="step-icon"><i class="ph ph-game-controller"></i></div>
+          <h4>Game</h4>
+          <p>Reactor & Sorting</p>
+        </a>
+
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+        <!-- Add class="active-node" when in community.html -->
+        <a href="community.html" class="journey-step-node">
+          <span class="step-num">5</span>
+          <div class="step-icon"><i class="ph ph-users"></i></div>
+          <h4>Community</h4>
+          <p>Share & Inspire</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-logo">
+        <i class="ph ph-recycle"></i> 4R E-Learning Platform
+      </div>
+      <p class="footer-text">
+        Learn about Reduce, Reuse, Recycle, and Recovery
+      </p>
+      <p class="footer-text">
+        Making the world a better place, one step at a time.
+      </p>
+    </footer>
+
+    <!-- Mascot Script -->
+    <script src="mascot.js"></script>
+
+    <!-- Learn Section Interactive Script -->
+    <script>
+      // ================== LEARNING MODE & ACCORDION LOGIC ==================
+      function switchLearnMode(mode) {
+        const btnRead = document.getElementById("btn-mode-read");
+        const btnWatch = document.getElementById("btn-mode-watch");
+        const viewRead = document.getElementById("view-reading-mode");
+        const viewWatch = document.getElementById("view-watch-mode");
+
+        if (mode === "read") {
+          btnRead.classList.add("style-card-active");
+          btnWatch.classList.remove("style-card-active");
+          viewRead.style.display = "block";
+          viewWatch.style.display = "none";
+          stopVoiceOver();
+          const player = document.getElementById("learn-video-player");
+          if (player) player.pause();
+        } else {
+          btnWatch.classList.add("style-card-active");
+          btnRead.classList.remove("style-card-active");
+          viewRead.style.display = "none";
+          viewWatch.style.display = "block";
+          const activeTab = document.querySelector(".media-tab-btn.active-tab");
+          if (activeTab) {
+            const tabKey = activeTab.textContent
+              .toLowerCase()
+              .includes("recover")
+              ? "recovery"
+              : activeTab.textContent.trim().toLowerCase();
+            switchMediaTab(tabKey, activeTab);
+          }
+        }
+      }
+
+      function toggleAccordion(headerBtn) {
+        const clickedItem = headerBtn.closest(".accordion-item");
+        const isCurrentlyOpen = clickedItem.classList.contains("active-acc");
+
+        document.querySelectorAll(".accordion-item").forEach((item) => {
+          item.classList.remove("active-acc");
+          const statusSpan = item.querySelector(".acc-toggle-status");
+          const arrowIcon = item.querySelector(".acc-arrow");
+          if (statusSpan) statusSpan.textContent = "Click to expand";
+          if (arrowIcon)
+            arrowIcon.className = "ph-bold ph-caret-down acc-arrow";
+        });
+
+        if (!isCurrentlyOpen) {
+          clickedItem.classList.add("active-acc");
+          const statusSpan = clickedItem.querySelector(".acc-toggle-status");
+          const arrowIcon = clickedItem.querySelector(".acc-arrow");
+          if (statusSpan) statusSpan.textContent = "Click to collapse";
+          if (arrowIcon) arrowIcon.className = "ph-bold ph-caret-up acc-arrow";
+        }
+      }
+
+      // ================== 4R MEDIA DATA & TIMED CUES ==================
+      const mediaData = {
+        reduce: {
+          videoFile: "Video/REDUCE.mp4",
+          title: "1. REDUCE: Stop Waste Before It Starts",
+          desc: "The greenest product is the one that was never made. Consume less to protect the earth.",
+          articles: [
+            {
+              title: "Global Push to Cut Single-Use Plastics at the Source",
+              desc: "Governments and retailers worldwide are accelerating bans on single-use plastic bags and packaging.",
+              img: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=400&q=80",
+            },
+            {
+              title:
+                "Zero-Waste Refill Stations Gain Momentum in Urban Supermarkets",
+              desc: "Supermarket chains are introducing package-free bulk aisles to cut household waste.",
+              img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=400&q=80",
+            },
+          ],
+          narration: [
+            {
+              time: 0.1,
+              text: "The greenest product is the one that was never made. Welcome to the first and most critical tier of sustainability: Reduce.",
+            },
+            {
+              time: 10.0,
+              text: "Every year, millions of tons of resources are extracted just to create packaging we discard in seconds.",
+            },
+            {
+              time: 20.0,
+              text: "When you buy in bulk, carry reusable containers, and choose durability over disposable convenience, you halt pollution before it even starts.",
+            },
+            {
+              time: 30.0,
+              text: "Remember: before you reuse, before you recycle—always choose to reduce!",
+            },
+          ],
+        },
+        reuse: {
+          videoFile: "Video/REUSE.mp4",
+          title: "2. REUSE: Extend the Product Lifecycle",
+          desc: "Keeping products circulating in their original form saves carbon and energy.",
+          articles: [
+            {
+              title: "The Modern Repair Café Movement",
+              desc: "Community workshops empower citizens to mend electrical appliances and fix damaged furniture.",
+              img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80",
+            },
+            {
+              title: "Commercial Returnable Packaging Systems",
+              desc: "Logistics companies standardize durable containers to eliminate single-use cardboard boxes.",
+              img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=400&q=80",
+            },
+          ],
+          narration: [
+            {
+              time: 0.1,
+              text: "Don't throw away potential! The second step in our journey is Reuse.",
+            },
+            {
+              time: 10.0,
+              text: "When an item has served its initial purpose, its story shouldn't end in a trash bin.",
+            },
+            {
+              time: 20.0,
+              text: "By refilling containers, mending torn garments, repairing appliances, or passing pre-loved goods to someone else in your community, you preserve all the embedded energy and craftsmanship that went into making it.",
+            },
+            {
+              time: 32.0,
+              text: "Think twice before you toss—reimagine, repurpose, and reuse!",
+            },
+          ],
+        },
+        recycle: {
+          videoFile: "Video/RECYCLE.mp4",
+          title: "3. RECYCLE: Closed-Loop Material Regeneration",
+          desc: "How sorting clean paper, glass, and metal creates fresh raw commodities.",
+          articles: [
+            {
+              title: "Advanced Sorting Robotics in Modern MRF Facilities",
+              desc: "Optical scanners and AI arms sort recyclable streams at high speed with 99% purity.",
+              img: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=400&q=80",
+            },
+            {
+              title: "The Critical Impact of Paper and Aluminum Pulping",
+              desc: "Recycling an aluminum can saves 95% of the energy needed to make a new one from raw bauxite.",
+              img: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=400&q=80",
+            },
+          ],
+          narration: [
+            {
+              time: 0.1,
+              text: "When an item has reached the end of its useful life, it's time to recycle.",
+            },
+            {
+              time: 10.0,
+              text: "Recycling breaks down clean waste materials like paper, glass, metals, and designated polymers, turning them into fresh raw commodities.",
+            },
+            {
+              time: 20.0,
+              text: "It saves up to ninety-five percent of the energy needed to process raw ores and stops landfills from overflowing.",
+            },
+            {
+              time: 30.0,
+              text: "But remember: keep your recyclables clean, dry, and correctly sorted, because contamination spoils the whole batch!",
+            },
+          ],
+        },
+        recovery: {
+          videoFile: "Video/RECOVERY.mp4",
+          title: "4. RECOVERY ⚡: Clean Energy from Residual Discards",
+          desc: "The critical final safety net: extracting megawatts of clean power from non-recyclables.",
+          articles: [
+            {
+              title: "Inside High-Tech Waste-to-Energy Plants",
+              desc: "How modern high-temperature combustion produces clean district steam and green electricity.",
+              img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=400&q=80",
+            },
+            {
+              title:
+                "Anaerobic Digesters: Turning Food Scraps into Clean Biogas",
+              desc: "Municipal bio-digesters harness methane from compostable waste to power transit bus fleets.",
+              img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=400&q=80",
+            },
+          ],
+          narration: [
+            {
+              time: 0.1,
+              text: "What happens when an item can't be recycled? That's where the missing link comes in: Recovery. The fourth 'R' is our technological safety net.",
+            },
+            {
+              time: 10.0,
+              text: "Instead of allowing non-recyclable discards and organic waste to rot and generate harmful methane in landfills, advanced Waste-to-Energy plants capture clean electricity and district heat through controlled high-temperature combustion.",
+            },
+            {
+              time: 23.0,
+              text: "Meanwhile, bio-digesters turn food scraps into renewable biogas. Don't waste the residue—recover the energy!",
+            },
+          ],
+        },
+      };
+
+      // ================== SYNCHRONIZED VOICE-OVER SYSTEM ==================
+      let voiceOverEnabled = true;
+      let currentTopicKey = "reduce";
+      let currentCueIndex = -1;
+      const synth = window.speechSynthesis;
+
+      function speakText(text) {
+        if (!voiceOverEnabled || !("speechSynthesis" in window)) return;
+        synth.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = 1.0;
+        utterance.pitch = 1.1; // Slightly friendly tone matching R.B. mascot
+
+        // Pick an English voice
+        const voices = synth.getVoices();
+        const englishVoice = voices.find(
+          (v) =>
+            v.lang.startsWith("en") &&
+            (v.name.includes("Natural") ||
+              v.name.includes("Google") ||
+              v.name.includes("Samantha") ||
+              v.name.includes("David")),
+        );
+        if (englishVoice) utterance.voice = englishVoice;
+
+        synth.speak(utterance);
+      }
+
+      function stopVoiceOver() {
+        if ("speechSynthesis" in window) synth.cancel();
+        currentCueIndex = -1;
+      }
+
+      function toggleVoiceOver(e) {
+        if (e) e.stopPropagation(); // Don't trigger video pause
+        voiceOverEnabled = !voiceOverEnabled;
+
+        const icon = document.getElementById("voice-icon");
+        const label = document.getElementById("voice-label");
+        const btn = document.getElementById("btn-voice-toggle");
+
+        if (voiceOverEnabled) {
+          icon.className = "ph-bold ph-speaker-high";
+          label.textContent = "Voice: ON";
+          btn.classList.remove("voice-muted");
+          // Resume voice for the current video timestamp
+          checkTimedNarration();
+        } else {
+          icon.className = "ph-bold ph-speaker-slash";
+          label.textContent = "Voice: OFF";
+          btn.classList.add("voice-muted");
+          stopVoiceOver();
+        }
+      }
+
+      function checkTimedNarration() {
+        const player = document.getElementById("learn-video-player");
+        if (!player || player.paused || !voiceOverEnabled) return;
+
+        const cues = mediaData[currentTopicKey].narration;
+        const currentTime = player.currentTime;
+
+        // Find the cue corresponding to the current time
+        let activeIdx = -1;
+        for (let i = 0; i < cues.length; i++) {
+          if (currentTime >= cues[i].time) {
+            activeIdx = i;
+          }
+        }
+
+        if (activeIdx !== -1 && activeIdx !== currentCueIndex) {
+          currentCueIndex = activeIdx;
+          speakText(cues[activeIdx].text);
+        }
+      }
+
+      // ================== VIDEO PLAYER & CLICK-TO-PAUSE ==================
+      function toggleVideoPlayback() {
+        const player = document.getElementById("learn-video-player");
+        if (!player) return;
+
+        if (player.paused) {
+          player.play();
+        } else {
+          player.pause();
+        }
+      }
+
+      function setupVideoPlayerEvents() {
+        const player = document.getElementById("learn-video-player");
+        const indicator = document.getElementById("play-indicator");
+        const icon = document.getElementById("indicator-icon");
+
+        player.addEventListener("play", () => {
+          indicator.style.opacity = "0";
+          checkTimedNarration();
+        });
+
+        player.addEventListener("pause", () => {
+          indicator.style.opacity = "1";
+          icon.className = "ph-fill ph-play";
+          if ("speechSynthesis" in window) synth.cancel();
+        });
+
+        player.addEventListener("ended", () => {
+          indicator.style.opacity = "1";
+          icon.className = "ph-fill ph-arrow-counter-clockwise";
+          stopVoiceOver();
+        });
+
+        player.addEventListener("timeupdate", () => {
+          checkTimedNarration();
+        });
+
+        player.addEventListener("seeking", () => {
+          currentCueIndex = -1; // Reset cue so it resyncs on the new timestamp
+          stopVoiceOver();
+        });
+      }
+
+      function switchMediaTab(categoryKey, btnElement) {
+        if (!mediaData[categoryKey]) return;
+        currentTopicKey = categoryKey;
+        currentCueIndex = -1;
+        stopVoiceOver();
+
+        document
+          .querySelectorAll(".media-tab-btn")
+          .forEach((b) => b.classList.remove("active-tab"));
+        if (btnElement) btnElement.classList.add("active-tab");
+
+        const item = mediaData[categoryKey];
+        const player = document.getElementById("learn-video-player");
+        const source = document.getElementById("video-source");
+
+        if (player) {
+          player.pause();
+          source.src = item.videoFile;
+          player.src = item.videoFile;
+          player.load();
+
+          // Show play icon overlay on load
+          const indicator = document.getElementById("play-indicator");
+          if (indicator) {
+            indicator.style.opacity = "1";
+            document.getElementById("indicator-icon").className =
+              "ph-fill ph-play";
+          }
+        }
+
+        // Update Metadata Text
+        document.getElementById("video-display-title").textContent = item.title;
+        document.getElementById("video-display-desc").textContent = item.desc;
+
+        // Update Supporting Articles
+        const articlesBox = document.getElementById("media-articles-container");
+        if (articlesBox) {
+          articlesBox.innerHTML = "";
+          item.articles.forEach((art) => {
+            articlesBox.innerHTML += `
+                        <div class="media-article-card">
+                            <img src="${art.img}" alt="Article thumbnail">
+                            <div class="article-content">
+                                <h4>${art.title}</h4>
+                                <p>${art.desc}</p>
+                            </div>
+                        </div>
+                    `;
+          });
+        }
+      }
+
+      // ================== INIT ==================
+      document.addEventListener("DOMContentLoaded", () => {
+        setupVideoPlayerEvents();
+
+        // Check if page opened with Recovery query
+        const urlParams = new URLSearchParams(window.location.search);
+        if (
+          urlParams.get("topic") === "recover" ||
+          window.location.hash === "#acc-recover"
+        ) {
+          switchLearnMode("read");
+          const recoverItem = document.getElementById("acc-recover");
+          if (recoverItem) {
+            toggleAccordion(recoverItem.querySelector(".accordion-header"));
+            setTimeout(
+              () =>
+                recoverItem.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                }),
+              200,
+            );
+          }
+        } else {
+          const firstAcc = document.querySelector(".accordion-item");
+          if (firstAcc) firstAcc.classList.add("active-acc");
+        }
+
+        // Load initial voice synthesis voices cache
+        if ("speechSynthesis" in window) {
+          speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
+        }
+
+        // Init default media tab
+        const defaultMediaTab = document.querySelector(".media-tab-btn");
+        if (defaultMediaTab) switchMediaTab("reduce", defaultMediaTab);
+      });
+    </script>
+  </body>
+</html>

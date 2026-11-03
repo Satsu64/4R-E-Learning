@@ -1,0 +1,1339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4R E-Learning - Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  </head>
+  <body class="quiz-body">
+    <!-- Top Navigation Bar -->
+    <nav class="top-navbar">
+      <div class="nav-logo">
+        <i class="ph ph-recycle"></i>
+        <div>
+          <h1>4R E-Learning</h1>
+          <p>Reduce, Reuse, Recycle, Recover</p>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html"><i class="ph ph-house"></i> Home</a>
+        <a href="tips.html"><i class="ph ph-lightbulb"></i> Tips</a>
+        <a href="learn.html"><i class="ph ph-book-open"></i> Learn</a>
+        <a href="quiz.html" class="active"
+          ><i class="ph ph-graduation-cap"></i> Quiz</a
+        >
+        <a href="game.html"><i class="ph ph-game-controller"></i> Game</a>
+        <a href="community.html"><i class="ph ph-users"></i> Community</a>
+      </div>
+    </nav>
+
+    <main class="quiz-main-container">
+      <!-- ================= 1. QUIZ SELECTION MENU ================= -->
+      <section id="quiz-selection-menu" class="quiz-selection-menu">
+        <h1 class="quiz-menu-title">CHOOSE YOUR QUIZ</h1>
+        <p class="quiz-menu-subtitle">
+          Select an evaluation format to test and validate your understanding of
+          the 4R hierarchy.
+        </p>
+
+        <div class="quiz-cards-container">
+          <!-- Quiz 1 Card -->
+          <div class="quiz-select-card" onclick="openQuiz('mcq')">
+            <div
+              class="quiz-card-img"
+              style="background: linear-gradient(135deg, #10b981, #059669)"
+            >
+              <i class="ph-fill ph-list-checks"></i>
+            </div>
+            <div class="quiz-card-tag">5 RANDOM QUESTIONS / ROUND</div>
+            <h3>Objective Assessment</h3>
+            <p>
+              Fast-paced questions testing core concepts, definitions, and waste
+              stream classifications with instant answer rationales.
+            </p>
+            <button
+              type="button"
+              class="btn-primary"
+              style="margin-top: 15px; width: 100%"
+            >
+              Start Objective Quiz <i class="ph-bold ph-arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- Quiz 2 Card -->
+          <div class="quiz-select-card" onclick="openQuiz('case')">
+            <div
+              class="quiz-card-img"
+              style="background: linear-gradient(135deg, #f59e0b, #ea580c)"
+            >
+              <i class="ph-fill ph-briefcase"></i>
+            </div>
+            <div class="quiz-card-tag tag-recovery">PHOTO-BASED SCENARIOS</div>
+            <h3 style="color: #ea580c">Case Study Challenge</h3>
+            <p>
+              Evaluate real-world industrial and community waste dilemmas with
+              photos and strategic rationales.
+            </p>
+            <button
+              type="button"
+              class="btn-orange"
+              style="margin-top: 15px; width: 100%"
+            >
+              Start Case Studies <i class="ph-bold ph-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 2. QUIZ 1: OBJECTIVE ASSESSMENT ================= -->
+      <div
+        id="quiz-mcq-wrapper"
+        class="quiz-view-wrapper"
+        style="display: none"
+      >
+        <div class="quiz-panel">
+          <div class="quiz-panel-header">
+            <button
+              type="button"
+              class="quiz-back-btn"
+              onclick="backToQuizMenu()"
+            >
+              <i class="ph-bold ph-arrow-left"></i> Back to Menu
+            </button>
+            <div class="quiz-badge">Objective Mode</div>
+            <div class="quiz-progress-track">
+              <span id="mcq-progress-text">Question 1 of 5</span>
+              <div class="quiz-bar-bg">
+                <div
+                  class="quiz-bar-fill"
+                  id="mcq-progress-fill"
+                  style="width: 20%"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Question Screen -->
+          <div id="mcq-question-screen">
+            <h2 class="quiz-question-title" id="mcq-question-title">
+              Loading question...
+            </h2>
+            <div class="quiz-options-list" id="mcq-options-container"></div>
+
+            <!-- Instant Question Explanation Box -->
+            <div
+              id="mcq-explanation-box"
+              class="mcq-explanation-card"
+              style="display: none"
+            >
+              <div class="exp-header" id="mcq-exp-header">
+                <i class="ph-bold ph-info"></i> Explanation
+              </div>
+              <p class="exp-text" id="mcq-exp-text"></p>
+            </div>
+
+            <div class="quiz-footer-actions">
+              <button
+                type="button"
+                id="mcq-next-btn"
+                class="btn-primary"
+                style="display: none"
+                onclick="nextMcqQuestion()"
+              >
+                Next Question <i class="ph-bold ph-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- MCQ Result & Full Review Screen -->
+          <div
+            id="mcq-result-screen"
+            class="quiz-result-card"
+            style="display: none"
+          >
+            <div class="result-icon-bubble">
+              <i class="ph-fill ph-trophy"></i>
+            </div>
+            <h2>Assessment Completed!</h2>
+            <p class="result-score-text">
+              You scored
+              <strong id="mcq-final-score" class="text-green">0</strong> /
+              <span id="mcq-total-score">5</span>
+            </p>
+            <p id="mcq-feedback-text" class="result-feedback"></p>
+
+            <div
+              style="
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                margin: 25px 0;
+              "
+            >
+              <button type="button" class="btn-primary" onclick="initMcqQuiz()">
+                <i class="ph ph-arrow-counter-clockwise"></i> Try 5 New
+                Questions
+              </button>
+              <button
+                type="button"
+                class="btn-secondary"
+                onclick="backToQuizMenu()"
+              >
+                Quiz Menu
+              </button>
+            </div>
+
+            <!-- Comprehensive Review Section -->
+            <div class="quiz-review-section">
+              <div class="review-section-heading">
+                <i class="ph-bold ph-clipboard-text text-green"></i> Review Your
+                Answers
+              </div>
+              <div class="review-list" id="mcq-review-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 3. QUIZ 2: CASE STUDY CHALLENGE ================= -->
+      <div
+        id="quiz-case-wrapper"
+        class="quiz-view-wrapper"
+        style="display: none"
+      >
+        <div class="quiz-panel case-panel">
+          <div class="quiz-panel-header">
+            <button
+              type="button"
+              class="quiz-back-btn"
+              onclick="backToQuizMenu()"
+            >
+              <i class="ph-bold ph-arrow-left"></i> Back to Menu
+            </button>
+            <div class="quiz-badge badge-orange">Visual Case Study</div>
+            <div class="quiz-progress-track">
+              <span id="case-progress-text">Scenario 1 of 4</span>
+              <div class="quiz-bar-bg">
+                <div
+                  class="quiz-bar-fill fill-orange"
+                  id="case-progress-fill"
+                  style="width: 25%"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Scenario Screen -->
+          <div id="case-active-screen">
+            <div class="scenario-card-layout">
+              <div class="scenario-photo-wrap">
+                <img
+                  id="case-photo"
+                  class="scenario-photo"
+                  src=""
+                  alt="Scenario Case Photo"
+                  onerror="handleImageError(this)"
+                />
+                <div class="scenario-photo-overlay"></div>
+              </div>
+              <div class="scenario-info-pane">
+                <span class="scenario-tag" id="case-scenario-tag">CASE #</span>
+                <h3 id="case-scenario-heading" class="scenario-heading">
+                  Title
+                </h3>
+                <p id="case-scenario-body" class="scenario-narrative">
+                  Description
+                </p>
+              </div>
+            </div>
+
+            <h4 class="decision-prompt">
+              Identify the optimal strategic pathway based on the 4R hierarchy:
+            </h4>
+
+            <div
+              class="scenario-choices-grid"
+              id="case-choices-container"
+            ></div>
+
+            <!-- Explanatory Academic Debrief Box -->
+            <div
+              id="case-debrief-box"
+              class="academic-debrief-card"
+              style="display: none"
+            >
+              <div class="debrief-heading" id="case-debrief-heading">
+                <i class="ph-bold ph-info"></i> Academic Rationale
+              </div>
+              <p id="case-debrief-text">Explanation</p>
+              <div style="text-align: right; margin-top: 15px">
+                <button
+                  type="button"
+                  id="case-next-btn"
+                  class="btn-orange"
+                  onclick="nextCaseScenario()"
+                >
+                  Proceed to Next Scenario
+                  <i class="ph-bold ph-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case Challenge Result Screen -->
+          <div
+            id="case-result-screen"
+            class="quiz-result-card"
+            style="display: none"
+          >
+            <div class="result-icon-bubble recovery-bubble">
+              <i class="ph-fill ph-certificate"></i>
+            </div>
+            <h2>Case Analysis Complete!</h2>
+            <p class="result-score-text">
+              Strategic Accuracy:
+              <strong id="case-final-score" style="color: #ea580c">0</strong> /
+              <span id="case-total-score">4</span>
+            </p>
+            <p id="case-evaluation-summary" class="result-feedback"></p>
+            <div
+              style="
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                margin-top: 25px;
+              "
+            >
+              <button type="button" class="btn-orange" onclick="initCaseQuiz()">
+                <i class="ph ph-arrow-counter-clockwise"></i> Try 4 New
+                Scenarios
+              </button>
+              <button
+                type="button"
+                class="btn-secondary"
+                onclick="backToQuizMenu()"
+              >
+                Quiz Menu
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Global Recommended Learning Flow Guide -->
+    <section
+      class="journey-guide-section"
+      style="max-width: 950px; margin: 40px auto 30px auto; width: 100%"
+    >
+      <div class="guide-header">
+        <i class="ph-fill ph-compass"></i>
+        <h2>How to Navigate the Platform</h2>
+        <p>
+          Follow our recommended 5-step learning path to maximize your
+          understanding and test your skills.
+        </p>
+      </div>
+
+      <div class="journey-steps-container">
+        <a href="index.html" class="journey-step-node">
+          <span class="step-num">1</span>
+          <div class="step-icon"><i class="ph ph-house"></i></div>
+          <h4>Home</h4>
+          <p>Overview & Goals</p>
+        </a>
+
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+        <!-- Add class="active-node" when in learn.html -->
+        <a href="learn.html" class="journey-step-node">
+          <span class="step-num">2</span>
+          <div class="step-icon"><i class="ph ph-book-open"></i></div>
+          <h4>Learn</h4>
+          <p>Read & Watch</p>
+        </a>
+
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+        <!-- Add class="active-node" when in quiz.html -->
+        <a href="quiz.html" class="journey-step-node active-node">
+          <span class="step-num">3</span>
+          <div class="step-icon"><i class="ph ph-graduation-cap"></i></div>
+          <h4>Quiz</h4>
+          <p>Check Knowledge</p>
+        </a>
+
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+        <!-- Add class="active-node" when in game.html -->
+        <a href="game.html" class="journey-step-node">
+          <span class="step-num">4</span>
+          <div class="step-icon"><i class="ph ph-game-controller"></i></div>
+          <h4>Game</h4>
+          <p>Reactor & Sorting</p>
+        </a>
+
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+        <!-- Add class="active-node" when in community.html -->
+        <a href="community.html" class="journey-step-node">
+          <span class="step-num">5</span>
+          <div class="step-icon"><i class="ph ph-users"></i></div>
+          <h4>Community</h4>
+          <p>Share & Inspire</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-logo">
+        <i class="ph ph-recycle"></i> 4R E-Learning Platform
+      </div>
+      <p class="footer-text">
+        Learn about Reduce, Reuse, Recycle, and Recovery
+      </p>
+      <p class="footer-text">
+        Making the world a better place, one step at a time.
+      </p>
+    </footer>
+
+    <!-- Mascot Script -->
+    <script src="mascot.js"></script>
+
+    <!-- Quiz Engine Script -->
+    <script>
+      // Web Audio Synthesizer
+      let audioCtx = null;
+      function getAudioContext() {
+        if (!audioCtx)
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === "suspended") audioCtx.resume();
+        return audioCtx;
+      }
+
+      function playSound(type) {
+        try {
+          const ctx = getAudioContext();
+          const now = ctx.currentTime;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+
+          if (type === "correct") {
+            osc.type = "sine";
+            osc.frequency.setValueAtTime(523.25, now);
+            osc.frequency.setValueAtTime(659.25, now + 0.1);
+            gain.gain.setValueAtTime(0.2, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+            osc.start(now);
+            osc.stop(now + 0.35);
+          } else if (type === "wrong") {
+            osc.type = "sawtooth";
+            osc.frequency.setValueAtTime(220, now);
+            osc.frequency.linearRampToValueAtTime(140, now + 0.25);
+            gain.gain.setValueAtTime(0.18, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+            osc.start(now);
+            osc.stop(now + 0.3);
+          } else if (type === "finish") {
+            [523.25, 659.25, 783.99, 1046.5].forEach((freq, idx) => {
+              const o = ctx.createOscillator();
+              const g = ctx.createGain();
+              o.type = "triangle";
+              o.frequency.setValueAtTime(freq, now + idx * 0.12);
+              g.gain.setValueAtTime(0.22, now + idx * 0.12);
+              g.gain.exponentialRampToValueAtTime(
+                0.001,
+                now + idx * 0.12 + 0.4,
+              );
+              o.connect(g);
+              g.connect(ctx.destination);
+              o.start(now + idx * 0.12);
+              o.stop(now + idx * 0.12 + 0.4);
+            });
+          }
+        } catch (e) {
+          console.warn(e);
+        }
+      }
+
+      // Image error fallback
+      function handleImageError(img) {
+        img.onerror = null;
+        img.src =
+          "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80";
+      }
+
+      // Navigation Controllers
+      function openQuiz(type) {
+        document.getElementById("quiz-selection-menu").style.display = "none";
+        if (type === "mcq") {
+          document.getElementById("quiz-mcq-wrapper").style.display = "flex";
+          document.getElementById("quiz-case-wrapper").style.display = "none";
+          initMcqQuiz();
+        } else if (type === "case") {
+          document.getElementById("quiz-mcq-wrapper").style.display = "none";
+          document.getElementById("quiz-case-wrapper").style.display = "flex";
+          initCaseQuiz();
+        }
+      }
+
+      function backToQuizMenu() {
+        document.getElementById("quiz-mcq-wrapper").style.display = "none";
+        document.getElementById("quiz-case-wrapper").style.display = "none";
+        document.getElementById("quiz-selection-menu").style.display = "block";
+      }
+
+      // ================= 20 MASTER OBJECTIVE QUESTIONS WITH EXPLANATIONS =================
+      const mcqMasterPool = [
+        {
+          q: "What distinguishes 'Recovery' as the 4th R from standard 'Recycling'?",
+          options: [
+            "Recovery transforms plastic bottles into new synthetic fleece clothing.",
+            "Recovery captures usable energy (electricity, heat, fuel) from residual non-recyclables.",
+            "Recovery buries waste permanently inside regional open landfills.",
+            "Recovery halts purchasing to avoid packaging waste.",
+          ],
+          correct: 1,
+          explanation:
+            "While recycling remanufactures materials into new items, Recovery safely combusts or bio-digests non-recyclable residual waste to extract usable electrical power, steam, or biofuel.",
+        },
+        {
+          q: "Which material is best suited for Waste-to-Energy Recovery rather than mechanical recycling?",
+          options: [
+            "Uncontaminated corrugated cardboard shipping cartons",
+            "Clean, unbroken glass beverage containers",
+            "Soiled multi-layer food packaging foils and unrecyclable composite resins",
+            "Degreased aluminum beverage cans",
+          ],
+          correct: 2,
+          explanation:
+            "Soiled food packaging and complex multi-layer foils cannot be mechanically pulped or remelted without ruining recycling batches, making high-temperature energy recovery the best route.",
+        },
+        {
+          q: "According to the Waste Hierarchy, which step is considered the most preferable baseline action?",
+          options: ["Recycle", "Reduce", "Recover", "Reuse"],
+          correct: 1,
+          explanation:
+            "Source reduction (Reduce) is at the very top of the waste hierarchy because preventing waste from being generated completely eliminates the need for handling, recycling, or disposal.",
+        },
+        {
+          q: "What combustible bio-gas is harvested through the anaerobic digestion of recovered organic waste?",
+          options: [
+            "Propane",
+            "Biogas (primarily methane)",
+            "Pure nitrogen",
+            "Sulfur dioxide",
+          ],
+          correct: 1,
+          explanation:
+            "Anaerobic bacteria break down organic matter in oxygen-free digesters to produce biogas (60-70% methane), which can be combusted for electricity or purified into biomethane vehicle fuel.",
+        },
+        {
+          q: "Why must spent lithium-ion batteries go to specialized Recovery centers rather than standard curbside bins?",
+          options: [
+            "They cause truck and landfill fires and contain high-value recoverable cobalt and lithium.",
+            "They decompose into organic garden fertilizer in under 48 hours.",
+            "They can be dissolved directly in drinking water reservoirs.",
+            "They are classified as inert, non-reactive household paper.",
+          ],
+          correct: 0,
+          explanation:
+            "Lithium-ion cells easily suffer thermal runaway when crushed in regular garbage compactors. Specialized recovery facilities safely neutralize fire risks and recover rare strategic metals.",
+        },
+        {
+          q: "What is Refuse-Derived Fuel (RDF) produced from?",
+          options: [
+            "Crude oil pumped from offshore platforms",
+            "Combustible fractions of sorted municipal solid waste processed into energy pellets",
+            "Fresh wood logs cut from designated forestry timber",
+            "Nuclear power cooling pond water",
+          ],
+          correct: 1,
+          explanation:
+            "RDF is manufactured by shredding, drying, and pelletizing the combustible non-recyclable portions of municipal waste to serve as a coal substitute in industrial boilers and cement kilns.",
+        },
+        {
+          q: "How do modern Waste-to-Energy facilities prevent toxic air emissions like dioxins from escaping chimney flues?",
+          options: [
+            "By releasing emissions exclusively during nighttime hours",
+            "Using advanced multi-stage scrubbers, activated carbon, and fabric baghouse filters",
+            "Mixing chemical perfumes with the exhaust steam",
+            "Pumping the gases into underground municipal sewers",
+          ],
+          correct: 1,
+          explanation:
+            "State-of-the-art flue gas treatment utilizes activated carbon injection to bind dioxins and heavy metals, lime scrubbers for acid gases, and fabric filters to trap 99.9% of particulates.",
+        },
+        {
+          q: "What remains after solid waste is incinerated in a modern thermal recovery facility?",
+          options: [
+            "Bottom ash (which can be recovered for road construction) and filtered fly ash",
+            "Pure liquid drinking water",
+            "Nuclear radioactive isotopes",
+            "Plastic granulate pellets",
+          ],
+          correct: 0,
+          explanation:
+            "Combustion leaves behind non-combustible mineral residue known as bottom ash (often recycled into aggregate for asphalt) and fine toxic fly ash trapped by filters for safe containment.",
+        },
+        {
+          q: "Which 'R' best describes repairing a split dining chair instead of buying a replacement?",
+          options: ["Recycle", "Recover", "Reuse", "Reject"],
+          correct: 2,
+          explanation:
+            "Repairing, refurnishing, and continuing to use an item in its original physical form without destroying its material structure directly represents the Reuse tier.",
+        },
+        {
+          q: "Why is 'Reduction' considered environmentally superior to 'Recycling'?",
+          options: [
+            "Recycling does not consume energy or transport fuel.",
+            "Reduction stops resource extraction, processing, and emissions before they occur.",
+            "Reduction creates more physical trash for power stations.",
+            "Recycled products last infinitely without ever degrading.",
+          ],
+          correct: 1,
+          explanation:
+            "Recycling still consumes considerable water, transport fuel, and electrical energy. Reduction prevents virgin raw resource extraction and manufacturing emissions entirely.",
+        },
+        {
+          q: "What is the primary product of high-temperature pyrolysis applied to tires and dense rubber?",
+          options: [
+            "Pyrolytic oil, syngas, and recovered carbon black",
+            "Clean fresh drinking milk",
+            "Liquid oxygen",
+            "Natural wood mulch",
+          ],
+          correct: 0,
+          explanation:
+            "Pyrolysis decomposes rubber at high temperatures without oxygen, condensing vapors into combustible fuel oil and syngas while leaving commercial-grade carbon black.",
+        },
+        {
+          q: "What happens when food waste decays in traditional anaerobic landfills without gas capture?",
+          options: [
+            "It releases methane, a greenhouse gas over 25 times more potent than carbon dioxide.",
+            "It converts into solid granite rock.",
+            "It purifies groundwater reservoirs underneath.",
+            "It absorbs all carbon emissions from nearby roads.",
+          ],
+          correct: 0,
+          explanation:
+            "Trapped food waste rots without oxygen inside landfills, producing fugitive methane emissions that drive global warming at more than 25 times the warming potential of CO2.",
+        },
+        {
+          q: "What is 'Upcycling'?",
+          options: [
+            "Throwing waste into elevated bins",
+            "Transforming unwanted by-products into materials of higher artistic or functional value",
+            "Down-grading plastic into un-meltable road tar",
+            "Shipping trash to other continents by air freight",
+          ],
+          correct: 1,
+          explanation:
+            "Upcycling creative reuse elevates discarded materials into higher-value products (e.g., turning discarded sails into durable fashion backpacks) without chemical breakdown.",
+        },
+        {
+          q: "In an academic Circular Economy model, waste is viewed as:",
+          options: [
+            "An unavoidable burden requiring deeper landfills",
+            "A valuable secondary resource or feedstock for energy and material recovery",
+            "Something that must only be discarded into open oceans",
+            "A concept that has no economic measurement",
+          ],
+          correct: 1,
+          explanation:
+            "The circular economy replaces the linear 'take-make-waste' model by designing out waste and viewing post-consumer materials as inputs for manufacturing or clean energy recovery.",
+        },
+        {
+          q: "What precious metals can be recovered from discarded smartphone circuit boards?",
+          options: [
+            "Gold, silver, copper, and palladium",
+            "Uranium and helium",
+            "Plutonium and coal",
+            "Liquid nitrogen and mercury",
+          ],
+          correct: 0,
+          explanation:
+            "One ton of printed circuit boards contains up to 40 to 800 times the concentration of gold found in mined ore, alongside recoverable silver, copper, and palladium.",
+        },
+        {
+          q: "What is the main role of the 'Recovery' tier in achieving Zero-Waste to Landfill certification?",
+          options: [
+            "It acts as the final buffer to extract energy from residual waste that cannot be reduced, reused, or recycled.",
+            "It replaces the need to separate recyclables at home.",
+            "It allows companies to generate unlimited single-use plastics.",
+            "It turns all municipal garbage into edible protein.",
+          ],
+          correct: 0,
+          explanation:
+            "Recovery acts as the protective safety net before landfilling, ensuring that even non-recyclable residues yield clean heat and power rather than occupying valuable land.",
+        },
+        {
+          q: "Why are greasy, cheese-covered cardboard pizza boxes often diverted away from mechanical paper recycling?",
+          options: [
+            "Food grease cannot be separated during pulp washing and contaminates entire paper batches.",
+            "Cardboard melts if it comes near cheese.",
+            "Grease makes paper bins too slippery to carry.",
+            "Paper recycling mills only accept plastic items.",
+          ],
+          correct: 0,
+          explanation:
+            "Paper recycling mixes fibers with water. Oil and grease do not dissolve in water; they attach to the wood fibers, creating oil spots and weak points that ruin entire batches of paper.",
+        },
+        {
+          q: "What is Syngas (Synthesis Gas) produced during the thermal gasification of waste?",
+          options: [
+            "A mixture of carbon monoxide and hydrogen used to generate electricity or synthetic fuels",
+            "Pure liquid gasoline ready for vehicle tanks",
+            "Steam mixed with toxic pesticide aerosols",
+            "Compressed atmospheric air",
+          ],
+          correct: 0,
+          explanation:
+            "High-temperature gasification in a lean-oxygen chamber converts carbon materials into syngas (H2 + CO), an efficient gaseous fuel used in turbines or chemical synthesis.",
+        },
+        {
+          q: "Which practice demonstrates the 'Reduce' tier in daily grocery shopping?",
+          options: [
+            "Buying products with minimal packaging or bringing personal reusable cloth tote bags",
+            "Purchasing 5 disposable plastic bags and recycling them later",
+            "Burning plastic bags at home on a backyard barbecue",
+            "Throwing glass jars into forest streams",
+          ],
+          correct: 0,
+          explanation:
+            "Carrying personal tote bags and purchasing loose bulk produce avoids introducing single-use packaging into the waste stream in the first place.",
+        },
+        {
+          q: "How does Waste-to-Energy Recovery directly help combat municipal landfill shortages?",
+          options: [
+            "It reduces the physical volume of solid waste going into landfills by approximately 85% to 90%.",
+            "It triples the size of garbage heaps.",
+            "It converts municipal land into volcanic soil.",
+            "It makes waste heavier so it sinks into the earth's crust.",
+          ],
+          correct: 0,
+          explanation:
+            "Thermal combustion consumes the combustible organic mass, shrinking the volume of solid waste entering landfills by up to 90% and prolonging the operating lifespan of disposal sites.",
+        },
+      ];
+
+      // ================= 10 VERIFIED SCENARIOS WITH RELIABLE IMAGES =================
+      const caseMasterPool = [
+        {
+          tag: "Hospitality & Catering",
+          title: "University Dining Hall Organic Waste",
+          photo:
+            "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+          narrative:
+            "A campus cafeteria produces 250 kg of mixed post-meal food scraps daily, contaminated with compostable paper napkins and grease. Landfill disposal is costly and emits methane plumes.",
+          options: [
+            {
+              label: "Strategy A: Landfill Dumping",
+              sub: "Pack all residues into municipal black trash bags for standard open dump disposal.",
+              isBest: false,
+              explanation:
+                "Landfilling food waste generates methane plumes and wastes valuable nutrient and energy potential.",
+            },
+            {
+              label: "Strategy B: Anaerobic Digestion / Biogas Recovery",
+              sub: "Route the organic substrate into an anaerobic digester to extract biogas for campus kitchen cooking stoves.",
+              isBest: true,
+              explanation:
+                "Optimum Strategy: Because mechanical recycling is impossible for eaten food scraps, biological recovery (biogas + bio-fertilizer) harnesses renewable energy while diverting 100% from landfills.",
+            },
+            {
+              label: "Strategy C: Mechanical Repolymerization",
+              sub: "Attempt to melt down the food leftovers with discarded beverage bottles.",
+              isBest: false,
+              explanation:
+                "Food waste is organic and cannot be mechanically repolymerized with plastics; this ruins recyclable batches.",
+            },
+          ],
+        },
+        {
+          tag: "Industrial Manufacturing",
+          title: "Electric Vehicle Battery Rejection",
+          photo:
+            "https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&w=800&q=80",
+          narrative:
+            "An electric scooter plant identifies 40 defective lithium battery packs that cannot be refurbished or safely reused. They cannot be thrown into regular municipal waste.",
+          options: [
+            {
+              label: "Strategy A: Hydrometallurgical Mineral Recovery",
+              sub: "Send packs to a dedicated recovery facility to safely neutralize cells and extract valuable cobalt, nickel, and lithium.",
+              isBest: true,
+              explanation:
+                "Optimum Strategy: Specialized recovery reclaims rare, high-value battery minerals and prevents fire risks while keeping heavy metals out of ground aquifers.",
+            },
+            {
+              label: "Strategy B: General Waste Open Incineration",
+              sub: "Burn the defective battery packs on-site inside a basic yard incinerator.",
+              isBest: false,
+              explanation:
+                "Open burning of lithium batteries releases toxic fluorinated gases and risks explosive runaway reactions.",
+            },
+            {
+              label: "Strategy C: Plastics Shredder",
+              sub: "Feed whole battery cells into regular plastic bottle shredders.",
+              isBest: false,
+              explanation:
+                "Mechanical plastic granulators puncture battery anodes and cathodes, triggering chemical fires.",
+            },
+          ],
+        },
+        {
+          tag: "Commercial Logistics",
+          title: "Warehouse Wooden Cargo Pallet Excess",
+          photo:
+            "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+          narrative:
+            "A logistics distribution hub receives 600 slightly damaged wooden cargo pallets per month. The timber is clean and untreated, but current procedures discard them as general scrap.",
+          options: [
+            {
+              label: "Strategy A: Immediate Mass-Burn Thermal Recovery",
+              sub: "Burn all intact pallets inside a thermal power station to generate steam.",
+              isBest: false,
+              explanation:
+                "Burning structurally sound wood skips the higher tiers: pallets should be repaired or reused prior to thermal recovery.",
+            },
+            {
+              label:
+                "Strategy B: Repair, Direct Reuse, & Timber Remanufacturing",
+              sub: "Standardize a repair bench to mend minor board cracks for re-circulation, and chip unfixable offcuts for composite wood.",
+              isBest: true,
+              explanation:
+                "Optimum Strategy: Preserving the physical integrity of timber (Reuse & Recycle) saves more embedded carbon than immediate thermal incineration.",
+            },
+            {
+              label: "Strategy C: Open Pit Burial",
+              sub: "Dump all pallets into the municipal landfill without sorting.",
+              isBest: false,
+              explanation:
+                "This wastes valuable raw timber and occupies critical landfill volume without capturing any utility.",
+            },
+          ],
+        },
+        {
+          tag: "Municipal Solid Waste",
+          title: "Residual Slag & Multi-Layer Foil Wrappers",
+          photo:
+            "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80",
+          narrative:
+            "After all clean metals, paper, and PET bottles have been sorted by a municipal MRF, 80 tons of soiled multi-layer foil-laminated chip wrappers and non-recyclable polymers remain.",
+          options: [
+            {
+              label: "Strategy A: Refuse-Derived Fuel (RDF) Energy Recovery",
+              sub: "Process residual polymers into pelletized RDF to generate steam and electric power in an industrial boiler with scrubbers.",
+              isBest: true,
+              explanation:
+                "Optimum Strategy: Once higher tiers (Reduce, Reuse, Recycle) have been exhausted, recovering electricity from high-calorific multi-layer foils represents the best environmental outcome.",
+            },
+            {
+              label: "Strategy B: Chemical Solvent Stripping",
+              sub: "Spend intensive water and chemical solvents to separate microscopic aluminum laminates from snack wrappers.",
+              isBest: false,
+              explanation:
+                "Separating microscopic layers of multi-film wrappers requires disproportionate water and chemical energy, making mechanical recycling environmentally and economically unfeasible.",
+            },
+            {
+              label: "Strategy C: Municipal Storm Drain Disposal",
+              sub: "Allow residues to wash into open municipal drainage channels.",
+              isBest: false,
+              explanation:
+                "Dumping into water channels causes plastic pollution, choking waterways and devastating marine ecosystems.",
+            },
+          ],
+        },
+        {
+          tag: "Healthcare Facilities",
+          title: "Hospital Non-Infectious PPE & Clean Linens",
+          photo:
+            "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80",
+          narrative:
+            "A regional hospital generates 300 kg of non-infectious, clean polypropylene isolation gowns and packaging daily after surgical deliveries. Landfilling synthetic gowns takes centuries to degrade.",
+          options: [
+            {
+              label: "Strategy A: Regulated High-Efficiency Thermal Recovery",
+              sub: "Incinerate clean hospital single-use garments in an advanced clinical WtE plant to generate steam for laundry sterilization.",
+              isBest: true,
+              explanation:
+                "Optimum Strategy: Strict healthcare hygiene laws often forbid direct mechanical garment recycling; thermal recovery neutralizes biological risks while offsetting hospital energy costs.",
+            },
+            {
+              label: "Strategy B: Resale as Household Cleaning Rags",
+              sub: "Distribute used surgical gowns to public flea markets for unwashed home reuse.",
+              isBest: false,
+              explanation:
+                "Hospital gowns cannot be redistributed for informal public reuse due to health risk protocols.",
+            },
+            {
+              label: "Strategy C: Outdoor Yard Composting",
+              sub: "Bury synthetic polypropylene garments into organic garden compost heaps.",
+              isBest: false,
+              explanation:
+                "Synthetic plastic textiles do not biodegrade in compost heaps and pollute soil with microplastics.",
+            },
+          ],
+        },
+        {
+          tag: "Agricultural Processing",
+          title: "Rice Milling Husk & Chaff Residue",
+          photo:
+            "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80",
+          narrative:
+            "A grain cooperative produces 15 metric tons of dry rice husks weekly after harvesting. Farmers currently burn them in open fields, causing severe seasonal smoke haze.",
+          options: [
+            {
+              label: "Strategy A: Biomass Gasification & Silica Recovery",
+              sub: "Feed husks into a closed biomass gasifier to generate electricity for milling machines and recover high-grade silica ash.",
+              isBest: true,
+              explanation:
+                "Optimum Strategy: Agricultural residue gasification stops open-field burning haze while generating cheap on-site rural electricity.",
+            },
+            {
+              label: "Strategy B: Continued Open Field Burning",
+              sub: "Burn all husk piles on farmland during windy afternoons.",
+              isBest: false,
+              explanation:
+                "Open crop burning creates severe particulate pollution (PM2.5), violates clean air regulations, and wastes calorific bio-energy.",
+            },
+            {
+              label: "Strategy C: River Dispersal",
+              sub: "Dump dry husks into river currents to wash them away.",
+              isBest: false,
+              explanation:
+                "Dumping massive volumes of husks into waterways depletes dissolved oxygen and harms freshwater fish.",
+            },
+          ],
+        },
+        {
+          tag: "Automotive Services",
+          title: "End-of-Life Vulcanized Vehicle Tires",
+          photo:
+            "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=800&q=80",
+          narrative:
+            "An auto maintenance franchise discards 400 scrap tires every month. Stored piles collect stagnant rainwater, breeding dengue mosquitoes and creating severe fire hazards.",
+          options: [
+            {
+              label: "Strategy A: Pyrolysis Oil Recovery & Crumb Rubber Reuse",
+              sub: "Shred sound tire treads for playground crumb rubber and process degraded carcasses in a pyrolysis reactor to recover oil and steel.",
+              isBest: true,
+              explanation:
+                "Optimum Strategy: Combining physical crumb reuse with thermal pyrolysis eliminates breeding grounds for disease and reclaims oil and scrap steel.",
+            },
+            {
+              label: "Strategy B: Backyard Tire Burning",
+              sub: "Set fire to tire stacks behind the repair garage at night.",
+              isBest: false,
+              explanation:
+                "Tire fires emit thick black acrid smoke, carcinogenic hydrocarbons, and molten toxic oils that contaminate soil.",
+            },
+            {
+              label: "Strategy C: Secret Highway Dumping",
+              sub: "Abandon worn tires along rural highway shoulders.",
+              isBest: false,
+              explanation:
+                "Illegal dumping creates unsightly blight, vector breeding sites, and incurs massive municipal cleanup fines.",
+            },
+          ],
+        },
+        {
+          tag: "Fashion & Textiles",
+          title: "Garment Factory Post-Cutting Fabric Scraps",
+          photo:
+            "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=80",
+          narrative:
+            "An apparel manufacturer produces 500 kg of pure cotton fabric edge trimmings and roll ends daily during pattern cutting. The trimmings are clean, un-dyed, and virgin fiber.",
+          options: [
+            {
+              label:
+                "Strategy A: Mechanical Fiber Shredding & Yarn Re-Spinning",
+              sub: "Shred clean clippings back into cotton fibers to spin into recycled yarns for new tote bags and insulation batts.",
+              isBest: true,
+              explanation:
+                "Optimum Strategy: Because the cotton is clean and un-soiled, mechanical material recycling preserves fiber quality without skipping directly to incineration.",
+            },
+            {
+              label: "Strategy B: Immediate Thermal Combustion",
+              sub: "Incinerate all virgin cotton scraps in a boiler.",
+              isBest: false,
+              explanation:
+                "Incinerating pure virgin cotton skips higher circular tiers when the fiber could easily be re-spun into valuable new textiles.",
+            },
+            {
+              label: "Strategy C: Landfill Bagging",
+              sub: "Bury clean cotton scraps in landfills beneath construction dirt.",
+              isBest: false,
+              explanation:
+                "Dumping clean raw cotton wastes the huge quantities of water, land, and energy used to grow the crop.",
+            },
+          ],
+        },
+        {
+          tag: "Beverage Brewing",
+          title: "Brewery Spent Malt Grain & Mash Sludge",
+          photo:
+            "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80",
+          narrative:
+            "A craft beverage brewery generates 1,200 kg of wet, sugar-depleted spent barley mash every brewing day. The mash is wet, rich in protein, and turns sour in 48 hours.",
+          options: [
+            {
+              label:
+                "Strategy A: Livestock Feed Upcycling & Methane Bio-Recovery",
+              sub: "Divert fresh wet mash directly to local dairy farmers for livestock feed, and route excess mash into an anaerobic biogas digester.",
+              isBest: true,
+              explanation:
+                "Optimum Strategy: Upcycling nutrient-rich spent grain as cattle feed and capturing remaining bio-methane achieves circular resource recovery.",
+            },
+            {
+              label: "Strategy B: General Trash Incineration",
+              sub: "Attempt to burn the dripping wet barley mash in standard municipal trash burners.",
+              isBest: false,
+              explanation:
+                "Wet barley mash has a negative calorific balance; trying to burn soggy mash smothers burner flames and wastes fuel.",
+            },
+            {
+              label: "Strategy C: Sewer Drain Washing",
+              sub: "Hose heavy grain solids down municipal storm sinks.",
+              isBest: false,
+              explanation:
+                "Flushing massive grain solids clogs municipal sewers and triggers wastewater treatment plant failures.",
+            },
+          ],
+        },
+        {
+          tag: "Construction & Demolition",
+          title: "Reinforced Concrete Foundation Debris",
+          photo:
+            "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+          narrative:
+            "An urban renewal demolition site breaks up 50 tons of reinforced concrete slabs and internal steel rebar from an obsolete office tower.",
+          options: [
+            {
+              label:
+                "Strategy A: Magnetic Rebar Extraction & Aggregate Crushing",
+              sub: "Crush concrete into graded road-base aggregate and magnetically recover rebar for electric arc steel remelting.",
+              isBest: true,
+              explanation:
+                "Optimum Strategy: Heavy demolition debris cannot be burned for energy, but crushing concrete into road base and melting rebar achieves 98% material recovery.",
+            },
+            {
+              label: "Strategy B: High-Heat Thermal Incineration",
+              sub: "Throw concrete boulders into a waste-to-energy trash incinerator.",
+              isBest: false,
+              explanation:
+                "Concrete and stone are non-combustible minerals that damage thermal incinerator grates.",
+            },
+            {
+              label: "Strategy C: Illegal Ocean Barge Dumping",
+              sub: "Barge all rubble into marine nature reserves and dump it on coral reefs.",
+              isBest: false,
+              explanation:
+                "Unauthorized coastal dumping destroys delicate coral reefs and incurs severe environmental penalties.",
+            },
+          ],
+        },
+      ];
+
+      // ================= QUIZ 1: LOGIC WITH EXPLANATIONS & FULL REVIEW =================
+      let activeMcqs = [];
+      let mcqIndex = 0;
+      let mcqScore = 0;
+      let mcqAnswered = false;
+      let mcqUserLogs = []; // Stores answers for post-quiz review
+
+      function initMcqQuiz() {
+        activeMcqs = [...mcqMasterPool]
+          .sort(() => 0.5 - Math.random())
+          .slice(0, 5);
+        mcqIndex = 0;
+        mcqScore = 0;
+        mcqAnswered = false;
+        mcqUserLogs = [];
+
+        document.getElementById("mcq-question-screen").style.display = "block";
+        document.getElementById("mcq-result-screen").style.display = "none";
+        document.getElementById("mcq-total-score").textContent =
+          activeMcqs.length;
+        renderMcqQuestion();
+      }
+
+      function renderMcqQuestion() {
+        mcqAnswered = false;
+        const current = activeMcqs[mcqIndex];
+
+        document.getElementById("mcq-next-btn").style.display = "none";
+        document.getElementById("mcq-explanation-box").style.display = "none";
+
+        document.getElementById("mcq-progress-text").textContent =
+          `Question ${mcqIndex + 1} of ${activeMcqs.length}`;
+        document.getElementById("mcq-progress-fill").style.width =
+          `${((mcqIndex + 1) / activeMcqs.length) * 100}%`;
+        document.getElementById("mcq-question-title").textContent = current.q;
+
+        const container = document.getElementById("mcq-options-container");
+        container.innerHTML = "";
+
+        current.options.forEach((opt, idx) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "quiz-option-btn";
+          btn.innerHTML = `<span class="opt-letter">${String.fromCharCode(65 + idx)}</span> <span class="opt-text">${opt}</span>`;
+          btn.onclick = () => selectMcqOption(idx, btn);
+          container.appendChild(btn);
+        });
+      }
+
+      function selectMcqOption(selectedIndex, btnElement) {
+        if (mcqAnswered) return;
+        mcqAnswered = true;
+
+        const current = activeMcqs[mcqIndex];
+        const allBtns = document.querySelectorAll(".quiz-option-btn");
+        const isCorrect = selectedIndex === current.correct;
+
+        if (isCorrect) {
+          btnElement.classList.add("opt-correct");
+          playSound("correct");
+          mcqScore++;
+        } else {
+          btnElement.classList.add("opt-incorrect");
+          allBtns[current.correct].classList.add("opt-correct");
+          playSound("wrong");
+        }
+
+        allBtns.forEach((b) => (b.disabled = true));
+
+        // Log answer for end-of-quiz review
+        mcqUserLogs.push({
+          question: current.q,
+          selectedOptionText: current.options[selectedIndex],
+          correctOptionText: current.options[current.correct],
+          isCorrect: isCorrect,
+          explanation: current.explanation,
+        });
+
+        // Display inline explanation
+        const expBox = document.getElementById("mcq-explanation-box");
+        const expHeader = document.getElementById("mcq-exp-header");
+        const expText = document.getElementById("mcq-exp-text");
+
+        if (isCorrect) {
+          expBox.className = "mcq-explanation-card exp-correct";
+          expHeader.innerHTML =
+            '<i class="ph-bold ph-check-circle"></i> Correct!';
+        } else {
+          expBox.className = "mcq-explanation-card exp-wrong";
+          expHeader.innerHTML = '<i class="ph-bold ph-x-circle"></i> Incorrect';
+        }
+        expText.textContent = current.explanation;
+        expBox.style.display = "block";
+
+        // Show Next button
+        document.getElementById("mcq-next-btn").style.display = "inline-flex";
+      }
+
+      function nextMcqQuestion() {
+        mcqIndex++;
+        if (mcqIndex < activeMcqs.length) {
+          renderMcqQuestion();
+        } else {
+          finishMcqQuiz();
+        }
+      }
+
+      function finishMcqQuiz() {
+        playSound("finish");
+        if (typeof confetti === "function")
+          confetti({ particleCount: 130, spread: 110, origin: { y: 0.4 } });
+
+        document.getElementById("mcq-question-screen").style.display = "none";
+        document.getElementById("mcq-result-screen").style.display = "block";
+        document.getElementById("mcq-final-score").textContent = mcqScore;
+
+        const feedback = document.getElementById("mcq-feedback-text");
+        if (mcqScore === activeMcqs.length) {
+          feedback.textContent =
+            "Outstanding mastery! You clearly understand the distinctions of the 4R waste hierarchy.";
+        } else if (mcqScore >= 3) {
+          feedback.textContent =
+            "Good performance! Review the questions below to see how Recovery compares to Recycling.";
+        } else {
+          feedback.textContent =
+            "Keep practicing! Review the detailed rationales below to strengthen your understanding.";
+        }
+
+        // Populate Comprehensive Review List
+        const reviewContainer = document.getElementById("mcq-review-list");
+        reviewContainer.innerHTML = "";
+
+        mcqUserLogs.forEach((item, idx) => {
+          const card = document.createElement("div");
+          card.className = `review-item-card ${item.isCorrect ? "review-correct" : "review-wrong"}`;
+
+          card.innerHTML = `
+                    <div class="review-item-top">
+                        <div>
+                            <span class="review-q-num">Question ${idx + 1}</span>
+                            <h4 class="review-q-title">${item.question}</h4>
+                        </div>
+                        <span class="review-status-badge">
+                            ${item.isCorrect ? '<i class="ph-bold ph-check"></i> Correct' : '<i class="ph-bold ph-x"></i> Incorrect'}
+                        </span>
+                    </div>
+
+                    <div class="review-answers-box">
+                        <div class="ans-row">
+                            <strong>Your Choice:</strong> 
+                            <span class="${item.isCorrect ? "ans-correct-choice" : "ans-user-wrong"}">${item.selectedOptionText}</span>
+                        </div>
+                        ${
+                          !item.isCorrect
+                            ? `
+                        <div class="ans-row">
+                            <strong>Correct Answer:</strong> 
+                            <span class="ans-correct-choice">${item.correctOptionText}</span>
+                        </div>`
+                            : ""
+                        }
+                    </div>
+
+                    <p class="review-exp-note"><strong>Rationale:</strong> ${item.explanation}</p>
+                `;
+          reviewContainer.appendChild(card);
+        });
+      }
+
+      // ================= QUIZ 2: CASE STUDY LOGIC =================
+      let activeCases = [];
+      let caseIndex = 0;
+      let caseScore = 0;
+      let caseAnswered = false;
+
+      function initCaseQuiz() {
+        activeCases = [...caseMasterPool]
+          .sort(() => 0.5 - Math.random())
+          .slice(0, 4);
+        caseIndex = 0;
+        caseScore = 0;
+        caseAnswered = false;
+
+        document.getElementById("case-active-screen").style.display = "block";
+        document.getElementById("case-result-screen").style.display = "none";
+        document.getElementById("case-total-score").textContent =
+          activeCases.length;
+        renderCaseScenario();
+      }
+
+      function renderCaseScenario() {
+        caseAnswered = false;
+        const current = activeCases[caseIndex];
+
+        document.getElementById("case-debrief-box").style.display = "none";
+        document.getElementById("case-progress-text").textContent =
+          `Scenario ${caseIndex + 1} of ${activeCases.length}`;
+        document.getElementById("case-progress-fill").style.width =
+          `${((caseIndex + 1) / activeCases.length) * 100}%`;
+
+        const photoEl = document.getElementById("case-photo");
+        photoEl.src = current.photo;
+
+        document.getElementById("case-scenario-tag").textContent = current.tag;
+        document.getElementById("case-scenario-heading").textContent =
+          current.title;
+        document.getElementById("case-scenario-body").textContent =
+          current.narrative;
+
+        const container = document.getElementById("case-choices-container");
+        container.innerHTML = "";
+
+        current.options.forEach((opt) => {
+          const card = document.createElement("div");
+          card.className = "case-choice-card";
+          card.innerHTML = `
+                    <div class="choice-title">${opt.label}</div>
+                    <div class="choice-sub">${opt.sub}</div>
+                `;
+          card.onclick = () => selectCaseOption(opt, card);
+          container.appendChild(card);
+        });
+      }
+
+      function selectCaseOption(selectedOption, cardElement) {
+        if (caseAnswered) return;
+        caseAnswered = true;
+
+        const current = activeCases[caseIndex];
+        const allCards = document.querySelectorAll(".case-choice-card");
+
+        if (selectedOption.isBest) {
+          cardElement.classList.add("choice-correct");
+          playSound("correct");
+          caseScore++;
+          document.getElementById("case-debrief-heading").className =
+            "debrief-heading text-green";
+          document.getElementById("case-debrief-heading").innerHTML =
+            '<i class="ph-bold ph-check-circle"></i> Optimal Strategic Decision!';
+        } else {
+          cardElement.classList.add("choice-incorrect");
+          playSound("wrong");
+          document.getElementById("case-debrief-heading").className =
+            "debrief-heading text-orange";
+          document.getElementById("case-debrief-heading").innerHTML =
+            '<i class="ph-bold ph-warning-circle"></i> Sub-Optimal Strategy';
+
+          allCards.forEach((c, idx) => {
+            if (current.options[idx].isBest) c.classList.add("choice-correct");
+          });
+        }
+
+        allCards.forEach((c) => (c.style.pointerEvents = "none"));
+
+        document.getElementById("case-debrief-text").textContent =
+          selectedOption.explanation;
+        document.getElementById("case-debrief-box").style.display = "block";
+      }
+
+      function nextCaseScenario() {
+        caseIndex++;
+        if (caseIndex < activeCases.length) {
+          renderCaseScenario();
+        } else {
+          finishCaseQuiz();
+        }
+      }
+
+      function finishCaseQuiz() {
+        playSound("finish");
+        if (typeof confetti === "function")
+          confetti({ particleCount: 150, spread: 110, origin: { y: 0.45 } });
+
+        document.getElementById("case-active-screen").style.display = "none";
+        document.getElementById("case-result-screen").style.display = "block";
+        document.getElementById("case-final-score").textContent = caseScore;
+
+        const summary = document.getElementById("case-evaluation-summary");
+        if (caseScore === activeCases.length) {
+          summary.textContent =
+            "Flawless technical analysis! You accurately identified the correct balance between recovery, reuse, and recycling across every scenario.";
+        } else if (caseScore >= 2) {
+          summary.textContent =
+            "Competent analytical performance. Remember to prioritize Reuse and Mechanical Recycling first, reserving Energy Recovery for residual or hazardous streams.";
+        } else {
+          summary.textContent =
+            "Review the 4R hierarchy principles in the Learn module to improve your strategic waste pathway planning.";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,957 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4R E-Learning - Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  </head>
+  <body class="game-body">
+    <!-- Top Navigation Bar -->
+    <nav class="top-navbar">
+      <div class="nav-logo">
+        <i class="ph ph-recycle"></i>
+        <div>
+          <h1>4R E-Learning</h1>
+          <p>Reduce, Reuse, Recycle, Recover</p>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html"><i class="ph ph-house"></i> Home</a>
+        <a href="tips.html"><i class="ph ph-lightbulb"></i> Tips</a>
+        <a href="learn.html"><i class="ph ph-book-open"></i> Learn</a>
+        <a href="quiz.html"><i class="ph ph-graduation-cap"></i> Quiz</a>
+        <a href="game.html" class="active"
+          ><i class="ph ph-game-controller"></i> Game</a
+        >
+        <a href="community.html"><i class="ph ph-users"></i> Community</a>
+      </div>
+    </nav>
+
+    <!-- Error Toast Notification -->
+    <div id="error-toast" class="toast">Oops! Wrong choice!</div>
+
+    <main class="game-main">
+      <!-- ================= 1. MAIN MENU ================= -->
+      <section id="game-selection-menu" class="game-selection-menu">
+        <h1 class="game-title" style="text-align: center; margin-bottom: 40px">
+          CHOOSE YOUR GAME
+        </h1>
+        <div class="game-cards-container">
+          <!-- Game 1 Card -->
+          <div class="game-select-card" onclick="openGame('sort')">
+            <div class="game-card-img" style="background: #10b981">
+              <i class="ph-fill ph-trash"></i>
+            </div>
+            <h3>Trash Sorting Simulator</h3>
+            <p>
+              Learn the basics of the 4Rs by dragging or clicking everyday waste
+              into the correct bins.
+            </p>
+            <button
+              type="button"
+              class="btn-primary"
+              style="margin-top: 15px; width: 100%"
+            >
+              Play Game 1
+            </button>
+          </div>
+
+          <!-- Game 2 Card -->
+          <div class="game-select-card" onclick="openGame('reactor')">
+            <div
+              class="game-card-img"
+              style="background: linear-gradient(135deg, #f59e0b, #ea580c)"
+            >
+              <i class="ph-fill ph-lightning"></i>
+            </div>
+            <h3 style="color: #ea580c">Energy Reactor (Recovery)</h3>
+            <p>
+              Fast-paced! Tap unrecyclable and organic items to extract clean
+              energy. Don't burn recyclables!
+            </p>
+            <button
+              type="button"
+              class="btn-primary"
+              style="
+                margin-top: 15px;
+                width: 100%;
+                background: #ea580c;
+                color: white;
+                border-color: #ea580c;
+              "
+            >
+              Play Game 2
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 2. GAME 1: TRASH SORTING ================= -->
+      <div id="game-sort-wrapper" style="display: none; width: 100%; gap: 30px">
+        <aside class="game-sidebar">
+          <div class="instructions-card">
+            <h3>How to play:</h3>
+            <ul>
+              <li>
+                <strong>Drag & Drop</strong> or
+                <strong>Click item, then click bin</strong>
+              </li>
+              <li>Normal Item = 10 Points</li>
+              <li>
+                <strong style="color: #ea580c"
+                  >Recovery Item = 20 Points!</strong
+                >
+              </li>
+            </ul>
+            <button
+              type="button"
+              class="btn-text"
+              style="margin-top: 20px; color: #64748b"
+              onclick="backToMenu()"
+            >
+              <i class="ph-bold ph-arrow-left"></i> Back to Menu
+            </button>
+          </div>
+        </aside>
+
+        <section class="game-board-container">
+          <h1 class="game-title">TRASH SORTING GAME</h1>
+          <div class="game-board">
+            <div class="game-header">
+              <div class="stat-box">
+                <span>Score</span
+                ><strong id="score-display" class="text-green">0</strong>
+              </div>
+              <div class="stat-box stat-error">
+                <span>Errors</span
+                ><strong id="error-display" class="text-red">0</strong>
+              </div>
+              <button
+                type="button"
+                class="btn-new-game"
+                onclick="initSortGame()"
+              >
+                <i class="ph ph-arrow-counter-clockwise"></i> Restart
+              </button>
+            </div>
+
+            <div class="bins-container">
+              <div class="bin-card bin-blue" data-category="recyclable">
+                <div class="bin-header">
+                  <div>
+                    <h3>Recyclable</h3>
+                    <p>Paper, plastic, glass</p>
+                  </div>
+                  <i class="ph ph-trash"></i>
+                </div>
+                <div class="drop-zone" id="drop-recyclable">
+                  Items: <span class="bin-count">0</span>
+                </div>
+              </div>
+              <div class="bin-card bin-green" data-category="organic">
+                <div class="bin-header">
+                  <div>
+                    <h3>Organic</h3>
+                    <p>Food waste</p>
+                  </div>
+                  <i class="ph ph-trash"></i>
+                </div>
+                <div class="drop-zone" id="drop-organic">
+                  Items: <span class="bin-count">0</span>
+                </div>
+              </div>
+              <div class="bin-card bin-gray" data-category="general">
+                <div class="bin-header">
+                  <div>
+                    <h3>General Waste</h3>
+                    <p>Non-recyclables</p>
+                  </div>
+                  <i class="ph ph-trash"></i>
+                </div>
+                <div class="drop-zone" id="drop-general">
+                  Items: <span class="bin-count">0</span>
+                </div>
+              </div>
+              <div
+                class="bin-card bin-red"
+                data-category="hazardous"
+                style="border: 2px solid #fef08a"
+              >
+                <div class="bin-header">
+                  <div>
+                    <h3>Recovery</h3>
+                    <p>Batteries, chemicals</p>
+                  </div>
+                  <i class="ph-fill ph-sparkle" style="color: #fef08a"></i>
+                </div>
+                <div class="drop-zone" id="drop-hazardous">
+                  Items: <span class="bin-count">0</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="items-section" id="items-section">
+              <h3>Items to Sort (<span id="items-left-count">10</span>)</h3>
+              <div class="items-grid" id="items-grid"></div>
+            </div>
+
+            <!-- Game 1 Results & Mistakes Review -->
+            <div
+              class="game-results-section"
+              id="game-results-section"
+              style="display: none"
+            >
+              <div class="results-banner">
+                <h2>🎉 Round Complete!</h2>
+                <p>
+                  You scored
+                  <strong id="final-game-score" class="text-green">0</strong>
+                  points with
+                  <strong id="final-game-errors" class="text-red">0</strong>
+                  errors.
+                </p>
+              </div>
+              <div id="mistakes-container"></div>
+              <div style="text-align: center; margin-top: 25px">
+                <button
+                  type="button"
+                  class="btn-new-game"
+                  style="margin: 0 auto"
+                  onclick="initSortGame()"
+                >
+                  Play Again
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ================= 3. GAME 2: ENERGY REACTOR ================= -->
+      <div
+        id="game-reactor-wrapper"
+        class="reactor-wrapper"
+        style="display: none"
+      >
+        <div class="reactor-top-bar">
+          <button type="button" class="reactor-back-btn" onclick="backToMenu()">
+            <i class="ph-bold ph-arrow-left"></i> Back to Menu
+          </button>
+          <h1 class="game-title reactor-main-title">ENERGY REACTOR</h1>
+        </div>
+
+        <div class="game-board reactor-board">
+          <div class="game-header">
+            <div class="stat-box reactor-power-box">
+              <span class="power-label"
+                >City Power Grid: <strong id="reactor-score">0</strong> MW</span
+              >
+              <div class="power-bar-bg">
+                <div class="power-bar-fill" id="power-bar-fill"></div>
+              </div>
+            </div>
+
+            <div class="stat-box stat-score-box">
+              <span>Best Score</span>
+              <strong id="reactor-highscore-display" class="text-green"
+                >0</strong
+              >
+            </div>
+
+            <div class="stat-box stat-timer-box">
+              <span>Time Left</span>
+              <strong id="reactor-timer" class="text-orange">30s</strong>
+            </div>
+          </div>
+
+          <!-- Centered Instructions & Start Screen -->
+          <div id="reactor-start-screen" class="reactor-briefing-screen">
+            <div class="reactor-instructions-card">
+              <div class="briefing-header">
+                <i class="ph-fill ph-lightning"></i>
+                <h2>Mission Briefing</h2>
+              </div>
+              <p class="briefing-sub">
+                Power up the city using
+                <strong>Waste-to-Energy Recovery</strong>!
+              </p>
+
+              <div class="rules-grid">
+                <div class="rule-box rule-allow">
+                  <div class="rule-icon"><i class="ph-bold ph-check"></i></div>
+                  <div class="rule-text">
+                    <strong>TAP THESE (+15 MW)</strong>
+                    <span>Hazardous (🔋, 🪣) & Organic (☕, 🍌) Waste</span>
+                  </div>
+                </div>
+                <div class="rule-box rule-avoid">
+                  <div class="rule-icon"><i class="ph-bold ph-x"></i></div>
+                  <div class="rule-text">
+                    <strong>AVOID THESE (-10 MW)</strong>
+                    <span>Clean Recyclables (📦, 🍾, 🥤)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="btn-start-reactor"
+              onclick="startReactorGame()"
+            >
+              <i class="ph-fill ph-play"></i> START REACTOR
+            </button>
+          </div>
+
+          <!-- 3x3 Reactor Grid -->
+          <div id="reactor-game-area" style="display: none">
+            <div class="reactor-grid" id="reactor-grid"></div>
+          </div>
+
+          <!-- Reactor Results Screen -->
+          <div
+            class="game-results-section"
+            id="reactor-results-section"
+            style="display: none; border-color: #ea580c"
+          >
+            <div class="results-banner">
+              <h2>⚡ Reactor Shutdown!</h2>
+              <p>
+                You generated
+                <strong id="final-reactor-score" style="color: #ea580c"
+                  >0</strong
+                >
+                Megawatts of clean power!
+              </p>
+              <div id="reactor-highscore-banner"></div>
+            </div>
+            <div style="text-align: center; margin-top: 25px">
+              <button
+                type="button"
+                class="btn-new-game"
+                style="margin: 0 auto; background: #ea580c"
+                onclick="startReactorGame()"
+              >
+                Run Another Cycle
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Global Recommended Learning Flow Guide -->
+    <section
+      class="journey-guide-section"
+      style="max-width: 950px; margin: 40px auto 30px auto; width: 100%"
+    >
+      <div class="guide-header">
+        <i class="ph-fill ph-compass"></i>
+        <h2>How to Navigate the Platform</h2>
+        <p>
+          Follow our recommended 5-step learning path to maximize your
+          understanding and test your skills.
+        </p>
+      </div>
+
+      <div class="journey-steps-container">
+        <a href="index.html" class="journey-step-node">
+          <span class="step-num">1</span>
+          <div class="step-icon"><i class="ph ph-house"></i></div>
+          <h4>Home</h4>
+          <p>Overview & Goals</p>
+        </a>
+
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+        <!-- Add class="active-node" when in learn.html -->
+        <a href="learn.html" class="journey-step-node">
+          <span class="step-num">2</span>
+          <div class="step-icon"><i class="ph ph-book-open"></i></div>
+          <h4>Learn</h4>
+          <p>Read & Watch</p>
+        </a>
+
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+        <!-- Add class="active-node" when in quiz.html -->
+        <a href="quiz.html" class="journey-step-node">
+          <span class="step-num">3</span>
+          <div class="step-icon"><i class="ph ph-graduation-cap"></i></div>
+          <h4>Quiz</h4>
+          <p>Check Knowledge</p>
+        </a>
+
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+        <!-- Add class="active-node" when in game.html -->
+        <a href="game.html" class="journey-step-node active-node">
+          <span class="step-num">4</span>
+          <div class="step-icon"><i class="ph ph-game-controller"></i></div>
+          <h4>Game</h4>
+          <p>Reactor & Sorting</p>
+        </a>
+
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+        <!-- Add class="active-node" when in community.html -->
+        <a href="community.html" class="journey-step-node">
+          <span class="step-num">5</span>
+          <div class="step-icon"><i class="ph ph-users"></i></div>
+          <h4>Community</h4>
+          <p>Share & Inspire</p>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-logo">
+        <i class="ph ph-recycle"></i> 4R E-Learning Platform
+      </div>
+      <p class="footer-text">
+        Learn about Reduce, Reuse, Recycle, and Recovery
+      </p>
+      <p class="footer-text">
+        Making the world a better place, one step at a time.
+      </p>
+    </footer>
+
+    <!-- Mascot Script -->
+    <script src="mascot.js"></script>
+
+    <!-- Game Logic & Sound Effects Script -->
+    <script>
+      // --- Web Audio API Shared Synthesizer ---
+      let audioCtx = null;
+      function getAudioContext() {
+        if (!audioCtx)
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === "suspended") audioCtx.resume();
+        return audioCtx;
+      }
+
+      function playSound(type) {
+        try {
+          const ctx = getAudioContext();
+          const now = ctx.currentTime;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+
+          if (type === "correct") {
+            osc.type = "sine";
+            osc.frequency.setValueAtTime(523.25, now);
+            osc.frequency.setValueAtTime(783.99, now + 0.1);
+            gain.gain.setValueAtTime(0.25, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.38);
+            osc.start(now);
+            osc.stop(now + 0.38);
+          } else if (type === "wrong") {
+            osc.type = "sawtooth";
+            osc.frequency.setValueAtTime(190, now);
+            osc.frequency.linearRampToValueAtTime(125, now + 0.3);
+            gain.gain.setValueAtTime(0.2, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+            osc.start(now);
+            osc.stop(now + 0.35);
+          } else if (type === "zap") {
+            osc.type = "square";
+            osc.frequency.setValueAtTime(800, now);
+            osc.frequency.exponentialRampToValueAtTime(100, now + 0.15);
+            gain.gain.setValueAtTime(0.2, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+            osc.start(now);
+            osc.stop(now + 0.15);
+          } else if (type === "finish") {
+            const notes = [523.25, 659.25, 783.99, 1046.5];
+            notes.forEach((freq, idx) => {
+              const noteOsc = ctx.createOscillator();
+              const noteGain = ctx.createGain();
+              noteOsc.type = "triangle";
+              noteOsc.frequency.setValueAtTime(freq, now + idx * 0.12);
+              noteGain.gain.setValueAtTime(0.25, now + idx * 0.12);
+              noteGain.gain.exponentialRampToValueAtTime(
+                0.001,
+                now + idx * 0.12 + 0.45,
+              );
+              noteOsc.connect(noteGain);
+              noteGain.connect(ctx.destination);
+              noteOsc.start(now + idx * 0.12);
+              noteOsc.stop(now + idx * 0.12 + 0.45);
+            });
+          }
+        } catch (e) {
+          console.warn("Audio error:", e);
+        }
+      }
+
+      const masterItemPool = [
+        { id: 1, name: "Cardboard", emoji: "📦", category: "recyclable" },
+        { id: 2, name: "Bottle", emoji: "🍾", category: "recyclable" },
+        { id: 3, name: "Can", emoji: "🥤", category: "recyclable" },
+        { id: 4, name: "Paper", emoji: "📰", category: "recyclable" },
+        {
+          id: 7,
+          name: "Coffee",
+          emoji: "☕",
+          category: "organic",
+          isRecoverable: true,
+        },
+        {
+          id: 8,
+          name: "Banana",
+          emoji: "🍌",
+          category: "organic",
+          isRecoverable: true,
+        },
+        { id: 12, name: "Tissue", emoji: "🧻", category: "general" },
+        { id: 13, name: "Plastic Bag", emoji: "🛍️", category: "general" },
+        {
+          id: 17,
+          name: "Battery",
+          emoji: "🔋",
+          category: "hazardous",
+          isRecoverable: true,
+        },
+        {
+          id: 18,
+          name: "Paint",
+          emoji: "🪣",
+          category: "hazardous",
+          isRecoverable: true,
+        },
+      ];
+
+      const categoryLabels = {
+        recyclable: "Recyclable",
+        organic: "Organic",
+        general: "General Waste",
+        hazardous: "Recovery",
+      };
+
+      // --- Navigation Controller ---
+      function openGame(type) {
+        document.getElementById("game-selection-menu").style.display = "none";
+        if (type === "sort") {
+          document.getElementById("game-sort-wrapper").style.display = "flex";
+          document.getElementById("game-reactor-wrapper").style.display =
+            "none";
+          initSortGame();
+        } else if (type === "reactor") {
+          document.getElementById("game-sort-wrapper").style.display = "none";
+          document.getElementById("game-reactor-wrapper").style.display =
+            "flex";
+          document.getElementById("reactor-start-screen").style.display =
+            "flex";
+          document.getElementById("reactor-game-area").style.display = "none";
+          document.getElementById("reactor-results-section").style.display =
+            "none";
+
+          let savedHighscore =
+            localStorage.getItem("4r_reactor_highscore") || 0;
+          document.getElementById("reactor-highscore-display").textContent =
+            savedHighscore;
+        }
+      }
+
+      function backToMenu() {
+        document.getElementById("game-sort-wrapper").style.display = "none";
+        document.getElementById("game-reactor-wrapper").style.display = "none";
+        document.getElementById("game-selection-menu").style.display = "block";
+        if (typeof reactorInterval !== "undefined")
+          clearInterval(reactorInterval);
+        if (typeof reactorTimer !== "undefined") clearInterval(reactorTimer);
+      }
+
+      // ================= GAME 1: TRASH SORTING LOGIC =================
+      let sScore = 0,
+        sErrs = 0,
+        sLeft = 10,
+        sBinCounts = {},
+        wrongList = [],
+        draggedItem = null;
+      let selectedItem = null;
+
+      function initSortGame() {
+        sScore = 0;
+        sErrs = 0;
+        sLeft = 10;
+        sBinCounts = { recyclable: 0, organic: 0, general: 0, hazardous: 0 };
+        wrongList = [];
+        selectedItem = null;
+        draggedItem = null;
+
+        document.getElementById("score-display").textContent = sScore;
+        document.getElementById("error-display").textContent = sErrs;
+        document.getElementById("items-left-count").textContent = sLeft;
+        document
+          .querySelectorAll(".bin-count")
+          .forEach((s) => (s.textContent = "0"));
+
+        document.getElementById("items-section").style.display = "block";
+        document.getElementById("game-results-section").style.display = "none";
+
+        const poolCopy = [...masterItemPool]
+          .sort(() => 0.5 - Math.random())
+          .slice(0, 10);
+        const grid = document.getElementById("items-grid");
+        grid.innerHTML = "";
+
+        poolCopy.forEach((item) => {
+          const el = document.createElement("div");
+          el.className = "draggable-item";
+          el.setAttribute("draggable", "true");
+          el.setAttribute("data-category", item.category);
+          el.setAttribute("data-name", item.name);
+          el.setAttribute("data-emoji", item.emoji);
+
+          el.innerHTML = `<div class="item-emoji">${item.emoji}</div><div class="item-name">${item.name}</div>`;
+
+          // Drag & Drop Handlers
+          el.ondragstart = function (e) {
+            clearItemSelection();
+            draggedItem = this;
+            setTimeout(() => this.classList.add("dragging"), 0);
+            e.dataTransfer.setData(
+              "text/plain",
+              this.getAttribute("data-category"),
+            );
+          };
+          el.ondragend = function () {
+            this.classList.remove("dragging");
+            draggedItem = null;
+          };
+
+          // Click-to-Select Handler
+          el.onclick = function (e) {
+            e.stopPropagation();
+            if (selectedItem === this) {
+              clearItemSelection();
+            } else {
+              clearItemSelection();
+              selectedItem = this;
+              this.classList.add("item-selected");
+            }
+          };
+
+          grid.appendChild(el);
+        });
+      }
+
+      function clearItemSelection() {
+        if (selectedItem) {
+          selectedItem.classList.remove("item-selected");
+          selectedItem = null;
+        }
+      }
+
+      document.addEventListener("click", (e) => {
+        if (
+          !e.target.closest(".draggable-item") &&
+          !e.target.closest(".bin-card")
+        ) {
+          clearItemSelection();
+        }
+      });
+
+      // Setup Bins (Both Drop and Click)
+      document.querySelectorAll(".bin-card").forEach((bin) => {
+        bin.ondragover = (e) => {
+          e.preventDefault();
+          bin.classList.add("drag-over");
+        };
+        bin.ondragleave = () => bin.classList.remove("drag-over");
+
+        bin.ondrop = function (e) {
+          e.preventDefault();
+          this.classList.remove("drag-over");
+          if (!draggedItem) return;
+
+          const chosenCat = this.getAttribute("data-category");
+          const actualCat = draggedItem.getAttribute("data-category");
+          processDrop(this, draggedItem, chosenCat, actualCat);
+        };
+
+        bin.onclick = function () {
+          if (selectedItem) {
+            const chosenCat = this.getAttribute("data-category");
+            const actualCat = selectedItem.getAttribute("data-category");
+            const itemToPlace = selectedItem;
+            clearItemSelection();
+            processDrop(this, itemToPlace, chosenCat, actualCat);
+          }
+        };
+      });
+
+      function processDrop(binElement, itemElement, chosenCat, actualCat) {
+        if (chosenCat === actualCat) {
+          handleCorrectDrop(binElement, itemElement, chosenCat);
+        } else {
+          handleWrongDrop(binElement, itemElement, chosenCat, actualCat);
+        }
+      }
+
+      function handleCorrectDrop(binElement, itemElement, category) {
+        const isRecovery = category === "hazardous";
+        const pointsEarned = isRecovery ? 20 : 10;
+
+        sScore += pointsEarned;
+        sLeft -= 1;
+        sBinCounts[category] += 1;
+
+        playSound("correct");
+
+        if (itemElement) itemElement.remove();
+        draggedItem = null;
+
+        document.getElementById("score-display").textContent = sScore;
+        document.getElementById("items-left-count").textContent = Math.max(
+          0,
+          sLeft,
+        );
+        binElement.querySelector(".bin-count").textContent =
+          sBinCounts[category];
+
+        // Floating Points Animation
+        const floatTxt = document.createElement("div");
+        floatTxt.className =
+          "float-points " + (isRecovery ? "float-recovery" : "");
+        floatTxt.textContent = isRecovery
+          ? "+20 Energy Recovered!"
+          : "+10 Points";
+        binElement.appendChild(floatTxt);
+        setTimeout(() => floatTxt.remove(), 1000);
+
+        if (typeof confetti === "function") {
+          const rect = binElement.getBoundingClientRect();
+          const x = (rect.left + rect.width / 2) / window.innerWidth;
+          const y = (rect.top + rect.height / 2) / window.innerHeight;
+          confetti({
+            particleCount: isRecovery ? 80 : 40,
+            spread: isRecovery ? 80 : 55,
+            origin: { x: x, y: y },
+            colors: isRecovery
+              ? ["#f59e0b", "#ea580c", "#fef08a"]
+              : ["#10b981", "#3b82f6"],
+          });
+        }
+
+        if (sLeft <= 0) {
+          setTimeout(showSortResults, 450);
+        }
+      }
+
+      function handleWrongDrop(binElement, itemElement, chosenCat, actualCat) {
+        if (itemElement) {
+          wrongList.push({
+            name: itemElement.getAttribute("data-name"),
+            emoji: itemElement.getAttribute("data-emoji"),
+            chosenBin: categoryLabels[chosenCat],
+            correctBin: categoryLabels[actualCat],
+          });
+          itemElement.remove();
+        }
+        draggedItem = null;
+
+        sErrs += 1;
+        sLeft -= 1;
+        sBinCounts[chosenCat] += 1;
+
+        playSound("wrong");
+
+        document.getElementById("error-display").textContent = sErrs;
+        document.getElementById("items-left-count").textContent = Math.max(
+          0,
+          sLeft,
+        );
+        binElement.querySelector(".bin-count").textContent =
+          sBinCounts[chosenCat];
+
+        const toast = document.getElementById("error-toast");
+        if (toast) {
+          toast.classList.add("show");
+          setTimeout(() => toast.classList.remove("show"), 2000);
+        }
+
+        if (sLeft <= 0) {
+          setTimeout(showSortResults, 450);
+        }
+      }
+
+      function showSortResults() {
+        playSound("finish");
+        if (typeof confetti === "function") {
+          confetti({ particleCount: 160, spread: 130, origin: { y: 0.4 } });
+        }
+
+        document.getElementById("items-section").style.display = "none";
+        document.getElementById("game-results-section").style.display = "block";
+        document.getElementById("final-game-score").textContent = sScore;
+        document.getElementById("final-game-errors").textContent = sErrs;
+
+        const mistakesContainer = document.getElementById("mistakes-container");
+
+        if (wrongList.length === 0) {
+          mistakesContainer.innerHTML = `
+                    <div class="perfect-score-box">
+                        <i class="ph-fill ph-check-circle"></i>
+                        <h3>Perfect Sorting!</h3>
+                        <p>You sorted all items into their correct bins without a single mistake.</p>
+                    </div>
+                `;
+        } else {
+          let listHTML = `<h3 class="mistakes-heading">Items Sorted Incorrectly (${wrongList.length}):</h3><div class="mistakes-grid">`;
+          wrongList.forEach((item) => {
+            listHTML += `
+                        <div class="mistake-card">
+                            <div class="mistake-item-info">
+                                <span class="mistake-emoji">${item.emoji}</span>
+                                <strong>${item.name}</strong>
+                            </div>
+                            <div class="mistake-details">
+                                <span class="badge-wrong"><i class="ph-bold ph-x"></i> Placed in: ${item.chosenBin}</span>
+                                <span class="badge-correct"><i class="ph-bold ph-check"></i> Should be: ${item.correctBin}</span>
+                            </div>
+                        </div>
+                    `;
+          });
+          listHTML += `</div>`;
+          mistakesContainer.innerHTML = listHTML;
+        }
+      }
+
+      // ================= GAME 2: REACTOR LOGIC =================
+      let reactorScore = 0,
+        reactorTime = 30,
+        reactorInterval,
+        reactorTimer;
+      let bestReactorScore = localStorage.getItem("4r_reactor_highscore") || 0;
+
+      function startReactorGame() {
+        reactorScore = 0;
+        reactorTime = 30;
+
+        document.getElementById("reactor-score").textContent = 0;
+        document.getElementById("reactor-timer").textContent = "30s";
+        document.getElementById("power-bar-fill").style.width = "0%";
+
+        document.getElementById("reactor-start-screen").style.display = "none";
+        document.getElementById("reactor-results-section").style.display =
+          "none";
+        document.getElementById("reactor-game-area").style.display = "block";
+
+        const grid = document.getElementById("reactor-grid");
+        grid.innerHTML = "";
+        for (let i = 0; i < 9; i++) {
+          const cell = document.createElement("div");
+          cell.className = "reactor-cell";
+          cell.id = "cell-" + i;
+          cell.onclick = () => handleReactorClick(i);
+          grid.appendChild(cell);
+        }
+
+        if (reactorTimer) clearInterval(reactorTimer);
+        reactorTimer = setInterval(() => {
+          reactorTime--;
+          document.getElementById("reactor-timer").textContent =
+            reactorTime + "s";
+          if (reactorTime <= 0) endReactorGame();
+        }, 1000);
+
+        spawnReactorItem();
+      }
+
+      function spawnReactorItem() {
+        if (reactorTime <= 0) return;
+        const emptyCells = [
+          ...document.querySelectorAll(".reactor-cell"),
+        ].filter((c) => !c.hasChildNodes());
+        if (emptyCells.length === 0) return;
+
+        const cell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+        const itemObj =
+          masterItemPool[Math.floor(Math.random() * masterItemPool.length)];
+
+        const el = document.createElement("div");
+        el.className = "reactor-item";
+        el.textContent = itemObj.emoji;
+        el.dataset.isRecover = itemObj.isRecoverable ? "true" : "false";
+
+        cell.appendChild(el);
+
+        setTimeout(() => {
+          if (el.parentElement) el.remove();
+          spawnReactorItem();
+        }, 1800);
+      }
+
+      function handleReactorClick(cellId) {
+        const cell = document.getElementById("cell-" + cellId);
+        const item = cell.firstChild;
+        if (!item) return;
+
+        if (item.dataset.isRecover === "true") {
+          reactorScore += 15;
+          playSound("zap");
+          item.textContent = "⚡";
+          cell.style.backgroundColor = "#10b981";
+        } else {
+          reactorScore = Math.max(0, reactorScore - 10);
+          playSound("wrong");
+          item.textContent = "❌";
+          cell.style.backgroundColor = "#ef4444";
+        }
+
+        document.getElementById("reactor-score").textContent = reactorScore;
+        document.getElementById("power-bar-fill").style.width =
+          Math.min(100, (reactorScore / 300) * 100) + "%";
+
+        setTimeout(() => {
+          if (cell) cell.style.backgroundColor = "#334155";
+          if (item.parentElement) item.remove();
+          spawnReactorItem();
+        }, 300);
+      }
+
+      function endReactorGame() {
+        clearInterval(reactorInterval);
+        clearInterval(reactorTimer);
+        playSound("finish");
+
+        document.getElementById("reactor-game-area").style.display = "none";
+        document.getElementById("reactor-results-section").style.display =
+          "block";
+        document.getElementById("final-reactor-score").textContent =
+          reactorScore;
+
+        let isNewHighscore = false;
+        if (reactorScore > bestReactorScore) {
+          bestReactorScore = reactorScore;
+          localStorage.setItem("4r_reactor_highscore", bestReactorScore);
+          isNewHighscore = true;
+          document.getElementById("reactor-highscore-display").textContent =
+            bestReactorScore;
+        }
+
+        const banner = document.getElementById("reactor-highscore-banner");
+        if (isNewHighscore) {
+          banner.innerHTML = `<span style="color: #10b981; font-size: 20px; font-weight: 900; display: block; margin-top: 15px;">🏆 NEW PERSONAL HIGH SCORE! 🏆</span>`;
+          if (typeof confetti === "function")
+            confetti({ particleCount: 150, spread: 120, origin: { y: 0.4 } });
+        } else {
+          banner.innerHTML = `<span style="color: #64748b; font-size: 15px; font-weight: 600; display: block; margin-top: 15px;">Personal High Score: ${bestReactorScore} MW</span>`;
+          if (typeof confetti === "function")
+            confetti({ particleCount: 60, spread: 80, origin: { y: 0.5 } });
+        }
+      }
+    </script>
+  </body>
+</html>

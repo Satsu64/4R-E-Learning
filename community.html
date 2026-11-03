@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4R E-Learning - Community</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body class="community-body">
+    <nav class="top-navbar">
+      <div class="nav-logo">
+        <i class="ph ph-recycle"></i>
+        <div>
+          <h1>4R E-Learning</h1>
+          <p>Reduce, Reuse, Recycle, Recover</p>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html"><i class="ph ph-house"></i> Home</a>
+        <a href="tips.html"><i class="ph ph-lightbulb"></i> Tips</a>
+        <a href="learn.html"><i class="ph ph-book-open"></i> Learn</a>
+        <a href="quiz.html"><i class="ph ph-graduation-cap"></i> Quiz</a>
+        <a href="game.html"><i class="ph ph-game-controller"></i> Game</a>
+        <a href="community.html" class="active"><i class="ph ph-users"></i> Community</a>
+      </div>
+    </nav>
+
+    <main class="community-main">
+      <div class="community-header">
+        <h1 class="game-title">COMMUNITY BOARD</h1>
+        <p>Share your sustainability journey and inspire others!</p>
+      </div>
+
+      <div class="community-layout">
+        <aside class="community-form-wrapper">
+          <div class="community-card form-card">
+            <h2>Share Your 4R Action</h2>
+            <form id="post-form">
+              <div class="input-group">
+                <label for="post-name">Name</label>
+                <input
+                  type="text"
+                  id="post-name"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label for="post-category">Category</label>
+                <select id="post-category" required>
+                  <option value="Reduce">🌱 Reduce</option>
+                  <option value="Reuse">🔄 Reuse</option>
+                  <option value="Recycle">♻️ Recycle</option>
+                  <option value="Recover">🔋 Recover</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label for="post-text">What did you do?</label>
+                <textarea
+                  id="post-text"
+                  rows="4"
+                  placeholder="I started composting today..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary w-100">
+                <i class="ph-bold ph-paper-plane-tilt"></i> Post to Community
+              </button>
+            </form>
+          </div>
+        </aside>
+
+        <section class="community-feed" id="community-feed"></section>
+      </div>
+    </main>
+
+    <!-- Global Recommended Learning Flow Guide -->
+        <section class="journey-guide-section" style="max-width: 950px; margin: 40px auto 30px auto; width: 100%;">
+            <div class="guide-header">
+                <i class="ph-fill ph-compass"></i>
+                <h2>How to Navigate the Platform</h2>
+                <p>Follow our recommended 5-step learning path to maximize your understanding and test your skills.</p>
+            </div>
+
+            <div class="journey-steps-container">
+                
+                <a href="index.html" class="journey-step-node">
+                    <span class="step-num">1</span>
+                    <div class="step-icon"><i class="ph ph-house"></i></div>
+                    <h4>Home</h4>
+                    <p>Overview & Goals</p>
+                </a>
+                
+                <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+                <!-- Add class="active-node" when in learn.html -->
+                <a href="learn.html" class="journey-step-node">
+                    <span class="step-num">2</span>
+                    <div class="step-icon"><i class="ph ph-book-open"></i></div>
+                    <h4>Learn</h4>
+                    <p>Read & Watch</p>
+                </a>
+
+                <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+                <!-- Add class="active-node" when in quiz.html -->
+                <a href="quiz.html" class="journey-step-node">
+                    <span class="step-num">3</span>
+                    <div class="step-icon"><i class="ph ph-graduation-cap"></i></div>
+                    <h4>Quiz</h4>
+                    <p>Check Knowledge</p>
+                </a>
+
+                <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+                <!-- Add class="active-node" when in game.html -->
+                <a href="game.html" class="journey-step-node">
+                    <span class="step-num">4</span>
+                    <div class="step-icon"><i class="ph ph-game-controller"></i></div>
+                    <h4>Game</h4>
+                    <p>Reactor & Sorting</p>
+                </a>
+
+                <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+                <!-- Add class="active-node" when in community.html -->
+                <a href="community.html" class="journey-step-node active-node">
+                    <span class="step-num">5</span>
+                    <div class="step-icon"><i class="ph ph-users"></i></div>
+                    <h4>Community</h4>
+                    <p>Share & Inspire</p>
+                </a>
+
+            </div>
+        </section>
+
+    <footer>
+      <div class="footer-logo">
+        <i class="ph ph-recycle"></i> 4R E-Learning Platform
+      </div>
+      <p class="footer-text">
+        Learn about Reduce, Reuse, Recycle, and Recovery
+      </p>
+      <p class="footer-text">
+        Making the world a better place, one step at a time.
+      </p>
+    </footer>
+
+    <script>
+      // DB Version forces a cache reset so Dr. Eco shows up
+      const DB_VERSION = "v2.1";
+
+      const initialComments = [
+        {
+          id: 101,
+          name: "Sarah J.",
+          category: "Reuse",
+          text: "I finally turned my old glass pasta jars into a matching spice rack! It looks great and saved me from buying new plastic containers.",
+          date: new Date(Date.now() - 86400000).toLocaleString(),
+          isDummy: true,
+          likes: 12,
+          likedByMe: false,
+        },
+        {
+          id: 102,
+          name: "Ahmad",
+          category: "Recycle",
+          text: "Just learned how to properly sort my paper and plastics. My apartment block just got new bins so I'm making sure everything is clean before dropping it in.",
+          date: new Date(Date.now() - 3600000).toLocaleString(),
+          isDummy: true,
+          likes: 8,
+          likedByMe: false,
+        },
+        {
+          id: 103,
+          name: "Dr. Eco",
+          category: "Recover",
+          text: "Sent my old swollen laptop battery and e-waste to the specialized recovery facility today. They'll safely extract the lithium and cobalt to generate new batteries!",
+          date: new Date(Date.now() - 1800000).toLocaleString(),
+          isDummy: true,
+          likes: 24,
+          likedByMe: false,
+        },
+      ];
+
+      const form = document.getElementById("post-form");
+      const feed = document.getElementById("community-feed");
+
+      function getComments() {
+        const savedVersion = localStorage.getItem("4r_community_version");
+        const saved = localStorage.getItem("4r_community_posts");
+
+        if (saved && savedVersion === DB_VERSION) {
+          return JSON.parse(saved);
+        } else {
+          localStorage.setItem("4r_community_version", DB_VERSION);
+          saveComments(initialComments);
+          return initialComments;
+        }
+      }
+
+      function saveComments(commentsArray) {
+        localStorage.setItem(
+          "4r_community_posts",
+          JSON.stringify(commentsArray),
+        );
+      }
+
+      function getBadgeClass(category) {
+        switch (category) {
+          case "Reduce":
+            return "badge-reduce";
+          case "Reuse":
+            return "badge-reuse";
+          case "Recycle":
+            return "badge-recycle";
+          case "Recover":
+            return "badge-recover";
+          default:
+            return "badge-reduce";
+        }
+      }
+
+      function renderFeed() {
+        const comments = getComments();
+        feed.innerHTML = "";
+
+        [...comments].reverse().forEach((post) => {
+          const card = document.createElement("div");
+          card.className =
+            "community-card post-card " +
+            (post.category === "Recover" ? "recover-premium-post" : "");
+
+          let actionButtons = `
+                    <div class="post-actions">
+                        <div class="post-actions-left">
+                            <button class="btn-text react-btn ${post.likedByMe ? "liked" : ""}" onclick="toggleLike(${post.id})">
+                                <i class="${post.likedByMe ? "ph-fill" : "ph-bold"} ph-heart"></i> ${post.likes || 0}
+                            </button>
+                        </div>
+                        ${
+                          !post.isDummy
+                            ? `
+                        <div class="post-actions-right">
+                            <button class="btn-text edit-btn" onclick="editPost(${post.id})"><i class="ph-bold ph-pencil-simple"></i> Edit</button>
+                            <button class="btn-text delete-btn" onclick="deletePost(${post.id})"><i class="ph-bold ph-trash"></i> Delete</button>
+                        </div>`
+                            : ""
+                        }
+                    </div>
+                `;
+
+          card.innerHTML = `
+                    <div class="post-header">
+                        <div class="post-user-info">
+                            <div class="avatar"><i class="ph-fill ph-user"></i></div>
+                            <div>
+                                <h4 class="post-name">${post.name}</h4>
+                                <span class="post-date">${post.date}</span>
+                            </div>
+                        </div>
+                        <span class="category-badge ${getBadgeClass(post.category)}">${post.category}</span>
+                    </div>
+                    <div class="post-body">
+                        <p id="text-${post.id}">${post.text}</p>
+                    </div>
+                    ${actionButtons}
+                `;
+          feed.appendChild(card);
+        });
+      }
+
+      window.toggleLike = function (id) {
+        let comments = getComments();
+        const post = comments.find((p) => p.id === id);
+        if (post) {
+          post.likedByMe = !post.likedByMe;
+          post.likes += post.likedByMe ? 1 : -1;
+          saveComments(comments);
+          renderFeed();
+        }
+      };
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const newPost = {
+          id: Date.now(),
+          name: document.getElementById("post-name").value,
+          category: document.getElementById("post-category").value,
+          text: document.getElementById("post-text").value,
+          date: new Date().toLocaleString(),
+          isDummy: false,
+          likes: 0,
+          likedByMe: false,
+        };
+        const comments = getComments();
+        comments.push(newPost);
+        saveComments(comments);
+        form.reset();
+        renderFeed();
+      });
+
+      window.deletePost = function (id) {
+        if (confirm("Delete this post?")) {
+          let comments = getComments();
+          saveComments(comments.filter((post) => post.id !== id));
+          renderFeed();
+        }
+      };
+
+      window.editPost = function (id) {
+        let comments = getComments();
+        const post = comments.find((p) => p.id === id);
+        if (post) {
+          const newText = prompt("Edit your post:", post.text);
+          if (newText && newText.trim() !== "") {
+            post.text = newText.trim();
+            saveComments(comments);
+            renderFeed();
+          }
+        }
+      };
+
+      window.onload = renderFeed;
+    </script>
+
+<!-- Mascot Script -->
+    <script src="mascot.js"></script>
+</body>
+</html>
+
+  </body>
+</html>

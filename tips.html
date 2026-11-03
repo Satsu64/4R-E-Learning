@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4R E-Learning - Tips</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body class="tips-body">
+    <!-- Top Navigation Bar -->
+    <nav class="top-navbar">
+      <div class="nav-logo">
+        <i class="ph ph-recycle"></i>
+        <div>
+          <h1>4R E-Learning</h1>
+          <p>Reduce, Reuse, Recycle, Recover</p>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html"><i class="ph ph-house"></i> Home</a>
+        <a href="tips.html" class="active"><i class="ph ph-lightbulb"></i> Tips</a>
+        <a href="learn.html"><i class="ph ph-book-open"></i> Learn</a
+        >
+        <a href="quiz.html"><i class="ph ph-graduation-cap"></i> Quiz</a>
+        <a href="game.html"><i class="ph ph-game-controller"></i> Game</a>
+        <a href="community.html"><i class="ph ph-users"></i> Community</a>
+      </div>
+    </nav>
+
+    <main class="tips-main">
+      <!-- Hero Banner -->
+      <section class="tips-hero-card">
+        <h2>Start Small, Think Big</h2>
+        <p>
+          Remember, every small action counts! You don't have to implement all
+          these tips at once. Start with a few that work best for your lifestyle
+          and gradually incorporate more. Together, we can make a significant
+          positive impact on our planet.
+        </p>
+      </section>
+
+      <!-- Interactive Folder Section -->
+      <!-- Interactive Folder Component -->
+        <div class="folder-wrapper" id="folder-wrapper" data-theme="main">
+            
+            <!-- Folder Tabs -->
+            <div class="folder-tabs">
+                <!-- 1. Main Tab (Orange, connects to folder body) -->
+                <button type="button" class="folder-tab tab-main active" data-target="main" onclick="switchTipTab('main', this)">
+                    <span class="tab-spacer"></span>
+                </button>
+
+                <!-- 2. Home Tab -->
+                <button type="button" class="folder-tab tab-home" data-target="home" onclick="switchTipTab('home', this)">
+                    <i class="ph-fill ph-house"></i>
+                    <span>HOME</span>
+                </button>
+
+                <!-- 3. Shopping Tab -->
+                <button type="button" class="folder-tab tab-shopping" data-target="shopping" onclick="switchTipTab('shopping', this)">
+                    <i class="ph-fill ph-bag"></i>
+                    <span>SHOPPING</span>
+                </button>
+
+                <!-- 4. Food & Kitchen Tab -->
+                <button type="button" class="folder-tab tab-food" data-target="food" onclick="switchTipTab('food', this)">
+                    <i class="ph-fill ph-fork-knife"></i>
+                    <span>FOOD & KITCHEN</span>
+                </button>
+
+                <!-- 5. Clothing Tab -->
+                <button type="button" class="folder-tab tab-clothing" data-target="clothing" onclick="switchTipTab('clothing', this)">
+                    <i class="ph-fill ph-t-shirt"></i>
+                    <span>CLOTHING</span>
+                </button>
+
+                <!-- 6. Transportation Tab -->
+                <button type="button" class="folder-tab tab-transport" data-target="transport" onclick="switchTipTab('transport', this)">
+                    <i class="ph-fill ph-train"></i>
+                    <span>TRANSPORTATION</span>
+                </button>
+            </div>
+
+            <!-- Folder Body -->
+            <div class="folder-body" id="folder-body">
+                
+                <!-- CONTENT 1: MAIN OVERVIEW (Matches Screenshot) -->
+                <div class="folder-content active" id="content-main">
+                    <div class="folder-main-card">
+                        <div class="card-bulb-icon">
+                            <i class="ph-bold ph-lightbulb"></i>
+                        </div>
+                        <h2>Daily Sustainability Tips</h2>
+                        <p>Practical tips to make sustainable living easy and effective</p>
+                    </div>
+                </div>
+
+                <!-- CONTENT 2: HOME -->
+                <div class="folder-content" id="content-home">
+                    <ul class="tips-list">
+                        <li class="tip-item"><span class="tip-number">1</span> Turn off lights, fans, and appliances when leaving a room.</li>
+                        <li class="tip-item"><span class="tip-number">2</span> Unplug chargers and electronics to prevent standby phantom power loss.</li>
+                        <li class="tip-item"><span class="tip-number">3</span> Install water-saving aerators on kitchen and bathroom taps.</li>
+                        <li class="tip-item"><span class="tip-number">4</span> Switch conventional incandescent bulbs to energy-efficient LEDs.</li>
+                    </ul>
+                </div>
+
+                <!-- CONTENT 3: SHOPPING -->
+                <div class="folder-content" id="content-shopping">
+                    <ul class="tips-list">
+                        <li class="tip-item"><span class="tip-number">1</span> Bring durable canvas tote bags whenever you go grocery shopping.</li>
+                        <li class="tip-item"><span class="tip-number">2</span> Buy pantry staples in bulk to minimize single-use packaging.</li>
+                        <li class="tip-item"><span class="tip-number">3</span> Choose products manufactured with certified post-consumer recycled content.</li>
+                        <li class="tip-item"><span class="tip-number">4</span> Avoid individually wrapped single-serve snacks and produce.</li>
+                    </ul>
+                </div>
+
+                <!-- CONTENT 4: FOOD & KITCHEN -->
+                <div class="folder-content" id="content-food">
+                    <ul class="tips-list">
+                        <li class="tip-item"><span class="tip-number">1</span> Plan weekly meals in advance to prevent perishable ingredients from spoiling.</li>
+                        <li class="tip-item"><span class="tip-number">2</span> Compost fruit rinds, vegetable peels, and coffee grounds at home.</li>
+                        <li class="tip-item"><span class="tip-number">3</span> Store food in clear airtight glass containers to keep items fresh longer.</li>
+                        <li class="tip-item"><span class="tip-number">4</span> Repurpose vegetable scraps into homemade cooking broth before discarding.</li>
+                    </ul>
+                </div>
+
+                <!-- CONTENT 5: CLOTHING -->
+                <div class="folder-content" id="content-clothing">
+                    <ul class="tips-list">
+                        <li class="tip-item"><span class="tip-number">1</span> Wash garments in cold water and air-dry them on laundry racks.</li>
+                        <li class="tip-item"><span class="tip-number">2</span> Mend loose buttons and repair torn seams instead of throwing clothes out.</li>
+                        <li class="tip-item"><span class="tip-number">3</span> Donate gently-worn clothing to local charitable shelters or thrift stores.</li>
+                        <li class="tip-item"><span class="tip-number">4</span> Choose timeless, durable natural fabrics over fast-fashion synthetic blends.</li>
+                    </ul>
+                </div>
+
+                <!-- CONTENT 6: TRANSPORTATION -->
+                <div class="folder-content" id="content-transport">
+                    <ul class="tips-list">
+                        <li class="tip-item"><span class="tip-number">1</span> Carpool or share rides with colleagues, neighbors, and friends.</li>
+                        <li class="tip-item"><span class="tip-number">2</span> Use public transit buses and commuter trains for regular daily commutes.</li>
+                        <li class="tip-item"><span class="tip-number">3</span> Walk or cycle for short neighborhood errands to cut carbon emissions.</li>
+                        <li class="tip-item"><span class="tip-number">4</span> Maintain proper tire pressure to improve vehicle fuel economy.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+      </section>
+    </main>
+
+<!-- Global Recommended Learning Flow Guide -->
+        <section class="journey-guide-section" style="max-width: 950px; margin: 40px auto 30px auto; width: 100%;">
+            <div class="guide-header">
+                <i class="ph-fill ph-compass"></i>
+                <h2>How to Navigate the Platform</h2>
+                <p>Follow our recommended 5-step learning path to maximize your understanding and test your skills.</p>
+            </div>
+
+            <div class="journey-steps-container">
+                
+                <a href="index.html" class="journey-step-node">
+                    <span class="step-num">1</span>
+                    <div class="step-icon"><i class="ph ph-house"></i></div>
+                    <h4>Home</h4>
+                    <p>Overview & Goals</p>
+                </a>
+                
+                <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+                <!-- Add class="active-node" when in learn.html -->
+                <a href="learn.html" class="journey-step-node">
+                    <span class="step-num">2</span>
+                    <div class="step-icon"><i class="ph ph-book-open"></i></div>
+                    <h4>Learn</h4>
+                    <p>Read & Watch</p>
+                </a>
+
+                <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+                <!-- Add class="active-node" when in quiz.html -->
+                <a href="quiz.html" class="journey-step-node">
+                    <span class="step-num">3</span>
+                    <div class="step-icon"><i class="ph ph-graduation-cap"></i></div>
+                    <h4>Quiz</h4>
+                    <p>Check Knowledge</p>
+                </a>
+
+                <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+                <!-- Add class="active-node" when in game.html -->
+                <a href="game.html" class="journey-step-node">
+                    <span class="step-num">4</span>
+                    <div class="step-icon"><i class="ph ph-game-controller"></i></div>
+                    <h4>Game</h4>
+                    <p>Reactor & Sorting</p>
+                </a>
+
+                <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+
+                <!-- Add class="active-node" when in community.html -->
+                <a href="community.html" class="journey-step-node">
+                    <span class="step-num">5</span>
+                    <div class="step-icon"><i class="ph ph-users"></i></div>
+                    <h4>Community</h4>
+                    <p>Share & Inspire</p>
+                </a>
+
+            </div>
+        </section>
+
+    <footer>
+      <div class="footer-logo">
+        <i class="ph ph-recycle"></i> 4R E-Learning Platform
+      </div>
+      <p class="footer-text">
+        Learn about Reduce, Reuse, Recycle, and Recovery
+      </p>
+      <p class="footer-text">
+        Making the world a better place, one step at a time.
+      </p>
+    </footer>
+
+    <!-- Interactive Javascript for Folder Tabs -->
+    <script>
+      function switchTab(themeName) {
+        // 1. Update the folder theme color wrapper
+        const folder = document.getElementById("dynamic-folder");
+        folder.setAttribute("data-theme", themeName);
+
+        // 2. Update active tab styling
+        const tabs = document.querySelectorAll(".folder-tab");
+        tabs.forEach((tab) => {
+          if (tab.getAttribute("data-target") === themeName) {
+            tab.classList.add("active");
+          } else {
+            tab.classList.remove("active");
+          }
+        });
+
+        // 3. Show correct content and hide others
+        const contents = document.querySelectorAll(".folder-content");
+        contents.forEach((content) => {
+          if (content.id === "content-" + themeName) {
+            content.classList.add("active");
+          } else {
+            content.classList.remove("active");
+          }
+        });
+      }
+    </script>
+
+<!-- Mascot Script -->
+    <script src="mascot.js"></script>
+
+<script>
+        function switchTipTab(targetName, clickedButton) {
+            // 1. Update active tab styling
+            document.querySelectorAll('.folder-tab').forEach(tab => tab.classList.remove('active'));
+            clickedButton.classList.add('active');
+
+            // 2. Change folder body theme/color
+            const wrapper = document.getElementById('folder-wrapper');
+            wrapper.setAttribute('data-theme', targetName);
+
+            // Adjust top-left curve if not on the main tab
+            const folderBody = document.getElementById('folder-body');
+            if (targetName === 'main') {
+                folderBody.style.borderTopLeftRadius = '0';
+            } else {
+                folderBody.style.borderTopLeftRadius = '24px';
+            }
+
+            // 3. Switch visible content
+            document.querySelectorAll('.folder-content').forEach(content => content.classList.remove('active'));
+            const targetContent = document.getElementById('content-' + targetName);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>
+
