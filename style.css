@@ -3175,3 +3175,315 @@ button {
   background: #64748b;
   color: #cbd5e1;
 }
+
+/* ==========================================================================
+   MOBILE RESPONSIVE SUITE (Phones & Small Tablets: <= 768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* ---------------- 1. R.B. MASCOT MOBILE OPTIMIZATION ---------------- */
+  #rb-container {
+    bottom: 12px !important;
+    left: 10px !important;
+    transform-origin: bottom left;
+    transform: scale(0.62) !important; /* Scales R.B. down to 62% on mobile */
+    z-index: 9999;
+  }
+
+  /* Adjust sleeping state so scaled R.B. stays anchored */
+  .rb-sleeping {
+    transform: translateY(20px) scale(0.62) !important;
+  }
+
+  /* Compact Speech Bubble */
+  .rb-bubble {
+    width: 190px !important;
+    font-size: 13px !important;
+    padding: 10px 14px !important;
+    bottom: 140px !important;
+    left: 40px !important;
+  }
+
+  /* ---------------- 2. TOP NAVBAR & HEADER ---------------- */
+  .top-navbar {
+    padding: 12px 16px !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: center !important;
+  }
+
+  .nav-logo {
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Enable smooth horizontal scroll for navigation buttons */
+  .nav-links {
+    width: 100% !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    padding-bottom: 4px !important;
+    justify-content: flex-start !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide scrollbar for clean UI */
+  }
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    padding: 6px 12px !important;
+    font-size: 13px !important;
+    flex-shrink: 0;
+  }
+
+  /* ---------------- 3. HOMEPAGE MOBILE FLOW ---------------- */
+  .home-main {
+    margin: 20px auto 40px auto !important;
+    padding: 0 14px !important;
+  }
+
+  .dual-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .hero-card {
+    padding: 26px 20px !important;
+  }
+
+  .hero-card h2 {
+    font-size: 20px !important;
+  }
+
+  .journey-guide-section {
+    padding: 20px 14px !important;
+  }
+
+  .journey-steps-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .step-connector {
+    display: none !important;
+  }
+
+  .journey-step-node {
+    min-width: unset !important;
+    padding: 14px 8px !important;
+  }
+
+  .quick-row-top,
+  .quick-row-bottom {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .quick-card {
+    max-width: 100% !important;
+    aspect-ratio: 16 / 11 !important;
+    font-size: 16px !important;
+  }
+
+  .quick-card i {
+    font-size: 28px !important;
+  }
+
+  /* ---------------- 4. GAME 1: TRASH SORTING ---------------- */
+  .game-main {
+    flex-direction: column !important;
+    padding: 0 12px !important;
+    margin: 20px auto !important;
+    gap: 20px !important;
+  }
+
+  .game-sidebar {
+    width: 100% !important;
+  }
+
+  .game-title {
+    font-size: 30px !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .game-board {
+    padding: 18px 14px !important;
+  }
+
+  .game-header {
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .stat-box {
+    padding: 8px 16px !important;
+  }
+
+  /* Convert 4 horizontal bins into an accessible 2x2 grid */
+  .bins-container {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  .bin-card {
+    padding: 12px !important;
+  }
+
+  .bin-header h3 {
+    font-size: 14px !important;
+  }
+
+  .drop-zone {
+    padding: 15px 0 !important;
+    font-size: 13px !important;
+  }
+
+  /* Shrink items grid to fit screen */
+  .items-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .draggable-item {
+    padding: 10px 6px !important;
+  }
+
+  .item-emoji {
+    font-size: 26px !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* ---------------- 5. GAME 2: REACTOR ---------------- */
+  .reactor-board {
+    padding: 18px 14px !important;
+  }
+
+  .reactor-cell {
+    height: 90px !important;
+    font-size: 42px !important;
+  }
+
+  .rules-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ---------------- 6. LEARN SECTION & ACCORDIONS ---------------- */
+  .learn-main-container {
+    padding: 0 12px !important;
+    margin: 20px auto 40px auto !important;
+  }
+
+  .style-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .style-card {
+    padding: 16px 18px !important;
+  }
+
+  .accordion-header {
+    padding: 16px 18px !important;
+  }
+
+  .acc-icon-box {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 22px !important;
+  }
+
+  .acc-title-left h3 {
+    font-size: 17px !important;
+  }
+
+  .accordion-body {
+    padding: 0 16px 20px 16px !important;
+  }
+
+  .accordion-body-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .acc-col-side {
+    border-left: none !important;
+    border-top: 1px solid #f1f5f9 !important;
+    padding-left: 0 !important;
+    padding-top: 16px !important;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .media-articles-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ---------------- 7. QUIZ SECTION ---------------- */
+  .quiz-cards-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .quiz-panel {
+    padding: 20px 16px !important;
+  }
+
+  .scenario-card-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .scenario-photo-wrap {
+    height: 170px !important;
+    min-height: unset !important;
+  }
+
+  /* ---------------- 8. TIPS FOLDER ---------------- */
+  .tips-hero-card {
+    padding: 20px 16px !important;
+  }
+
+  .folder-tabs {
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    padding-bottom: 2px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .folder-tab {
+    padding: 8px 14px !important;
+    font-size: 11px !important;
+    flex-shrink: 0;
+  }
+
+  .folder-body {
+    padding: 24px 16px !important;
+  }
+
+  .folder-main-card {
+    padding: 28px 16px !important;
+  }
+
+  .folder-main-card h2 {
+    font-size: 22px !important;
+  }
+
+  /* ---------------- 9. COMMUNITY BOARD ---------------- */
+  .community-layout {
+    flex-direction: column !important;
+  }
+
+  .community-form-wrapper {
+    width: 100% !important;
+    position: static !important;
+  }
+
+  .community-board-title {
+    font-size: 32px !important;
+  }
+}
