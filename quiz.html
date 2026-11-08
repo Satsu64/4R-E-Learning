@@ -23,22 +23,60 @@
         </div>
       </div>
       <div class="nav-links">
-        <a href="index.html"><i class="ph ph-house"></i> Home</a>
-        <a href="tips.html"><i class="ph ph-lightbulb"></i> Tips</a>
-        <a href="learn.html"><i class="ph ph-book-open"></i> Learn</a>
-        <a href="quiz.html" class="active"
-          ><i class="ph ph-graduation-cap"></i> Quiz</a
+        <a href="index.html"
+          ><i class="ph ph-house"></i>
+          <span class="t-txt" data-en="Home" data-bm="Utama">Home</span></a
         >
-        <a href="game.html"><i class="ph ph-game-controller"></i> Game</a>
-        <a href="community.html"><i class="ph ph-users"></i> Community</a>
+        <a href="learn.html"
+          ><i class="ph ph-book-open"></i>
+          <span class="t-txt" data-en="Learn" data-bm="Belajar">Learn</span></a
+        >
+        <a href="tips.html"
+          ><i class="ph ph-lightbulb"></i>
+          <span class="t-txt" data-en="Tips" data-bm="Tip">Tips</span></a
+        >
+        <a href="quiz.html" class="active"
+          ><i class="ph ph-graduation-cap"></i>
+          <span class="t-txt" data-en="Quiz" data-bm="Kuiz">Quiz</span></a
+        >
+        <a href="game.html"
+          ><i class="ph ph-game-controller"></i>
+          <span class="t-txt" data-en="Game" data-bm="Permainan">Game</span></a
+        >
+        <a href="community.html"
+          ><i class="ph ph-users"></i>
+          <span class="t-txt" data-en="Community" data-bm="Komuniti"
+            >Community</span
+          ></a
+        >
+
+        <!-- Language Toggle Button -->
+        <button
+          type="button"
+          id="lang-toggle-btn"
+          class="btn-lang-toggle"
+          onclick="toggleLanguage()"
+        >
+          <span>🇲🇾 BM</span>
+        </button>
       </div>
     </nav>
 
     <main class="quiz-main-container">
       <!-- ================= 1. QUIZ SELECTION MENU ================= -->
       <section id="quiz-selection-menu" class="quiz-selection-menu">
-        <h1 class="quiz-menu-title">CHOOSE YOUR QUIZ</h1>
-        <p class="quiz-menu-subtitle">
+        <h1
+          class="quiz-menu-title t-txt"
+          data-en="CHOOSE YOUR QUIZ"
+          data-bm="PILIH FORMAT KUIZ"
+        >
+          CHOOSE YOUR QUIZ
+        </h1>
+        <p
+          class="quiz-menu-subtitle t-txt"
+          data-en="Select an evaluation format to test and validate your understanding of the 4R hierarchy."
+          data-bm="Pilih mod penilaian untuk menguji dan memperkukuh pemahaman anda mengenai hierarki 4R."
+        >
           Select an evaluation format to test and validate your understanding of
           the 4R hierarchy.
         </p>
@@ -52,18 +90,40 @@
             >
               <i class="ph-fill ph-list-checks"></i>
             </div>
-            <div class="quiz-card-tag">5 RANDOM QUESTIONS / ROUND</div>
-            <h3>Objective Assessment</h3>
-            <p>
-              Fast-paced questions testing core concepts, definitions, and waste
-              stream classifications with instant answer rationales.
+            <div
+              class="quiz-card-tag t-txt"
+              data-en="3 DIFFICULTY TIERS"
+              data-bm="3 TAHAP KESUKARAN"
+            >
+              3 DIFFICULTY TIERS
+            </div>
+            <h3
+              class="t-txt"
+              data-en="Objective Assessment"
+              data-bm="Penilaian Objektif"
+            >
+              Objective Assessment
+            </h3>
+            <p
+              class="t-txt"
+              data-en="Test definitions, laws (Act 672), and waste sorting rules with 10 rotating questions from a 20-question bank."
+              data-bm="Uji definisi, perundangan (Akta 672) dan peraturan pengasingan sisa. 10 soalan rawak daripada 20 soalan setiap tahap."
+            >
+              Test definitions, laws (Act 672), and waste sorting rules with 10
+              rotating questions from a 20-question bank.
             </p>
             <button
               type="button"
               class="btn-primary"
               style="margin-top: 15px; width: 100%"
             >
-              Start Objective Quiz <i class="ph-bold ph-arrow-right"></i>
+              <span
+                class="t-txt"
+                data-en="Start Objective Quiz"
+                data-bm="Mula Kuiz Objektif"
+                >Start Objective Quiz</span
+              >
+              <i class="ph-bold ph-arrow-right"></i>
             </button>
           </div>
 
@@ -75,18 +135,41 @@
             >
               <i class="ph-fill ph-briefcase"></i>
             </div>
-            <div class="quiz-card-tag tag-recovery">PHOTO-BASED SCENARIOS</div>
-            <h3 style="color: #ea580c">Case Study Challenge</h3>
-            <p>
-              Evaluate real-world industrial and community waste dilemmas with
-              photos and strategic rationales.
+            <div
+              class="quiz-card-tag tag-recovery t-txt"
+              data-en="VISUAL SCENARIOS"
+              data-bm="SENARIO BERGAMBAR"
+            >
+              VISUAL SCENARIOS
+            </div>
+            <h3
+              style="color: #ea580c"
+              class="t-txt"
+              data-en="Case Study Challenge"
+              data-bm="Cabaran Kajian Kes"
+            >
+              Case Study Challenge
+            </h3>
+            <p
+              class="t-txt"
+              data-en="Evaluate real-world industrial and community scenarios with photos, choosing the optimal 4R strategic pathway."
+              data-bm="Nilai dilema pengurusan sisa industri dan komuniti sebenar lengkap dengan gambar dan penerangan terperinci."
+            >
+              Evaluate real-world industrial and community scenarios with
+              photos, choosing the optimal 4R strategic pathway.
             </p>
             <button
               type="button"
               class="btn-orange"
               style="margin-top: 15px; width: 100%"
             >
-              Start Case Studies <i class="ph-bold ph-arrow-right"></i>
+              <span
+                class="t-txt"
+                data-en="Start Case Studies"
+                data-bm="Mula Kajian Kes"
+                >Start Case Studies</span
+              >
+              <i class="ph-bold ph-arrow-right"></i>
             </button>
           </div>
         </div>
@@ -105,16 +188,62 @@
               class="quiz-back-btn"
               onclick="backToQuizMenu()"
             >
-              <i class="ph-bold ph-arrow-left"></i> Back to Menu
+              <i class="ph-bold ph-arrow-left"></i>
+              <span class="t-txt" data-en="Back to Menu" data-bm="Kembali"
+                >Back to Menu</span
+              >
             </button>
-            <div class="quiz-badge">Objective Mode</div>
+
+            <!-- Difficulty Tier Bar -->
+            <div class="quiz-tier-bar">
+              <button
+                type="button"
+                class="tier-select-btn active-tier"
+                id="tier-btn-beginner"
+                onclick="selectQuizTier('beginner')"
+              >
+                <span
+                  class="t-txt"
+                  data-en="Beginner (Asas)"
+                  data-bm="Beginner (Asas)"
+                  >Beginner (Asas)</span
+                >
+              </button>
+              <button
+                type="button"
+                class="tier-select-btn"
+                id="tier-btn-intermediate"
+                onclick="selectQuizTier('intermediate')"
+              >
+                <span
+                  class="t-txt"
+                  data-en="Intermediate (Sederhana)"
+                  data-bm="Intermediate (Sederhana)"
+                  >Intermediate (Sederhana)</span
+                >
+              </button>
+              <button
+                type="button"
+                class="tier-select-btn"
+                id="tier-btn-hard"
+                onclick="selectQuizTier('hard')"
+              >
+                <span
+                  class="t-txt"
+                  data-en="Hard (Lanjutan)"
+                  data-bm="Hard (Lanjutan)"
+                  >Hard (Lanjutan)</span
+                >
+              </button>
+            </div>
+
             <div class="quiz-progress-track">
-              <span id="mcq-progress-text">Question 1 of 5</span>
+              <span id="mcq-progress-text">Question 1 of 10</span>
               <div class="quiz-bar-bg">
                 <div
                   class="quiz-bar-fill"
                   id="mcq-progress-fill"
-                  style="width: 20%"
+                  style="width: 10%"
                 ></div>
               </div>
             </div>
@@ -127,7 +256,7 @@
             </h2>
             <div class="quiz-options-list" id="mcq-options-container"></div>
 
-            <!-- Instant Question Explanation Box -->
+            <!-- Explanation Card -->
             <div
               id="mcq-explanation-box"
               class="mcq-explanation-card"
@@ -145,14 +274,20 @@
                 id="mcq-next-btn"
                 class="btn-primary"
                 style="display: none"
-                onclick="nextMcqQuestion()"
+                onclick="nextTierQuestion()"
               >
-                Next Question <i class="ph-bold ph-arrow-right"></i>
+                <span
+                  class="t-txt"
+                  data-en="Next Question"
+                  data-bm="Soalan Seterusnya"
+                  >Next Question</span
+                >
+                <i class="ph-bold ph-arrow-right"></i>
               </button>
             </div>
           </div>
 
-          <!-- MCQ Result & Full Review Screen -->
+          <!-- MCQ Result Screen -->
           <div
             id="mcq-result-screen"
             class="quiz-result-card"
@@ -161,11 +296,19 @@
             <div class="result-icon-bubble">
               <i class="ph-fill ph-trophy"></i>
             </div>
-            <h2>Assessment Completed!</h2>
+            <h2
+              class="t-txt"
+              data-en="Assessment Completed!"
+              data-bm="Penilaian Selesai!"
+            >
+              Assessment Completed!
+            </h2>
             <p class="result-score-text">
-              You scored
+              <span class="t-txt" data-en="You scored" data-bm="Skor Anda:"
+                >You scored</span
+              >
               <strong id="mcq-final-score" class="text-green">0</strong> /
-              <span id="mcq-total-score">5</span>
+              <span id="mcq-total-score">10</span>
             </p>
             <p id="mcq-feedback-text" class="result-feedback"></p>
 
@@ -175,26 +318,43 @@
                 gap: 15px;
                 justify-content: center;
                 margin: 25px 0;
+                flex-wrap: wrap;
               "
             >
-              <button type="button" class="btn-primary" onclick="initMcqQuiz()">
-                <i class="ph ph-arrow-counter-clockwise"></i> Try 5 New
-                Questions
+              <button
+                type="button"
+                class="btn-primary"
+                onclick="initTieredMcqQuiz()"
+              >
+                <i class="ph ph-arrow-counter-clockwise"></i>
+                <span
+                  class="t-txt"
+                  data-en="Rotate 10 New Questions"
+                  data-bm="Pusing 10 Soalan Baharu"
+                  >Rotate 10 New Questions</span
+                >
               </button>
               <button
                 type="button"
                 class="btn-secondary"
                 onclick="backToQuizMenu()"
               >
-                Quiz Menu
+                <span class="t-txt" data-en="Quiz Menu" data-bm="Menu Kuiz"
+                  >Quiz Menu</span
+                >
               </button>
             </div>
 
-            <!-- Comprehensive Review Section -->
+            <!-- Answer Review Section -->
             <div class="quiz-review-section">
               <div class="review-section-heading">
-                <i class="ph-bold ph-clipboard-text text-green"></i> Review Your
-                Answers
+                <i class="ph-bold ph-clipboard-text text-green"></i>
+                <span
+                  class="t-txt"
+                  data-en="Review Your Answers"
+                  data-bm="Semakan Jawapan Anda"
+                  >Review Your Answers</span
+                >
               </div>
               <div class="review-list" id="mcq-review-list"></div>
             </div>
@@ -215,9 +375,54 @@
               class="quiz-back-btn"
               onclick="backToQuizMenu()"
             >
-              <i class="ph-bold ph-arrow-left"></i> Back to Menu
+              <i class="ph-bold ph-arrow-left"></i>
+              <span class="t-txt" data-en="Back to Menu" data-bm="Kembali"
+                >Back to Menu</span
+              >
             </button>
-            <div class="quiz-badge badge-orange">Visual Case Study</div>
+
+            <div class="quiz-tier-bar">
+              <button
+                type="button"
+                class="tier-select-btn active-tier"
+                id="case-tier-btn-beginner"
+                onclick="selectCaseTier('beginner')"
+              >
+                <span
+                  class="t-txt"
+                  data-en="Community (Asas)"
+                  data-bm="Komuniti (Asas)"
+                  >Community (Asas)</span
+                >
+              </button>
+              <button
+                type="button"
+                class="tier-select-btn"
+                id="case-tier-btn-intermediate"
+                onclick="selectCaseTier('intermediate')"
+              >
+                <span
+                  class="t-txt"
+                  data-en="Commercial (Sederhana)"
+                  data-bm="Komersial (Sederhana)"
+                  >Commercial (Sederhana)</span
+                >
+              </button>
+              <button
+                type="button"
+                class="tier-select-btn"
+                id="case-tier-btn-hard"
+                onclick="selectCaseTier('hard')"
+              >
+                <span
+                  class="t-txt"
+                  data-en="Industrial (Lanjutan)"
+                  data-bm="Industri (Lanjutan)"
+                  >Industrial (Lanjutan)</span
+                >
+              </button>
+            </div>
+
             <div class="quiz-progress-track">
               <span id="case-progress-text">Scenario 1 of 4</span>
               <div class="quiz-bar-bg">
@@ -244,7 +449,9 @@
                 <div class="scenario-photo-overlay"></div>
               </div>
               <div class="scenario-info-pane">
-                <span class="scenario-tag" id="case-scenario-tag">CASE #</span>
+                <span class="scenario-tag" id="case-scenario-tag"
+                  >CASE STUDY</span
+                >
                 <h3 id="case-scenario-heading" class="scenario-heading">
                   Title
                 </h3>
@@ -254,7 +461,11 @@
               </div>
             </div>
 
-            <h4 class="decision-prompt">
+            <h4
+              class="decision-prompt t-txt"
+              data-en="Identify the optimal strategic pathway based on the 4R hierarchy:"
+              data-bm="Kenal pasti pelan tindakan paling optimum berdasarkan hierarki 4R:"
+            >
               Identify the optimal strategic pathway based on the 4R hierarchy:
             </h4>
 
@@ -263,7 +474,7 @@
               id="case-choices-container"
             ></div>
 
-            <!-- Explanatory Academic Debrief Box -->
+            <!-- Debrief Box -->
             <div
               id="case-debrief-box"
               class="academic-debrief-card"
@@ -280,14 +491,19 @@
                   class="btn-orange"
                   onclick="nextCaseScenario()"
                 >
-                  Proceed to Next Scenario
+                  <span
+                    class="t-txt"
+                    data-en="Proceed to Next Scenario"
+                    data-bm="Ke Senario Seterusnya"
+                    >Proceed to Next Scenario</span
+                  >
                   <i class="ph-bold ph-arrow-right"></i>
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Case Challenge Result Screen -->
+          <!-- Case Result Screen -->
           <div
             id="case-result-screen"
             class="quiz-result-card"
@@ -296,9 +512,20 @@
             <div class="result-icon-bubble recovery-bubble">
               <i class="ph-fill ph-certificate"></i>
             </div>
-            <h2>Case Analysis Complete!</h2>
+            <h2
+              class="t-txt"
+              data-en="Case Analysis Complete!"
+              data-bm="Analisis Kes Selesai!"
+            >
+              Case Analysis Complete!
+            </h2>
             <p class="result-score-text">
-              Strategic Accuracy:
+              <span
+                class="t-txt"
+                data-en="Strategic Accuracy:"
+                data-bm="Ketepatan Strategik:"
+                >Strategic Accuracy:</span
+              >
               <strong id="case-final-score" style="color: #ea580c">0</strong> /
               <span id="case-total-score">4</span>
             </p>
@@ -309,18 +536,26 @@
                 gap: 15px;
                 justify-content: center;
                 margin-top: 25px;
+                flex-wrap: wrap;
               "
             >
               <button type="button" class="btn-orange" onclick="initCaseQuiz()">
-                <i class="ph ph-arrow-counter-clockwise"></i> Try 4 New
-                Scenarios
+                <i class="ph ph-arrow-counter-clockwise"></i>
+                <span
+                  class="t-txt"
+                  data-en="Rotate New Scenarios"
+                  data-bm="Pusing Senario Baharu"
+                  >Rotate New Scenarios</span
+                >
               </button>
               <button
                 type="button"
                 class="btn-secondary"
                 onclick="backToQuizMenu()"
               >
-                Quiz Menu
+                <span class="t-txt" data-en="Quiz Menu" data-bm="Menu Kuiz"
+                  >Quiz Menu</span
+                >
               </button>
             </div>
           </div>
@@ -335,8 +570,18 @@
     >
       <div class="guide-header">
         <i class="ph-fill ph-compass"></i>
-        <h2>How to Navigate the Platform</h2>
-        <p>
+        <h2
+          class="t-txt"
+          data-en="How to Navigate the Platform"
+          data-bm="Panduan Navigasi Platform"
+        >
+          How to Navigate the Platform
+        </h2>
+        <p
+          class="t-txt"
+          data-en="Follow our recommended 5-step learning path to maximize your understanding and test your skills."
+          data-bm="Ikuti 5 langkah pembelajaran yang disyorkan bagi menguasai amalan pengurusan sisa mampan."
+        >
           Follow our recommended 5-step learning path to maximize your
           understanding and test your skills.
         </p>
@@ -346,48 +591,60 @@
         <a href="index.html" class="journey-step-node">
           <span class="step-num">1</span>
           <div class="step-icon"><i class="ph ph-house"></i></div>
-          <h4>Home</h4>
-          <p>Overview & Goals</p>
+          <h4 class="t-txt" data-en="Home" data-bm="Utama">Home</h4>
+          <p
+            class="t-txt"
+            data-en="Overview & Goals"
+            data-bm="Pengenalan & Matlamat"
+          >
+            Overview & Goals
+          </p>
         </a>
-
         <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
-
-        <!-- Add class="active-node" when in learn.html -->
         <a href="learn.html" class="journey-step-node">
           <span class="step-num">2</span>
           <div class="step-icon"><i class="ph ph-book-open"></i></div>
-          <h4>Learn</h4>
-          <p>Read & Watch</p>
+          <h4 class="t-txt" data-en="Learn" data-bm="Belajar">Learn</h4>
+          <p class="t-txt" data-en="Read & Watch" data-bm="Baca & Tonton">
+            Read & Watch
+          </p>
         </a>
-
         <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
-
-        <!-- Add class="active-node" when in quiz.html -->
         <a href="quiz.html" class="journey-step-node active-node">
           <span class="step-num">3</span>
           <div class="step-icon"><i class="ph ph-graduation-cap"></i></div>
-          <h4>Quiz</h4>
-          <p>Check Knowledge</p>
+          <h4 class="t-txt" data-en="Quiz" data-bm="Kuiz">Quiz</h4>
+          <p class="t-txt" data-en="Check Knowledge" data-bm="Uji Kefahaman">
+            Check Knowledge
+          </p>
         </a>
-
         <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
-
-        <!-- Add class="active-node" when in game.html -->
         <a href="game.html" class="journey-step-node">
           <span class="step-num">4</span>
           <div class="step-icon"><i class="ph ph-game-controller"></i></div>
-          <h4>Game</h4>
-          <p>Reactor & Sorting</p>
+          <h4 class="t-txt" data-en="Game" data-bm="Permainan">Game</h4>
+          <p
+            class="t-txt"
+            data-en="Reactor & Sorting"
+            data-bm="Simulasi & Reaktor"
+          >
+            Reactor & Sorting
+          </p>
         </a>
-
         <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
-
-        <!-- Add class="active-node" when in community.html -->
         <a href="community.html" class="journey-step-node">
           <span class="step-num">5</span>
           <div class="step-icon"><i class="ph ph-users"></i></div>
-          <h4>Community</h4>
-          <p>Share & Inspire</p>
+          <h4 class="t-txt" data-en="Community" data-bm="Komuniti">
+            Community
+          </h4>
+          <p
+            class="t-txt"
+            data-en="Share & Inspire"
+            data-bm="Kongsi & Inspirasi"
+          >
+            Share & Inspire
+          </p>
         </a>
       </div>
     </section>
@@ -410,7 +667,7 @@
 
     <!-- Quiz Engine Script -->
     <script>
-      // Web Audio Synthesizer
+      // ================== GLOBAL AUDIO SYNTHESIZER ==================
       let audioCtx = null;
       function getAudioContext() {
         if (!audioCtx)
@@ -466,24 +723,58 @@
         }
       }
 
-      // Image error fallback
       function handleImageError(img) {
         img.onerror = null;
         img.src =
           "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80";
       }
 
-      // Navigation Controllers
+      // ================== BILINGUAL TRANSLATION CONTROLLER ==================
+      let currentLang = localStorage.getItem("site_lang") || "en";
+
+      function setLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem("site_lang", lang);
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll(".t-txt").forEach((el) => {
+          const text = el.getAttribute(`data-${lang}`);
+          if (text) el.innerHTML = text;
+        });
+
+        const langBtn = document.getElementById("lang-toggle-btn");
+        if (langBtn) {
+          langBtn.innerHTML =
+            lang === "en" ? "<span>BM</span>" : "<span>EN</span>";
+        }
+
+        // Re-render active question/scenario if active
+        if (
+          document.getElementById("quiz-mcq-wrapper").style.display === "flex"
+        ) {
+          renderTieredQuestion();
+        } else if (
+          document.getElementById("quiz-case-wrapper").style.display === "flex"
+        ) {
+          renderCaseScenario();
+        }
+      }
+
+      function toggleLanguage() {
+        setLanguage(currentLang === "en" ? "bm" : "en");
+      }
+
+      // ================== NAVIGATION CONTROLLERS ==================
       function openQuiz(type) {
         document.getElementById("quiz-selection-menu").style.display = "none";
         if (type === "mcq") {
           document.getElementById("quiz-mcq-wrapper").style.display = "flex";
           document.getElementById("quiz-case-wrapper").style.display = "none";
-          initMcqQuiz();
+          selectQuizTier("beginner");
         } else if (type === "case") {
           document.getElementById("quiz-mcq-wrapper").style.display = "none";
           document.getElementById("quiz-case-wrapper").style.display = "flex";
-          initCaseQuiz();
+          selectCaseTier("beginner");
         }
       }
 
@@ -493,737 +784,2119 @@
         document.getElementById("quiz-selection-menu").style.display = "block";
       }
 
-      // ================= 20 MASTER OBJECTIVE QUESTIONS WITH EXPLANATIONS =================
-      const mcqMasterPool = [
-        {
-          q: "What distinguishes 'Recovery' as the 4th R from standard 'Recycling'?",
-          options: [
-            "Recovery transforms plastic bottles into new synthetic fleece clothing.",
-            "Recovery captures usable energy (electricity, heat, fuel) from residual non-recyclables.",
-            "Recovery buries waste permanently inside regional open landfills.",
-            "Recovery halts purchasing to avoid packaging waste.",
-          ],
-          correct: 1,
-          explanation:
-            "While recycling remanufactures materials into new items, Recovery safely combusts or bio-digests non-recyclable residual waste to extract usable electrical power, steam, or biofuel.",
-        },
-        {
-          q: "Which material is best suited for Waste-to-Energy Recovery rather than mechanical recycling?",
-          options: [
-            "Uncontaminated corrugated cardboard shipping cartons",
-            "Clean, unbroken glass beverage containers",
-            "Soiled multi-layer food packaging foils and unrecyclable composite resins",
-            "Degreased aluminum beverage cans",
-          ],
-          correct: 2,
-          explanation:
-            "Soiled food packaging and complex multi-layer foils cannot be mechanically pulped or remelted without ruining recycling batches, making high-temperature energy recovery the best route.",
-        },
-        {
-          q: "According to the Waste Hierarchy, which step is considered the most preferable baseline action?",
-          options: ["Recycle", "Reduce", "Recover", "Reuse"],
-          correct: 1,
-          explanation:
-            "Source reduction (Reduce) is at the very top of the waste hierarchy because preventing waste from being generated completely eliminates the need for handling, recycling, or disposal.",
-        },
-        {
-          q: "What combustible bio-gas is harvested through the anaerobic digestion of recovered organic waste?",
-          options: [
-            "Propane",
-            "Biogas (primarily methane)",
-            "Pure nitrogen",
-            "Sulfur dioxide",
-          ],
-          correct: 1,
-          explanation:
-            "Anaerobic bacteria break down organic matter in oxygen-free digesters to produce biogas (60-70% methane), which can be combusted for electricity or purified into biomethane vehicle fuel.",
-        },
-        {
-          q: "Why must spent lithium-ion batteries go to specialized Recovery centers rather than standard curbside bins?",
-          options: [
-            "They cause truck and landfill fires and contain high-value recoverable cobalt and lithium.",
-            "They decompose into organic garden fertilizer in under 48 hours.",
-            "They can be dissolved directly in drinking water reservoirs.",
-            "They are classified as inert, non-reactive household paper.",
-          ],
-          correct: 0,
-          explanation:
-            "Lithium-ion cells easily suffer thermal runaway when crushed in regular garbage compactors. Specialized recovery facilities safely neutralize fire risks and recover rare strategic metals.",
-        },
-        {
-          q: "What is Refuse-Derived Fuel (RDF) produced from?",
-          options: [
-            "Crude oil pumped from offshore platforms",
-            "Combustible fractions of sorted municipal solid waste processed into energy pellets",
-            "Fresh wood logs cut from designated forestry timber",
-            "Nuclear power cooling pond water",
-          ],
-          correct: 1,
-          explanation:
-            "RDF is manufactured by shredding, drying, and pelletizing the combustible non-recyclable portions of municipal waste to serve as a coal substitute in industrial boilers and cement kilns.",
-        },
-        {
-          q: "How do modern Waste-to-Energy facilities prevent toxic air emissions like dioxins from escaping chimney flues?",
-          options: [
-            "By releasing emissions exclusively during nighttime hours",
-            "Using advanced multi-stage scrubbers, activated carbon, and fabric baghouse filters",
-            "Mixing chemical perfumes with the exhaust steam",
-            "Pumping the gases into underground municipal sewers",
-          ],
-          correct: 1,
-          explanation:
-            "State-of-the-art flue gas treatment utilizes activated carbon injection to bind dioxins and heavy metals, lime scrubbers for acid gases, and fabric filters to trap 99.9% of particulates.",
-        },
-        {
-          q: "What remains after solid waste is incinerated in a modern thermal recovery facility?",
-          options: [
-            "Bottom ash (which can be recovered for road construction) and filtered fly ash",
-            "Pure liquid drinking water",
-            "Nuclear radioactive isotopes",
-            "Plastic granulate pellets",
-          ],
-          correct: 0,
-          explanation:
-            "Combustion leaves behind non-combustible mineral residue known as bottom ash (often recycled into aggregate for asphalt) and fine toxic fly ash trapped by filters for safe containment.",
-        },
-        {
-          q: "Which 'R' best describes repairing a split dining chair instead of buying a replacement?",
-          options: ["Recycle", "Recover", "Reuse", "Reject"],
-          correct: 2,
-          explanation:
-            "Repairing, refurnishing, and continuing to use an item in its original physical form without destroying its material structure directly represents the Reuse tier.",
-        },
-        {
-          q: "Why is 'Reduction' considered environmentally superior to 'Recycling'?",
-          options: [
-            "Recycling does not consume energy or transport fuel.",
-            "Reduction stops resource extraction, processing, and emissions before they occur.",
-            "Reduction creates more physical trash for power stations.",
-            "Recycled products last infinitely without ever degrading.",
-          ],
-          correct: 1,
-          explanation:
-            "Recycling still consumes considerable water, transport fuel, and electrical energy. Reduction prevents virgin raw resource extraction and manufacturing emissions entirely.",
-        },
-        {
-          q: "What is the primary product of high-temperature pyrolysis applied to tires and dense rubber?",
-          options: [
-            "Pyrolytic oil, syngas, and recovered carbon black",
-            "Clean fresh drinking milk",
-            "Liquid oxygen",
-            "Natural wood mulch",
-          ],
-          correct: 0,
-          explanation:
-            "Pyrolysis decomposes rubber at high temperatures without oxygen, condensing vapors into combustible fuel oil and syngas while leaving commercial-grade carbon black.",
-        },
-        {
-          q: "What happens when food waste decays in traditional anaerobic landfills without gas capture?",
-          options: [
-            "It releases methane, a greenhouse gas over 25 times more potent than carbon dioxide.",
-            "It converts into solid granite rock.",
-            "It purifies groundwater reservoirs underneath.",
-            "It absorbs all carbon emissions from nearby roads.",
-          ],
-          correct: 0,
-          explanation:
-            "Trapped food waste rots without oxygen inside landfills, producing fugitive methane emissions that drive global warming at more than 25 times the warming potential of CO2.",
-        },
-        {
-          q: "What is 'Upcycling'?",
-          options: [
-            "Throwing waste into elevated bins",
-            "Transforming unwanted by-products into materials of higher artistic or functional value",
-            "Down-grading plastic into un-meltable road tar",
-            "Shipping trash to other continents by air freight",
-          ],
-          correct: 1,
-          explanation:
-            "Upcycling creative reuse elevates discarded materials into higher-value products (e.g., turning discarded sails into durable fashion backpacks) without chemical breakdown.",
-        },
-        {
-          q: "In an academic Circular Economy model, waste is viewed as:",
-          options: [
-            "An unavoidable burden requiring deeper landfills",
-            "A valuable secondary resource or feedstock for energy and material recovery",
-            "Something that must only be discarded into open oceans",
-            "A concept that has no economic measurement",
-          ],
-          correct: 1,
-          explanation:
-            "The circular economy replaces the linear 'take-make-waste' model by designing out waste and viewing post-consumer materials as inputs for manufacturing or clean energy recovery.",
-        },
-        {
-          q: "What precious metals can be recovered from discarded smartphone circuit boards?",
-          options: [
-            "Gold, silver, copper, and palladium",
-            "Uranium and helium",
-            "Plutonium and coal",
-            "Liquid nitrogen and mercury",
-          ],
-          correct: 0,
-          explanation:
-            "One ton of printed circuit boards contains up to 40 to 800 times the concentration of gold found in mined ore, alongside recoverable silver, copper, and palladium.",
-        },
-        {
-          q: "What is the main role of the 'Recovery' tier in achieving Zero-Waste to Landfill certification?",
-          options: [
-            "It acts as the final buffer to extract energy from residual waste that cannot be reduced, reused, or recycled.",
-            "It replaces the need to separate recyclables at home.",
-            "It allows companies to generate unlimited single-use plastics.",
-            "It turns all municipal garbage into edible protein.",
-          ],
-          correct: 0,
-          explanation:
-            "Recovery acts as the protective safety net before landfilling, ensuring that even non-recyclable residues yield clean heat and power rather than occupying valuable land.",
-        },
-        {
-          q: "Why are greasy, cheese-covered cardboard pizza boxes often diverted away from mechanical paper recycling?",
-          options: [
-            "Food grease cannot be separated during pulp washing and contaminates entire paper batches.",
-            "Cardboard melts if it comes near cheese.",
-            "Grease makes paper bins too slippery to carry.",
-            "Paper recycling mills only accept plastic items.",
-          ],
-          correct: 0,
-          explanation:
-            "Paper recycling mixes fibers with water. Oil and grease do not dissolve in water; they attach to the wood fibers, creating oil spots and weak points that ruin entire batches of paper.",
-        },
-        {
-          q: "What is Syngas (Synthesis Gas) produced during the thermal gasification of waste?",
-          options: [
-            "A mixture of carbon monoxide and hydrogen used to generate electricity or synthetic fuels",
-            "Pure liquid gasoline ready for vehicle tanks",
-            "Steam mixed with toxic pesticide aerosols",
-            "Compressed atmospheric air",
-          ],
-          correct: 0,
-          explanation:
-            "High-temperature gasification in a lean-oxygen chamber converts carbon materials into syngas (H2 + CO), an efficient gaseous fuel used in turbines or chemical synthesis.",
-        },
-        {
-          q: "Which practice demonstrates the 'Reduce' tier in daily grocery shopping?",
-          options: [
-            "Buying products with minimal packaging or bringing personal reusable cloth tote bags",
-            "Purchasing 5 disposable plastic bags and recycling them later",
-            "Burning plastic bags at home on a backyard barbecue",
-            "Throwing glass jars into forest streams",
-          ],
-          correct: 0,
-          explanation:
-            "Carrying personal tote bags and purchasing loose bulk produce avoids introducing single-use packaging into the waste stream in the first place.",
-        },
-        {
-          q: "How does Waste-to-Energy Recovery directly help combat municipal landfill shortages?",
-          options: [
-            "It reduces the physical volume of solid waste going into landfills by approximately 85% to 90%.",
-            "It triples the size of garbage heaps.",
-            "It converts municipal land into volcanic soil.",
-            "It makes waste heavier so it sinks into the earth's crust.",
-          ],
-          correct: 0,
-          explanation:
-            "Thermal combustion consumes the combustible organic mass, shrinking the volume of solid waste entering landfills by up to 90% and prolonging the operating lifespan of disposal sites.",
-        },
-      ];
+      // ================== 60 MASTER OBJECTIVE QUESTIONS (SWCORP MODULES) ==================
+      const mcqTierBank = {
+        beginner: [
+          {
+            q_en: "What is the primary definition of 'Reduce' in the 4R hierarchy?",
+            q_bm: "Apakah definisi utama 'Reduce' (Pengurangan) dalam hierarki 4R?",
+            options_en: [
+              "Burying plastic waste underground",
+              "Preventing waste generation before it begins",
+              "Burning waste in outdoor yards",
+              "Melting plastic bottles into shoes",
+            ],
+            options_bm: [
+              "Menimbus sisa plastik di dalam tanah",
+              "Mengelakkan penjanaan sisa sebelum ia bermula",
+              "Membakar sampah di halaman rumah",
+              "Melebur botol plastik menjadi kasut",
+            ],
+            correct: 1,
+            exp_en:
+              "Reduce is the highest tier of the hierarchy because preventing waste stops resource extraction and pollution at the source.",
+            exp_bm:
+              "Reduce adalah keutamaan paling tinggi kerana mengelakkan janaan sisa menghentikan pencemaran terus dari punca.",
+          },
+          {
+            q_en: "Under Malaysian recycling standards, which color bin is designated for Paper (Kertas)?",
+            q_bm: "Mengikut piawaian kitar semula Malaysia, tong warna apakah yang dikhaskan untuk Kertas?",
+            options_en: ["Brown", "Orange", "Blue", "Green"],
+            options_bm: ["Coklat", "Jingga", "Biru", "Hijau"],
+            correct: 2,
+            exp_en:
+              "Blue bins are for paper, Orange bins are for plastics and aluminum cans, and Brown bins are for glass.",
+            exp_bm:
+              "Tong Biru untuk kertas, tong Jingga untuk tin dan plastik, dan tong Coklat untuk kaca.",
+          },
+          {
+            q_en: "According to SWCorp, how much solid waste does each Malaysian produce on average per day?",
+            q_bm: "Menurut data SWCorp, berapakah purata janaan sisa harian bagi setiap rakyat Malaysia?",
+            options_en: ["0.25 kg", "1.17 kg", "5.80 kg", "10.50 kg"],
+            options_bm: ["0.25 kg", "1.17 kg", "5.80 kg", "10.50 kg"],
+            correct: 1,
+            exp_en:
+              "On average, each Malaysian generates 1.17 kg of waste daily, totaling approximately 38,000 tonnes nationwide.",
+            exp_bm:
+              "Secara purata setiap rakyat Malaysia menghasilkan 1.17kg sisa sehari, mencecah 38,000 tan sehari di seluruh negara.",
+          },
+          {
+            q_en: "Which category does an empty, clean aluminum soda can belong to?",
+            q_bm: "Dalam kategori manakah tin aluminium minuman ringan yang bersih dikelaskan?",
+            options_en: [
+              "General Non-Recyclable",
+              "Recyclable (Orange Bin)",
+              "Hazardous Waste",
+              "Organic Soil Waste",
+            ],
+            options_bm: [
+              "Sisa Baki",
+              "Sisa Kitar Semula (Tong Jingga)",
+              "Sisa Berbahaya",
+              "Sisa Organik",
+            ],
+            correct: 1,
+            exp_en:
+              "Clean aluminum cans are recyclable and must be placed into the orange recycling bin.",
+            exp_bm:
+              "Tin aluminium boleh dikitar semula dan dimasukkan ke dalam tong jingga.",
+          },
+          {
+            q_en: "What should you do before placing a food container or milk bottle into a recycling bin?",
+            q_bm: "Apakah tindakan pertama sebelum membuang botol minuman ke dalam tong kitar semula?",
+            options_en: [
+              "Burn the label off",
+              "Empty, rinse, and dry it",
+              "Fill it with sand",
+              "Crush it while it is full",
+            ],
+            options_bm: [
+              "Bakar label botol",
+              "Kosongkan, bilas, dan keringkan",
+              "Isikan dengan tanah",
+              "Penyekkan semasa masih berisi",
+            ],
+            correct: 1,
+            exp_en:
+              "Rinsing removes grease and sugar, preventing bacteria, odors, and batch contamination.",
+            exp_bm:
+              "Membilas membersihkan sisa minuman agar tidak mencemarkan sisa kitar semula lain.",
+          },
+          {
+            q_en: "What does 'Upcycling' mean according to the SWCorp module?",
+            q_bm: "Apakah yang dimaksudkan dengan 'Upcycling' dalam modul SWCorp?",
+            options_en: [
+              "Throwing waste into high bins",
+              "Creatively repurposing scrap into higher aesthetic or functional products",
+              "Exporting waste to overseas landfills",
+              "Digging deeper trenches for garbage",
+            ],
+            options_bm: [
+              "Membuang sampah ke tong tinggi",
+              "Mengguna semula sisa secara kreatif menjadi produk bernilai estetika",
+              "Mengeksport sisa ke negara lain",
+              "Menggali lubang sampah lebih dalam",
+            ],
+            correct: 1,
+            exp_en:
+              "Upcycling turns discarded materials into creative, useful products like making bags from old T-shirts.",
+            exp_bm:
+              "Upcycling mengubah bahan buangan kepada produk kreatif seperti beg daripada baju terpakai.",
+          },
+          {
+            q_en: "Which item CANNOT be placed into standard curbside recycling bins?",
+            q_bm: "Antara berikut, yang manakah TIDAK BOLEH dibuang ke dalam tong kitar semula biasa?",
+            options_en: [
+              "Newspapers",
+              "Clean cardboard boxes",
+              "Soiled baby diapers",
+              "Clean glass perfume bottles",
+            ],
+            options_bm: [
+              "Surat khabar",
+              "Kotak kadbod bersih",
+              "Lampin pakai buang kotor",
+              "Botol kaca minyak wangi",
+            ],
+            correct: 2,
+            exp_en:
+              "Soiled disposable diapers are residual waste (sisa baki) and must be disposed of in sanitary landfills.",
+            exp_bm:
+              "Lampin pakai buang adalah sisa baki yang mesti dilupuskan ke tapak pelupusan.",
+          },
+          {
+            q_en: "What is the primary color of the glass recycling bin in Malaysia?",
+            q_bm: "Apakah warna tong kitar semula bagi bahan kaca di Malaysia?",
+            options_en: ["Green", "Brown", "Yellow", "Red"],
+            options_bm: ["Hijau", "Coklat", "Kuning", "Merah"],
+            correct: 1,
+            exp_en:
+              "Brown bins are dedicated to glass bottles, jars, and silica containers.",
+            exp_bm:
+              "Tong berwarna coklat dikhaskan untuk botol kaca, balang dan bekas kaca silika.",
+          },
+          {
+            q_en: "Which act enforces waste management standardization across Peninsular Malaysia?",
+            q_bm: "Akta manakah yang menyeragamkan pengurusan sisa pepejal di Semenanjung Malaysia?",
+            options_en: [
+              "Akta Jalan Raya 1987",
+              "Akta 672 (Pengurusan Sisa Pepejal)",
+              "Akta Bomba 1988",
+              "Akta Buruh 1955",
+            ],
+            options_bm: [
+              "Akta Jalan Raya 1987",
+              "Akta 672 (Pengurusan Sisa Pepejal)",
+              "Akta Bomba 1988",
+              "Akta Buruh 1955",
+            ],
+            correct: 1,
+            exp_en:
+              "Act 672 regulates solid waste management and public cleansing to ensure nationwide sustainability.",
+            exp_bm:
+              "Akta 672 mengawal selia pengurusan sisa pepejal dan pembersihan awam di Malaysia.",
+          },
+          {
+            q_en: "What is the target national recycling rate set by the Malaysian government?",
+            q_bm: "Berapakah sasaran kadar kitar semula kebangsaan yang ditetapkan kerajaan?",
+            options_en: ["5%", "10%", "30%+", "100%"],
+            options_bm: ["5%", "10%", "30%+", "100%"],
+            correct: 2,
+            exp_en:
+              "The national target was set at 30% and above to divert critical mass away from landfills.",
+            exp_bm:
+              "Kerajaan menetapkan sasaran 30% dan ke atas bagi mengurangkan sisa ke tapak pelupusan.",
+          },
+          {
+            q_en: "Which of these is a direct example of 'Reuse'?",
+            q_bm: "Antara berikut, yang manakah contoh langsung amalan 'Reuse' (Guna Semula)?",
+            options_en: [
+              "Throwing shoes in the river",
+              "Refilling an empty water bottle instead of buying single-use bottles",
+              "Leaving food waste on dining tables",
+              "Burning dry leaves",
+            ],
+            options_bm: [
+              "Membuang kasut ke sungai",
+              "Mengisi semula botol air dan menggunakannya berulang kali",
+              "Membiarkan sisa makanan basi di meja",
+              "Membakar daun kering",
+            ],
+            correct: 1,
+            exp_en:
+              "Reusing items in their original physical form avoids manufacturing new replacements.",
+            exp_bm:
+              "Menggunakan semula barangan tanpa memusnahkan bentuk asalnya menjimatkan sumber.",
+          },
+          {
+            q_en: "What waste fraction represents the largest component (31% - 45%) in Malaysian municipal bins?",
+            q_bm: "Sisa apakah yang mencatatkan komposisi paling tinggi (31% - 45%) di Malaysia mengikut JPSPN?",
+            options_en: [
+              "Glass jars",
+              "Metal car parts",
+              "Food and kitchen waste",
+              "Old textiles",
+            ],
+            options_bm: [
+              "Balang kaca",
+              "Besi kenderaan",
+              "Sisa makanan dan sisa dapur",
+              "Kain terpakai",
+            ],
+            correct: 2,
+            exp_en:
+              "Food waste is the largest single category generated daily in Malaysia.",
+            exp_bm:
+              "Sisa makanan merupakan sisa tertinggi yang dijana di Malaysia setiap hari.",
+          },
+          {
+            q_en: "What date is celebrated every year as National Recycling Day in Malaysia?",
+            q_bm: "Tarikh manakah yang disambut sebagai Hari Kitar Semula Kebangsaan di Malaysia?",
+            options_en: ["1 Januari", "11 November", "31 Ogos", "25 Disember"],
+            options_bm: ["1 Januari", "11 November", "31 Ogos", "25 Disember"],
+            correct: 1,
+            exp_en:
+              "November 11th is designated annually as Hari Kitar Semula Kebangsaan by KPKT.",
+            exp_bm:
+              "11 November telah ditetapkan setiap tahun sebagai Hari Kitar Semula Kebangsaan oleh KPKT.",
+          },
+          {
+            q_en: "What is the primary function of a school 'Bank Kitar Semula'?",
+            q_bm: "Apakah fungsi utama penubuhan 'Bank Kitar Semula' di sekolah?",
+            options_en: [
+              "To bury school computers",
+              "To systematically weigh, collect, and sell student recyclables for charity/funds",
+              "To burn exam papers",
+              "To distribute free plastic straws",
+            ],
+            options_bm: [
+              "Menimbus komputer sekolah",
+              "Menimbang, mengumpul dan menjual barangan kitar semula untuk dana sekolah",
+              "Membakar kertas peperiksaan",
+              "Mengedarkan straw plastik percuma",
+            ],
+            correct: 1,
+            exp_en:
+              "Recycling banks encourage students to separate waste, record weights, and earn funds for eco-projects.",
+            exp_bm:
+              "Bank Kitar Semula menggalakkan murid mengasingkan sisa dan menjana pendapatan sekolah.",
+          },
+          {
+            q_en: "When did the Separation at Source (SAS) regulation officially come into effect in Malaysia?",
+            q_bm: "Bilakah peraturan Pengasingan Sisa di Punca (SAS) mula dikuatkuasakan di Malaysia?",
+            options_en: [
+              "1 Januari 2000",
+              "1 September 2015",
+              "1 Jun 2020",
+              "31 Disember 2024",
+            ],
+            options_bm: [
+              "1 Januari 2000",
+              "1 September 2015",
+              "1 Jun 2020",
+              "31 Disember 2024",
+            ],
+            correct: 1,
+            exp_en:
+              "Mandatory separation at source for households began on September 1, 2015 under Act 672.",
+            exp_bm:
+              "Pengasingan sisa di punca diwajibkan bermula pada 1 September 2015 di bawah Akta 672.",
+          },
+          {
+            q_en: "Drink boxes (Tetra Pak) must be disposed into which bin after being cleaned?",
+            q_bm: "Kotak minuman (Tetra Pak) perlu dimasukkan ke dalam tong manakah selepas dibilas dan dilipat?",
+            options_en: [
+              "Blue (Paper)",
+              "Brown (Glass)",
+              "Green (Organic)",
+              "Black (General)",
+            ],
+            options_bm: [
+              "Biru (Kertas)",
+              "Coklat (Kaca)",
+              "Hijau (Organik)",
+              "Hitam (Sisa Baki)",
+            ],
+            correct: 0,
+            exp_en:
+              "Because 75% of a beverage carton is high-grade virgin paper pulp, it is collected in the Blue Paper bin.",
+            exp_bm:
+              "Kerana 75% kotak minuman terdiri daripada pulpa kertas, ia dimasukkan ke tong Biru.",
+          },
+          {
+            q_en: "What does the 4th 'R' (Recovery) focus on?",
+            q_bm: "Apakah fokus utama bagi 'R' ke-4 iaitu Recovery (Perolehan Semula)?",
+            options_en: [
+              "Exporting garbage overseas",
+              "Extracting energy, heat, and fuel from non-recyclable residues",
+              "Throwing plastics into drainage ditches",
+              "Buying more disposable cutlery",
+            ],
+            options_bm: [
+              "Mengeksport sampah ke luar negara",
+              "Memperoleh tenaga, haba dan bahan api daripada sisa baki",
+              "Membuang plastik ke parit",
+              "Membeli lebih banyak sudu plastik",
+            ],
+            correct: 1,
+            exp_en:
+              "Recovery converts residual discards into clean electricity, district heat, or fuel instead of landfilling.",
+            exp_bm:
+              "Recovery mengolah sisa yang tidak boleh dikitar semula menjadi tenaga elektrik dan haba.",
+          },
+          {
+            q_en: "Which organism is commonly utilized in vermicomposting?",
+            q_bm: "Organisma manakah yang digunakan secara meluas dalam kaedah vermikompos?",
+            options_en: [
+              "Houseflies",
+              "African Nightcrawler earthworms",
+              "Termites",
+              "Locusts",
+            ],
+            options_bm: [
+              "Lalat rumah",
+              "Cacing tanah African Nightcrawler",
+              "Anai-anai",
+              "Belalang",
+            ],
+            correct: 1,
+            exp_en:
+              "African Nightcrawlers efficiently break down decomposed kitchen scraps into nutrient-rich vermicast.",
+            exp_bm:
+              "Cacing African Nightcrawler menguraikan sisa makanan menjadi baja vermikompos yang subur.",
+          },
+          {
+            q_en: "Why should we avoid throwing toxic chemicals into regular household garbage?",
+            q_bm: "Mengapakah bahan kimia toksik tidak boleh dicampur ke dalam sampah isi rumah biasa?",
+            options_en: [
+              "It makes the trash too light",
+              "It contaminates soil, leachate, and endangers waste collection workers",
+              "It turns trash into gold",
+              "It stops trucks from driving",
+            ],
+            options_bm: [
+              "Sampah menjadi terlalu ringan",
+              "Mencemarkan air bawah tanah (leachate) dan membahayakan pekerja pembersihan",
+              "Menukarkan sampah menjadi emas",
+              "Menghalang lori bergerak",
+            ],
+            correct: 1,
+            exp_en:
+              "Toxic chemicals leak into groundwater via leachate and pose chemical explosion hazards to workers.",
+            exp_bm:
+              "Bahan kimia meresap ke dalam air tanah dan berisiko mencetuskan kebakaran kepada pekerja.",
+          },
+          {
+            q_en: "What simple action demonstrates 'Refuse' (Penolakan) in daily shopping?",
+            q_bm: "Apakah tindakan mudah yang menunjukkan amalan 'Refuse' (Tolak) semasa membeli-belah?",
+            options_en: [
+              "Accepting 10 plastic bags",
+              "Saying NO to plastic straws and bringing your own reusable shopping bag",
+              "Taking extra plastic cutlery to throw away at home",
+              "Buying products with 3 layers of wrap",
+            ],
+            options_bm: [
+              "Menerima 10 beg plastik",
+              "Menolak penyedut minuman plastik dan membawa beg guna semula sendiri",
+              "Mengambil sudu plastik berlebihan untuk dibuang di rumah",
+              "Membeli barangan berbalut tebal",
+            ],
+            correct: 1,
+            exp_en:
+              "Refusing single-use plastics prevents unnecessary non-biodegradable waste from entering your home.",
+            exp_bm:
+              "Menolak barangan pakai buang menghalang sampah plastik daripada dijana.",
+          },
+        ],
+        intermediate: [
+          {
+            q_en: "What is Leachate (Air Larut Resap) in landfill management?",
+            q_bm: "Apakah yang dimaksudkan dengan Air Larut Resap (Leachate) di tapak pelupusan?",
+            options_en: [
+              "Clean rainwater safe for drinking",
+              "Toxic liquid formed when water filters through rotting waste mass",
+              "Liquid fertilizer extracted from trees",
+              "Fuel oil pumped directly into combustion engines",
+            ],
+            options_bm: [
+              "Air hujan bersih selamat diminum",
+              "Cecair toksik pekat yang terhasil daripada air hujan yang meresap melalui timbunan sampah",
+              "Baja cecair daripada pokok",
+              "Bahan api yang disuntik terus ke enjin",
+            ],
+            correct: 1,
+            exp_en:
+              "Leachate contains dissolved heavy metals and organic toxins that require dedicated wastewater treatment plants.",
+            exp_bm:
+              "Air larut resap mengandungi logam berat dan bahan organik terlarut yang mesti dirawat secara khusus.",
+          },
+          {
+            q_en: "How does anaerobic digestion generate renewable electrical power?",
+            q_bm: "Bagaimanakah proses pencernaan anaerobik (anaerobic digestion) menjana tenaga elektrik?",
+            options_en: [
+              "By burning coal alongside raw vegetables",
+              "Microorganisms digest organic matter without oxygen, releasing methane biogas which fuels gas engines",
+              "By placing compost under direct desert sunlight",
+              "By crushing plastic bottles with magnetic arms",
+            ],
+            options_bm: [
+              "Membakar arang batu bersama sayur",
+              "Bakteria menguraikan sisa organik tanpa oksigen bagi menghasilkan biogas metana untuk memacu generator",
+              "Menjemur kompos di bawah matahari terik",
+              "Memampatkan botol plastik menggunakan magnet",
+            ],
+            correct: 1,
+            exp_en:
+              "Anaerobic digesters produce methane-rich biogas which drives turbines to generate electricity and heat.",
+            exp_bm:
+              "Pencernaan anaerobik menghasilkan gas metana yang dibakar untuk menggerakkan turbin elektrik.",
+          },
+          {
+            q_en: "Which Malaysian island facility utilizes thermal treatment (insinerator) to manage municipal waste?",
+            q_bm: "Fasiliti loji rawatan termal (insinerator) manakah yang beroperasi di pulau pelancongan Malaysia?",
+            options_en: [
+              "Pulau Langkawi & Pulau Tioman",
+              "Pulau Redang & Pulau Perhentian",
+              "Pulau Labuan & Pulau Ketam",
+              "Pulau Carey & Pulau Pangkor Laut",
+            ],
+            options_bm: [
+              "Pulau Langkawi & Pulau Tioman",
+              "Pulau Redang & Pulau Perhentian",
+              "Pulau Labuan & Pulau Ketam",
+              "Pulau Carey & Pulau Pangkor Laut",
+            ],
+            correct: 0,
+            exp_en:
+              "SWCorp operates island thermal incinerators in Pulau Langkawi, Pulau Pangkor, and Pulau Tioman.",
+            exp_bm:
+              "Insinerator termal beroperasi di Pulau Langkawi, Pulau Pangkor, dan Pulau Tioman bagi menangani kekangan tanah tapak pelupusan.",
+          },
+          {
+            q_en: "What is the key technological function of a Material Recovery Facility (MRF)?",
+            q_bm: "Apakah fungsi utama Kemudahan Mendapatkan Semula Bahan (Material Recovery Facility - MRF)?",
+            options_en: [
+              "Burying waste beneath deep geological layers",
+              "Using mechanical conveyors, screens, and optical sensors to separate recyclable commodities",
+              "Dumping industrial oil into oceans",
+              "Producing radioactive medical isotopes",
+            ],
+            options_bm: [
+              "Menimbus sampah ke dalam tanah",
+              "Menggunakan mesin pengasing mekanikal dan sensor optik untuk memisahkan bahan kitar semula",
+              "Membuang minyak industri ke laut",
+              "Menghasilkan isotop radioaktif perubatan",
+            ],
+            correct: 1,
+            exp_en:
+              "MRFs process commingled waste mechanically to extract plastics, metals, cardboard, and paper for industry.",
+            exp_bm:
+              "MRF menggunakan teknologi mekanikal untuk mengasingkan bahan berguna menjadi bahan mentah industri.",
+          },
+          {
+            q_en: "What is the Takakura Home Method of composting?",
+            q_bm: "Apakah kaedah pengkomposan 'Takakura Home Method'?",
+            options_en: [
+              "Boiling food waste in chemical acids",
+              "Fermenting microorganisms using local ingredients (tempeh/yeast) inside a ventilated basket with seed compost",
+              "Burying aluminum cans in sand",
+              "Freezing meat leftovers for 6 months",
+            ],
+            options_bm: [
+              "Merebus sisa makanan dalam asid",
+              "Membiakkan mikroorganisma pengurai daripada tempe/ragi dalam bakul berongga berisi medium kompos",
+              "Menanam tin aluminium dalam pasir",
+              "Membekukan sisa daging selama 6 bulan",
+            ],
+            correct: 1,
+            exp_en:
+              "Takakura utilizes pre-cultured fermenting microorganisms (tempeh/brown sugar) to compost kitchen waste odorlessly within weeks.",
+            exp_bm:
+              "Kaedah Takakura menggunakan larutan penapaian (tempe dan gula merah) untuk menguraikan sisa makanan tanpa bau.",
+          },
+          {
+            q_en: "What is Refuse-Derived Fuel (RDF)?",
+            q_bm: "Apakah yang dimaksudkan dengan Bahan Api Terbitan Sampah (Refuse-Derived Fuel - RDF)?",
+            options_en: [
+              "Crude oil pumped from offshore deep rigs",
+              "Fuel pellets produced by drying, shredding, and densifying high-calorific non-recyclable solid waste",
+              "Nuclear fuel rods cooled with brine",
+              "Wood logs harvested from forest reserves",
+            ],
+            options_bm: [
+              "Minyak mentah daripada pelantar minyak",
+              "Bahan api bertenaga tinggi yang dihasilkan melalui pengeringan, penyiatan dan pemadatan sisa pepejal",
+              "Rod nuklear yang disejukkan dengan garam",
+              "Kayu balak daripada hutan simpan",
+            ],
+            correct: 1,
+            exp_en:
+              "RDF pellets replace coal in cement kilns and industrial boilers, recovering energy from combustible waste.",
+            exp_bm:
+              "RDF dihasilkan daripada sisa pepejal mudah terbakar untuk menggantikan arang batu dalam relau industri.",
+          },
+          {
+            q_en: "Why is Bokashi composting described as an anaerobic process?",
+            q_bm: "Mengapakah kaedah pengkomposan Bokashi dikelaskan sebagai proses anaerobik?",
+            options_en: [
+              "It requires electric wind blowers",
+              "It operates in an airtight sealed bucket using Effective Microorganisms (EM) without oxygen",
+              "It must be done under running water",
+              "It burns food scraps at 800°C",
+            ],
+            options_bm: [
+              "Ia memerlukan kipas angin elektrik",
+              "Ia berlaku dalam bekas kedap udara menggunakan bakteria Effective Microorganisms (EM) tanpa oksigen",
+              "Ia mesti direndam di bawah air mengalir",
+              "Ia membakar sisa makanan pada suhu 800°C",
+            ],
+            correct: 1,
+            exp_en:
+              "Bokashi ferments food scraps anaerobically in airtight containers using EM bran powder.",
+            exp_bm:
+              "Bokashi menapai sisa makanan dalam keadaan kedap udara tanpa kehadiran oksigen menggunakan serbuk EM.",
+          },
+          {
+            q_en: "What is an 'Inert Landfill' (Tapak Pelupusan Lengai)?",
+            q_bm: "Apakah fungsi Tapak Pelupusan Lengai (Inert Landfill)?",
+            options_en: [
+              "A site that only accepts non-reactive construction debris like concrete, bricks, and rocks",
+              "A site that burns nuclear waste",
+              "A food composting open park",
+              "A sanitary landfill for household garbage",
+            ],
+            options_bm: [
+              "Tapak pelupusan yang hanya menerima sisa binaan tidak aktif seperti batu, konkrit dan pasir",
+              "Tapak pembakaran sisa nuklear",
+              "Taman kompos sisa makanan",
+              "Tapak pelupusan sanitari untuk sampah dapur",
+            ],
+            correct: 0,
+            exp_en:
+              "Inert landfills accept stable construction demolition materials that do not decompose or produce leachate/methane.",
+            exp_bm:
+              "Tapak pelupusan lengai menerima sisa binaan yang tidak bertindak balas secara kimia dan tidak mereput.",
+          },
+          {
+            q_en: "What is the primary difference between Act 672 and Act 673 in Malaysia?",
+            q_bm: "Apakah perbezaan asas antara Akta 672 dan Akta 673 di Malaysia?",
+            options_en: [
+              "Act 672 handles sports; Act 673 handles roads",
+              "Act 672 regulates waste management laws; Act 673 establishes the SWCorp corporation to execute them",
+              "Act 672 was abolished; Act 673 is active",
+              "Both acts only apply to Sabah and Sarawak",
+            ],
+            options_bm: [
+              "Akta 672 tentang sukan; Akta 673 tentang jalan raya",
+              "Akta 672 memperuntukkan bidang kuasa perundangan; Akta 673 menubuhkan perbadanan SWCorp sebagai pelaksana",
+              "Akta 672 dimansuhkan; Akta 673 diguna pakai",
+              "Kedua-dua akta hanya untuk Sabah dan Sarawak",
+            ],
+            correct: 1,
+            exp_en:
+              "Act 672 provides the legal framework for solid waste; Act 673 establishes the legal entity of SWCorp under KPKT.",
+            exp_bm:
+              "Akta 672 mengawal selia undang-undang sisa pepejal; Akta 673 menubuhkan Perbadanan SWCorp.",
+          },
+          {
+            q_en: "Which sanitary landfill in Selangor captures landfill gas to feed electricity directly into Tenaga Nasional Berhad (TNB)?",
+            q_bm: "Tapak pelupusan sanitari manakah di Selangor yang menjana tenaga elektrik daripada gas tapak pelupusan untuk grid TNB?",
+            options_en: [
+              "Tapak Pelupusan Bukit Tagar",
+              "Pantai Cenang Dump",
+              "Cameron Highland Pit",
+              "Taman Sentosa Yard",
+            ],
+            options_bm: [
+              "Tapak Pelupusan Sanitari Bukit Tagar",
+              "Tapak Pantai Cenang",
+              "Lembah Cameron",
+              "Taman Sentosa",
+            ],
+            correct: 0,
+            exp_en:
+              "Bukit Tagar Sanitary Landfill captures methane emissions to generate over 10 MW of green electrical power.",
+            exp_bm:
+              "Tapak Pelupusan Sanitari Bukit Tagar mengumpul gas metana bagi menjana lebih 10 MW tenaga elektrik hijau.",
+          },
+          {
+            q_en: "What chemical element in discarded electronic circuit boards represents valuable recoverable resources?",
+            q_bm: "Unsur kimia berharga apakah yang boleh diperoleh semula (recover) daripada papan litar elektronik terpakai?",
+            options_en: [
+              "Nitrogen gas",
+              "Gold, silver, copper, and palladium",
+              "Liquid chlorine",
+              "Potassium nitrate",
+            ],
+            options_bm: [
+              "Gas nitrogen",
+              "Emas, perak, tembaga, dan paladium",
+              "Klorin cecair",
+              "Kalium nitrat",
+            ],
+            correct: 1,
+            exp_en:
+              "E-waste contains concentrated precious metals that specialized hydrometallurgical recovery plants extract.",
+            exp_bm:
+              "Sisa elektronik mengandungi kepekatan logam berharga seperti emas dan tembaga yang boleh dipulihkan semula.",
+          },
+          {
+            q_en: "How does Julian Brown's plastic-to-fuel reactor operate?",
+            q_bm: "Bagaimanakah reaktor penukaran plastik kepada bahan api ciptaan Julian Brown beroperasi?",
+            options_en: [
+              "By washing plastics in detergent",
+              "Through oxygen-free thermal pyrolysis, cracking polymer chains into diesel, petrol, and syngas",
+              "By freezing plastics in dry ice",
+              "By feeding plastics to mutated fish",
+            ],
+            options_bm: [
+              "Membasuh plastik dalam sabun",
+              "Melalui proses pirolisis tanpa oksigen yang memecahkan rantaian polimer menjadi bahan api diesel dan petrol",
+              "Membekukan plastik dalam ais kering",
+              "Memberi plastik kepada ikan",
+            ],
+            correct: 1,
+            exp_en:
+              "Julian Brown proved that thermal pyrolysis breaks plastic polymers into fuel without toxic atmospheric incineration.",
+            exp_bm:
+              "Julian Brown membuktikan pirolisis terma mampu menukar sisa plastik menjadi bahan api petrol dan diesel.",
+          },
+          {
+            q_en: "Why is broken ceramic dinnerware excluded from silica glass recycling bins?",
+            q_bm: "Mengapakah seramik dan tembikar yang pecah tidak boleh dimasukkan ke dalam tong kitar semula kaca?",
+            options_en: [
+              "They have different melting temperatures and mineral compositions that ruin recycled glass furnace batches",
+              "They are too heavy for trucks",
+              "They dissolve in rain",
+              "Ceramics are classified as fresh fruit",
+            ],
+            options_bm: [
+              "Takat lebur dan komposisi mineralnya berbeza dan akan merosakkan relau lebur kaca silika",
+              "Seramik terlalu berat untuk lori",
+              "Seramik larut dalam hujan",
+              "Seramik dikelaskan sebagai buah",
+            ],
+            correct: 0,
+            exp_en:
+              "Ceramics melt at much higher temperatures than soda-lime container glass, creating ceramic defects in new bottles.",
+            exp_bm:
+              "Seramik mempunyai takat lebur yang berbeza dan mencemarkan kelompok kaca kitar semula.",
+          },
+          {
+            q_en: "What is a 'Transfer Station' (Stesen Pemindahan) in municipal waste logistics?",
+            q_bm: "Apakah peranan 'Stesen Pemindahan' (Transfer Station) dalam logistik sisa pepejal?",
+            options_en: [
+              "A place to sell old bus tickets",
+              "A central depot where local small compactor trucks unload waste into massive haulage trailers",
+              "A train station for tourists",
+              "A factory that manufactures plastic shopping bags",
+            ],
+            options_bm: [
+              "Tempat menjual tiket bas lama",
+              "Pusat transit pemunggahan dan pemampatan sisa daripada lori kecil ke lori treler berkapasiti besar",
+              "Stesen kereta api pelancong",
+              "Kilang membuat beg plastik",
+            ],
+            correct: 1,
+            exp_en:
+              "Transfer stations consolidate waste into high-capacity haulage trucks, drastically reducing city transport emissions.",
+            exp_bm:
+              "Stesen pemindahan memampat dan memuatkan semula sampah ke dalam treler besar untuk jimat kos pengangkutan.",
+          },
+          {
+            q_en: "How many operative transfer stations are cataloged by SWCorp across Peninsular Malaysia?",
+            q_bm: "Berapakah bilangan stesen pemindahan utama yang direkodkan oleh SWCorp di Semenanjung Malaysia?",
+            options_en: [
+              "1",
+              "4 (Taruka, Taman Beringin, Shah Alam, Ampang Jajar)",
+              "50",
+              "200",
+            ],
+            options_bm: [
+              "1",
+              "4 (Taruka, Taman Beringin, Shah Alam, Ampang Jajar)",
+              "50",
+              "200",
+            ],
+            correct: 1,
+            exp_en:
+              "The four key stations are Taruka (Johor), Taman Beringin (KL), Shah Alam (Selangor), and Ampang Jajar (Penang).",
+            exp_bm:
+              "Empat stesen utama ialah Taruka (Johor), Taman Beringin (KL), Shah Alam (Selangor), dan Ampang Jajar (Pulau Pinang).",
+          },
+          {
+            q_en: "What happens to bottom ash recovered from modern waste-to-energy incinerators?",
+            q_bm: "Apakah yang dilakukan terhadap abu bawah (bottom ash) daripada loji insinerator sisa moden?",
+            options_en: [
+              "Dumped directly into drinking rivers",
+              "Processed into non-structural aggregates for road construction and civil works",
+              "Turned into baby food",
+              "Compressed into school pencils",
+            ],
+            options_bm: [
+              "Dibuang terus ke dalam sungai minuman",
+              "Diproses menjadi agregat kitar semula untuk pembinaan jalan raya dan simen",
+              "Dijadikan makanan bayi",
+              "Dimampatkan menjadi pensel sekolah",
+            ],
+            correct: 1,
+            exp_en:
+              "Non-hazardous bottom ash is recovered as secondary aggregate for asphalt road sub-bases.",
+            exp_bm:
+              "Abu bawah dirawat dan diguna semula sebagai bahan asas pembinaan jalan raya.",
+          },
+          {
+            q_en: "Which dangerous vector-borne disease increases when open dumps allow rain to collect inside scrap tires?",
+            q_bm: "Penyakit bawaan vektor apakah yang merebak sekiranya longgokan tayar terpakai menakung air hujan?",
+            options_en: [
+              "Influenza",
+              "Dengue Fever (Demam Denggi)",
+              "Tuberculosis",
+              "Scurvy",
+            ],
+            options_bm: [
+              "Selesema biasa",
+              "Demam Denggi (Aedes)",
+              "Batuk kering",
+              "Skurvi",
+            ],
+            correct: 1,
+            exp_en:
+              "Stagnant rainwater trapped inside tires creates optimal breeding grounds for Aedes mosquitoes.",
+            exp_bm:
+              "Air bertakung dalam tayar terpakai menjadi tempat pembiakan nyamuk Aedes pembawa denggi.",
+          },
+          {
+            q_en: "What by-product of food scrap composting functions as soil enhancement?",
+            q_bm: "Apakah hasil akhir pengkomposan sisa makanan yang berguna untuk penyuburan tanah?",
+            options_en: [
+              "Sulfur dioxide gas",
+              "Humus-rich organic compost",
+              "Industrial diesel",
+              "Plastic pellets",
+            ],
+            options_bm: [
+              "Gas sulfur dioksida",
+              "Baja organik kaya humus",
+              "Minyak diesel industri",
+              "Palet plastik",
+            ],
+            correct: 1,
+            exp_en:
+              "Composting transforms organic waste into dark, nutrient-dense humus that enriches soil microbiomes.",
+            exp_bm:
+              "Pengkomposan menghasilkan bahan humus yang menyuburkan tanah dan tanaman.",
+          },
+          {
+            q_en: "What distinguishes 'Scheduled Waste' (Sisa Berjadual) from municipal solid waste in Malaysian law?",
+            q_bm: "Apakah perbezaan Sisa Berjadual berbanding sisa pepejal perbandaran di bawah undang-undang Malaysia?",
+            options_en: [
+              "Scheduled waste is regulated by Environmental Quality Act 1974 due to toxic, corrosive, or hazardous traits",
+              "Scheduled waste is just food waste on Mondays",
+              "Scheduled waste has no chemical hazard",
+              "Scheduled waste must be thrown in blue bins",
+            ],
+            options_bm: [
+              "Sisa berjadual dikawal selia Akta Kualiti Alam Sekeliling 1974 kerana sifatnya yang toksik dan berbahaya",
+              "Sisa berjadual ialah sisa makanan hari Isnin",
+              "Sisa berjadual tidak berbahaya",
+              "Sisa berjadual dibuang dalam tong biru",
+            ],
+            correct: 0,
+            exp_en:
+              "Scheduled waste possesses hazardous, corrosive, or infectious properties regulated under the Department of Environment (DOE).",
+            exp_bm:
+              "Sisa berjadual ialah buangan toksik dan berbahaya yang tertakluk di bawah Akta Kualiti Alam Sekeliling 1974.",
+          },
+          {
+            q_en: "Why does municipal landfilling without methane capture accelerate climate change?",
+            q_bm: "Mengapakah pelupusan sisa makanan di tapak pelupusan mempercepatkan perubahan iklim?",
+            options_en: [
+              "It cools the atmosphere too quickly",
+              "Decomposing organics emit methane (CH4), a greenhouse gas over 25x more potent than CO2",
+              "It absorbs all ultraviolet radiation",
+              "It increases cloud formation",
+            ],
+            options_bm: [
+              "Ia menyejukkan bumi terlalu pantas",
+              "Penguraian anaerobik melepaskan gas metana (CH4) yang 25 kali lebih kuat memerangkap haba berbanding CO2",
+              "Ia menyerap sinaran ultraungu",
+              "Ia meningkatkan pembentukan awan",
+            ],
+            correct: 1,
+            exp_en:
+              "Methane has a global warming potential more than 25 times greater than carbon dioxide over a 100-year timescale.",
+            exp_bm:
+              "Gas metana dari tapak pelupusan mempunyai kesan pemanasan global 25 kali ganda lebih kuat daripada CO2.",
+          },
+        ],
+        hard: [
+          {
+            q_en: "What is the legal implication of Section 101 in Act 672 regarding household waste sorting?",
+            q_bm: "Apakah implikasi perundangan di bawah Seksyen 101 Akta 672 berkaitan pengasingan sisa isi rumah?",
+            options_en: [
+              "Citizens receive cash rewards daily",
+              "Local authorities are prohibited from buying bins",
+              "SWCorp can compound and penalize residents for failing to segregate recyclables at source",
+              "Only commercial premises are required to clean bins",
+            ],
+            options_bm: [
+              "Penduduk menerima wang tunai harian",
+              "Pihak berkuasa dilarang membeli tong sampah",
+              "SWCorp berkuasa mengeluarkan kompaun dan mendenda isi rumah yang gagal mengasingkan sisa di punca",
+              "Hanya premis komersial perlu mengasingkan sisa",
+            ],
+            correct: 2,
+            exp_en:
+              "Section 101 empowers SWCorp to issue notices and fines to residents who refuse to sort recyclable fractions at source.",
+            exp_bm:
+              "Seksyen 101 Akta 672 memberi kuasa kepada penguat kuasa mengenakan kompaun kepada pesalah yang tidak mengasingkan sisa.",
+          },
+          {
+            q_en: "In modern flue gas cleaning systems (WtE), how are toxic dioxins and furans neutralized?",
+            q_bm: "Dalam sistem rawatan gas loji WtE moden, bagaimanakah pelepasan toksik dioksin dan furan dineutralkan?",
+            options_en: [
+              "Combustion maintained above 850°C for 2 seconds, followed by activated carbon injection and baghouse fabric filtration",
+              "Spraying water perfume into chimney flues",
+              "Venting exhaust gases at midnight",
+              "Mixing air with nitrogen fertiliser",
+            ],
+            options_bm: [
+              "Pembakaran dikekalkan melebihi 850°C selama 2 saat, diikuti suntikan karbon teraktif dan penapis beg fabrik",
+              "Menyembur minyak wangi ke cerobong asap",
+              "Melepaskan asap pada waktu tengah malam",
+              "Mencampurkan gas dengan baja nitrogen",
+            ],
+            correct: 0,
+            exp_en:
+              "Operating boilers above 850°C destroys dioxin precursors, while activated carbon adsorbs remaining trace molecules.",
+            exp_bm:
+              "Suhu melebihi 850°C memusnahkan struktur dioksin, manakala suntikan karbon teraktif menyerap baki toksik sebelum dilepaskan.",
+          },
+          {
+            q_en: "Why is mechanical reprocessing of contaminated multi-layer flexible films (metallized plastic film) economically and technically infeasible compared to thermal Recovery?",
+            q_bm: "Mengapakah proses kitar semula mekanikal filem plastik berbilang lapisan sukar berbanding perolehan tenaga (Recovery)?",
+            options_en: [
+              "Multi-layer films dissolve in regular water",
+              "Incompatible polymer melt indices and microscopic aluminum coatings require excessive chemical solvents and water",
+              "Films are strictly explosive",
+              "Machinery refuses to touch silver packaging",
+            ],
+            options_bm: [
+              "Plastik berbilang lapisan larut dalam air paip",
+              "Perbezaan takat lebur polimer berbeza dan salutan aluminium mikroskopik memerlukan kos pelarut kimia yang terlalu tinggi",
+              "Plastik tersebut mudah meletup",
+              "Mesin kilang tidak boleh memproses warna perak",
+            ],
+            correct: 1,
+            exp_en:
+              "Delaminating bonded polyethylene, PET, and aluminum foil consumes prohibitive chemical and energy resources, making RDF/WtE the optimum pathway.",
+            exp_bm:
+              "Mengasingkan lapisan polietilena dan aluminium memerlukan tenaga dan bahan kimia yang tinggi, menjadikannya lebih sesuai untuk perolehan tenaga (RDF).",
+          },
+          {
+            q_en: "What chemical reaction takes place in pyrolytic depolymerization of waste tires?",
+            q_bm: "Apakah tindak balas kimia yang berlaku dalam proses pirolisis sisa tayar terpakai?",
+            options_en: [
+              "Aerobic composting yielding soil hummus",
+              "Thermal decomposition of vulcanized cross-linked polymers in the absence of oxygen, yielding pyrolytic oil, syngas, and carbon black",
+              "Hydrolysis with hydrochloric acid into sugar",
+              "Nuclear fusion of carbon atoms",
+            ],
+            options_bm: [
+              "Pengkomposan aerobik menghasilkan humus",
+              "Penguraian terma polimer tanpa kehadiran oksigen bagi menghasilkan minyak pirolisis, syngas, dan karbon hitam",
+              "Tindak balas hidrolisis menjadi gula",
+              "Pelakuran nuklear atom karbon",
+            ],
+            correct: 1,
+            exp_en:
+              "Pyrolysis breaks vulcanized polyisoprene chains into condensable hydrocarbons (oil) and non-condensable syngas.",
+            exp_bm:
+              "Pirolisis memecahkan ikatan getah tanpa oksigen untuk menghasilkan minyak bahan api, gas sintesis dan karbon hitam.",
+          },
+          {
+            q_en: "In life-cycle assessment (LCA), why does recycling secondary aluminum conserve 95% of embodied energy?",
+            q_bm: "Dalam Penilaian Kitaran Hayat (LCA), mengapakah kitar semula aluminium menjimatkan 95% tenaga terkandung?",
+            options_en: [
+              "Remelting scrap avoids the energy-intensive Hall-Héroult electrochemical reduction of bauxite ore into alumina",
+              "Recycled cans melt at room temperature",
+              "Aluminum absorbs energy from the surrounding air",
+              "Recycled metal needs no heating furnaces",
+            ],
+            options_bm: [
+              "Peleburan sekerap mengelakkan proses elektrolisis Hall-Héroult yang memerlukan elektrik amat tinggi untuk mengekstrak bauksit",
+              "Aluminium kitar semula lebur pada suhu bilik",
+              "Aluminium menyerap tenaga daripada udara sekeliling",
+              "Logam terpakai tidak memerlukan relau pemanas",
+            ],
+            correct: 0,
+            exp_en:
+              "Primary extraction from bauxite requires immense electricity for smelting; secondary melting requires only 5% of that thermodynamic input.",
+            exp_bm:
+              "Pengekstrakan primer daripada bijih bauksit menggunakan proses elektrolisis elektrik mega; peleburan semula hanya perlu 5% tenaga tersebut.",
+          },
+          {
+            q_en: "What is the primary operational hazard of disposing discarded lithium-iron-phosphate (LFP) cells in standard municipal waste compactors?",
+            q_bm: "Apakah bahaya operasi utama jika sel bateri litium dibuang ke dalam lori pemadat sampah perbandaran?",
+            options_en: [
+              "Mechanical puncture triggers internal short-circuits, thermal runaway, and toxic hydrogen fluoride gas fires",
+              "The batteries convert garbage into ice",
+              "The truck tires instantly puncture",
+              "Batteries decompose into pure water",
+            ],
+            options_bm: [
+              "Himpitan mekanikal memecahkan pemisah sel mengakibatkan litar pintas dalaman, thermal runaway dan kebakaran toksik hidrogen fluorida",
+              "Bateri menukarkan sampah menjadi ais",
+              "Tayar lori pecah serta-merta",
+              "Bateri reput menjadi air paip",
+            ],
+            correct: 0,
+            exp_en:
+              "Crushing lithium cells damages separators, leading to exothermic runaway and release of flammable, toxic electrolytes.",
+            exp_bm:
+              "Pemadatan memecahkan membran bateri yang mencetuskan kebakaran kimia 'thermal runaway' dan gas toksik.",
+          },
+          {
+            q_en: "Under the Circular Economy framework, what is the role of Extended Producer Responsibility (EPR)?",
+            q_bm: "Di bawah kerangka Ekonomi Kitaran, apakah tanggungjawab di bawah Tanggungjawab Lanjutan Pengeluar (EPR)?",
+            options_en: [
+              "Producers are exempt from all environmental taxes",
+              "Manufacturers must finance and take physical responsibility for the post-consumer collection, treatment, and recycling of their packaging",
+              "Consumers pay manufacturers for every disposed bottle",
+              "Government bans all private companies from manufacturing goods",
+            ],
+            options_bm: [
+              "Pengeluar dikecualikan daripada semua cukai",
+              "Pengeluar bertanggungjawab secara kewangan dan logistik mengurus dan mengitar semula produk selepas fasa penggunaan pengguna",
+              "Pengguna membayar denda kepada kilang bagi setiap botol",
+              "Kerajaan melarang pengilangan semua barangan",
+            ],
+            correct: 1,
+            exp_en:
+              "EPR mandates that brand owners internalize end-of-life costs, incentivizing eco-design and higher recycling rates.",
+            exp_bm:
+              "Dasar EPR mewajibkan syarikat pengeluar menanggung kos pengumpulan dan rawatan sisa produk mereka selepas digunakan.",
+          },
+          {
+            q_en: "What biological phase during anaerobic digestion produces volatile fatty acids before methanogenesis?",
+            q_bm: "Fasa biologi apakah dalam pencernaan anaerobik yang menghasilkan asid lemak meruap sebelum peringkat metanogenesis?",
+            options_en: [
+              "Acidogenesis and Acetogenesis",
+              "Photosynthesis",
+              "Vitrification",
+              "Condensation",
+            ],
+            options_bm: [
+              "Asidogenesis dan Asetogenesis",
+              "Fotosintesis",
+              "Vitrifikasi",
+              "Kondensasi",
+            ],
+            correct: 0,
+            exp_en:
+              "Hydrolysis is followed by acidogenesis and acetogenesis, producing acetate and hydrogen which methanogens convert to CH4.",
+            exp_bm:
+              "Proses hidrolisis diikuti oleh asidogenesis dan asetogenesis untuk menghasilkan asid asetik sebelum bakteria metanogen menukarkannya kepada metana.",
+          },
+          {
+            q_en: "Which chemical contaminant prevents unwashed corrugated pizza boxes from undergoing successful hydropulping?",
+            q_bm: "Bahan pencemar apakah pada kotak pizza terpakai yang merosakkan proses 'hydropulping' kertas?",
+            options_en: [
+              "Hydrophobic lipid triglycerides (oil and cheese grease) that prevent hydrogen bonding between cellulose fibers",
+              "Dissolved salt crystals",
+              "Carbon dioxide molecules",
+              "Sodium fluoride additives",
+            ],
+            options_bm: [
+              "Trigliserida lipid hidrofobik (minyak dan gris keju) yang menghalang ikatan hidrogen antara gentian selulosa",
+              "Hablur garam terlarut",
+              "Molekul karbon dioksida",
+              "Bahan natrium fluorida",
+            ],
+            correct: 0,
+            exp_en:
+              "Lipids coat paper fibers during pulping, preventing the re-formation of cellulose hydrogen bonds and creating oil defects in new paper sheets.",
+            exp_bm:
+              "Minyak dan gris menolak air serta menghalang gentian selulosa daripada bercantum semula semasa pemprosesan pulpa kertas.",
+          },
+          {
+            q_en: "What is the thermodynamic output of a combined heat and power (CHP) waste-to-energy plant?",
+            q_bm: "Apakah keluaran termodinamik daripada loji rawatan termal sisa jenis gabungan haba dan kuasa (CHP)?",
+            options_en: [
+              "Only cold liquid nitrogen",
+              "Simultaneous generation of high-pressure electricity via steam turbines and thermal energy for district heating/cooling",
+              "Pure gasoline only",
+              "Zero energy output",
+            ],
+            options_bm: [
+              "Hanya gas cecair nitrogen sejuk",
+              "Penjanaan serentak tenaga elektrik melalui turbin stim dan tenaga haba untuk sistem pemanasan/penyejukan daerah",
+              "Hanya minyak petrol tulen",
+              "Tiada tenaga terhasil",
+            ],
+            correct: 1,
+            exp_en:
+              "CHP plants maximize thermal efficiency up to 80-90% by tapping waste heat from steam turbines for city utility grids.",
+            exp_bm:
+              "Loji CHP memanfaatkan stim bertenaga tinggi untuk memacu turbin elektrik serta membekalkan haba berguna ke kawasan sekitar.",
+          },
+          {
+            q_en: "In the context of Malaysian waste management, what is the role of the Solid Waste and Public Cleansing Management Corporation (SWCorp)?",
+            q_bm: "Apakah fungsi eksekutif Perbadanan SWCorp di bawah Akta 673?",
+            options_en: [
+              "Building toll highways across the country",
+              "Planning, regulating, inspecting, and managing municipal solid waste and public cleansing operations",
+              "Conducting oil drilling in the South China Sea",
+              "Regulating international passenger airports",
+            ],
+            options_bm: [
+              "Membina lebuh raya bertol di seluruh negara",
+              "Merancang, mengawal selia, memeriksa dan menguatkuasakan operasi pengurusan sisa pepejal dan pembersihan awam",
+              "Menggerudi minyak di Laut China Selatan",
+              "Mengawal selia lapangan terbang antarabangsa",
+            ],
+            correct: 1,
+            exp_en:
+              "SWCorp took over solid waste regulation from local authorities in adopting states to implement modern integrated systems.",
+            exp_bm:
+              "SWCorp mengambil alih fungsi pengurusan sisa pepejal daripada PBT di negeri-negeri yang mengguna pakai Akta 672.",
+          },
+          {
+            q_en: "Why is open burning of chlorinated plastics (such as PVC) strictly prohibited under environmental law?",
+            q_bm: "Mengapakah pembakaran terbuka plastik berklorin (seperti PVC) diharamkan sama sekali?",
+            options_en: [
+              "It cools surrounding farm crops",
+              "It releases carcinogenic polychlorinated dibenzodioxins (PCDDs) and hydrochloric acid plumes",
+              "It makes plastics too heavy to move",
+              "It turns clouds into clear ozone",
+            ],
+            options_bm: [
+              "Ia menyejukkan tanaman sekeliling",
+              "Ia membebaskan gas karsinogenik poliklorinat dibenzodioksin (PCDD) dan asid hidroklorik beracun",
+              "Ia menjadikan plastik terlalu berat untuk diangkat",
+              "Ia menukarkan awan kepada ozon",
+            ],
+            correct: 1,
+            exp_en:
+              "Low-temperature uncontrolled combustion of organochlorines synthesizes dioxins, which bioaccumulate in food chains.",
+            exp_bm:
+              "Pembakaran pada suhu rendah membebaskan gas dioksin yang kekal dalam persekitaran dan menyebabkan penyakit kanser.",
+          },
+          {
+            q_en: "What distinguishes Level 4 Sanitary Landfills from open dumping grounds?",
+            q_bm: "Apakah ciri teknikal yang membezakan Tapak Pelupusan Sanitari Tahap 4 berbanding tapak pelupusan terbuka?",
+            options_en: [
+              "Composite geomembrane liner, leachate collection & treatment plant, and forced landfill gas flaring/power generation",
+              "It has no fencing",
+              "Waste is dumped without daily soil cover",
+              "It allows untreated garbage to wash into open seas",
+            ],
+            options_bm: [
+              "Lapisan geomembran sintetik, sistem pengumpulan & rawatan air larut resap (leachate), dan penuaian gas metana untuk elektrik",
+              "Ia tidak mempunyai pagar",
+              "Sampah dilonggok tanpa tanah penutup harian",
+              "Sampah dilepaskan ke laut terbuka",
+            ],
+            correct: 0,
+            exp_en:
+              "Level 4 engineered sanitary landfills isolate waste completely with HDPE liners and utilize automated gas-to-energy capture.",
+            exp_bm:
+              "Tapak sanitari Tahap 4 dilengkapi pelapik HDPE, rawatan leachate biologi dan penuaian gas metana berteknologi tinggi.",
+          },
+          {
+            q_en: "What environmental indicator is used by school clubs to gauge waste audit performance?",
+            q_bm: "Indikator kuantitatif apakah yang dikira semasa pelaksanaan Audit Sisa Pepejal di sekolah (Modul SWCorp)?",
+            options_en: [
+              "School building height",
+              "Potensi Kadar Kitar Semula: (Berat sisa boleh dikitar semula ÷ Berat keseluruhan sisa) × 100",
+              "Number of canteen tables",
+              "Total school exam grades",
+            ],
+            options_bm: [
+              "Ketinggian bangunan sekolah",
+              "Potensi Kadar Kitar Semula: (Berat sisa boleh dikitar semula ÷ Berat keseluruhan sisa) × 100",
+              "Bilangan meja kantin",
+              "Gred markah peperiksaan",
+            ],
+            correct: 1,
+            exp_en:
+              "The recycling potential formula determines the percentage of salvageable commodities wasted in garbage bins.",
+            exp_bm:
+              "Formula Potensi Kadar Kitar Semula mengukur peratusan bahan kitar semula yang dibuang membazir ke dalam tong sampah.",
+          },
+          {
+            q_en: "What chemical gas compound constitutes the primary combustible fraction (60-70%) of captured landfill and biogas?",
+            q_bm: "Sebatian gas apakah yang membentuk komponen utama mudah terbakar (60-70%) dalam biogas tapak pelupusan?",
+            options_en: [
+              "Carbon monoxide (CO)",
+              "Methane (CH4)",
+              "Nitrous oxide (N2O)",
+              "Argon (Ar)",
+            ],
+            options_bm: [
+              "Karbon monoksida (CO)",
+              "Metana (CH4)",
+              "Nitrus oksida (N2O)",
+              "Argon (Ar)",
+            ],
+            correct: 1,
+            exp_en:
+              "Biogas generated by anaerobic methanogens consists primarily of methane (CH4) and carbon dioxide (CO2).",
+            exp_bm:
+              "Biogas terdiri daripada 60-70% gas metana (CH4) yang mempunyai nilai kalori tinggi untuk bahan api.",
+          },
+          {
+            q_en: "Why is the use of polystyrene (expanded EPS) food containers discouraged in circular economy models?",
+            q_bm: "Mengapakah penggunaan bekas makanan polisterin (EPS) dihentikan dalam model ekonomi kitaran?",
+            options_en: [
+              "It is too heavy to carry",
+              "High volume-to-weight ratio makes logistics costly, and it breaks into microplastics that resist biodegradation",
+              "It dissolves into clean water",
+              "It is made of pure fruit pulp",
+            ],
+            options_bm: [
+              "Ia terlalu berat untuk dibawa",
+              "Nisbah isipadu tinggi tetapi berat rendah menyukarkan logistik kitar semula, serta mudah pecah menjadi mikroplastik",
+              "Ia larut menjadi air bersih",
+              "Ia diperbuat daripada pulpa buah",
+            ],
+            correct: 1,
+            exp_en:
+              "Expanded polystyrene is 95% air, rendering transportation uneconomical, while its brittle structure fragments into hazardous microplastics.",
+            exp_bm:
+              "Polisterin mempunyai ketumpatan rendah yang merugikan logistik kitar semula dan mencemarkan ekosistem sebagai mikroplastik.",
+          },
+          {
+            q_en: "What is the primary role of Effective Microorganisms (EM) in the Bokashi method?",
+            q_bm: "Apakah peranan utama bakteria Effective Microorganisms (EM) dalam kaedah Bokashi?",
+            options_en: [
+              "To attract fruit flies",
+              "To ferment organic scraps anaerobically, outcompeting putrefactive bacteria and preventing foul odors",
+              "To freeze the kitchen scraps",
+              "To turn food into synthetic plastic",
+            ],
+            options_bm: [
+              "Menarik kehadiran lalat buah",
+              "Menapai sisa organik secara anaerobik, menghalang bakteria pembusuk dan mengelakkan bau busuk",
+              "Membekukan sisa dapur",
+              "Menukarkan makanan menjadi plastik sintetik",
+            ],
+            correct: 1,
+            exp_en:
+              "Lactic acid bacteria, yeasts, and photosynthetic bacteria in EM ferment waste cleanly without rotten odor plumes.",
+            exp_bm:
+              "Kumpulan bakteria asid laktik dan ragi dalam EM menapai sisa tanpa menghasilkan bau busuk.",
+          },
+          {
+            q_en: "What happens when heavy metals like cadmium and lead enter unlined landfill soils?",
+            q_bm: "Apakah kesan sekiranya logam berat seperti kadmium dan plumbum meresap ke dalam tanah tapak pelupusan tidak beralas?",
+            options_en: [
+              "They purify plant roots",
+              "They bioaccumulate in underlying aquifers and crops, causing chronic organ and kidney failure in humans",
+              "They convert rocks into diamonds",
+              "They evaporate harmlessly within 5 minutes",
+            ],
+            options_bm: [
+              "Menyuburkan akar tanaman",
+              "Meresap ke dalam akuifer air bawah tanah dan rantai makanan, menyebabkan kerosakan organ kronik manusia",
+              "Menukarkan batu menjadi intan",
+              "Meruap ke udara tanpa bahaya dalam 5 minit",
+            ],
+            correct: 1,
+            exp_en:
+              "Toxic heavy metals leach into groundwater supplies, accumulating in food chains and inducing neurotoxic poisoning.",
+            exp_bm:
+              "Logam berat meresap ke dalam air tanah dan menyebabkan keracunan kronik terhadap buah pinggang dan saraf manusia.",
+          },
+          {
+            q_en: "What is Julian Brown's core innovation regarding decentralized plastic waste management?",
+            q_bm: "Apakah kelebihan utama reka bentuk inovasi pirolisis plastik Julian Brown?",
+            options_en: [
+              "Massive multi-billion dollar coal generators",
+              "Mobile modular micro-pyrolysis reactors deployed directly on islands or remote communities without massive transport logistics",
+              "Exporting waste to Antarctic glaciers",
+              "Using trained dolphins to collect plastic",
+            ],
+            options_bm: [
+              "Loji gergasi berbilion ringgit",
+              "Reaktor modular mudah alih yang boleh ditempatkan terus di pulau atau komuniti pedalaman tanpa logistik pengangkutan besar",
+              "Menghantar sisa ke glasier Antartika",
+              "Menggunakan ikan lumba-lumba mengutip plastik",
+            ],
+            correct: 1,
+            exp_en:
+              "Decentralized reactors allow island or rural regions to produce fuel on-site from plastic discards, eliminating shipping emissions.",
+            exp_bm:
+              "Reaktor mudah alih modular membolehkan sisa plastik diolah menjadi minyak bahan api terus di kawasan pulau atau pedalaman.",
+          },
+          {
+            q_en: "How does the 'Loji Rawatan Termal' at Tanah Merah, Negeri Sembilan, contribute to the circular economy?",
+            q_bm: "Bagaimanakah Loji Rawatan Termal Tanah Merah (Negeri Sembilan) menyumbang kepada ekonomi kitaran?",
+            options_en: [
+              "It buries all waste in open pits",
+              "It incinerates over 1,000 tonnes of post-sorting municipal waste daily, driving steam turbines to generate renewable grid electricity",
+              "It manufactures plastic toy cars",
+              "It stores nuclear hospital isotopes",
+            ],
+            options_bm: [
+              "Ia menimbus semua sisa dalam parit",
+              "Ia merawat lebih 1,000 tan sisa sehari melalui pembakaran terkawal untuk menjana elektrik hijau ke grid nasional",
+              "Ia membuat mainan kereta plastik",
+              "Ia menyimpan sisa nuklear hospital",
+            ],
+            correct: 1,
+            exp_en:
+              "The plant is Malaysia's flagship commercial Waste-to-Energy facility, diverting thousands of tons from landfills daily while supplying green power.",
+            exp_bm:
+              "Loji WtE komersial pertama ini merawat sisa pepejal dan menjana tenaga elektrik bersih secara berterusan.",
+          },
+        ],
+      };
 
-      // ================= 10 VERIFIED SCENARIOS WITH RELIABLE IMAGES =================
-      const caseMasterPool = [
-        {
-          tag: "Hospitality & Catering",
-          title: "University Dining Hall Organic Waste",
-          photo:
-            "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
-          narrative:
-            "A campus cafeteria produces 250 kg of mixed post-meal food scraps daily, contaminated with compostable paper napkins and grease. Landfill disposal is costly and emits methane plumes.",
-          options: [
-            {
-              label: "Strategy A: Landfill Dumping",
-              sub: "Pack all residues into municipal black trash bags for standard open dump disposal.",
-              isBest: false,
-              explanation:
-                "Landfilling food waste generates methane plumes and wastes valuable nutrient and energy potential.",
-            },
-            {
-              label: "Strategy B: Anaerobic Digestion / Biogas Recovery",
-              sub: "Route the organic substrate into an anaerobic digester to extract biogas for campus kitchen cooking stoves.",
-              isBest: true,
-              explanation:
-                "Optimum Strategy: Because mechanical recycling is impossible for eaten food scraps, biological recovery (biogas + bio-fertilizer) harnesses renewable energy while diverting 100% from landfills.",
-            },
-            {
-              label: "Strategy C: Mechanical Repolymerization",
-              sub: "Attempt to melt down the food leftovers with discarded beverage bottles.",
-              isBest: false,
-              explanation:
-                "Food waste is organic and cannot be mechanically repolymerized with plastics; this ruins recyclable batches.",
-            },
-          ],
-        },
-        {
-          tag: "Industrial Manufacturing",
-          title: "Electric Vehicle Battery Rejection",
-          photo:
-            "https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&w=800&q=80",
-          narrative:
-            "An electric scooter plant identifies 40 defective lithium battery packs that cannot be refurbished or safely reused. They cannot be thrown into regular municipal waste.",
-          options: [
-            {
-              label: "Strategy A: Hydrometallurgical Mineral Recovery",
-              sub: "Send packs to a dedicated recovery facility to safely neutralize cells and extract valuable cobalt, nickel, and lithium.",
-              isBest: true,
-              explanation:
-                "Optimum Strategy: Specialized recovery reclaims rare, high-value battery minerals and prevents fire risks while keeping heavy metals out of ground aquifers.",
-            },
-            {
-              label: "Strategy B: General Waste Open Incineration",
-              sub: "Burn the defective battery packs on-site inside a basic yard incinerator.",
-              isBest: false,
-              explanation:
-                "Open burning of lithium batteries releases toxic fluorinated gases and risks explosive runaway reactions.",
-            },
-            {
-              label: "Strategy C: Plastics Shredder",
-              sub: "Feed whole battery cells into regular plastic bottle shredders.",
-              isBest: false,
-              explanation:
-                "Mechanical plastic granulators puncture battery anodes and cathodes, triggering chemical fires.",
-            },
-          ],
-        },
-        {
-          tag: "Commercial Logistics",
-          title: "Warehouse Wooden Cargo Pallet Excess",
-          photo:
-            "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
-          narrative:
-            "A logistics distribution hub receives 600 slightly damaged wooden cargo pallets per month. The timber is clean and untreated, but current procedures discard them as general scrap.",
-          options: [
-            {
-              label: "Strategy A: Immediate Mass-Burn Thermal Recovery",
-              sub: "Burn all intact pallets inside a thermal power station to generate steam.",
-              isBest: false,
-              explanation:
-                "Burning structurally sound wood skips the higher tiers: pallets should be repaired or reused prior to thermal recovery.",
-            },
-            {
-              label:
-                "Strategy B: Repair, Direct Reuse, & Timber Remanufacturing",
-              sub: "Standardize a repair bench to mend minor board cracks for re-circulation, and chip unfixable offcuts for composite wood.",
-              isBest: true,
-              explanation:
-                "Optimum Strategy: Preserving the physical integrity of timber (Reuse & Recycle) saves more embedded carbon than immediate thermal incineration.",
-            },
-            {
-              label: "Strategy C: Open Pit Burial",
-              sub: "Dump all pallets into the municipal landfill without sorting.",
-              isBest: false,
-              explanation:
-                "This wastes valuable raw timber and occupies critical landfill volume without capturing any utility.",
-            },
-          ],
-        },
-        {
-          tag: "Municipal Solid Waste",
-          title: "Residual Slag & Multi-Layer Foil Wrappers",
-          photo:
-            "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80",
-          narrative:
-            "After all clean metals, paper, and PET bottles have been sorted by a municipal MRF, 80 tons of soiled multi-layer foil-laminated chip wrappers and non-recyclable polymers remain.",
-          options: [
-            {
-              label: "Strategy A: Refuse-Derived Fuel (RDF) Energy Recovery",
-              sub: "Process residual polymers into pelletized RDF to generate steam and electric power in an industrial boiler with scrubbers.",
-              isBest: true,
-              explanation:
-                "Optimum Strategy: Once higher tiers (Reduce, Reuse, Recycle) have been exhausted, recovering electricity from high-calorific multi-layer foils represents the best environmental outcome.",
-            },
-            {
-              label: "Strategy B: Chemical Solvent Stripping",
-              sub: "Spend intensive water and chemical solvents to separate microscopic aluminum laminates from snack wrappers.",
-              isBest: false,
-              explanation:
-                "Separating microscopic layers of multi-film wrappers requires disproportionate water and chemical energy, making mechanical recycling environmentally and economically unfeasible.",
-            },
-            {
-              label: "Strategy C: Municipal Storm Drain Disposal",
-              sub: "Allow residues to wash into open municipal drainage channels.",
-              isBest: false,
-              explanation:
-                "Dumping into water channels causes plastic pollution, choking waterways and devastating marine ecosystems.",
-            },
-          ],
-        },
-        {
-          tag: "Healthcare Facilities",
-          title: "Hospital Non-Infectious PPE & Clean Linens",
-          photo:
-            "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80",
-          narrative:
-            "A regional hospital generates 300 kg of non-infectious, clean polypropylene isolation gowns and packaging daily after surgical deliveries. Landfilling synthetic gowns takes centuries to degrade.",
-          options: [
-            {
-              label: "Strategy A: Regulated High-Efficiency Thermal Recovery",
-              sub: "Incinerate clean hospital single-use garments in an advanced clinical WtE plant to generate steam for laundry sterilization.",
-              isBest: true,
-              explanation:
-                "Optimum Strategy: Strict healthcare hygiene laws often forbid direct mechanical garment recycling; thermal recovery neutralizes biological risks while offsetting hospital energy costs.",
-            },
-            {
-              label: "Strategy B: Resale as Household Cleaning Rags",
-              sub: "Distribute used surgical gowns to public flea markets for unwashed home reuse.",
-              isBest: false,
-              explanation:
-                "Hospital gowns cannot be redistributed for informal public reuse due to health risk protocols.",
-            },
-            {
-              label: "Strategy C: Outdoor Yard Composting",
-              sub: "Bury synthetic polypropylene garments into organic garden compost heaps.",
-              isBest: false,
-              explanation:
-                "Synthetic plastic textiles do not biodegrade in compost heaps and pollute soil with microplastics.",
-            },
-          ],
-        },
-        {
-          tag: "Agricultural Processing",
-          title: "Rice Milling Husk & Chaff Residue",
-          photo:
-            "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80",
-          narrative:
-            "A grain cooperative produces 15 metric tons of dry rice husks weekly after harvesting. Farmers currently burn them in open fields, causing severe seasonal smoke haze.",
-          options: [
-            {
-              label: "Strategy A: Biomass Gasification & Silica Recovery",
-              sub: "Feed husks into a closed biomass gasifier to generate electricity for milling machines and recover high-grade silica ash.",
-              isBest: true,
-              explanation:
-                "Optimum Strategy: Agricultural residue gasification stops open-field burning haze while generating cheap on-site rural electricity.",
-            },
-            {
-              label: "Strategy B: Continued Open Field Burning",
-              sub: "Burn all husk piles on farmland during windy afternoons.",
-              isBest: false,
-              explanation:
-                "Open crop burning creates severe particulate pollution (PM2.5), violates clean air regulations, and wastes calorific bio-energy.",
-            },
-            {
-              label: "Strategy C: River Dispersal",
-              sub: "Dump dry husks into river currents to wash them away.",
-              isBest: false,
-              explanation:
-                "Dumping massive volumes of husks into waterways depletes dissolved oxygen and harms freshwater fish.",
-            },
-          ],
-        },
-        {
-          tag: "Automotive Services",
-          title: "End-of-Life Vulcanized Vehicle Tires",
-          photo:
-            "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=800&q=80",
-          narrative:
-            "An auto maintenance franchise discards 400 scrap tires every month. Stored piles collect stagnant rainwater, breeding dengue mosquitoes and creating severe fire hazards.",
-          options: [
-            {
-              label: "Strategy A: Pyrolysis Oil Recovery & Crumb Rubber Reuse",
-              sub: "Shred sound tire treads for playground crumb rubber and process degraded carcasses in a pyrolysis reactor to recover oil and steel.",
-              isBest: true,
-              explanation:
-                "Optimum Strategy: Combining physical crumb reuse with thermal pyrolysis eliminates breeding grounds for disease and reclaims oil and scrap steel.",
-            },
-            {
-              label: "Strategy B: Backyard Tire Burning",
-              sub: "Set fire to tire stacks behind the repair garage at night.",
-              isBest: false,
-              explanation:
-                "Tire fires emit thick black acrid smoke, carcinogenic hydrocarbons, and molten toxic oils that contaminate soil.",
-            },
-            {
-              label: "Strategy C: Secret Highway Dumping",
-              sub: "Abandon worn tires along rural highway shoulders.",
-              isBest: false,
-              explanation:
-                "Illegal dumping creates unsightly blight, vector breeding sites, and incurs massive municipal cleanup fines.",
-            },
-          ],
-        },
-        {
-          tag: "Fashion & Textiles",
-          title: "Garment Factory Post-Cutting Fabric Scraps",
-          photo:
-            "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=80",
-          narrative:
-            "An apparel manufacturer produces 500 kg of pure cotton fabric edge trimmings and roll ends daily during pattern cutting. The trimmings are clean, un-dyed, and virgin fiber.",
-          options: [
-            {
-              label:
-                "Strategy A: Mechanical Fiber Shredding & Yarn Re-Spinning",
-              sub: "Shred clean clippings back into cotton fibers to spin into recycled yarns for new tote bags and insulation batts.",
-              isBest: true,
-              explanation:
-                "Optimum Strategy: Because the cotton is clean and un-soiled, mechanical material recycling preserves fiber quality without skipping directly to incineration.",
-            },
-            {
-              label: "Strategy B: Immediate Thermal Combustion",
-              sub: "Incinerate all virgin cotton scraps in a boiler.",
-              isBest: false,
-              explanation:
-                "Incinerating pure virgin cotton skips higher circular tiers when the fiber could easily be re-spun into valuable new textiles.",
-            },
-            {
-              label: "Strategy C: Landfill Bagging",
-              sub: "Bury clean cotton scraps in landfills beneath construction dirt.",
-              isBest: false,
-              explanation:
-                "Dumping clean raw cotton wastes the huge quantities of water, land, and energy used to grow the crop.",
-            },
-          ],
-        },
-        {
-          tag: "Beverage Brewing",
-          title: "Brewery Spent Malt Grain & Mash Sludge",
-          photo:
-            "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80",
-          narrative:
-            "A craft beverage brewery generates 1,200 kg of wet, sugar-depleted spent barley mash every brewing day. The mash is wet, rich in protein, and turns sour in 48 hours.",
-          options: [
-            {
-              label:
-                "Strategy A: Livestock Feed Upcycling & Methane Bio-Recovery",
-              sub: "Divert fresh wet mash directly to local dairy farmers for livestock feed, and route excess mash into an anaerobic biogas digester.",
-              isBest: true,
-              explanation:
-                "Optimum Strategy: Upcycling nutrient-rich spent grain as cattle feed and capturing remaining bio-methane achieves circular resource recovery.",
-            },
-            {
-              label: "Strategy B: General Trash Incineration",
-              sub: "Attempt to burn the dripping wet barley mash in standard municipal trash burners.",
-              isBest: false,
-              explanation:
-                "Wet barley mash has a negative calorific balance; trying to burn soggy mash smothers burner flames and wastes fuel.",
-            },
-            {
-              label: "Strategy C: Sewer Drain Washing",
-              sub: "Hose heavy grain solids down municipal storm sinks.",
-              isBest: false,
-              explanation:
-                "Flushing massive grain solids clogs municipal sewers and triggers wastewater treatment plant failures.",
-            },
-          ],
-        },
-        {
-          tag: "Construction & Demolition",
-          title: "Reinforced Concrete Foundation Debris",
-          photo:
-            "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
-          narrative:
-            "An urban renewal demolition site breaks up 50 tons of reinforced concrete slabs and internal steel rebar from an obsolete office tower.",
-          options: [
-            {
-              label:
-                "Strategy A: Magnetic Rebar Extraction & Aggregate Crushing",
-              sub: "Crush concrete into graded road-base aggregate and magnetically recover rebar for electric arc steel remelting.",
-              isBest: true,
-              explanation:
-                "Optimum Strategy: Heavy demolition debris cannot be burned for energy, but crushing concrete into road base and melting rebar achieves 98% material recovery.",
-            },
-            {
-              label: "Strategy B: High-Heat Thermal Incineration",
-              sub: "Throw concrete boulders into a waste-to-energy trash incinerator.",
-              isBest: false,
-              explanation:
-                "Concrete and stone are non-combustible minerals that damage thermal incinerator grates.",
-            },
-            {
-              label: "Strategy C: Illegal Ocean Barge Dumping",
-              sub: "Barge all rubble into marine nature reserves and dump it on coral reefs.",
-              isBest: false,
-              explanation:
-                "Unauthorized coastal dumping destroys delicate coral reefs and incurs severe environmental penalties.",
-            },
-          ],
-        },
-      ];
+      // ================== CASE STUDIES DATABASE (TIERED) ==================
+      const caseTierBank = {
+        beginner: [
+          {
+            tag: "School & Canteen",
+            title_en: "Primary School Lunch Food Scrap Overload",
+            title_bm: "Lebihan Sisa Makanan Kantin Sekolah Rendah",
+            photo:
+              "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=700&q=80",
+            narrative_en:
+              "A primary school canteen produces 40 kg of leftover rice, vegetables, and fruit rinds every recess. Currently, all scraps are thrown into general garbage bags, causing foul odors and attracting stray animals.",
+            narrative_bm:
+              "Kantin sekolah rendah menghasilkan 40 kg sisa nasi, sayur dan kulit buah setiap waktu rehat. Sisa dibuang ke dalam plastik sampah biasa lalu berbau busuk dan menarik haiwan perosak.",
+            options_en: [
+              {
+                label: "Strategy A: Conventional Landfill Burial",
+                sub: "Continue bagging scraps for municipal garbage trucks to haul to landfill.",
+                isBest: false,
+                explanation:
+                  "Sending food waste to landfills produces potent methane gas and wastes valuable soil nutrients.",
+              },
+              {
+                label: "Strategy B: School Takakura / Bokashi Composting",
+                sub: "Set up a school composting corner using Takakura baskets or Bokashi bins to produce fertilizer for the 'Taman Lestari'.",
+                isBest: true,
+                explanation:
+                  "Optimum Strategy: Composting diverts organic waste 100% from disposal and yields rich fertilizer for school gardens.",
+              },
+              {
+                label: "Strategy C: Open Burning Behind Classroom",
+                sub: "Burn the wet food scraps in a ditch behind the school.",
+                isBest: false,
+                explanation:
+                  "Open burning causes hazardous smoke, is illegal, and cannot burn wet food scraps effectively.",
+              },
+            ],
+            options_bm: [
+              {
+                label: "Strategi A: Pelupusan ke Tapak Pelupusan",
+                sub: "Bungkus dalam plastik dan biar lori sampah hantar ke tapak pelupusan.",
+                isBest: false,
+                explanation:
+                  "Sisa makanan di tapak pelupusan membebaskan gas metana dan membazirkan nutrien tanah.",
+              },
+              {
+                label: "Strategi B: Pengkomposan Takakura / Bokashi Sekolah",
+                sub: "Wujudkan sudut kompos menggunakan kaedah Takakura atau Bokashi untuk baja Taman Lestari.",
+                isBest: true,
+                explanation:
+                  "Strategi Terbaik: Pengkomposan merawat sisa secara mampan dan menghasilkan baja organik untuk tanaman sekolah.",
+              },
+              {
+                label: "Strategi C: Pembakaran Terbuka",
+                sub: "Bakar sisa makanan basah di kawasan belakang sekolah.",
+                isBest: false,
+                explanation:
+                  "Pembakaran terbuka adalah salah di sisi undang-undang dan menghasilkan asap beracun.",
+              },
+            ],
+          },
+          {
+            tag: "Residential Household",
+            title_en: "High-Volume Beverage Carton (Tetra Pak) Waste",
+            title_bm: "Lambakan Kotak Minuman (Tetra Pak) Isi Rumah",
+            photo:
+              "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=700&q=80",
+            narrative_en:
+              "A housing neighborhood throws away hundreds of milk and juice cartons weekly into black trash bins. Residents believe cartons cannot be recycled because they have a plastic cap.",
+            narrative_bm:
+              "Kawasan kejiranan membuang ratusan kotak susu dan jus ke dalam tong sampah hitam kerana menyangka ia tidak boleh dikitar semula.",
+            options_en: [
+              {
+                label: "Strategy A: Empty, Rinse, Flatten & Blue Bin",
+                sub: "Educate residents to rinse, remove caps, flatten cartons, and place them into the Blue (Paper) recycling bin.",
+                isBest: true,
+                explanation:
+                  "Optimum Strategy: 75% of drink cartons is high-grade virgin paper pulp, which specialized mills recycle into paperboard and roof tiles.",
+              },
+              {
+                label: "Strategy B: Bury in Backyard Garden",
+                sub: "Bury cartons under fruit trees to decompose.",
+                isBest: false,
+                explanation:
+                  "The polyethylene and aluminum foil layers take decades to break down, polluting soil.",
+              },
+              {
+                label: "Strategy C: Throw into General Waste",
+                sub: "Continue dumping in black bins.",
+                isBest: false,
+                explanation:
+                  "Wastes high-quality pulp that could easily be recycled.",
+              },
+            ],
+            options_bm: [
+              {
+                label: "Strategi A: Kosongkan, Bilas, Lipat & Masuk Tong Biru",
+                sub: "Didik penduduk membilas, melipat leper dan memasukkan ke dalam tong Kertas (Biru).",
+                isBest: true,
+                explanation:
+                  "Strategi Terbaik: 75% kotak minuman ialah pulpa kertas berkualiti tinggi yang boleh diproses semula.",
+              },
+              {
+                label: "Strategi B: Tanam di Belakang Rumah",
+                sub: "Timbus kotak minuman di bawah pokok buah-buahan.",
+                isBest: false,
+                explanation:
+                  "Lapisan polietilena dan aluminium tidak reput dan mencemarkan tanah.",
+              },
+              {
+                label: "Strategi C: Terus Buang ke Sisa Baki",
+                sub: "Kekalkan pembuangan ke tong sampah biasa.",
+                isBest: false,
+                explanation:
+                  "Membazirkan sumber pulpa kertas yang bernilai tinggi.",
+              },
+            ],
+          },
+          {
+            tag: "Community Event",
+            title_en: "School Sports Day Single-Use Plastic Bottle Surge",
+            title_bm: "Lambakan Botol Air Sekali Guna Sempena Hari Sukan",
+            photo:
+              "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=700&q=80",
+            narrative_en:
+              "During the annual school athletic meet, over 2,000 single-use plastic mineral water bottles are discarded in a single afternoon.",
+            narrative_bm:
+              "Semasa temasya sukan tahunan, lebih 2,000 botol air plastik sekali guna dibuang dalam masa satu petang.",
+            options_en: [
+              {
+                label: "Strategy A: Green Initiative Water Refill Stations",
+                sub: "Advise students to bring reusable tumblers and set up large water coolers (Inisiatif Hijau).",
+                isBest: true,
+                explanation:
+                  "Optimum Strategy: Source reduction (Reduce) prevents the generation of thousands of plastic bottles from the start.",
+              },
+              {
+                label: "Strategy B: Dump All in School Field Ditch",
+                sub: "Leave them on the grass for cleaners to sweep into open incinerators.",
+                isBest: false,
+                explanation:
+                  "Severe environmental hazard and against school safety regulations.",
+              },
+              {
+                label: "Strategy C: Collect and Crush Without Refills",
+                sub: "Keep buying disposable bottles and crush them later.",
+                isBest: false,
+                explanation:
+                  "Sub-optimal: Recycling is helpful, but preventing waste at the source is far superior.",
+              },
+            ],
+            options_bm: [
+              {
+                label: "Strategi A: Inisiatif Hijau Stesen Isian Semula Air",
+                sub: "Galakkan murid bawa botol guna semula dan sediakan tong air isian percuma.",
+                isBest: true,
+                explanation:
+                  "Strategi Terbaik: Pengurangan di punca (Reduce) mengelakkan ribuan sisa botol plastik sebelum dijana.",
+              },
+              {
+                label: "Strategi B: Longgok di Tepi Padang",
+                sub: "Biar sampah bertaburan untuk disapu pekerja pembersihan.",
+                isBest: false,
+                explanation:
+                  "Mencemarkan pemandangan dan melanggar prinsip kebersihan.",
+              },
+              {
+                label: "Strategi C: Beli Banyak dan Kitar Semula Kemudian",
+                sub: "Terus beli botol sekali guna dan kumpul selepas tamat.",
+                isBest: false,
+                explanation:
+                  "Kurang tepat: Mengurangkan penjanaan jauh lebih baik berbanding mengurus sisa.",
+              },
+            ],
+          },
+          {
+            tag: "Household Upcycling",
+            title_en: "Discarded Cotton T-Shirts & Textile Offcuts",
+            title_bm: "Pakaian T-Shirt Lama Tidak Dipakai",
+            photo:
+              "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=700&q=80",
+            narrative_en:
+              "A family has 30 outgrown, slightly faded cotton t-shirts that are clean but no longer worn.",
+            narrative_bm:
+              "Sebuah keluarga mempunyai 30 helai t-shirt kapas lama yang masih elok tetapi tidak lagi dipakai.",
+            options_en: [
+              {
+                label: "Strategy A: Upcycling into Reusable Grocery Tee-Bags",
+                sub: "Follow the SWCorp 'Tee-Bag' activity by cutting and tying t-shirts into grocery tote bags without stitching.",
+                isBest: true,
+                explanation:
+                  "Optimum Strategy: Creative reuse extends product lifecycle and eliminates the need for plastic grocery bags.",
+              },
+              {
+                label: "Strategy B: Throw in General Kitchen Bin",
+                sub: "Discard them with rotting kitchen leftovers.",
+                isBest: false,
+                explanation:
+                  "Textiles in landfills take years to decompose and occupy valuable space.",
+              },
+              {
+                label: "Strategy C: Burn in Garden Fire Pit",
+                sub: "Burn all clothing in the yard.",
+                isBest: false,
+                explanation:
+                  "Releases smoke emissions and wastes reusable cotton fibers.",
+              },
+            ],
+            options_bm: [
+              {
+                label: "Strategi A: Inovasi Upcycling 'Tee-Bag'",
+                sub: "Gunting dan ikat kemeja-T menjadi beg jinjing serba guna tanpa jahit (Modul SWCorp).",
+                isBest: true,
+                explanation:
+                  "Strategi Terbaik: Guna semula kreatif memanjangkan hayat fabrik dan menggantikan beg plastik.",
+              },
+              {
+                label: "Strategi B: Buang Bersama Sisa Dapur",
+                sub: "Campur pakaian lama dengan sisa makanan basah.",
+                isBest: false,
+                explanation:
+                  "Tekstil lambat reput di tapak pelupusan dan membazirkan gentian kapas.",
+              },
+              {
+                label: "Strategi C: Bakar di Halaman Rumah",
+                sub: "Bakar semua baju lama.",
+                isBest: false,
+                explanation:
+                  "Menghasilkan asap berbahaya dan melanggar undang-undang kualiti udara.",
+              },
+            ],
+          },
+        ],
+        intermediate: [
+          {
+            tag: "University Campus",
+            title_en: "Cafeteria Organic Waste & Biogas Harvesting",
+            title_bm: "Sisa Makanan Kafeteria Universiti & Penuaian Biogas",
+            photo:
+              "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80",
+            narrative_en:
+              "A campus dining hall produces 250 kg of post-meal food scraps daily, mixed with gravies and grease. Landfill transport fees are rising steeply.",
+            narrative_bm:
+              "Dewan makan kampus menghasilkan 250 kg sisa makanan berkuah setiap hari. Kos pengangkutan ke tapak pelupusan semakin mahal.",
+            options_en: [
+              {
+                label: "Strategy A: Anaerobic Digestion for Cooking Gas",
+                sub: "Install a semi-commercial anaerobic digester to extract methane biogas for cafeteria stoves.",
+                isBest: true,
+                explanation:
+                  "Optimum Strategy: Biological recovery captures renewable fuel while diverting 100% of organic waste from landfills.",
+              },
+              {
+                label: "Strategy B: Feed into Plastic Granulator",
+                sub: "Melt leftovers with plastic bottles.",
+                isBest: false,
+                explanation:
+                  "Food scraps contaminate polymer batches and cannot be recycled mechanically.",
+              },
+              {
+                label: "Strategy C: Flush Down Drainage Sewers",
+                sub: "Hose solids directly into storm ditches.",
+                isBest: false,
+                explanation:
+                  "Causes sewer clogs, river eutrophication, and environmental fines.",
+              },
+            ],
+            options_bm: [
+              {
+                label: "Strategi A: Pencernaan Anaerobik Menjana Biogas",
+                sub: "Pasang pengurai anaerobik untuk menuai gas metana bagi dapur memasak kafeteria.",
+                isBest: true,
+                explanation:
+                  "Strategi Terbaik: Perolehan biologi menghasilkan bahan api bersih dan mengurangkan kos gas memasak.",
+              },
+              {
+                label: "Strategi B: Lebur Bersama Plastik",
+                sub: "Campurkan sisa makanan dengan botol plastik.",
+                isBest: false,
+                explanation:
+                  "Sisa makanan merosakkan kelompok plastik kitar semula.",
+              },
+              {
+                label: "Strategi C: Basuh Masuk ke Longkang",
+                sub: "Sembur semua sisa makanan masuk ke longkang awam.",
+                isBest: false,
+                explanation:
+                  "Menyumbat parit dan menyebabkan pencemaran bau busuk serta pencemaran air.",
+              },
+            ],
+          },
+          {
+            tag: "Automotive Services",
+            title_en: "Municipal Stockpile of Worn Vulcanized Tires",
+            title_bm: "Longgokan Tayar Getah Terpakai di Bengkel",
+            photo:
+              "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=700&q=80",
+            narrative_en:
+              "A regional franchise has 800 scrap tires accumulating behind their workshop, collecting rainwater and posing severe fire risks.",
+            narrative_bm:
+              "Sebuah bengkel mengumpul 800 tayar terpakai yang menakung air hujan dan berisiko menjadi sarang nyamuk Aedes.",
+            options_en: [
+              {
+                label: "Strategy A: Pyrolysis Oil & Crumb Rubber Reuse",
+                sub: "Shred sound treads for playground rubber mats and process carcasses in a pyrolysis reactor for fuel oil.",
+                isBest: true,
+                explanation:
+                  "Optimum Strategy: Combines physical reuse with thermal recovery, eliminating mosquito breeding hazards.",
+              },
+              {
+                label: "Strategy B: Open Yard Incineration at Night",
+                sub: "Burn tire piles in an open lot.",
+                isBest: false,
+                explanation:
+                  "Tire fires emit thick black carcinogenic smoke and toxic molten oils.",
+              },
+              {
+                label: "Strategy C: Abandon on Road Shoulders",
+                sub: "Dump along rural highways.",
+                isBest: false,
+                explanation:
+                  "Creates public blight and heavy fines under Act 672.",
+              },
+            ],
+            options_bm: [
+              {
+                label: "Strategi A: Pirolisis Minyak & Kepingan Getah Rekreasi",
+                sub: "Kisar bunga tayar untuk lantai taman permainan dan hantar ke reaktor pirolisis untuk minyak.",
+                isBest: true,
+                explanation:
+                  "Strategi Terbaik: Gabungan guna semula fizikal dan perolehan terma menghapuskan sarang denggi.",
+              },
+              {
+                label: "Strategi B: Bakar Terbuka Waktu Malam",
+                sub: "Bakar tayar di kawasan lapang.",
+                isBest: false,
+                explanation:
+                  "Asap tayar mengandungi hidrokarbon karsinogenik yang sangat berbahaya.",
+              },
+              {
+                label: "Strategi C: Buang di Tepi Jalan",
+                sub: "Tinggalkan di bahu jalan sunyi.",
+                isBest: false,
+                explanation:
+                  "Salah di bawah Akta 672 dan mencacatkan pemandangan.",
+              },
+            ],
+          },
+          {
+            tag: "Commercial Warehouse",
+            title_en: "Damaged Wooden Logistics Cargo Pallets",
+            title_bm: "Palet Kayu Kargo Rosak di Gudang Logistik",
+            photo:
+              "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=700&q=80",
+            narrative_en:
+              "A logistics hub generates 400 cracked wooden pallets each month. The timber is clean and chemical-free.",
+            narrative_bm:
+              "Pusat logistik menghasilkan 400 palet kayu retak setiap bulan. Kayu tersebut bersih tanpa bahan pengawet kimia.",
+            options_en: [
+              {
+                label: "Strategy A: Pallet Repair & Timber Reclamation",
+                sub: "Set up a repair bench to mend boards for reuse, chipping offcuts into composite chipboards or mulch.",
+                isBest: true,
+                explanation:
+                  "Optimum Strategy: Preserving physical wood structure (Reuse & Recycle) saves more embedded carbon than immediate burning.",
+              },
+              {
+                label: "Strategy B: Mass-Burn in Trash Incinerator",
+                sub: "Burn all pallets immediately for steam.",
+                isBest: false,
+                explanation:
+                  "Skips higher circular tiers where sound timber can be repaired and reused.",
+              },
+              {
+                label: "Strategy C: Open Pit Landfill Dumping",
+                sub: "Dump pallets into sanitary landfills.",
+                isBest: false,
+                explanation:
+                  "Wastes high-grade timber and occupies massive landfill space.",
+              },
+            ],
+            options_bm: [
+              {
+                label: "Strategi A: Baik Pulih & Penebusgunaan Kayu",
+                sub: "Baiki papan yang retak untuk guna semula, dan hancurkan sisa kayu menjadi papan lapis/mulsa.",
+                isBest: true,
+                explanation:
+                  "Strategi Terbaik: Menjaga integriti fizikal kayu menjimatkan lebih banyak jejak karbon berbanding pembakaran.",
+              },
+              {
+                label: "Strategi B: Bakar Terus di Insinerator",
+                sub: "Bakar semua palet untuk hasilkan stim.",
+                isBest: false,
+                explanation:
+                  "Membazirkan kayu yang masih elok yang boleh digunakan semula berkali-kali.",
+              },
+              {
+                label: "Strategi C: Timbus di Tapak Pelupusan",
+                sub: "Buang ke tapak pelupusan sampah biasa.",
+                isBest: false,
+                explanation:
+                  "Memenuhkan ruang tapak pelupusan dengan bahan yang masih bernilai.",
+              },
+            ],
+          },
+          {
+            tag: "Agricultural Processing",
+            title_en: "Paddy Milling Husk & Chaff Haze Hazard",
+            title_bm: "Sisa Sekam Padi dan Pencemaran Asap",
+            photo:
+              "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=700&q=80",
+            narrative_en:
+              "A rice mill generates 20 metric tons of dry rice husks weekly. Farmers burn them in open fields, creating thick smog.",
+            narrative_bm:
+              "Kilang padi menghasilkan 20 tan sekam padi kering setiap minggu dan dibakar secara terbuka hingga menyebabkan jerebu.",
+            options_en: [
+              {
+                label: "Strategy A: Biomass Gasification & Silica Extraction",
+                sub: "Feed husks into a closed gasifier to generate mill electricity and extract high-grade silica ash.",
+                isBest: true,
+                explanation:
+                  "Optimum Strategy: Stops open-field burning while recovering renewable electricity and industrial silica.",
+              },
+              {
+                label: "Strategy B: Continue Open Field Fires",
+                sub: "Burn piles on windy days.",
+                isBest: false,
+                explanation:
+                  "Causes severe particulate matter (PM2.5) pollution and violates clean air regulations.",
+              },
+              {
+                label: "Strategy C: Dump into River Canals",
+                sub: "Wash husks into waterways.",
+                isBest: false,
+                explanation: "Depletes water oxygen and chokes aquatic life.",
+              },
+            ],
+            options_bm: [
+              {
+                label: "Strategi A: Pengegasan Biojisim & Pengekstrakan Silika",
+                sub: "Salurkan ke loji pengegasan biojisim untuk jana elektrik kilang dan hasilkan abu silika bernilai.",
+                isBest: true,
+                explanation:
+                  "Strategi Terbaik: Menghentikan jerebu sambil menjana tenaga elektrik bersih dan mineral bernilai.",
+              },
+              {
+                label: "Strategi B: Terus Bakar di Sawah",
+                sub: "Bakar ketika angin kencang.",
+                isBest: false,
+                explanation:
+                  "Menyebabkan pencemaran jerebu PM2.5 dan melanggar akta alam sekitar.",
+              },
+              {
+                label: "Strategi C: Buang ke Sungai Pengairan",
+                sub: "Hanyutkan sekam padi ke tali air.",
+                isBest: false,
+                explanation:
+                  "Menjejaskan hidupan air dan menyumbat laluan pengairan sawah.",
+              },
+            ],
+          },
+        ],
+        hard: [
+          {
+            tag: "Advanced Municipal Solid Waste",
+            title_en: "Residual Non-Recyclable Multilayer Plastics",
+            title_bm: "Sisa Plastik Bungkusan Berlapis Sukar Kitar Semula",
+            photo:
+              "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=700&q=80",
+            narrative_en:
+              "After separating all clean PET bottles, cans, and cardboard, a Malaysian MRF has 80 tonnes of soiled snack foils and composite polymers remaining daily.",
+            narrative_bm:
+              "Selepas mengasingkan botol PET dan kertas, loji MRF mempunyai 80 tan sisa pembungkus makanan berlapis perak yang tidak boleh dikitar mekanikal.",
+            options_en: [
+              {
+                label:
+                  "Strategy A: Refuse-Derived Fuel (RDF) Pellets or Advanced Pyrolysis",
+                sub: "Drying, shredding, and densifying into RDF pellets for cement kilns, or applying Julian Brown-style pyrolysis to extract diesel/fuel oil.",
+                isBest: true,
+                explanation:
+                  "Optimum Strategy: When mechanical recycling is technically impossible, converting high-calorific plastics into RDF or fuel oil extracts vital energy utility.",
+              },
+              {
+                label: "Strategy B: Chemical Solvent Leaching",
+                sub: "Use expensive chemical baths to dissolve microscopic aluminum layers.",
+                isBest: false,
+                explanation:
+                  "Requires excessive solvents and water, resulting in negative environmental return.",
+              },
+              {
+                label: "Strategy C: River Dump Disposal",
+                sub: "Dump residues into drainage channels.",
+                isBest: false,
+                explanation:
+                  "Catastrophic environmental crime polluting marine food chains.",
+              },
+            ],
+            options_bm: [
+              {
+                label:
+                  "Strategi A: Pelet Bahan Api RDF / Pirolisis (Model Julian Brown)",
+                sub: "Keringkan dan padatkan jadi pelet RDF untuk relau simen, atau guna reaktor pirolisis untuk minyak bahan api.",
+                isBest: true,
+                explanation:
+                  "Strategi Terbaik: Bila kitar semula mekanikal mustahil, pemulihan terma (RDF/pirolisis) menjana tenaga daripada sisa baki.",
+              },
+              {
+                label: "Strategi B: Rendaman Pelarut Kimia Khas",
+                sub: "Gunakan bahan kimia mahal untuk mengasingkan lapisan aluminium mikroskopik.",
+                isBest: false,
+                explanation:
+                  "Penggunaan bahan kimia toksik berlebihan tidak ekonomik dan merosakkan alam sekitar.",
+              },
+              {
+                label: "Strategi C: Buang ke Alur Sungai",
+                sub: "Lepaskan sisa plastik ke sungai.",
+                isBest: false,
+                explanation:
+                  "Jenayah alam sekitar yang mencemarkan hidupan laut dengan mikroplastik.",
+              },
+            ],
+          },
+          {
+            tag: "Healthcare Operations",
+            title_en: "Hospital Non-Infectious Polypropylene Protective Gowns",
+            title_bm: "Gaun Pelindung Polipropilena Hospital Bukan Berjangkit",
+            photo:
+              "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=700&q=80",
+            narrative_en:
+              "A regional hospital generates 300 kg of single-use, clean synthetic polypropylene isolation gowns daily. Hygiene regulations strictly forbid public clothing reuse.",
+            narrative_bm:
+              "Hospital menghasilkan 300 kg gaun pelindung polipropilena sekali guna yang bersih tetapi dilarang undang-undang kebersihan untuk dipakai semula.",
+            options_en: [
+              {
+                label: "Strategy A: Clinical Waste-to-Energy Thermal Recovery",
+                sub: "Incinerate in a high-temperature clinical recovery plant, using the steam to power hospital laundry sterilizers.",
+                isBest: true,
+                explanation:
+                  "Optimum Strategy: Strict health protocols forbid textile reuse; controlled thermal recovery neutralizes biological risks while offsetting hospital energy costs.",
+              },
+              {
+                label: "Strategy B: Flea Market Public Resale",
+                sub: "Sell used surgical gowns to thrift shops.",
+                isBest: false,
+                explanation:
+                  "Strictly illegal due to infection control protocols.",
+              },
+              {
+                label: "Strategy C: Yard Composting",
+                sub: "Bury synthetic gowns in compost pits.",
+                isBest: false,
+                explanation:
+                  "Polypropylene is non-biodegradable synthetic plastic that will never compost.",
+              },
+            ],
+            options_bm: [
+              {
+                label: "Strategi A: Loji Rawatan Termal WtE Klinikal",
+                sub: "Bakar dalam insinerator suhu tinggi dengan penapisan gas, dan gunakan stim untuk sistem pensterilan hospital.",
+                isBest: true,
+                explanation:
+                  "Strategi Terbaik: Menjamin keselamatan biologi sambil memanfaatkan tenaga haba untuk menjimatkan kos hospital.",
+              },
+              {
+                label: "Strategi B: Jual Semula di Pasar Lambak",
+                sub: "Jual gaun hospital terpakai kepada orang awam.",
+                isBest: false,
+                explanation:
+                  "Dilarang sama sekali kerana risiko keselamatan kesihatan awam.",
+              },
+              {
+                label: "Strategi C: Timbus Jadi Baja Kompos",
+                sub: "Tanam gaun sintetik dalam tanah.",
+                isBest: false,
+                explanation:
+                  "Plastik sintetik polipropilena tidak mereput dan merosakkan kualiti tanah.",
+              },
+            ],
+          },
+          {
+            tag: "Clean Energy Technology",
+            title_en: "End-of-Life Industrial Lithium EV Battery Modules",
+            title_bm: "Modul Bateri Litium Kenderaan Elektrik Tamat Tempoh",
+            photo:
+              "https://images.unsplash.com/photo-1558441719-74e50d03708e?auto=format&fit=crop&w=700&q=80",
+            narrative_en:
+              "An electric bus depot has 30 degraded lithium battery packs that can no longer safely hold operational charges.",
+            narrative_bm:
+              "Depot bas elektrik mempunyai 30 pek bateri litium yang telah rosak dan tidak selamat digunakan lagi pada kenderaan.",
+            options_en: [
+              {
+                label:
+                  "Strategy A: Stationary Energy Storage Reuse & Hydrometallurgical Recycling",
+                sub: "Cascade packs into solar battery storage (second-life reuse), then extract cobalt, nickel, and lithium via hydrometallurgical recovery.",
+                isBest: true,
+                explanation:
+                  "Optimum Strategy: Maximizes circular value through second-life energy storage before recovering critical strategic battery minerals.",
+              },
+              {
+                label: "Strategy B: Municipal Landfill Compactor",
+                sub: "Crush cells in regular garbage trucks.",
+                isBest: false,
+                explanation:
+                  "Triggers catastrophic chemical fires and toxic hydrofluoric acid gas releases.",
+              },
+              {
+                label: "Strategy C: Open Yard Burning",
+                sub: "Burn batteries in scrap metal yards.",
+                isBest: false,
+                explanation: "Extreme explosion and toxic fume hazard.",
+              },
+            ],
+            options_bm: [
+              {
+                label:
+                  "Strategi A: Guna Semula Storan Solar & Kitar Semula Hidrometalurgi",
+                sub: "Gunakan bateri sebagai simpanan tenaga solar (fasa kedua), kemudian hantar ke loji pemulihan mineral kobalt dan litium.",
+                isBest: true,
+                explanation:
+                  "Strategi Terbaik: Memanfaatkan sepenuhnya kapasiti bateri sebelum mengekstrak semula mineral nadir bumi yang berharga.",
+              },
+              {
+                label: "Strategi B: Mampatkan dalam Lori Sampah Biasa",
+                sub: "Hancurkan bateri dalam lori sampah pembandaran.",
+                isBest: false,
+                explanation:
+                  "Mengakibatkan litar pintas, letupan dan kebakaran gas toksik hidrofluorik.",
+              },
+              {
+                label: "Strategi C: Bakar di Bengkel Besi Buruk",
+                sub: "Bakar sel bateri di kawasan terbuka.",
+                isBest: false,
+                explanation:
+                  "Bahaya letupan melampau dan pelepasan asap beracun.",
+              },
+            ],
+          },
+          {
+            tag: "Heavy Construction",
+            title_en: "Demolished Reinforced Concrete Tower Foundation",
+            title_bm: "Sisa Konkrit Bertetulang Robohan Bangunan",
+            photo:
+              "https://images.unsplash.com/photo-1541888946425-d0fbb186156f?auto=format&fit=crop&w=700&q=80",
+            narrative_en:
+              "An urban renewal site produces 100 tonnes of concrete rubble embedded with steel rebar.",
+            narrative_bm:
+              "Tapak perobohan menghasilkan 100 tan bongkah konkrit bercampur besi tetulang (rebar).",
+            options_en: [
+              {
+                label:
+                  "Strategy A: Magnetic Separation & Crushed Aggregate Roadbase",
+                sub: "Separate steel rebar magnetically for steel mills, and crush clean concrete into certified aggregate road-base.",
+                isBest: true,
+                explanation:
+                  "Optimum Strategy: Reclaims 98% of material mass without occupying landfill space, substituting mined quarry gravel.",
+              },
+              {
+                label: "Strategy B: Municipal Thermal Incineration",
+                sub: "Burn concrete boulders in waste incinerators.",
+                isBest: false,
+                explanation:
+                  "Concrete is non-combustible and damages thermal grates.",
+              },
+              {
+                label: "Strategy C: Marine Coastal Dumping",
+                sub: "Barge rubble into coral reefs.",
+                isBest: false,
+                explanation:
+                  "Destroys marine habitats and violates coastal protection laws.",
+              },
+            ],
+            options_bm: [
+              {
+                label: "Strategi A: Pengasingan Magnetik & Agregat Asas Jalan",
+                sub: "Asingkan besi rebar dengan magnet untuk peleburan semula, dan hancurkan konkrit menjadi batu asas jalan raya.",
+                isBest: true,
+                explanation:
+                  "Strategi Terbaik: Memulihkan 98% bahan tanpa membazir ruang tapak pelupusan dan menjimatkan sumber kuari batu.",
+              },
+              {
+                label: "Strategi B: Bakar dalam Insinerator Sampah",
+                sub: "Masukkan bongkah konkrit ke relau pembakaran.",
+                isBest: false,
+                explanation:
+                  "Batu konkrit tidak boleh dibakar dan merosakkan gril relau loji.",
+              },
+              {
+                label: "Strategi C: Buang ke Kawasan Terumbu Karang",
+                sub: "Campak sisa konkrit ke laut.",
+                isBest: false,
+                explanation:
+                  "Memusnahkan ekosistem batu karang dan menyalahi undang-undang marin.",
+              },
+            ],
+          },
+        ],
+      };
 
-      // ================= QUIZ 1: LOGIC WITH EXPLANATIONS & FULL REVIEW =================
-      let activeMcqs = [];
-      let mcqIndex = 0;
-      let mcqScore = 0;
-      let mcqAnswered = false;
-      let mcqUserLogs = []; // Stores answers for post-quiz review
+      // ================== OBJECTIVE QUIZ ENGINE ==================
+      let currentTier = "beginner";
+      let activeTierQuestions = [];
+      let mcqQuizIndex = 0;
+      let mcqQuizScore = 0;
+      let userQuizLogs = [];
 
-      function initMcqQuiz() {
-        activeMcqs = [...mcqMasterPool]
-          .sort(() => 0.5 - Math.random())
-          .slice(0, 5);
-        mcqIndex = 0;
-        mcqScore = 0;
-        mcqAnswered = false;
-        mcqUserLogs = [];
+      function selectQuizTier(tier) {
+        currentTier = tier;
+        const pool = [...mcqTierBank[tier]];
+        activeTierQuestions = pool.sort(() => 0.5 - Math.random()).slice(0, 10);
+
+        document
+          .querySelectorAll("#quiz-mcq-wrapper .tier-select-btn")
+          .forEach((b) => b.classList.remove("active-tier"));
+        const activeBtn = document.getElementById(`tier-btn-${tier}`);
+        if (activeBtn) activeBtn.classList.add("active-tier");
+
+        initTieredMcqQuiz();
+      }
+
+      function initTieredMcqQuiz() {
+        mcqQuizIndex = 0;
+        mcqQuizScore = 0;
+        userQuizLogs = [];
 
         document.getElementById("mcq-question-screen").style.display = "block";
         document.getElementById("mcq-result-screen").style.display = "none";
         document.getElementById("mcq-total-score").textContent =
-          activeMcqs.length;
-        renderMcqQuestion();
+          activeTierQuestions.length;
+        renderTieredQuestion();
       }
 
-      function renderMcqQuestion() {
-        mcqAnswered = false;
-        const current = activeMcqs[mcqIndex];
+      function renderTieredQuestion() {
+        if (!activeTierQuestions || activeTierQuestions.length === 0) return;
+        const qData = activeTierQuestions[mcqQuizIndex];
+        const isEn = currentLang === "en";
 
         document.getElementById("mcq-next-btn").style.display = "none";
         document.getElementById("mcq-explanation-box").style.display = "none";
 
-        document.getElementById("mcq-progress-text").textContent =
-          `Question ${mcqIndex + 1} of ${activeMcqs.length}`;
+        document.getElementById("mcq-progress-text").textContent = isEn
+          ? `Question ${mcqQuizIndex + 1} of ${activeTierQuestions.length} (${currentTier.toUpperCase()})`
+          : `Soalan ${mcqQuizIndex + 1} daripada ${activeTierQuestions.length} (Tahap: ${currentTier.toUpperCase()})`;
+
         document.getElementById("mcq-progress-fill").style.width =
-          `${((mcqIndex + 1) / activeMcqs.length) * 100}%`;
-        document.getElementById("mcq-question-title").textContent = current.q;
+          `${((mcqQuizIndex + 1) / activeTierQuestions.length) * 100}%`;
+        document.getElementById("mcq-question-title").textContent = isEn
+          ? qData.q_en
+          : qData.q_bm;
 
         const container = document.getElementById("mcq-options-container");
         container.innerHTML = "";
 
-        current.options.forEach((opt, idx) => {
+        const opts = isEn ? qData.options_en : qData.options_bm;
+        opts.forEach((opt, idx) => {
           const btn = document.createElement("button");
           btn.type = "button";
           btn.className = "quiz-option-btn";
           btn.innerHTML = `<span class="opt-letter">${String.fromCharCode(65 + idx)}</span> <span class="opt-text">${opt}</span>`;
-          btn.onclick = () => selectMcqOption(idx, btn);
+          btn.onclick = () => submitTierOption(idx, btn);
           container.appendChild(btn);
         });
       }
 
-      function selectMcqOption(selectedIndex, btnElement) {
-        if (mcqAnswered) return;
-        mcqAnswered = true;
+      function submitTierOption(chosenIdx, btnElement) {
+        const qData = activeTierQuestions[mcqQuizIndex];
+        const isEn = currentLang === "en";
+        const isCorrect = chosenIdx === qData.correct;
 
-        const current = activeMcqs[mcqIndex];
         const allBtns = document.querySelectorAll(".quiz-option-btn");
-        const isCorrect = selectedIndex === current.correct;
+        allBtns.forEach((b) => (b.disabled = true));
 
         if (isCorrect) {
           btnElement.classList.add("opt-correct");
           playSound("correct");
-          mcqScore++;
+          mcqQuizScore++;
         } else {
           btnElement.classList.add("opt-incorrect");
-          allBtns[current.correct].classList.add("opt-correct");
+          allBtns[qData.correct].classList.add("opt-correct");
           playSound("wrong");
         }
 
-        allBtns.forEach((b) => (b.disabled = true));
-
-        // Log answer for end-of-quiz review
-        mcqUserLogs.push({
-          question: current.q,
-          selectedOptionText: current.options[selectedIndex],
-          correctOptionText: current.options[current.correct],
+        userQuizLogs.push({
+          question: isEn ? qData.q_en : qData.q_bm,
+          chosen: (isEn ? qData.options_en : qData.options_bm)[chosenIdx],
+          answer: (isEn ? qData.options_en : qData.options_bm)[qData.correct],
           isCorrect: isCorrect,
-          explanation: current.explanation,
+          explanation: isEn ? qData.exp_en : qData.exp_bm,
         });
 
-        // Display inline explanation
         const expBox = document.getElementById("mcq-explanation-box");
         const expHeader = document.getElementById("mcq-exp-header");
         const expText = document.getElementById("mcq-exp-text");
 
-        if (isCorrect) {
-          expBox.className = "mcq-explanation-card exp-correct";
-          expHeader.innerHTML =
-            '<i class="ph-bold ph-check-circle"></i> Correct!';
-        } else {
-          expBox.className = "mcq-explanation-card exp-wrong";
-          expHeader.innerHTML = '<i class="ph-bold ph-x-circle"></i> Incorrect';
-        }
-        expText.textContent = current.explanation;
+        expBox.className = `mcq-explanation-card ${isCorrect ? "exp-correct" : "exp-wrong"}`;
+        expHeader.innerHTML = isCorrect
+          ? `<i class="ph-bold ph-check-circle"></i> ${isEn ? "Correct!" : "Tepat Sekali!"}`
+          : `<i class="ph-bold ph-x-circle"></i> ${isEn ? "Incorrect" : "Kurang Tepat"}`;
+        expText.textContent = isEn ? qData.exp_en : qData.exp_bm;
         expBox.style.display = "block";
 
-        // Show Next button
         document.getElementById("mcq-next-btn").style.display = "inline-flex";
       }
 
-      function nextMcqQuestion() {
-        mcqIndex++;
-        if (mcqIndex < activeMcqs.length) {
-          renderMcqQuestion();
+      function nextTierQuestion() {
+        mcqQuizIndex++;
+        if (mcqQuizIndex < activeTierQuestions.length) {
+          renderTieredQuestion();
         } else {
-          finishMcqQuiz();
+          displayTierResults();
         }
       }
 
-      function finishMcqQuiz() {
+      function displayTierResults() {
         playSound("finish");
         if (typeof confetti === "function")
-          confetti({ particleCount: 130, spread: 110, origin: { y: 0.4 } });
+          confetti({ particleCount: 140, spread: 120, origin: { y: 0.4 } });
 
         document.getElementById("mcq-question-screen").style.display = "none";
         document.getElementById("mcq-result-screen").style.display = "block";
-        document.getElementById("mcq-final-score").textContent = mcqScore;
+        document.getElementById("mcq-final-score").textContent = mcqQuizScore;
 
+        const isEn = currentLang === "en";
         const feedback = document.getElementById("mcq-feedback-text");
-        if (mcqScore === activeMcqs.length) {
-          feedback.textContent =
-            "Outstanding mastery! You clearly understand the distinctions of the 4R waste hierarchy.";
-        } else if (mcqScore >= 3) {
-          feedback.textContent =
-            "Good performance! Review the questions below to see how Recovery compares to Recycling.";
+        if (mcqQuizScore === activeTierQuestions.length) {
+          feedback.textContent = isEn
+            ? `Mastery achieved in ${currentTier.toUpperCase()}! You answered all 10 questions flawlessly.`
+            : `Tahniah! Penguasaan cemerlang bagi tahap ${currentTier.toUpperCase()}! 10/10 markah penuh.`;
+        } else if (mcqQuizScore >= 6) {
+          feedback.textContent = isEn
+            ? `Good effort in ${currentTier.toUpperCase()}! Review your mistakes below to strengthen your understanding.`
+            : `Usaha yang baik bagi tahap ${currentTier.toUpperCase()}. Semak jawapan anda di bawah.`;
         } else {
-          feedback.textContent =
-            "Keep practicing! Review the detailed rationales below to strengthen your understanding.";
+          feedback.textContent = isEn
+            ? `Keep learning! Explore the Learn section to review key concepts.`
+            : `Teruskan berusaha! Sila ulangkaji modul di bahagian Learn.`;
         }
 
-        // Populate Comprehensive Review List
-        const reviewContainer = document.getElementById("mcq-review-list");
-        reviewContainer.innerHTML = "";
-
-        mcqUserLogs.forEach((item, idx) => {
+        const reviewList = document.getElementById("mcq-review-list");
+        reviewList.innerHTML = "";
+        userQuizLogs.forEach((item, idx) => {
           const card = document.createElement("div");
           card.className = `review-item-card ${item.isCorrect ? "review-correct" : "review-wrong"}`;
-
           card.innerHTML = `
                     <div class="review-item-top">
                         <div>
-                            <span class="review-q-num">Question ${idx + 1}</span>
+                            <span class="review-q-num">${isEn ? "Question" : "Soalan"} ${idx + 1}</span>
                             <h4 class="review-q-title">${item.question}</h4>
                         </div>
                         <span class="review-status-badge">
-                            ${item.isCorrect ? '<i class="ph-bold ph-check"></i> Correct' : '<i class="ph-bold ph-x"></i> Incorrect'}
+                            ${item.isCorrect ? '<i class="ph-bold ph-check"></i> ' + (isEn ? "Correct" : "Betul") : '<i class="ph-bold ph-x"></i> ' + (isEn ? "Incorrect" : "Salah")}
                         </span>
                     </div>
-
                     <div class="review-answers-box">
                         <div class="ans-row">
-                            <strong>Your Choice:</strong> 
-                            <span class="${item.isCorrect ? "ans-correct-choice" : "ans-user-wrong"}">${item.selectedOptionText}</span>
+                            <strong>${isEn ? "Your Choice:" : "Pilihan Anda:"}</strong> 
+                            <span class="${item.isCorrect ? "ans-correct-choice" : "ans-user-wrong"}">${item.chosen}</span>
                         </div>
                         ${
                           !item.isCorrect
                             ? `
                         <div class="ans-row">
-                            <strong>Correct Answer:</strong> 
-                            <span class="ans-correct-choice">${item.correctOptionText}</span>
+                            <strong>${isEn ? "Correct Answer:" : "Jawapan Tepat:"}</strong> 
+                            <span class="ans-correct-choice">${item.answer}</span>
                         </div>`
                             : ""
                         }
                     </div>
-
-                    <p class="review-exp-note"><strong>Rationale:</strong> ${item.explanation}</p>
+                    <p class="review-exp-note"><strong>${isEn ? "Rationale:" : "Penerangan:"}</strong> ${item.explanation}</p>
                 `;
-          reviewContainer.appendChild(card);
+          reviewList.appendChild(card);
         });
       }
 
-      // ================= QUIZ 2: CASE STUDY LOGIC =================
+      // ================== CASE STUDY ENGINE ==================
+      let currentCaseTier = "beginner";
       let activeCases = [];
       let caseIndex = 0;
       let caseScore = 0;
       let caseAnswered = false;
 
+      function selectCaseTier(tier) {
+        currentCaseTier = tier;
+        activeCases = [...caseTierBank[tier]].sort(() => 0.5 - Math.random());
+
+        document
+          .querySelectorAll("#quiz-case-wrapper .tier-select-btn")
+          .forEach((b) => b.classList.remove("active-tier"));
+        const activeBtn = document.getElementById(`case-tier-btn-${tier}`);
+        if (activeBtn) activeBtn.classList.add("active-tier");
+
+        initCaseQuiz();
+      }
+
       function initCaseQuiz() {
-        activeCases = [...caseMasterPool]
-          .sort(() => 0.5 - Math.random())
-          .slice(0, 4);
         caseIndex = 0;
         caseScore = 0;
         caseAnswered = false;
@@ -1236,28 +2909,32 @@
       }
 
       function renderCaseScenario() {
+        if (!activeCases || activeCases.length === 0) return;
         caseAnswered = false;
         const current = activeCases[caseIndex];
+        const isEn = currentLang === "en";
 
         document.getElementById("case-debrief-box").style.display = "none";
-        document.getElementById("case-progress-text").textContent =
-          `Scenario ${caseIndex + 1} of ${activeCases.length}`;
+        document.getElementById("case-progress-text").textContent = isEn
+          ? `Scenario ${caseIndex + 1} of ${activeCases.length} (${currentCaseTier.toUpperCase()})`
+          : `Senario ${caseIndex + 1} daripada ${activeCases.length} (Tahap: ${currentCaseTier.toUpperCase()})`;
         document.getElementById("case-progress-fill").style.width =
           `${((caseIndex + 1) / activeCases.length) * 100}%`;
 
-        const photoEl = document.getElementById("case-photo");
-        photoEl.src = current.photo;
-
+        document.getElementById("case-photo").src = current.photo;
         document.getElementById("case-scenario-tag").textContent = current.tag;
-        document.getElementById("case-scenario-heading").textContent =
-          current.title;
-        document.getElementById("case-scenario-body").textContent =
-          current.narrative;
+        document.getElementById("case-scenario-heading").textContent = isEn
+          ? current.title_en
+          : current.title_bm;
+        document.getElementById("case-scenario-body").textContent = isEn
+          ? current.narrative_en
+          : current.narrative_bm;
 
         const container = document.getElementById("case-choices-container");
         container.innerHTML = "";
 
-        current.options.forEach((opt) => {
+        const opts = isEn ? current.options_en : current.options_bm;
+        opts.forEach((opt) => {
           const card = document.createElement("div");
           card.className = "case-choice-card";
           card.innerHTML = `
@@ -1274,6 +2951,7 @@
         caseAnswered = true;
 
         const current = activeCases[caseIndex];
+        const isEn = currentLang === "en";
         const allCards = document.querySelectorAll(".case-choice-card");
 
         if (selectedOption.isBest) {
@@ -1283,17 +2961,18 @@
           document.getElementById("case-debrief-heading").className =
             "debrief-heading text-green";
           document.getElementById("case-debrief-heading").innerHTML =
-            '<i class="ph-bold ph-check-circle"></i> Optimal Strategic Decision!';
+            `<i class="ph-bold ph-check-circle"></i> ${isEn ? "Optimal Strategic Decision!" : "Keputusan Strategik Terbaik!"}`;
         } else {
           cardElement.classList.add("choice-incorrect");
           playSound("wrong");
           document.getElementById("case-debrief-heading").className =
             "debrief-heading text-orange";
           document.getElementById("case-debrief-heading").innerHTML =
-            '<i class="ph-bold ph-warning-circle"></i> Sub-Optimal Strategy';
+            `<i class="ph-bold ph-warning-circle"></i> ${isEn ? "Sub-Optimal Strategy" : "Strategi Kurang Tepat"}`;
 
+          const opts = isEn ? current.options_en : current.options_bm;
           allCards.forEach((c, idx) => {
-            if (current.options[idx].isBest) c.classList.add("choice-correct");
+            if (opts[idx].isBest) c.classList.add("choice-correct");
           });
         }
 
@@ -1322,18 +3001,32 @@
         document.getElementById("case-result-screen").style.display = "block";
         document.getElementById("case-final-score").textContent = caseScore;
 
+        const isEn = currentLang === "en";
         const summary = document.getElementById("case-evaluation-summary");
         if (caseScore === activeCases.length) {
-          summary.textContent =
-            "Flawless technical analysis! You accurately identified the correct balance between recovery, reuse, and recycling across every scenario.";
+          summary.textContent = isEn
+            ? `Flawless technical analysis in ${currentCaseTier.toUpperCase()}! You accurately balanced reuse, recycling, and energy recovery.`
+            : `Analisis teknikal cemerlang bagi tahap ${currentCaseTier.toUpperCase()}! Anda menguasai imbangan antara guna semula, kitar semula dan perolehan tenaga.`;
         } else if (caseScore >= 2) {
-          summary.textContent =
-            "Competent analytical performance. Remember to prioritize Reuse and Mechanical Recycling first, reserving Energy Recovery for residual or hazardous streams.";
+          summary.textContent = isEn
+            ? "Competent analytical performance. Remember to prioritize source reduction and reuse before recovery."
+            : "Prestasi analisis yang baik. Utamakan pengurangan dan guna semula sebelum perolehan tenaga.";
         } else {
-          summary.textContent =
-            "Review the 4R hierarchy principles in the Learn module to improve your strategic waste pathway planning.";
+          summary.textContent = isEn
+            ? "Review the 4R hierarchy principles in the Learn module to improve your strategic waste pathway planning."
+            : "Sila semak semula modul hierarki 4R dalam seksyen Learn untuk meningkatkan ketepatan perancangan.";
         }
       }
+
+      // Initialize Language on Page Load
+      document.addEventListener("DOMContentLoaded", () => {
+        setLanguage(currentLang);
+      });
     </script>
+
+<!-- Language Script -->
+    <script src="lang.js"></script>
+</body>
+
   </body>
 </html>

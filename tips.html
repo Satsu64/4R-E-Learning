@@ -6,7 +6,7 @@
     <title>4R E-Learning - Tips</title>
     <link rel="stylesheet" href="style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -22,21 +22,51 @@
         </div>
       </div>
       <div class="nav-links">
-        <a href="index.html"><i class="ph ph-house"></i> Home</a>
-        <a href="tips.html" class="active"><i class="ph ph-lightbulb"></i> Tips</a>
-        <a href="learn.html"><i class="ph ph-book-open"></i> Learn</a
+        <a href="index.html"
+          ><i class="ph ph-house"></i>
+          <span data-en="Home" data-bm="Utama">Home</span></a
         >
-        <a href="quiz.html"><i class="ph ph-graduation-cap"></i> Quiz</a>
-        <a href="game.html"><i class="ph ph-game-controller"></i> Game</a>
-        <a href="community.html"><i class="ph ph-users"></i> Community</a>
+        <a href="tips.html" class="active"
+          ><i class="ph ph-lightbulb"></i>
+          <span data-en="Tips" data-bm="Tip">Tips</span></a
+        >
+        <a href="learn.html"
+          ><i class="ph ph-book-open"></i>
+          <span data-en="Learn" data-bm="Belajar">Learn</span></a
+        >
+        <a href="quiz.html"
+          ><i class="ph ph-graduation-cap"></i>
+          <span data-en="Quiz" data-bm="Kuiz">Quiz</span></a
+        >
+        <a href="game.html"
+          ><i class="ph ph-game-controller"></i>
+          <span data-en="Game" data-bm="Permainan">Game</span></a
+        >
+        <a href="community.html"
+          ><i class="ph ph-users"></i>
+          <span data-en="Community" data-bm="Komuniti">Community</span></a
+        >
+        <button
+          type="button"
+          id="lang-toggle-btn"
+          class="btn-lang-toggle"
+          onclick="toggleLanguage()"
+        >
+          <span>🇲🇾 BM</span>
+        </button>
       </div>
     </nav>
 
     <main class="tips-main">
       <!-- Hero Banner -->
       <section class="tips-hero-card">
-        <h2>Start Small, Think Big</h2>
-        <p>
+        <h2 data-en="Start Small, Think Big" data-bm="Mula Kecil, Fikir Jauh">
+          Start Small, Think Big
+        </h2>
+        <p
+          data-en="Remember, every small action counts! You don't have to implement all these tips at once. Start with a few that work best for your lifestyle and gradually incorporate more. Together, we can make a significant positive impact on our planet."
+          data-bm="Ingat, setiap tindakan kecil amat bermakna! Anda tidak perlu mengamalkan semua tip ini sekali gus. Mulakan dengan amalan yang sesuai dengan gaya hidup anda secara beransur-ansur. Bersama-sama, kita mampu memberi impak positif yang besar kepada bumi kita."
+        >
           Remember, every small action counts! You don't have to implement all
           these tips at once. Start with a few that work best for your lifestyle
           and gradually incorporate more. Together, we can make a significant
@@ -44,248 +74,458 @@
         </p>
       </section>
 
-      <!-- Interactive Folder Section -->
       <!-- Interactive Folder Component -->
-        <div class="folder-wrapper" id="folder-wrapper" data-theme="main">
-            
-            <!-- Folder Tabs -->
-            <div class="folder-tabs">
-                <!-- 1. Main Tab (Orange, connects to folder body) -->
-                <button type="button" class="folder-tab tab-main active" data-target="main" onclick="switchTipTab('main', this)">
-                    <span class="tab-spacer"></span>
-                </button>
+      <div class="folder-wrapper" id="folder-wrapper" data-theme="main">
+        <!-- Folder Tabs -->
+        <div class="folder-tabs">
+          <!-- 1. Main Tab (Orange) -->
+          <button
+            type="button"
+            class="folder-tab tab-main active"
+            data-target="main"
+            onclick="switchTipTab('main', this)"
+          >
+            <span class="tab-spacer"></span>
+          </button>
 
-                <!-- 2. Home Tab -->
-                <button type="button" class="folder-tab tab-home" data-target="home" onclick="switchTipTab('home', this)">
-                    <i class="ph-fill ph-house"></i>
-                    <span>HOME</span>
-                </button>
+          <!-- 2. Home Tab -->
+          <button
+            type="button"
+            class="folder-tab tab-home"
+            data-target="home"
+            onclick="switchTipTab('home', this)"
+          >
+            <i class="ph-fill ph-house"></i>
+            <span data-en="HOME" data-bm="RUMAH">HOME</span>
+          </button>
 
-                <!-- 3. Shopping Tab -->
-                <button type="button" class="folder-tab tab-shopping" data-target="shopping" onclick="switchTipTab('shopping', this)">
-                    <i class="ph-fill ph-bag"></i>
-                    <span>SHOPPING</span>
-                </button>
+          <!-- 3. Shopping Tab -->
+          <button
+            type="button"
+            class="folder-tab tab-shopping"
+            data-target="shopping"
+            onclick="switchTipTab('shopping', this)"
+          >
+            <i class="ph-fill ph-bag"></i>
+            <span data-en="SHOPPING" data-bm="BELI-BELAH">SHOPPING</span>
+          </button>
 
-                <!-- 4. Food & Kitchen Tab -->
-                <button type="button" class="folder-tab tab-food" data-target="food" onclick="switchTipTab('food', this)">
-                    <i class="ph-fill ph-fork-knife"></i>
-                    <span>FOOD & KITCHEN</span>
-                </button>
+          <!-- 4. Food & Kitchen Tab -->
+          <button
+            type="button"
+            class="folder-tab tab-food"
+            data-target="food"
+            onclick="switchTipTab('food', this)"
+          >
+            <i class="ph-fill ph-fork-knife"></i>
+            <span data-en="FOOD & KITCHEN" data-bm="MAKANAN & DAPUR"
+              >FOOD & KITCHEN</span
+            >
+          </button>
 
-                <!-- 5. Clothing Tab -->
-                <button type="button" class="folder-tab tab-clothing" data-target="clothing" onclick="switchTipTab('clothing', this)">
-                    <i class="ph-fill ph-t-shirt"></i>
-                    <span>CLOTHING</span>
-                </button>
+          <!-- 5. Clothing Tab -->
+          <button
+            type="button"
+            class="folder-tab tab-clothing"
+            data-target="clothing"
+            onclick="switchTipTab('clothing', this)"
+          >
+            <i class="ph-fill ph-t-shirt"></i>
+            <span data-en="CLOTHING" data-bm="PAKAIAN">CLOTHING</span>
+          </button>
 
-                <!-- 6. Transportation Tab -->
-                <button type="button" class="folder-tab tab-transport" data-target="transport" onclick="switchTipTab('transport', this)">
-                    <i class="ph-fill ph-train"></i>
-                    <span>TRANSPORTATION</span>
-                </button>
-            </div>
-
-            <!-- Folder Body -->
-            <div class="folder-body" id="folder-body">
-                
-                <!-- CONTENT 1: MAIN OVERVIEW (Matches Screenshot) -->
-                <div class="folder-content active" id="content-main">
-                    <div class="folder-main-card">
-                        <div class="card-bulb-icon">
-                            <i class="ph-bold ph-lightbulb"></i>
-                        </div>
-                        <h2>Daily Sustainability Tips</h2>
-                        <p>Practical tips to make sustainable living easy and effective</p>
-                    </div>
-                </div>
-
-                <!-- CONTENT 2: HOME -->
-                <div class="folder-content" id="content-home">
-                    <ul class="tips-list">
-                        <li class="tip-item"><span class="tip-number">1</span> Turn off lights, fans, and appliances when leaving a room.</li>
-                        <li class="tip-item"><span class="tip-number">2</span> Unplug chargers and electronics to prevent standby phantom power loss.</li>
-                        <li class="tip-item"><span class="tip-number">3</span> Install water-saving aerators on kitchen and bathroom taps.</li>
-                        <li class="tip-item"><span class="tip-number">4</span> Switch conventional incandescent bulbs to energy-efficient LEDs.</li>
-                    </ul>
-                </div>
-
-                <!-- CONTENT 3: SHOPPING -->
-                <div class="folder-content" id="content-shopping">
-                    <ul class="tips-list">
-                        <li class="tip-item"><span class="tip-number">1</span> Bring durable canvas tote bags whenever you go grocery shopping.</li>
-                        <li class="tip-item"><span class="tip-number">2</span> Buy pantry staples in bulk to minimize single-use packaging.</li>
-                        <li class="tip-item"><span class="tip-number">3</span> Choose products manufactured with certified post-consumer recycled content.</li>
-                        <li class="tip-item"><span class="tip-number">4</span> Avoid individually wrapped single-serve snacks and produce.</li>
-                    </ul>
-                </div>
-
-                <!-- CONTENT 4: FOOD & KITCHEN -->
-                <div class="folder-content" id="content-food">
-                    <ul class="tips-list">
-                        <li class="tip-item"><span class="tip-number">1</span> Plan weekly meals in advance to prevent perishable ingredients from spoiling.</li>
-                        <li class="tip-item"><span class="tip-number">2</span> Compost fruit rinds, vegetable peels, and coffee grounds at home.</li>
-                        <li class="tip-item"><span class="tip-number">3</span> Store food in clear airtight glass containers to keep items fresh longer.</li>
-                        <li class="tip-item"><span class="tip-number">4</span> Repurpose vegetable scraps into homemade cooking broth before discarding.</li>
-                    </ul>
-                </div>
-
-                <!-- CONTENT 5: CLOTHING -->
-                <div class="folder-content" id="content-clothing">
-                    <ul class="tips-list">
-                        <li class="tip-item"><span class="tip-number">1</span> Wash garments in cold water and air-dry them on laundry racks.</li>
-                        <li class="tip-item"><span class="tip-number">2</span> Mend loose buttons and repair torn seams instead of throwing clothes out.</li>
-                        <li class="tip-item"><span class="tip-number">3</span> Donate gently-worn clothing to local charitable shelters or thrift stores.</li>
-                        <li class="tip-item"><span class="tip-number">4</span> Choose timeless, durable natural fabrics over fast-fashion synthetic blends.</li>
-                    </ul>
-                </div>
-
-                <!-- CONTENT 6: TRANSPORTATION -->
-                <div class="folder-content" id="content-transport">
-                    <ul class="tips-list">
-                        <li class="tip-item"><span class="tip-number">1</span> Carpool or share rides with colleagues, neighbors, and friends.</li>
-                        <li class="tip-item"><span class="tip-number">2</span> Use public transit buses and commuter trains for regular daily commutes.</li>
-                        <li class="tip-item"><span class="tip-number">3</span> Walk or cycle for short neighborhood errands to cut carbon emissions.</li>
-                        <li class="tip-item"><span class="tip-number">4</span> Maintain proper tire pressure to improve vehicle fuel economy.</li>
-                    </ul>
-                </div>
-
-            </div>
+          <!-- 6. Transportation Tab -->
+          <button
+            type="button"
+            class="folder-tab tab-transport"
+            data-target="transport"
+            onclick="switchTipTab('transport', this)"
+          >
+            <i class="ph-fill ph-train"></i>
+            <span data-en="TRANSPORTATION" data-bm="PENGANGKUTAN"
+              >TRANSPORTATION</span
+            >
+          </button>
         </div>
-      </section>
+
+        <!-- Folder Body -->
+        <div class="folder-body" id="folder-body">
+          <!-- CONTENT 1: MAIN OVERVIEW -->
+          <div class="folder-content active" id="content-main">
+            <div class="folder-main-card">
+              <div class="card-bulb-icon">
+                <i class="ph-bold ph-lightbulb"></i>
+              </div>
+              <h2
+                data-en="Daily Sustainability Tips"
+                data-bm="Tip Kelestarian Harian"
+              >
+                Daily Sustainability Tips
+              </h2>
+              <p
+                data-en="Practical tips to make sustainable living easy and effective"
+                data-bm="Tip praktikal bagi menjadikan gaya hidup lestari lebih mudah dan berkesan"
+              >
+                Practical tips to make sustainable living easy and effective
+              </p>
+            </div>
+          </div>
+
+          <!-- CONTENT 2: HOME -->
+          <div class="folder-content" id="content-home">
+            <ul class="tips-list">
+              <li class="tip-item">
+                <span class="tip-number">1</span>
+                <span
+                  data-en="Turn off lights, fans, and appliances when leaving a room."
+                  data-bm="Padamkan lampu, kipas dan suis perkakasan elektrik apabila meninggalkan bilik."
+                >
+                  Turn off lights, fans, and appliances when leaving a room.
+                </span>
+              </li>
+              <li class="tip-item">
+                <span class="tip-number">2</span>
+                <span
+                  data-en="Unplug chargers and electronics to prevent standby phantom power loss."
+                  data-bm="Cabut palam pengecas dan peranti elektronik bagi mengelakkan pembaziran tenaga siap sedia (phantom power)."
+                >
+                  Unplug chargers and electronics to prevent standby phantom
+                  power loss.
+                </span>
+              </li>
+              <li class="tip-item">
+                <span class="tip-number">3</span>
+                <span
+                  data-en="Install water-saving aerators on kitchen and bathroom taps."
+                  data-bm="Pasang pengudara (aerator) penjimat air pada kepala paip dapur dan bilik air."
+                >
+                  Install water-saving aerators on kitchen and bathroom taps.
+                </span>
+              </li>
+              <li class="tip-item">
+                <span class="tip-number">4</span>
+                <span
+                  data-en="Switch conventional incandescent bulbs to energy-efficient LEDs."
+                  data-bm="Tukarkan mentol pijar konvensional kepada mentol lampu LED jimat tenaga."
+                >
+                  Switch conventional incandescent bulbs to energy-efficient
+                  LEDs.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CONTENT 3: SHOPPING -->
+          <div class="folder-content" id="content-shopping">
+            <ul class="tips-list">
+              <li class="tip-item">
+                <span class="tip-number">1</span>
+                <span
+                  data-en="Bring durable canvas tote bags whenever you go grocery shopping."
+                  data-bm="Bawa beg jinjing kanvas tahan lasak setiap kali keluar membeli-belah."
+                >
+                  Bring durable canvas tote bags whenever you go grocery
+                  shopping.
+                </span>
+              </li>
+              <li class="tip-item">
+                <span class="tip-number">2</span>
+                <span
+                  data-en="Buy pantry staples in bulk to minimize single-use packaging."
+                  data-bm="Beli barang keperluan dapur secara pukal untuk mengurangkan sisa bungkusan sekali guna."
+                >
+                  Buy pantry staples in bulk to minimize single-use packaging.
+                </span>
+              </li>
+              <li class="tip-item">
+                <span class="tip-number">3</span>
+                <span
+                  data-en="Choose products manufactured with certified post-consumer recycled content."
+                  data-bm="Pilih produk yang diperbuat daripada bahan kitar semula pasca-pengguna yang diperakui."
+                >
+                  Choose products manufactured with certified post-consumer
+                  recycled content.
+                </span>
+              </li>
+              <li class="tip-item">
+                <span class="tip-number">4</span>
+                <span
+                  data-en="Avoid individually wrapped single-serve snacks and produce."
+                  data-bm="Elakkan membeli snek atau hasil pertanian yang dibungkus plastik satu per satu."
+                >
+                  Avoid individually wrapped single-serve snacks and produce.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CONTENT 4: FOOD & KITCHEN -->
+          <div class="folder-content" id="content-food">
+            <ul class="tips-list">
+              <li class="tip-item">
+                <span class="tip-number">1</span>
+                <span
+                  data-en="Plan weekly meals in advance to prevent perishable ingredients from spoiling."
+                  data-bm="Rancang menu mingguan lebih awal bagi mengelakkan bahan mentah mudah rosak terbuang."
+                >
+                  Plan weekly meals in advance to prevent perishable ingredients
+                  from spoiling.
+                </span>
+              </li>
+              <li class="tip-item">
+                <span class="tip-number">2</span>
+                <span
+                  data-en="Compost fruit rinds, vegetable peels, and coffee grounds at home."
+                  data-bm="Komposkan kulit buah, sisa sayuran dan serbuk kopi terpakai di rumah."
+                >
+                  Compost fruit rinds, vegetable peels, and coffee grounds at
+                  home.
+                </span>
+              </li>
+              <li class="tip-item">
+                <span class="tip-number">3</span>
+                <span
+                  data-en="Store food in clear airtight glass containers to keep items fresh longer."
+                  data-bm="Simpan lebihan makanan dalam bekas kaca kedap udara agar tahan segar lebih lama."
+                >
+                  Store food in clear airtight glass containers to keep items
+                  fresh longer.
+                </span>
+              </li>
+              <li class="tip-item">
+                <span class="tip-number">4</span>
+                <span
+                  data-en="Repurpose vegetable scraps into homemade cooking broth before discarding."
+                  data-bm="Guna semula sisa sayuran bersih untuk dijadikan air rebusan stok sup sebelum dibuang."
+                >
+                  Repurpose vegetable scraps into homemade cooking broth before
+                  discarding.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CONTENT 5: CLOTHING -->
+          <div class="folder-content" id="content-clothing">
+            <ul class="tips-list">
+              <li class="tip-item">
+                <span class="tip-number">1</span>
+                <span
+                  data-en="Wash garments in cold water and air-dry them on laundry racks."
+                  data-bm="Basuh pakaian dengan air sejuk dan jemur di ampaian udara semula jadi."
+                >
+                  Wash garments in cold water and air-dry them on laundry racks.
+                </span>
+              </li>
+              <li class="tip-item">
+                <span class="tip-number">2</span>
+                <span
+                  data-en="Mend loose buttons and repair torn seams instead of throwing clothes out."
+                  data-bm="Jahit semula butang yang tercabut dan baiki jahitan koyak daripada terus membuang pakaian."
+                >
+                  Mend loose buttons and repair torn seams instead of throwing
+                  clothes out.
+                </span>
+              </li>
+              <li class="tip-item">
+                <span class="tip-number">3</span>
+                <span
+                  data-en="Donate gently-worn clothing to local charitable shelters or thrift stores."
+                  data-bm="Dermakan pakaian elok yang tidak lagi dipakai ke pusat kebajikan atau kedai pakaian terpakai."
+                >
+                  Donate gently-worn clothing to local charitable shelters or
+                  thrift stores.
+                </span>
+              </li>
+              <li class="tip-item">
+                <span class="tip-number">4</span>
+                <span
+                  data-en="Choose timeless, durable natural fabrics over fast-fashion synthetic blends."
+                  data-bm="Pilih fabrik semula jadi tahan lasak berbanding pakaian fesyen pantas (fast-fashion) berkualiti rendah."
+                >
+                  Choose timeless, durable natural fabrics over fast-fashion
+                  synthetic blends.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CONTENT 6: TRANSPORTATION -->
+          <div class="folder-content" id="content-transport">
+            <ul class="tips-list">
+              <li class="tip-item">
+                <span class="tip-number">1</span>
+                <span
+                  data-en="Carpool or share rides with colleagues, neighbors, and friends."
+                  data-bm="Berkongsi kenderaan (carpool) bersama rakan sekerja, jiran atau kawan-kawan."
+                >
+                  Carpool or share rides with colleagues, neighbors, and
+                  friends.
+                </span>
+              </li>
+              <li class="tip-item">
+                <span class="tip-number">2</span>
+                <span
+                  data-en="Use public transit buses and commuter trains for regular daily commutes."
+                  data-bm="Gunakan perkhidmatan bas awam atau tren komuter untuk perjalanan harian."
+                >
+                  Use public transit buses and commuter trains for regular daily
+                  commutes.
+                </span>
+              </li>
+              <li class="tip-item">
+                <span class="tip-number">3</span>
+                <span
+                  data-en="Walk or cycle for short neighborhood errands to cut carbon emissions."
+                  data-bm="Berjalan kaki atau berbasikal bagi urusan jarak dekat untuk mengurangkan pelepasan karbon."
+                >
+                  Walk or cycle for short neighborhood errands to cut carbon
+                  emissions.
+                </span>
+              </li>
+              <li class="tip-item">
+                <span class="tip-number">4</span>
+                <span
+                  data-en="Maintain proper tire pressure to improve vehicle fuel economy."
+                  data-bm="Pastikan tekanan angin tayar sentiasa optimum untuk kecekapan penggunaan bahan api kenderaan."
+                >
+                  Maintain proper tire pressure to improve vehicle fuel economy.
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </main>
 
-<!-- Global Recommended Learning Flow Guide -->
-        <section class="journey-guide-section" style="max-width: 950px; margin: 40px auto 30px auto; width: 100%;">
-            <div class="guide-header">
-                <i class="ph-fill ph-compass"></i>
-                <h2>How to Navigate the Platform</h2>
-                <p>Follow our recommended 5-step learning path to maximize your understanding and test your skills.</p>
-            </div>
+    <!-- Global Recommended Learning Flow Guide -->
+    <section
+      class="journey-guide-section"
+      style="max-width: 950px; margin: 40px auto 30px auto; width: 100%"
+    >
+      <div class="guide-header">
+        <i class="ph-fill ph-compass"></i>
+        <h2
+          data-en="How to Navigate the Platform"
+          data-bm="Panduan Navigasi Platform"
+        >
+          How to Navigate the Platform
+        </h2>
+        <p
+          data-en="Follow our recommended 5-step learning path to maximize your understanding and test your skills."
+          data-bm="Ikuti 5 langkah pembelajaran yang disyorkan bagi menguasai amalan pengurusan sisa mampan."
+        >
+          Follow our recommended 5-step learning path to maximize your
+          understanding and test your skills.
+        </p>
+      </div>
 
-            <div class="journey-steps-container">
-                
-                <a href="index.html" class="journey-step-node">
-                    <span class="step-num">1</span>
-                    <div class="step-icon"><i class="ph ph-house"></i></div>
-                    <h4>Home</h4>
-                    <p>Overview & Goals</p>
-                </a>
-                
-                <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+      <div class="journey-steps-container">
+        <a href="index.html" class="journey-step-node">
+          <span class="step-num">1</span>
+          <div class="step-icon"><i class="ph ph-house"></i></div>
+          <h4 data-en="Home" data-bm="Utama">Home</h4>
+          <p data-en="Overview & Goals" data-bm="Pengenalan & Matlamat">
+            Overview & Goals
+          </p>
+        </a>
 
-                <!-- Add class="active-node" when in learn.html -->
-                <a href="learn.html" class="journey-step-node">
-                    <span class="step-num">2</span>
-                    <div class="step-icon"><i class="ph ph-book-open"></i></div>
-                    <h4>Learn</h4>
-                    <p>Read & Watch</p>
-                </a>
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
 
-                <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+        <a href="learn.html" class="journey-step-node">
+          <span class="step-num">2</span>
+          <div class="step-icon"><i class="ph ph-book-open"></i></div>
+          <h4 data-en="Learn" data-bm="Belajar">Learn</h4>
+          <p data-en="Read & Watch" data-bm="Baca & Tonton">Read & Watch</p>
+        </a>
 
-                <!-- Add class="active-node" when in quiz.html -->
-                <a href="quiz.html" class="journey-step-node">
-                    <span class="step-num">3</span>
-                    <div class="step-icon"><i class="ph ph-graduation-cap"></i></div>
-                    <h4>Quiz</h4>
-                    <p>Check Knowledge</p>
-                </a>
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
 
-                <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+        <a href="quiz.html" class="journey-step-node">
+          <span class="step-num">3</span>
+          <div class="step-icon"><i class="ph ph-graduation-cap"></i></div>
+          <h4 data-en="Quiz" data-bm="Kuiz">Quiz</h4>
+          <p data-en="Check Knowledge" data-bm="Uji Kefahaman">
+            Check Knowledge
+          </p>
+        </a>
 
-                <!-- Add class="active-node" when in game.html -->
-                <a href="game.html" class="journey-step-node">
-                    <span class="step-num">4</span>
-                    <div class="step-icon"><i class="ph ph-game-controller"></i></div>
-                    <h4>Game</h4>
-                    <p>Reactor & Sorting</p>
-                </a>
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
 
-                <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+        <a href="game.html" class="journey-step-node">
+          <span class="step-num">4</span>
+          <div class="step-icon"><i class="ph ph-game-controller"></i></div>
+          <h4 data-en="Game" data-bm="Permainan">Game</h4>
+          <p data-en="Reactor & Sorting" data-bm="Simulasi & Reaktor">
+            Reactor & Sorting
+          </p>
+        </a>
 
-                <!-- Add class="active-node" when in community.html -->
-                <a href="community.html" class="journey-step-node">
-                    <span class="step-num">5</span>
-                    <div class="step-icon"><i class="ph ph-users"></i></div>
-                    <h4>Community</h4>
-                    <p>Share & Inspire</p>
-                </a>
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
 
-            </div>
-        </section>
+        <a href="community.html" class="journey-step-node">
+          <span class="step-num">5</span>
+          <div class="step-icon"><i class="ph ph-users"></i></div>
+          <h4 data-en="Community" data-bm="Komuniti">Community</h4>
+          <p data-en="Share & Inspire" data-bm="Kongsi & Inspirasi">
+            Share & Inspire
+          </p>
+        </a>
+      </div>
+    </section>
 
+    <!-- Footer -->
     <footer>
       <div class="footer-logo">
         <i class="ph ph-recycle"></i> 4R E-Learning Platform
       </div>
-      <p class="footer-text">
+      <p
+        class="footer-text"
+        data-en="Learn about Reduce, Reuse, Recycle, and Recovery"
+        data-bm="Pelajari mengenai Reduce, Reuse, Recycle, dan Recovery"
+      >
         Learn about Reduce, Reuse, Recycle, and Recovery
       </p>
-      <p class="footer-text">
+      <p
+        class="footer-text"
+        data-en="Making the world a better place, one step at a time."
+        data-bm="Menjadikan bumi lebih lestari, selangkah demi selangkah."
+      >
         Making the world a better place, one step at a time.
       </p>
     </footer>
 
-    <!-- Interactive Javascript for Folder Tabs -->
+    <!-- Tab Switching Script -->
     <script>
-      function switchTab(themeName) {
-        // 1. Update the folder theme color wrapper
-        const folder = document.getElementById("dynamic-folder");
-        folder.setAttribute("data-theme", themeName);
+      function switchTipTab(targetName, clickedButton) {
+        document
+          .querySelectorAll(".folder-tab")
+          .forEach((tab) => tab.classList.remove("active"));
+        clickedButton.classList.add("active");
 
-        // 2. Update active tab styling
-        const tabs = document.querySelectorAll(".folder-tab");
-        tabs.forEach((tab) => {
-          if (tab.getAttribute("data-target") === themeName) {
-            tab.classList.add("active");
-          } else {
-            tab.classList.remove("active");
-          }
-        });
+        const wrapper = document.getElementById("folder-wrapper");
+        wrapper.setAttribute("data-theme", targetName);
 
-        // 3. Show correct content and hide others
-        const contents = document.querySelectorAll(".folder-content");
-        contents.forEach((content) => {
-          if (content.id === "content-" + themeName) {
-            content.classList.add("active");
-          } else {
-            content.classList.remove("active");
-          }
-        });
+        const folderBody = document.getElementById("folder-body");
+        if (targetName === "main") {
+          folderBody.style.borderTopLeftRadius = "0";
+        } else {
+          folderBody.style.borderTopLeftRadius = "24px";
+        }
+
+        document
+          .querySelectorAll(".folder-content")
+          .forEach((content) => content.classList.remove("active"));
+        const targetContent = document.getElementById("content-" + targetName);
+        if (targetContent) {
+          targetContent.classList.add("active");
+        }
       }
     </script>
 
-<!-- Mascot Script -->
+    <!-- Mascot Script -->
     <script src="mascot.js"></script>
-
-<script>
-        function switchTipTab(targetName, clickedButton) {
-            // 1. Update active tab styling
-            document.querySelectorAll('.folder-tab').forEach(tab => tab.classList.remove('active'));
-            clickedButton.classList.add('active');
-
-            // 2. Change folder body theme/color
-            const wrapper = document.getElementById('folder-wrapper');
-            wrapper.setAttribute('data-theme', targetName);
-
-            // Adjust top-left curve if not on the main tab
-            const folderBody = document.getElementById('folder-body');
-            if (targetName === 'main') {
-                folderBody.style.borderTopLeftRadius = '0';
-            } else {
-                folderBody.style.borderTopLeftRadius = '24px';
-            }
-
-            // 3. Switch visible content
-            document.querySelectorAll('.folder-content').forEach(content => content.classList.remove('active'));
-            const targetContent = document.getElementById('content-' + targetName);
-            if (targetContent) {
-                targetContent.classList.add('active');
-            }
-        }
-    </script>
-
-</body>
+    <!-- Language Script (Required for translations to toggle) -->
+    <script src="lang.js"></script>
+  </body>
 </html>
-

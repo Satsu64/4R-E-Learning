@@ -3622,16 +3622,353 @@ button {
   }
 }
 
+/* ================== GAME 1 WRAPPER FIX ================== */
 #game-sort-wrapper,
 .game-sort-wrapper {
-  display: flex !important;
-  flex-direction: column !important;
-  width: 100% !important;
-  max-width: 850px !important;
-  margin: 0 auto !important;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .game-main {
   flex-direction: column !important;
   align-items: center !important;
+}
+
+.btn-lang-toggle {
+  background: #f1f5f9;
+  border: 1.5px solid #cbd5e1;
+  color: #1e293b;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+.btn-lang-toggle:hover {
+  background: #e2e8f0;
+  border-color: #94a3b8;
+  transform: scale(1.05);
+}
+
+/* ================== INFOGRAPHIC STATS BANNERS ================== */
+.infographic-banner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin-bottom: 24px;
+  gap: 15px;
+  flex-wrap: wrap;
+  color: #ffffff;
+}
+.info-green {
+  background: linear-gradient(135deg, #059669, #10b981);
+}
+.info-blue {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+}
+.info-teal {
+  background: linear-gradient(135deg, #0f766e, #0d9488);
+}
+.info-orange {
+  background: linear-gradient(135deg, #c2410c, #ea580c);
+  border: 2px solid #fef08a;
+}
+
+.info-stat {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 140px;
+}
+.info-val {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+.info-lbl {
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.92;
+  margin-top: 4px;
+}
+
+/* Bin Guides */
+.bins-color-guide {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+.bin-guide-box {
+  padding: 12px 16px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 13.5px;
+}
+.bg-blue-bin {
+  background: #eff6ff;
+  border-left: 5px solid #2563eb;
+  color: #1e3a8a;
+}
+.bg-orange-bin {
+  background: #fff7ed;
+  border-left: 5px solid #ea580c;
+  color: #9a3412;
+}
+.bg-brown-bin {
+  background: #fefce8;
+  border-left: 5px solid #ca8a04;
+  color: #713f12;
+}
+
+/* Malaysian Recovery Facilities Directory */
+.recovery-facilities-section {
+  margin-top: 25px;
+  background: #f8fafc;
+  border: 2px solid #fed7aa;
+  border-radius: 16px;
+  padding: 22px 24px;
+}
+.facility-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #9a3412;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.facility-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+.fac-tag {
+  font-size: 10.5px;
+  font-weight: 900;
+  background: #fff7ed;
+  color: #ea580c;
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+.tag-mrf {
+  background: #eff6ff;
+  color: #2563eb;
+}
+.tag-bio {
+  background: #ecfdf5;
+  color: #059669;
+}
+.facility-card h5 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+.facility-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.facility-card ul li {
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.45;
+}
+
+/* Overseas Innovation Box */
+.overseas-innovation-box {
+  margin-top: 20px;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-radius: 16px;
+  padding: 22px 24px;
+  position: relative;
+}
+.overseas-badge {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: #1e293b;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.6px;
+}
+.overseas-innovation-box h4 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 6px 0 12px 0;
+}
+.overseas-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+.overseas-text p {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #475569;
+  margin-bottom: 8px;
+}
+.overseas-highlight {
+  background: #ecfdf5;
+  border-left: 4px solid #10b981;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 13px;
+  color: #065f46;
+}
+.overseas-highlight h6 {
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+/* Quiz Tier Switcher */
+.quiz-tier-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+.tier-label {
+  font-size: 14px;
+  font-weight: 800;
+  color: #334155;
+}
+.tier-select-btn {
+  background: #f1f5f9;
+  border: 2px solid #cbd5e1;
+  color: #475569;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 13.5px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.tier-select-btn:hover {
+  background: #e2e8f0;
+}
+.tier-select-btn.active-tier {
+  background: #10b981;
+  border-color: #059669;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+@media (max-width: 820px) {
+  .facility-grid,
+  .overseas-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================== HERO & RECOVERY IMAGE EMBEDS ================== */
+.hero-card-img-wrap {
+  width: 100%;
+  height: 200px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  background-color: #0f172a;
+}
+
+.hero-card-visual {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.hero-card:hover .hero-card-visual {
+  transform: scale(1.04);
+}
+
+/* Learn Section Recovery Diagram */
+.recovery-graphic-banner {
+  width: 100%;
+  max-height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 12px 0 18px 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  border: 1.5px solid #fed7aa;
+}
+
+.recovery-diagram-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hero-card-img-wrap {
+    height: 160px;
+  }
+  .recovery-graphic-banner {
+    max-height: 200px;
+  }
+}
+
+/* ================== STANDALONE 3R HOME BANNER ================== */
+.home-featured-banner {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  margin-bottom: 30px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  background: #0f172a;
+}
+
+.featured-banner-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .home-featured-banner {
+    border-radius: 14px;
+    margin-bottom: 20px;
+  }
 }

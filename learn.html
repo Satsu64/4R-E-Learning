@@ -22,37 +22,92 @@
         </div>
       </div>
       <div class="nav-links">
-        <a href="index.html"><i class="ph ph-house"></i> Home</a>
-        <a href="tips.html"><i class="ph ph-lightbulb"></i> Tips</a>
-        <a href="learn.html" class="active"
-          ><i class="ph ph-book-open"></i> Learn</a
+        <a href="index.html"
+          ><i class="ph ph-house"></i>
+          <span data-en="Home" data-bm="Utama">Home</span></a
         >
-        <a href="quiz.html"><i class="ph ph-graduation-cap"></i> Quiz</a>
-        <a href="game.html"><i class="ph ph-game-controller"></i> Game</a>
-        <a href="community.html"><i class="ph ph-users"></i> Community</a>
+        <a href="tips.html"
+          ><i class="ph ph-lightbulb"></i>
+          <span data-en="Tips" data-bm="Tip">Tips</span></a
+        >
+        <a href="learn.html" class="active"
+          ><i class="ph ph-book-open"></i>
+          <span data-en="Learn" data-bm="Belajar">Learn</span></a
+        >
+        <a href="quiz.html"
+          ><i class="ph ph-graduation-cap"></i>
+          <span data-en="Quiz" data-bm="Kuiz">Quiz</span></a
+        >
+        <a href="game.html"
+          ><i class="ph ph-game-controller"></i>
+          <span data-en="Game" data-bm="Permainan">Game</span></a
+        >
+        <a href="community.html"
+          ><i class="ph ph-users"></i>
+          <span data-en="Community" data-bm="Komuniti">Community</span></a
+        >
+        <button
+          type="button"
+          id="lang-toggle-btn"
+          class="btn-lang-toggle"
+          onclick="toggleLanguage()"
+        >
+          <span>🇲🇾 BM</span>
+        </button>
       </div>
     </nav>
 
     <main class="learn-main-container">
       <!-- 1. TOP: REMEMBER THE HIERARCHY -->
       <section class="hierarchy-card">
-        <h2>Remember the Hierarchy!</h2>
-        <p>The 4Rs are most effective when applied in order:</p>
+        <h2
+          data-en="Remember the Hierarchy!"
+          data-bm="Ingat Hierarki Pengurusan Sisa!"
+        >
+          Remember the Hierarchy!
+        </h2>
+        <p
+          data-en="The 4Rs are most effective when applied in order:"
+          data-bm="Amalan 4R paling berkesan apabila diamalkan mengikut urutan:"
+        >
+          The 4Rs are most effective when applied in order:
+        </p>
         <div class="hierarchy-flow">
-          <span class="h-step">1. Reduce</span>
+          <span class="h-step" data-en="1. Reduce" data-bm="1. Pengurangan"
+            >1. Reduce</span
+          >
           <i class="ph-bold ph-arrow-right"></i>
-          <span class="h-step">2. Reuse</span>
+          <span class="h-step" data-en="2. Reuse" data-bm="2. Guna Semula"
+            >2. Reuse</span
+          >
           <i class="ph-bold ph-arrow-right"></i>
-          <span class="h-step">3. Recycle</span>
+          <span class="h-step" data-en="3. Recycle" data-bm="3. Kitar Semula"
+            >3. Recycle</span
+          >
           <i class="ph-bold ph-arrow-right"></i>
-          <span class="h-step h-step-recover">4. Recover</span>
+          <span
+            class="h-step h-step-recover"
+            data-en="4. Recover"
+            data-bm="4. Perolehan Semula"
+            >4. Recover</span
+          >
         </div>
       </section>
 
       <!-- 2. MIDDLE: CHOOSE YOUR LEARNING STYLE -->
       <section class="learning-style-selector">
-        <h2 class="style-selector-title">Choose Your Learning Style</h2>
-        <p class="style-selector-subtitle">
+        <h2
+          class="style-selector-title"
+          data-en="Choose Your Learning Style"
+          data-bm="Pilih Gaya Pembelajaran Anda"
+        >
+          Choose Your Learning Style
+        </h2>
+        <p
+          class="style-selector-subtitle"
+          data-en="Pick how you want to explore the 4Rs—read detailed guides or watch video explainers."
+          data-bm="Pilih cara penerokaan 4R anda—baca panduan terperinci atau tonton video penerangan."
+        >
           Pick how you want to explore the 4Rs—read detailed guides or watch
           video explainers.
         </p>
@@ -71,11 +126,18 @@
               <i class="ph-fill ph-book-open-text"></i>
             </div>
             <div class="style-card-info">
-              <span class="style-tag">INTERACTIVE TEXT</span>
-              <h3>Reading Mode</h3>
-              <p>
-                Explore modular guides, real-world examples, and step-by-step
-                strategies.
+              <span
+                class="style-tag"
+                data-en="INTERACTIVE TEXT"
+                data-bm="TEKS INTERAKTIF"
+                >INTERACTIVE TEXT</span
+              >
+              <h3 data-en="Reading Mode" data-bm="Mod Membaca">Reading Mode</h3>
+              <p
+                data-en="Explore modular guides, real-world examples, and infographics."
+                data-bm="Terokai panduan modular, contoh harian, dan infografik."
+              >
+                Explore modular guides, real-world examples, and infographics.
               </p>
             </div>
             <div class="style-check-indicator">
@@ -96,11 +158,18 @@
               <i class="ph-fill ph-video"></i>
             </div>
             <div class="style-card-info">
-              <span class="style-tag tag-teal">MEDIA LIBRARY</span>
-              <h3>Watch Mode</h3>
-              <p>
-                Watch short video breakdowns and browse curated industry case
-                study articles.
+              <span
+                class="style-tag tag-teal"
+                data-en="MEDIA LIBRARY"
+                data-bm="PERPUSTAKAAN MEDIA"
+                >MEDIA LIBRARY</span
+              >
+              <h3 data-en="Watch Mode" data-bm="Mod Menonton">Watch Mode</h3>
+              <p
+                data-en="Watch video breakdowns with R.B. voice-over narration."
+                data-bm="Tonton klip penerangan dengan suara latar R.B."
+              >
+                Watch video breakdowns with R.B. voice-over narration.
               </p>
             </div>
             <div class="style-check-indicator">
@@ -110,11 +179,11 @@
         </div>
       </section>
 
-      <!-- 3. CONTENT AREA: VIEW 1 - READING MODE (SPACIOUS 2-COLUMN ACCORDION) -->
+      <!-- 3. VIEW 1: READING MODE (ACCORDION & INFOGRAPHICS) -->
       <section id="view-reading-mode" class="learn-view-section">
         <div class="accordion-list">
           <!-- 1. REDUCE -->
-          <div class="accordion-item active-acc" id="acc-reduce">
+          <div class="accordion-item" id="acc-reduce">
             <button
               type="button"
               class="accordion-header"
@@ -125,75 +194,142 @@
                   <i class="ph-fill ph-leaf"></i>
                 </div>
                 <div>
-                  <h3>Reduce</h3>
-                  <span class="acc-toggle-status">Click to collapse</span>
+                  <h3 data-en="1. Reduce" data-bm="1. Pengurangan">
+                    1. Reduce
+                  </h3>
+                  <span
+                    class="acc-toggle-status"
+                    data-en="Click to expand"
+                    data-bm="Klik untuk buka"
+                    >Click to expand</span
+                  >
                 </div>
               </div>
-              <i class="ph-bold ph-caret-up acc-arrow"></i>
+              <i class="ph-bold ph-caret-down acc-arrow"></i>
             </button>
             <div class="accordion-body">
+              <div class="infographic-banner info-green">
+                <div class="info-stat">
+                  <span class="info-val">38,000</span>
+                  <span
+                    class="info-lbl"
+                    data-en="Tonnes Waste / Day in Malaysia (SWCorp)"
+                    data-bm="Tan Sisa / Hari di Malaysia (SWCorp)"
+                    >Tonnes Waste / Day in Malaysia (SWCorp)</span
+                  >
+                </div>
+                <div class="info-stat">
+                  <span class="info-val">1.17 kg</span>
+                  <span
+                    class="info-lbl"
+                    data-en="Average waste produced per Malaysian daily"
+                    data-bm="Purata sisa dijana setiap rakyat Malaysia sehari"
+                    >Average waste produced per Malaysian daily</span
+                  >
+                </div>
+                <div class="info-stat">
+                  <span class="info-val">#1</span>
+                  <span
+                    class="info-lbl"
+                    data-en="Top Tier in Sustainable Hierarchy"
+                    data-bm="Keutamaan Tertinggi Dalam Hierarki Mampan"
+                    >Top Tier in Sustainable Hierarchy</span
+                  >
+                </div>
+              </div>
+
               <div class="accordion-body-grid">
                 <div class="acc-col-main">
-                  <h4>What is Reduce?</h4>
-                  <p>
-                    Reducing means preventing waste before it even begins by
-                    making conscious consumption choices and minimizing the
-                    volume of single-use materials we bring into our daily
-                    lives.
+                  <h4
+                    data-en="What is Source Reduction?"
+                    data-bm="Apakah itu Pengurangan di Punca?"
+                  >
+                    What is Source Reduction?
+                  </h4>
+                  <p
+                    data-en="Choosing inputs wisely to avoid generating solid waste before, during, and after product use. Preventing waste eliminates collection, fuel, and processing costs entirely."
+                    data-bm="Memilih bahan dengan bijak bagi mengurangkan jumlah sisa pepejal sebelum, semasa dan selepas menggunakan sesuatu produk demi mengelakkan pembaziran sumber."
+                  >
+                    Choosing inputs wisely to avoid generating solid waste
+                    before, during, and after product use. Preventing waste
+                    eliminates collection, fuel, and processing costs entirely.
                   </p>
-
-                  <h4>Benefits</h4>
+                  <h4
+                    data-en="Core Principles (SWCorp Module)"
+                    data-bm="Prinsip Utama (Modul SWCorp)"
+                  >
+                    Core Principles (SWCorp Module)
+                  </h4>
                   <div class="benefits-grid">
                     <div class="benefit-card">
                       <div class="benefit-icon b-green">
-                        <i class="ph-bold ph-check"></i>
+                        <i class="ph-bold ph-shopping-bag"></i>
                       </div>
                       <span
-                        >Conserves virgin raw materials and natural
-                        forests</span
+                        data-en="Plan purchases & make strict grocery lists"
+                        data-bm="Merancang pembelian dengan membeli barang yang perlu sahaja"
+                        >Plan purchases & make strict grocery lists</span
                       >
                     </div>
                     <div class="benefit-card">
                       <div class="benefit-icon b-green">
-                        <i class="ph-bold ph-check"></i>
+                        <i class="ph-bold ph-package"></i>
                       </div>
                       <span
-                        >Saves personal household and grocery expenditure</span
+                        data-en="Pick items with minimal or biodegradable packaging"
+                        data-bm="Memilih barangan yang kurang pembungkusan (mesra alam)"
+                        >Pick items with minimal or biodegradable
+                        packaging</span
                       >
                     </div>
                     <div class="benefit-card">
                       <div class="benefit-icon b-green">
-                        <i class="ph-bold ph-check"></i>
+                        <i class="ph-bold ph-battery-charging"></i>
                       </div>
                       <span
-                        >Cuts manufacturing energy and industrial
-                        emissions</span
+                        data-en="Use rechargeable batteries over disposable ones"
+                        data-bm="Membeli bateri boleh dicas semula berbanding pakai buang"
+                        >Use rechargeable batteries over disposable ones</span
                       >
                     </div>
                     <div class="benefit-card">
                       <div class="benefit-icon b-green">
-                        <i class="ph-bold ph-check"></i>
+                        <i class="ph-bold ph-bowl-food"></i>
                       </div>
                       <span
-                        >Significantly reduces overall municipal waste
-                        volumes</span
+                        data-en="Bring personal food containers (Say NO to Plastics)"
+                        data-bm="Membawa bekas makanan sendiri (Katakan Tidak Pada Plastik)"
+                        >Bring personal food containers (Say NO to
+                        Plastics)</span
                       >
                     </div>
                   </div>
                 </div>
-
                 <div class="acc-col-side">
-                  <h4>Examples</h4>
+                  <h4
+                    data-en="School & Home Actions"
+                    data-bm="Tindakan di Sekolah & Rumah"
+                  >
+                    School & Home Actions
+                  </h4>
                   <ul class="examples-list ex-green">
-                    <li>
-                      Buy pantry staples in bulk using personal canvas tote bags
+                    <li
+                      data-en="Double-sided printing on paper"
+                      data-bm="Menggunakan kedua-dua belah muka surat kertas"
+                    >
+                      Double-sided printing on paper
                     </li>
-                    <li>
-                      Refuse single-use plastic cutlery, straws, and carrier
-                      bags
+                    <li
+                      data-en="Campaign: 'Value Food, Avoid Waste'"
+                      data-bm="Kempen 'Hargai Makanan, Elakkan Pembaziran'"
+                    >
+                      Campaign: 'Value Food, Avoid Waste'
                     </li>
-                    <li>
-                      Switch to paperless digital receipts and online billing
+                    <li
+                      data-en="Say NO to single-use polystyrene and plastic straws"
+                      data-bm="Katakan TIDAK kepada bekas polisterin dan straw plastik"
+                    >
+                      Say NO to single-use polystyrene and plastic straws
                     </li>
                   </ul>
                 </div>
@@ -213,77 +349,141 @@
                   <i class="ph-fill ph-arrows-clockwise"></i>
                 </div>
                 <div>
-                  <h3>Reuse</h3>
-                  <span class="acc-toggle-status">Click to expand</span>
+                  <h3 data-en="2. Reuse" data-bm="2. Guna Semula">2. Reuse</h3>
+                  <span
+                    class="acc-toggle-status"
+                    data-en="Click to expand"
+                    data-bm="Klik untuk buka"
+                    >Click to expand</span
+                  >
                 </div>
               </div>
               <i class="ph-bold ph-caret-down acc-arrow"></i>
             </button>
             <div class="accordion-body">
+              <div class="infographic-banner info-blue">
+                <div class="info-stat">
+                  <span class="info-val" data-en="5 Ways" data-bm="5 Kaedah"
+                    >5 Ways</span
+                  >
+                  <span
+                    class="info-lbl"
+                    data-en="Recognized Reuse Approaches (SWCorp)"
+                    data-bm="Kaedah Guna Semula Diiktiraf (SWCorp)"
+                    >Recognized Reuse Approaches (SWCorp)</span
+                  >
+                </div>
+                <div class="info-stat">
+                  <span
+                    class="info-val"
+                    data-en="Upcycling"
+                    data-bm="Guna Kreatif"
+                    >Upcycling</span
+                  >
+                  <span
+                    class="info-lbl"
+                    data-en="Adds aesthetic & functional market value"
+                    data-bm="Menambah nilai estetika dan fungsi baharu"
+                    >Adds aesthetic & functional market value</span
+                  >
+                </div>
+                <div class="info-stat">
+                  <span class="info-val" data-en="Zero Cost" data-bm="Kos Sifar"
+                    >Zero Cost</span
+                  >
+                  <span
+                    class="info-lbl"
+                    data-en="Prolongs material life before recycling"
+                    data-bm="Memanjangkan jangka hayat bahan tanpa kos"
+                    >Prolongs material life before recycling</span
+                  >
+                </div>
+              </div>
+
               <div class="accordion-body-grid">
                 <div class="acc-col-main">
-                  <h4>What is Reuse?</h4>
-                  <p>
-                    Reusing focuses on extending the operational lifespan of
-                    products through ongoing maintenance, repurposing, or
-                    donation rather than discarding them after initial use.
-                  </p>
-
-                  <h4>Benefits</h4>
+                  <h4
+                    data-en="The 5 Modalities of Reuse (SWCorp Guidelines)"
+                    data-bm="5 Kaedah Guna Semula (Panduan SWCorp)"
+                  >
+                    The 5 Modalities of Reuse (SWCorp Guidelines)
+                  </h4>
                   <div class="benefits-grid">
                     <div class="benefit-card">
-                      <div class="benefit-icon b-blue">
-                        <i class="ph-bold ph-check"></i>
+                      <div class="benefit-icon b-blue">1</div>
+                      <div>
+                        <strong
+                          data-en="Conventional Reuse:"
+                          data-bm="Guna Semula Konvensional:"
+                          >Conventional Reuse:</strong
+                        >
+                        <span
+                          data-en=" Using containers for their original purpose repeatedly."
+                          data-bm=" Guna barangan bagi tujuan asal (cth: botol air mineral)."
+                        >
+                          Using containers for their original purpose
+                          repeatedly.</span
+                        >
                       </div>
-                      <span
-                        >Prevents items from prematurely entering disposal
-                        sites</span
-                      >
                     </div>
                     <div class="benefit-card">
-                      <div class="benefit-icon b-blue">
-                        <i class="ph-bold ph-check"></i>
+                      <div class="benefit-icon b-blue">2</div>
+                      <div>
+                        <strong
+                          data-en="Creative Reuse (Upcycling):"
+                          data-bm="Guna Semula Kreatif (Upcycling):"
+                          >Creative Reuse (Upcycling):</strong
+                        >
+                        <span
+                          data-en=" Transforming scrap into higher artistic or functional products (Tee-Bag)."
+                          data-bm=" Inovasi sisa jadi produk bernilai estetika (cth: Beg T-shirt)."
+                        >
+                          Transforming scrap into higher products.</span
+                        >
                       </div>
-                      <span
-                        >Reduces demand for continuous product
-                        manufacturing</span
-                      >
                     </div>
                     <div class="benefit-card">
-                      <div class="benefit-icon b-blue">
-                        <i class="ph-bold ph-check"></i>
+                      <div class="benefit-icon b-blue">3</div>
+                      <div>
+                        <strong data-en="Reclamation:" data-bm="Penebusgunaan:"
+                          >Reclamation:</strong
+                        >
+                        <span
+                          data-en=" Salvaging building timbers or bricks for furniture."
+                          data-bm=" Kayu robohan lama dijadikan perabot atau hiasan rumah."
+                        >
+                          Salvaging building timbers for furniture.</span
+                        >
                       </div>
-                      <span
-                        >Supports community circular sharing and donation
-                        hubs</span
-                      >
                     </div>
                     <div class="benefit-card">
-                      <div class="benefit-icon b-blue">
-                        <i class="ph-bold ph-check"></i>
+                      <div class="benefit-icon b-blue">4</div>
+                      <div>
+                        <strong
+                          data-en="Refurbishing / Repair:"
+                          data-bm="Baik Pulih:"
+                          >Refurbishing / Repair:</strong
+                        >
+                        <span
+                          data-en=" Mending electronics, phones, and chairs instead of buying new."
+                          data-bm=" Membaiki perkakasan elektrik atau telefon pintar yang rosak."
+                        >
+                          Mending electronics and appliances.</span
+                        >
                       </div>
-                      <span
-                        >Lowers the carbon footprint of buying
-                        replacements</span
-                      >
                     </div>
                   </div>
                 </div>
-
                 <div class="acc-col-side">
-                  <h4>Examples</h4>
-                  <ul class="examples-list ex-blue">
-                    <li>
-                      Carry reusable insulated drink bottles and food containers
-                    </li>
-                    <li>
-                      Mend torn garments and repair damaged home furniture
-                    </li>
-                    <li>
-                      Donate outgrown clothing and working electronics to
-                      charities
-                    </li>
-                  </ul>
+                  <h4 data-en="Adaptive Reuse" data-bm="Penyesuaian Fungsi">
+                    Adaptive Reuse
+                  </h4>
+                  <p
+                    data-en="Modifying old, derelict structures into community centers, elder care homes, or eco-cafes."
+                    data-bm="Mengubah suai binaan lama/usang menjadi pusat kegiatan komuniti atau rumah kebajikan."
+                  >
+                    Modifying old structures into community centers.
+                  </p>
                 </div>
               </div>
             </div>
@@ -301,80 +501,128 @@
                   <i class="ph-fill ph-recycle"></i>
                 </div>
                 <div>
-                  <h3>Recycle</h3>
-                  <span class="acc-toggle-status">Click to expand</span>
+                  <h3 data-en="3. Recycle" data-bm="3. Kitar Semula">
+                    3. Recycle
+                  </h3>
+                  <span
+                    class="acc-toggle-status"
+                    data-en="Click to expand"
+                    data-bm="Klik untuk buka"
+                    >Click to expand</span
+                  >
                 </div>
               </div>
               <i class="ph-bold ph-caret-down acc-arrow"></i>
             </button>
             <div class="accordion-body">
+              <div class="infographic-banner info-teal">
+                <div class="info-stat">
+                  <span class="info-val">30%</span>
+                  <span
+                    class="info-lbl"
+                    data-en="National Recycling Target (Waste Policy)"
+                    data-bm="Sasaran Kadar Kitar Semula Kebangsaan"
+                    >National Recycling Target</span
+                  >
+                </div>
+                <div class="info-stat">
+                  <span class="info-val">SAS</span>
+                  <span
+                    class="info-lbl"
+                    data-en="Separation at Source enforced since Sept 1, 2015"
+                    data-bm="Pengasingan Sisa di Punca (1 Sept 2015)"
+                    >Separation at Source (1 Sept 2015)</span
+                  >
+                </div>
+                <div class="info-stat">
+                  <span class="info-val">95%</span>
+                  <span
+                    class="info-lbl"
+                    data-en="Energy saved by recycling aluminum cans vs raw ore"
+                    data-bm="Penjimatan tenaga lebur tin aluminium vs bauksit"
+                    >Energy saved by recycling aluminum cans</span
+                  >
+                </div>
+              </div>
+
               <div class="accordion-body-grid">
                 <div class="acc-col-main">
-                  <h4>What is Recycle?</h4>
-                  <p>
-                    Recycling is the process of collecting and processing
-                    materials that would otherwise be thrown away as trash and
-                    turning them into entirely new products.
-                  </p>
-
-                  <h4>Benefits</h4>
-                  <div class="benefits-grid">
-                    <div class="benefit-card">
-                      <div class="benefit-icon b-teal">
-                        <i class="ph-bold ph-check"></i>
-                      </div>
+                  <h4
+                    data-en="Separation at Source Color Coding (Malaysian Standards)"
+                    data-bm="Kod Warna Pengasingan Sisa di Punca (Piawaian Malaysia)"
+                  >
+                    Color Coding
+                  </h4>
+                  <div class="bins-color-guide">
+                    <div class="bin-guide-box bg-blue-bin">
+                      <strong data-en="Paper (Blue)" data-bm="Kertas (Biru)"
+                        ><i class="ph-bold ph-newspaper"></i> Paper
+                        (Blue)</strong
+                      >
                       <span
-                        >Conserves natural resources like timber and water</span
+                        data-en="Newspapers, magazines, books, boxes, cardboard, brochures."
+                        data-bm="Surat khabar, majalah, buku, kotak, kadbod, risalah."
+                        >Newspapers, magazines, books, boxes, cardboard,
+                        brochures.</span
                       >
                     </div>
-                    <div class="benefit-card">
-                      <div class="benefit-icon b-teal">
-                        <i class="ph-bold ph-check"></i>
-                      </div>
+                    <div class="bin-guide-box bg-orange-bin">
+                      <strong
+                        data-en="Plastics & Cans (Orange)"
+                        data-bm="Plastik & Tin (Jingga)"
+                        ><i class="ph-bold ph-brand-revolut"></i> Plastics &
+                        Cans (Orange)</strong
+                      >
                       <span
-                        >Saves significant amounts of manufacturing energy</span
+                        data-en="Beverage bottles, detergent bottles, aluminum cans, steel food tins."
+                        data-bm="Botol plastik minuman, botol sabun, tin aluminium, tin makanan keluli."
+                        >Beverage bottles, detergent bottles, aluminum cans,
+                        steel food tins.</span
                       >
                     </div>
-                    <div class="benefit-card">
-                      <div class="benefit-icon b-teal">
-                        <i class="ph-bold ph-check"></i>
-                      </div>
-                      <span
-                        >Reduces greenhouse gas emissions from refineries</span
+                    <div class="bin-guide-box bg-brown-bin">
+                      <strong data-en="Glass (Brown)" data-bm="Kaca (Coklat)"
+                        ><i class="ph-bold ph-brand-producthunt"></i> Glass
+                        (Brown)</strong
                       >
-                    </div>
-                    <div class="benefit-card">
-                      <div class="benefit-icon b-teal">
-                        <i class="ph-bold ph-check"></i>
-                      </div>
                       <span
-                        >Creates sustainable jobs across the circular
-                        economy</span
+                        data-en="Soy sauce bottles, jam jars, perfume containers (100% silica glass)."
+                        data-bm="Botol kicap, botol sos, balang jem, botol minyak wangi (100% kaca silika)."
+                        >Soy sauce bottles, jam jars, perfume containers (100%
+                        silica glass).</span
                       >
                     </div>
                   </div>
                 </div>
-
                 <div class="acc-col-side">
-                  <h4>Examples</h4>
-                  <ul class="examples-list ex-teal">
-                    <li>
-                      Sort clean paper, plastic, glass, and metal into bins
-                    </li>
-                    <li>
-                      Compost organic vegetable peels and garden yard waste
-                    </li>
-                    <li>
-                      Buy packaging formulated from post-consumer recyclables
-                    </li>
-                  </ul>
+                  <h4
+                    data-en="Critical Rule: Drink Cartons (Tetra Pak)"
+                    data-bm="Peraturan Khas: Kotak Minuman"
+                  >
+                    Drink Cartons (Tetra Pak)
+                  </h4>
+                  <p
+                    data-en="Composed of 75% paper, 20% polyethylene, and 5% aluminum. Steps: 1. Empty &rarr; 2. Rinse &rarr; 3. Flatten &rarr; 4. Place into BLUE (Paper) bin."
+                    data-bm="Komposisi: 75% kertas, 20% polietilena, 5% aluminium foil. Kaedah: 1. Kosongkan &rarr; 2. Bilas &rarr; 3. Lipat leper &rarr; 4. Masuk ke tong Kertas (Biru)."
+                  >
+                    Composed of 75% paper, 20% polyethylene, and 5% aluminum.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- 4. RECOVER -->
-          <div class="accordion-item accordion-recover" id="acc-recover">
+          <!-- 4. RECOVERY -->
+          <div
+            class="accordion-item accordion-recover active-acc"
+            id="acc-recover"
+          >
+
+             <!-- Custom Infographic Visual -->
+              <div class="recovery-graphic-banner">
+                <img src="PIC/RECOVERY.png" alt="4th R Recovery Process: Waste-to-Energy & Pyrolysis" class="recovery-diagram-img" />
+              </div>
+
             <button
               type="button"
               class="accordion-header"
@@ -382,79 +630,192 @@
             >
               <div class="acc-title-left">
                 <div class="acc-icon-box acc-orange">
-                  <i class="ph-fill ph-sparkle"></i>
+                  <i class="ph-fill ph-lightning"></i>
                 </div>
                 <div>
-                  <h3 style="color: #ea580c">Recover (The Final Step)</h3>
-                  <span class="acc-toggle-status">Click to expand</span>
+                  <h3
+                    style="color: #ea580c"
+                    data-en="4. Recover"
+                    data-bm="4. Perolehan Semula"
+                  >
+                    4. Recover
+                  </h3>
+                  <span
+                    class="acc-toggle-status"
+                    data-en="Click to collapse"
+                    data-bm="Klik untuk tutup"
+                    >Click to collapse</span
+                  >
                 </div>
               </div>
-              <i class="ph-bold ph-caret-down acc-arrow"></i>
+              <i class="ph-bold ph-caret-up acc-arrow"></i>
             </button>
             <div class="accordion-body">
-              <div class="accordion-body-grid">
-                <div class="acc-col-main">
-                  <h4>What is Recover?</h4>
-                  <p>
-                    Recovery is the critical final safety net. It involves
-                    extracting vital energy or materials from waste that cannot
-                    be reduced, reused, or recycled. This is often done through
-                    advanced biological processing or incineration with energy
-                    recovery.
-                  </p>
+              <div class="infographic-banner info-orange">
+                <div class="info-stat">
+                  <span class="info-val">Akta 672</span>
+                  <span
+                    class="info-lbl"
+                    data-en="Waste Management & Public Cleansing Act"
+                    data-bm="Akta Pengurusan Sisa Pepejal & Pembersihan Awam"
+                    >Waste Management Act</span
+                  >
+                </div>
+                <div class="info-stat">
+                  <span class="info-val">85-90%</span>
+                  <span
+                    class="info-lbl"
+                    data-en="Physical waste volume reduction via WtE"
+                    data-bm="Pengurangan isipadu sisa ke tapak pelupusan"
+                    >Waste volume reduction via WtE</span
+                  >
+                </div>
+                <div class="info-stat">
+                  <span class="info-val">31-45%</span>
+                  <span
+                    class="info-lbl"
+                    data-en="Malaysian waste is organic food waste"
+                    data-bm="Komposisi sisa makanan Malaysia (JPSPN)"
+                    >Food waste in Malaysia</span
+                  >
+                </div>
+              </div>
 
-                  <h4>Benefits</h4>
-                  <div class="benefits-grid">
-                    <div class="benefit-card benefit-card-orange">
-                      <div class="benefit-icon b-orange">
-                        <i class="ph-fill ph-lightning"></i>
-                      </div>
-                      <span
-                        >Generates renewable electricity and district heat</span
+              <!-- Malaysian Recovery Facilities List -->
+              <div class="recovery-facilities-section">
+                <h4 class="facility-title">
+                  <i class="ph-bold ph-map-pin"></i>
+                  <span
+                    data-en="Places Offering Recovery Services in Malaysia (SWCorp Directory)"
+                    data-bm="Fasiliti Perolehan Semula (Recovery) di Malaysia (Direktori SWCorp)"
+                    >Places Offering Recovery Services in Malaysia</span
+                  >
+                </h4>
+
+                <div class="facility-grid">
+                  <div class="facility-card">
+                    <div class="fac-tag">WtE / Thermal</div>
+                    <h5
+                      data-en="Malaysia Advanced Incinerators"
+                      data-bm="Insinerator Termaju Malaysia"
+                    >
+                      Insinerator Termaju Malaysia
+                    </h5>
+                    <ul>
+                      <li
+                        data-en="<strong>Pulau Langkawi (Kedah)</strong> - Island tourism waste thermal plant"
+                        data-bm="<strong>Pulau Langkawi (Kedah)</strong> - Insinerator pulau rawatan sisa pelancongan"
                       >
-                    </div>
-                    <div class="benefit-card benefit-card-orange">
-                      <div class="benefit-icon b-orange">
-                        <i class="ph-fill ph-lightning"></i>
-                      </div>
-                      <span
-                        >Drastically shrinks landfill volumes by up to 90%</span
+                        <strong>Pulau Langkawi (Kedah)</strong> - Island tourism
+                        waste thermal plant
+                      </li>
+                      <li
+                        data-en="<strong>Cameron Highlands (Pahang)</strong> - High-altitude municipal/agro plant"
+                        data-bm="<strong>Cameron Highlands (Pahang)</strong> - Mengolah sisa pertanian dan bandar"
                       >
-                    </div>
-                    <div class="benefit-card benefit-card-orange">
-                      <div class="benefit-icon b-orange">
-                        <i class="ph-fill ph-lightning"></i>
-                      </div>
-                      <span
-                        >Lowers toxic methane emissions from rotting
-                        organics</span
+                        <strong>Cameron Highlands (Pahang)</strong> -
+                        High-altitude municipal/agro plant
+                      </li>
+                      <li
+                        data-en="<strong>Pulau Pangkor & Pulau Tioman</strong> - Remote island thermal recovery units"
+                        data-bm="<strong>Pulau Pangkor & Pulau Tioman</strong> - Loji termal perbandaran pulau terpencil"
                       >
-                    </div>
-                    <div class="benefit-card benefit-card-orange">
-                      <div class="benefit-icon b-orange">
-                        <i class="ph-fill ph-lightning"></i>
-                      </div>
-                      <span>Recovers valuable raw metals from bottom ash</span>
-                    </div>
+                        <strong>Pulau Pangkor & Pulau Tioman</strong> - Remote
+                        island thermal recovery units
+                      </li>
+                      <li
+                        data-en="<strong>Tanah Merah WtE (Negeri Sembilan)</strong> - Generates 20+ MW green grid power"
+                        data-bm="<strong>Loji WtE Tanah Merah (Negeri Sembilan)</strong> - Menjana 20+ MW tenaga hijau ke grid nasional"
+                      >
+                        <strong>Tanah Merah WtE (Negeri Sembilan)</strong> -
+                        Generates 20+ MW green grid power
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="facility-card">
+                    <div class="fac-tag tag-mrf">MRF & RDF</div>
+                    <h5
+                      data-en="Material & Refuse-Derived Fuel"
+                      data-bm="Bahan Api Terbitan Sampah (RDF)"
+                    >
+                      Material & Refuse-Derived Fuel
+                    </h5>
+                    <ul>
+                      <li
+                        data-en="<strong>Belenggu Landfill (Temerloh)</strong> - Advanced mechanical MRF facility"
+                        data-bm="<strong>Tapak Pelupusan Belenggu (Temerloh)</strong> - Loji MRF mekanikal"
+                      >
+                        <strong>Belenggu Landfill (Temerloh)</strong> - Advanced
+                        mechanical MRF facility
+                      </li>
+                      <li
+                        data-en="<strong>Sg Udang Landfill (Melaka)</strong> - RDF fuel extraction facility"
+                        data-bm="<strong>Tapak Pelupusan Sg Udang (Melaka)</strong> - Pemisahan sekunder bahan bakar RDF"
+                      >
+                        <strong>Sg Udang Landfill (Melaka)</strong> - RDF fuel
+                        extraction facility
+                      </li>
+                      <li
+                        data-en="<strong>Taman Beringin (KL) & Ampang Jajar</strong> - High-compaction transfer stations"
+                        data-bm="<strong>Stesen Pemindahan Taman Beringin (KL) & Ampang Jajar</strong> - Pemadatan & perolehan sisa"
+                      >
+                        <strong>Taman Beringin (KL) & Ampang Jajar</strong> -
+                        High-compaction transfer stations
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="facility-card">
+                    <div class="fac-tag tag-bio">Bio & Organik</div>
+                    <h5
+                      data-en="Anaerobic Digestion & Compost"
+                      data-bm="Pencernaan Anaerobik & Kompos"
+                    >
+                      Anaerobic Digestion & Compost
+                    </h5>
+                    <ul>
+                      <li
+                        data-en="<strong>Bukit Tagar Landfill (Selangor)</strong> - Mega-scale landfill methane-to-energy power plant"
+                        data-bm="<strong>Tapak Pelupusan Bukit Tagar (Selangor)</strong> - Penuaian biogas metana skala mega untuk elektrik"
+                      >
+                        <strong>Bukit Tagar Landfill (Selangor)</strong> -
+                        Mega-scale landfill methane-to-energy power plant
+                      </li>
+                      <li
+                        data-en="<strong>Jeram & Seelong Landfills (Johor)</strong> - Advanced leachate biological treatment & gas capture"
+                        data-bm="<strong>Tapak Pelupusan Jeram & Seelong (Johor)</strong> - Rawatan air larut resap (leachate) & metana"
+                      >
+                        <strong>Jeram & Seelong Landfills (Johor)</strong> -
+                        Advanced leachate biological treatment & gas capture
+                      </li>
+                      <li
+                        data-en="<strong>SWCorp Community Compost Centers</strong> - 24hr automated in-vessel composters & Bokashi units"
+                        data-bm="<strong>Pusat Kompos Komuniti SWCorp</strong> - Pemprosesan sisa kantin guna mesin mekanikal 24 jam & Bokashi"
+                      >
+                        <strong>SWCorp Community Compost Centers</strong> - 24hr
+                        automated in-vessel composters & Bokashi units
+                      </li>
+                    </ul>
                   </div>
                 </div>
+              </div>
 
-                <div class="acc-col-side">
-                  <h4>Examples</h4>
-                  <ul class="examples-list ex-orange">
-                    <li>
-                      Sending non-recyclable solid waste to modern
-                      Waste-to-Energy plants
-                    </li>
-                    <li>
-                      Capturing landfill methane to generate electricity for
-                      local grids
-                    </li>
-                    <li>
-                      Anaerobic digestion of sewage and food scraps for clean
-                      biogas
-                    </li>
-                  </ul>
+<!-- Overseas Benchmark with Infographic Graphic -->
+            <div class="overseas-innovation-box">
+              <div class="overseas-badge"><i class="ph-fill ph-globe"></i> OVERSEAS BENCHMARK</div>
+
+              <h4 data-en="Global Innovation: Julian Brown & Gasoline from Waste Plastic" data-bm="Inovasi Global: Julian Brown & Petrol daripada Sisa Plastik">Global Innovation: Julian Brown & Gasoline from Waste Plastic</h4>
+              <div class="overseas-grid">
+                <div class="overseas-text">
+                  <p data-en="Julian Brown (pioneering inventor of decentralized plastic pyrolysis) engineered compact thermal depolymerization reactors capable of converting end-of-life non-recyclable plastic resins into high-octane diesel, petrol, and industrial fuel via oxygen-starved pyrolysis."
+                     data-bm="Julian Brown (pencipta reaktor pirolisis mudah alih) telah membuktikan teknologi penguraian terma tanpa oksigen yang memecahkan sisa plastik sukar kitar semula kepada rantai hidrokarbon asal—menghasilkan bahan api petrol, diesel gred tinggi dan syngas boleh guna tanpa mencemarkan lautan.">
+                    Julian Brown engineered compact thermal depolymerization reactors capable of converting end-of-life plastic into petrol and diesel.
+                  </p>
+                </div>
+                <div class="overseas-highlight">
+                  <h6 data-en="Key Output / Yield:" data-bm="Hasil Utama:">Key Output / Yield:</h6>
+                  <span data-en="1 Tonne Plastic &rarr; ~700-800 Litres Clean Fuel via Pyrolysis Recovery." data-bm="1 Tan Plastik &rarr; ~700-800 Liter Bahan Api Bersih melalui Pirolisis.">1 Tonne Plastic &rarr; ~700-800 Litres Clean Fuel via Pyrolysis Recovery.</span>
                 </div>
               </div>
             </div>
@@ -462,8 +823,7 @@
         </div>
       </section>
 
-      <!-- 3. CONTENT AREA: VIEW 2 - WATCH MODE (REAL HTML5 VIDEO PLAYER) -->
-      <!-- 3. CONTENT AREA: VIEW 2 - WATCH MODE -->
+      <!-- 3. VIEW 2: WATCH MODE (REAL HTML5 VIDEO PLAYER WITH VOICE-OVER) -->
       <section
         id="view-watch-mode"
         class="learn-view-section"
@@ -556,45 +916,86 @@
 
       <!-- 4. BOTTOM: WHY LEARN ABOUT THE 4RS -->
       <section class="why-learn-card">
-        <h2>Why Learn About the 4Rs?</h2>
+        <h2
+          data-en="Why Learn About the 4Rs?"
+          data-bm="Mengapa Belajar Mengenai 4R?"
+        >
+          Why Learn About the 4Rs?
+        </h2>
         <div class="why-grid">
           <div class="why-col">
             <div class="why-col-header">
               <i class="ph-fill ph-globe-hemisphere-west text-green"></i>
-              <h3>Environmental Impact</h3>
+              <h3 data-en="Environmental Impact" data-bm="Impak Alam Sekitar">
+                Environmental Impact
+              </h3>
             </div>
             <ul>
               <li>
-                <i class="ph-bold ph-check-circle"></i> Reduce landfill overflow
-                and preserve natural habitats
+                <i class="ph-bold ph-check-circle"></i>
+                <span
+                  data-en="Reduce landfill overflow and preserve natural habitats"
+                  data-bm="Kurangkan beban tapak pelupusan dan pelihara habitat semula jadi"
+                  >Reduce landfill overflow and preserve natural habitats</span
+                >
               </li>
               <li>
-                <i class="ph-bold ph-check-circle"></i> Cut greenhouse gas
-                emissions to combat climate disruption
+                <i class="ph-bold ph-check-circle"></i>
+                <span
+                  data-en="Cut greenhouse gas emissions to combat climate disruption"
+                  data-bm="Kurangkan pelepasan gas rumah hijau bagi menangani perubahan iklim"
+                  >Cut greenhouse gas emissions to combat climate
+                  disruption</span
+                >
               </li>
               <li>
-                <i class="ph-bold ph-check-circle"></i> Protect global wildlife
-                ecosystems and marine biodiversity
+                <i class="ph-bold ph-check-circle"></i>
+                <span
+                  data-en="Protect global wildlife ecosystems and marine biodiversity"
+                  data-bm="Lindungi ekosistem hidupan liar dan kepelbagaian biologi marin"
+                  >Protect global wildlife ecosystems and marine
+                  biodiversity</span
+                >
               </li>
             </ul>
           </div>
           <div class="why-col">
             <div class="why-col-header">
               <i class="ph-fill ph-hand-heart text-blue"></i>
-              <h3>Personal Benefits</h3>
+              <h3
+                data-en="Personal Benefits"
+                data-bm="Faedah Individu & Komuniti"
+              >
+                Personal Benefits
+              </h3>
             </div>
             <ul>
               <li>
-                <i class="ph-bold ph-check-circle"></i> Save household
-                expenditure through reuse and smart consumption
+                <i class="ph-bold ph-check-circle"></i>
+                <span
+                  data-en="Save household expenditure through reuse and smart consumption"
+                  data-bm="Jimat perbelanjaan isi rumah melalui guna semula dan belanja bijak"
+                  >Save household expenditure through reuse and smart
+                  consumption</span
+                >
               </li>
               <li>
-                <i class="ph-bold ph-check-circle"></i> Cultivate a cleaner,
-                healthier living space for family and peers
+                <i class="ph-bold ph-check-circle"></i>
+                <span
+                  data-en="Cultivate a cleaner, healthier living space for family and peers"
+                  data-bm="Wujudkan persekitaran hidup yang lebih bersih dan sihat untuk keluarga"
+                  >Cultivate a cleaner, healthier living space for family and
+                  peers</span
+                >
               </li>
               <li>
-                <i class="ph-bold ph-check-circle"></i> Champion community
-                leadership by driving local eco-initiatives
+                <i class="ph-bold ph-check-circle"></i>
+                <span
+                  data-en="Champion community leadership by driving local eco-initiatives"
+                  data-bm="Pimpin inisiatif kelestarian dalam komuniti setempat"
+                  >Champion community leadership by driving local
+                  eco-initiatives</span
+                >
               </li>
             </ul>
           </div>
@@ -609,8 +1010,16 @@
     >
       <div class="guide-header">
         <i class="ph-fill ph-compass"></i>
-        <h2>How to Navigate the Platform</h2>
-        <p>
+        <h2
+          data-en="How to Navigate the Platform"
+          data-bm="Panduan Navigasi Platform"
+        >
+          How to Navigate the Platform
+        </h2>
+        <p
+          data-en="Follow our recommended 5-step learning path to maximize your understanding and test your skills."
+          data-bm="Ikuti 5 langkah pembelajaran yang disyorkan bagi menguasai amalan pengurusan sisa mampan."
+        >
           Follow our recommended 5-step learning path to maximize your
           understanding and test your skills.
         </p>
@@ -620,48 +1029,52 @@
         <a href="index.html" class="journey-step-node">
           <span class="step-num">1</span>
           <div class="step-icon"><i class="ph ph-house"></i></div>
-          <h4>Home</h4>
-          <p>Overview & Goals</p>
+          <h4 data-en="Home" data-bm="Utama">Home</h4>
+          <p data-en="Overview & Goals" data-bm="Pengenalan & Matlamat">
+            Overview & Goals
+          </p>
         </a>
 
         <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
 
-        <!-- Add class="active-node" when in learn.html -->
         <a href="learn.html" class="journey-step-node active-node">
           <span class="step-num">2</span>
           <div class="step-icon"><i class="ph ph-book-open"></i></div>
-          <h4>Learn</h4>
-          <p>Read & Watch</p>
+          <h4 data-en="Learn" data-bm="Belajar">Learn</h4>
+          <p data-en="Read & Watch" data-bm="Baca & Tonton">Read & Watch</p>
         </a>
 
         <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
 
-        <!-- Add class="active-node" when in quiz.html -->
         <a href="quiz.html" class="journey-step-node">
           <span class="step-num">3</span>
           <div class="step-icon"><i class="ph ph-graduation-cap"></i></div>
-          <h4>Quiz</h4>
-          <p>Check Knowledge</p>
+          <h4 data-en="Quiz" data-bm="Kuiz">Quiz</h4>
+          <p data-en="Check Knowledge" data-bm="Uji Kefahaman">
+            Check Knowledge
+          </p>
         </a>
 
         <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
 
-        <!-- Add class="active-node" when in game.html -->
         <a href="game.html" class="journey-step-node">
           <span class="step-num">4</span>
           <div class="step-icon"><i class="ph ph-game-controller"></i></div>
-          <h4>Game</h4>
-          <p>Reactor & Sorting</p>
+          <h4 data-en="Game" data-bm="Permainan">Game</h4>
+          <p data-en="Reactor & Sorting" data-bm="Simulasi & Reaktor">
+            Reactor & Sorting
+          </p>
         </a>
 
         <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
 
-        <!-- Add class="active-node" when in community.html -->
         <a href="community.html" class="journey-step-node">
           <span class="step-num">5</span>
           <div class="step-icon"><i class="ph ph-users"></i></div>
-          <h4>Community</h4>
-          <p>Share & Inspire</p>
+          <h4 data-en="Community" data-bm="Komuniti">Community</h4>
+          <p data-en="Share & Inspire" data-bm="Kongsi & Inspirasi">
+            Share & Inspire
+          </p>
         </a>
       </div>
     </section>
@@ -671,20 +1084,30 @@
       <div class="footer-logo">
         <i class="ph ph-recycle"></i> 4R E-Learning Platform
       </div>
-      <p class="footer-text">
+      <p
+        class="footer-text"
+        data-en="Learn about Reduce, Reuse, Recycle, and Recovery"
+        data-bm="Pelajari mengenai Reduce, Reuse, Recycle, dan Recovery"
+      >
         Learn about Reduce, Reuse, Recycle, and Recovery
       </p>
-      <p class="footer-text">
+      <p
+        class="footer-text"
+        data-en="Making the world a better place, one step at a time."
+        data-bm="Menjadikan bumi lebih lestari, selangkah demi selangkah."
+      >
         Making the world a better place, one step at a time.
       </p>
     </footer>
 
     <!-- Mascot Script -->
     <script src="mascot.js"></script>
+    <!-- Language Script -->
+    <script src="lang.js"></script>
 
     <!-- Learn Section Interactive Script -->
     <script>
-      // ================== LEARNING MODE & ACCORDION LOGIC ==================
+      // ================== LEARNING MODE (READ VS WATCH) ==================
       function switchLearnMode(mode) {
         const btnRead = document.getElementById("btn-mode-read");
         const btnWatch = document.getElementById("btn-mode-watch");
@@ -704,6 +1127,7 @@
           btnRead.classList.remove("style-card-active");
           viewRead.style.display = "none";
           viewWatch.style.display = "block";
+
           const activeTab = document.querySelector(".media-tab-btn.active-tab");
           if (activeTab) {
             const tabKey = activeTab.textContent
@@ -719,22 +1143,32 @@
       function toggleAccordion(headerBtn) {
         const clickedItem = headerBtn.closest(".accordion-item");
         const isCurrentlyOpen = clickedItem.classList.contains("active-acc");
+        const lang = localStorage.getItem("site_lang") || "en";
 
         document.querySelectorAll(".accordion-item").forEach((item) => {
           item.classList.remove("active-acc");
           const statusSpan = item.querySelector(".acc-toggle-status");
           const arrowIcon = item.querySelector(".acc-arrow");
-          if (statusSpan) statusSpan.textContent = "Click to expand";
-          if (arrowIcon)
+          if (statusSpan) {
+            statusSpan.textContent =
+              lang === "bm" ? "Klik untuk buka" : "Click to expand";
+          }
+          if (arrowIcon) {
             arrowIcon.className = "ph-bold ph-caret-down acc-arrow";
+          }
         });
 
         if (!isCurrentlyOpen) {
           clickedItem.classList.add("active-acc");
           const statusSpan = clickedItem.querySelector(".acc-toggle-status");
           const arrowIcon = clickedItem.querySelector(".acc-arrow");
-          if (statusSpan) statusSpan.textContent = "Click to collapse";
-          if (arrowIcon) arrowIcon.className = "ph-bold ph-caret-up acc-arrow";
+          if (statusSpan) {
+            statusSpan.textContent =
+              lang === "bm" ? "Klik untuk tutup" : "Click to collapse";
+          }
+          if (arrowIcon) {
+            arrowIcon.className = "ph-bold ph-caret-up acc-arrow";
+          }
         }
       }
 
@@ -742,8 +1176,12 @@
       const mediaData = {
         reduce: {
           videoFile: "Video/REDUCE.mp4",
-          title: "1. REDUCE: Stop Waste Before It Starts",
-          desc: "The greenest product is the one that was never made. Consume less to protect the earth.",
+          title_en: "1. REDUCE: Stop Waste Before It Starts",
+          title_bm: "1. PENGURANGAN: Hentikan Sisa Sebelum Bermula",
+          desc_en:
+            "The greenest product is the one that was never made. Consume less to protect the earth.",
+          desc_bm:
+            "Barangan paling hijau adalah yang tidak dihasilkan. Kurangkan penggunaan untuk lindungi bumi.",
           articles: [
             {
               title: "Global Push to Cut Single-Use Plastics at the Source",
@@ -757,7 +1195,7 @@
               img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=400&q=80",
             },
           ],
-          narration: [
+          narration_en: [
             {
               time: 0.1,
               text: "The greenest product is the one that was never made. Welcome to the first and most critical tier of sustainability: Reduce.",
@@ -775,11 +1213,33 @@
               text: "Remember: before you reuse, before you recycle—always choose to reduce!",
             },
           ],
+          narration_bm: [
+            {
+              time: 0.1,
+              text: "Barangan paling hijau adalah barangan yang tidak pernah dihasilkan. Selamat datang ke asas kelestarian utama: Pengurangan.",
+            },
+            {
+              time: 10.0,
+              text: "Setiap tahun, berjuta tan sumber asli diekstrak hanya untuk menghasilkan pembungkusan yang kita buang dalam beberapa saat.",
+            },
+            {
+              time: 20.0,
+              text: "Apabila anda membeli secara pukal, membawa bekas sendiri dan memilih ketahanan, anda menghentikan pencemaran terus dari punca.",
+            },
+            {
+              time: 30.0,
+              text: "Ingat: sebelum guna semula, sebelum kitar semula—sentiasa pilih untuk kurangkan!",
+            },
+          ],
         },
         reuse: {
           videoFile: "Video/REUSE.mp4",
-          title: "2. REUSE: Extend the Product Lifecycle",
-          desc: "Keeping products circulating in their original form saves carbon and energy.",
+          title_en: "2. REUSE: Extend the Product Lifecycle",
+          title_bm: "2. GUNA SEMULA: Panjangkan Jangka Hayat Barangan",
+          desc_en:
+            "Keeping products circulating in their original form saves carbon and energy.",
+          desc_bm:
+            "Mengekalkan penggunaan barangan dalam bentuk asalnya menjimatkan karbon dan tenaga.",
           articles: [
             {
               title: "The Modern Repair Café Movement",
@@ -792,7 +1252,7 @@
               img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=400&q=80",
             },
           ],
-          narration: [
+          narration_en: [
             {
               time: 0.1,
               text: "Don't throw away potential! The second step in our journey is Reuse.",
@@ -810,11 +1270,33 @@
               text: "Think twice before you toss—reimagine, repurpose, and reuse!",
             },
           ],
+          narration_bm: [
+            {
+              time: 0.1,
+              text: "Jangan buang potensi! Langkah kedua dalam perjalanan kita ialah Guna Semula.",
+            },
+            {
+              time: 10.0,
+              text: "Apabila sesuatu barang selesai digunakan, nilainya tidak patut berakhir di tong sampah.",
+            },
+            {
+              time: 20.0,
+              text: "Dengan mengisi semula bekas, membaiki pakaian koyak atau menyumbang kepada komuniti, anda memelihara tenaga pembuatannya.",
+            },
+            {
+              time: 32.0,
+              text: "Fikir dua kali sebelum buang—guna semula secara kreatif!",
+            },
+          ],
         },
         recycle: {
           videoFile: "Video/RECYCLE.mp4",
-          title: "3. RECYCLE: Closed-Loop Material Regeneration",
-          desc: "How sorting clean paper, glass, and metal creates fresh raw commodities.",
+          title_en: "3. RECYCLE: Closed-Loop Material Regeneration",
+          title_bm: "3. KITAR SEMULA: Penjanaan Semula Bahan Kitaran Tertutup",
+          desc_en:
+            "How sorting clean paper, glass, and metal creates fresh raw commodities.",
+          desc_bm:
+            "Pengasingan kertas, kaca dan logam bersih menghasilkan bahan mentah industri baharu.",
           articles: [
             {
               title: "Advanced Sorting Robotics in Modern MRF Facilities",
@@ -827,7 +1309,7 @@
               img: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=400&q=80",
             },
           ],
-          narration: [
+          narration_en: [
             {
               time: 0.1,
               text: "When an item has reached the end of its useful life, it's time to recycle.",
@@ -845,11 +1327,33 @@
               text: "But remember: keep your recyclables clean, dry, and correctly sorted, because contamination spoils the whole batch!",
             },
           ],
+          narration_bm: [
+            {
+              time: 0.1,
+              text: "Bila sesuatu barang tamat hayat penggunaannya, tibalah masa untuk mengitar semula.",
+            },
+            {
+              time: 10.0,
+              text: "Kitar semula menghancurkan sisa bersih seperti kertas, kaca dan logam menjadi komoditi baharu.",
+            },
+            {
+              time: 20.0,
+              text: "Ia menjimatkan sehingga 95 peratus tenaga berbanding memproses bijih mentah dan mengelakkan tapak pelupusan penuh.",
+            },
+            {
+              time: 30.0,
+              text: "Ingat: pastikan barangan kitar semula bersih, kering dan diasingkan dengan betul!",
+            },
+          ],
         },
         recovery: {
           videoFile: "Video/RECOVERY.mp4",
-          title: "4. RECOVERY ⚡: Clean Energy from Residual Discards",
-          desc: "The critical final safety net: extracting megawatts of clean power from non-recyclables.",
+          title_en: "4. RECOVERY ⚡: Clean Energy from Residual Discards",
+          title_bm: "4. PEROLEHAN SEMULA ⚡: Tenaga Bersih daripada Sisa Baki",
+          desc_en:
+            "The critical final safety net: extracting megawatts of clean power from non-recyclables.",
+          desc_bm:
+            "Jaringan keselamatan terakhir: mengekstrak megawatt tenaga bersih daripada sisa tidak boleh kitar.",
           articles: [
             {
               title: "Inside High-Tech Waste-to-Energy Plants",
@@ -863,7 +1367,7 @@
               img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=400&q=80",
             },
           ],
-          narration: [
+          narration_en: [
             {
               time: 0.1,
               text: "What happens when an item can't be recycled? That's where the missing link comes in: Recovery. The fourth 'R' is our technological safety net.",
@@ -875,6 +1379,20 @@
             {
               time: 23.0,
               text: "Meanwhile, bio-digesters turn food scraps into renewable biogas. Don't waste the residue—recover the energy!",
+            },
+          ],
+          narration_bm: [
+            {
+              time: 0.1,
+              text: "Apa terjadi apabila sesuatu sisa tidak boleh dikitar semula? Di sinilah peranan 'R' ke-4 iaitu Recovery sebagai jaringan keselamatan berteknologi.",
+            },
+            {
+              time: 10.0,
+              text: "Daripada membiarkan sisa mereput dan melepaskan gas metana berbahaya di tapak pelupusan, loji Waste-to-Energy membakar sisa baki untuk menjana elektrik bersih.",
+            },
+            {
+              time: 23.0,
+              text: "Pengurai biogas pula menukar sisa makanan menjadi bahan api. Jangan bazirkan sisa—peroleh semula tenaganya!",
             },
           ],
         },
@@ -892,19 +1410,15 @@
 
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.rate = 1.0;
-        utterance.pitch = 1.1; // Slightly friendly tone matching R.B. mascot
+        utterance.pitch = 1.1;
 
-        // Pick an English voice
+        const lang = localStorage.getItem("site_lang") || "en";
         const voices = synth.getVoices();
-        const englishVoice = voices.find(
-          (v) =>
-            v.lang.startsWith("en") &&
-            (v.name.includes("Natural") ||
-              v.name.includes("Google") ||
-              v.name.includes("Samantha") ||
-              v.name.includes("David")),
+        const targetLangPrefix = lang === "bm" ? "ms" : "en";
+        const matchedVoice = voices.find((v) =>
+          v.lang.startsWith(targetLangPrefix),
         );
-        if (englishVoice) utterance.voice = englishVoice;
+        if (matchedVoice) utterance.voice = matchedVoice;
 
         synth.speak(utterance);
       }
@@ -915,7 +1429,7 @@
       }
 
       function toggleVoiceOver(e) {
-        if (e) e.stopPropagation(); // Don't trigger video pause
+        if (e) e.stopPropagation();
         voiceOverEnabled = !voiceOverEnabled;
 
         const icon = document.getElementById("voice-icon");
@@ -926,7 +1440,6 @@
           icon.className = "ph-bold ph-speaker-high";
           label.textContent = "Voice: ON";
           btn.classList.remove("voice-muted");
-          // Resume voice for the current video timestamp
           checkTimedNarration();
         } else {
           icon.className = "ph-bold ph-speaker-slash";
@@ -940,10 +1453,11 @@
         const player = document.getElementById("learn-video-player");
         if (!player || player.paused || !voiceOverEnabled) return;
 
-        const cues = mediaData[currentTopicKey].narration;
+        const item = mediaData[currentTopicKey];
+        const lang = localStorage.getItem("site_lang") || "en";
+        const cues = lang === "bm" ? item.narration_bm : item.narration_en;
         const currentTime = player.currentTime;
 
-        // Find the cue corresponding to the current time
         let activeIdx = -1;
         for (let i = 0; i < cues.length; i++) {
           if (currentTime >= cues[i].time) {
@@ -996,7 +1510,7 @@
         });
 
         player.addEventListener("seeking", () => {
-          currentCueIndex = -1; // Reset cue so it resyncs on the new timestamp
+          currentCueIndex = -1;
           stopVoiceOver();
         });
       }
@@ -1022,7 +1536,6 @@
           player.src = item.videoFile;
           player.load();
 
-          // Show play icon overlay on load
           const indicator = document.getElementById("play-indicator");
           if (indicator) {
             indicator.style.opacity = "1";
@@ -1031,33 +1544,63 @@
           }
         }
 
-        // Update Metadata Text
-        document.getElementById("video-display-title").textContent = item.title;
-        document.getElementById("video-display-desc").textContent = item.desc;
+        const lang = localStorage.getItem("site_lang") || "en";
+        const titleEl = document.getElementById("video-display-title");
+        const descEl = document.getElementById("video-display-desc");
+        if (titleEl)
+          titleEl.textContent = lang === "bm" ? item.title_bm : item.title_en;
+        if (descEl)
+          descEl.textContent = lang === "bm" ? item.desc_bm : item.desc_en;
 
-        // Update Supporting Articles
         const articlesBox = document.getElementById("media-articles-container");
         if (articlesBox) {
           articlesBox.innerHTML = "";
           item.articles.forEach((art) => {
             articlesBox.innerHTML += `
-                        <div class="media-article-card">
-                            <img src="${art.img}" alt="Article thumbnail">
-                            <div class="article-content">
-                                <h4>${art.title}</h4>
-                                <p>${art.desc}</p>
-                            </div>
-                        </div>
-                    `;
+              <div class="media-article-card">
+                  <img src="${art.img}" alt="Article thumbnail">
+                  <div class="article-content">
+                      <h4>${art.title}</h4>
+                      <p>${art.desc}</p>
+                  </div>
+              </div>
+            `;
           });
         }
+      }
+
+      // Hook called by lang.js when toggled
+      function onLanguageChange(lang) {
+        const item = mediaData[currentTopicKey];
+        if (item) {
+          const titleEl = document.getElementById("video-display-title");
+          const descEl = document.getElementById("video-display-desc");
+          if (titleEl)
+            titleEl.textContent = lang === "bm" ? item.title_bm : item.title_en;
+          if (descEl)
+            descEl.textContent = lang === "bm" ? item.desc_bm : item.desc_en;
+        }
+
+        // Update accordion toggle status text
+        document.querySelectorAll(".accordion-item").forEach((item) => {
+          const statusSpan = item.querySelector(".acc-toggle-status");
+          if (statusSpan) {
+            const isOpen = item.classList.contains("active-acc");
+            if (isOpen) {
+              statusSpan.textContent =
+                lang === "bm" ? "Klik untuk tutup" : "Click to collapse";
+            } else {
+              statusSpan.textContent =
+                lang === "bm" ? "Klik untuk buka" : "Click to expand";
+            }
+          }
+        });
       }
 
       // ================== INIT ==================
       document.addEventListener("DOMContentLoaded", () => {
         setupVideoPlayerEvents();
 
-        // Check if page opened with Recovery query
         const urlParams = new URLSearchParams(window.location.search);
         if (
           urlParams.get("topic") === "recover" ||
@@ -1081,12 +1624,10 @@
           if (firstAcc) firstAcc.classList.add("active-acc");
         }
 
-        // Load initial voice synthesis voices cache
         if ("speechSynthesis" in window) {
           speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
         }
 
-        // Init default media tab
         const defaultMediaTab = document.querySelector(".media-tab-btn");
         if (defaultMediaTab) switchMediaTab("reduce", defaultMediaTab);
       });
