@@ -12,154 +12,272 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </head>
   <body class="community-body">
+    <!-- Top Navigation Bar -->
     <nav class="top-navbar">
       <div class="nav-logo">
         <i class="ph ph-recycle"></i>
         <div>
           <h1>4R E-Learning</h1>
-          <p>Reduce, Reuse, Recycle, Recover</p>
+          <p
+            data-en="Reduce, Reuse, Recycle, Recover"
+            data-bm="Kurangkan, Guna Semula, Kitar Semula, Peroleh Semula"
+          >
+            Reduce, Reuse, Recycle, Recover
+          </p>
         </div>
       </div>
       <div class="nav-links">
-        <a href="index.html"><i class="ph ph-house"></i> Home</a>
-        <a href="tips.html"><i class="ph ph-lightbulb"></i> Tips</a>
-        <a href="learn.html"><i class="ph ph-book-open"></i> Learn</a>
-        <a href="quiz.html"><i class="ph ph-graduation-cap"></i> Quiz</a>
-        <a href="game.html"><i class="ph ph-game-controller"></i> Game</a>
-        <a href="community.html" class="active"><i class="ph ph-users"></i> Community</a>
-        <button type="button" id="lang-toggle-btn" class="btn-lang-toggle" onclick="toggleLanguage()">
-    <span>🇲🇾 BM</span>
-</button>
+        <a href="index.html"
+          ><i class="ph ph-house"></i>
+          <span data-en="Home" data-bm="Utama">Home</span></a
+        >
+        <a href="tips.html"
+          ><i class="ph ph-lightbulb"></i>
+          <span data-en="Tips" data-bm="Tip">Tips</span></a
+        >
+        <a href="learn.html"
+          ><i class="ph ph-book-open"></i>
+          <span data-en="Learn" data-bm="Belajar">Learn</span></a
+        >
+        <a href="quiz.html"
+          ><i class="ph ph-graduation-cap"></i>
+          <span data-en="Quiz" data-bm="Kuiz">Quiz</span></a
+        >
+        <a href="game.html"
+          ><i class="ph ph-game-controller"></i>
+          <span data-en="Game" data-bm="Permainan">Game</span></a
+        >
+        <a href="community.html" class="active"
+          ><i class="ph ph-users"></i>
+          <span data-en="Community" data-bm="Komuniti">Community</span></a
+        >
+        <button
+          type="button"
+          id="lang-toggle-btn"
+          class="btn-lang-toggle"
+          onclick="toggleLanguage()"
+        >
+          <span>🇲🇾 BM</span>
+        </button>
       </div>
     </nav>
 
     <main class="community-main">
       <div class="community-header">
-        <h1 class="game-title">COMMUNITY BOARD</h1>
-        <p>Share your sustainability journey and inspire others!</p>
+        <h1
+          class="community-board-title"
+          data-en="COMMUNITY BOARD"
+          data-bm="PAPAN KOMUNITI"
+        >
+          COMMUNITY BOARD
+        </h1>
+        <p
+          class="community-subtitle"
+          data-en="Share your sustainability journey and inspire others!"
+          data-bm="Kongsi perjalanan kelestarian anda dan beri inspirasi kepada orang lain!"
+        >
+          Share your sustainability journey and inspire others!
+        </p>
       </div>
 
       <div class="community-layout">
+        <!-- Sidebar Form -->
         <aside class="community-form-wrapper">
           <div class="community-card form-card">
-            <h2>Share Your 4R Action</h2>
+            <h2
+              data-en="Share Your 4R Action"
+              data-bm="Kongsi Tindakan 4R Anda"
+            >
+              Share Your 4R Action
+            </h2>
             <form id="post-form">
               <div class="input-group">
-                <label for="post-name">Name</label>
+                <label for="post-name" data-en="Name" data-bm="Nama"
+                  >Name</label
+                >
                 <input
                   type="text"
                   id="post-name"
                   placeholder="Your name"
+                  data-en="Your name"
+                  data-bm="Nama anda"
                   required
                 />
               </div>
 
               <div class="input-group">
-                <label for="post-category">Category</label>
+                <label for="post-category" data-en="Category" data-bm="Kategori"
+                  >Category</label
+                >
                 <select id="post-category" required>
-                  <option value="Reduce">🌱 Reduce</option>
-                  <option value="Reuse">🔄 Reuse</option>
-                  <option value="Recycle">♻️ Recycle</option>
-                  <option value="Recover">🔋 Recover</option>
+                  <option
+                    value="Reduce"
+                    data-en="🌱 Reduce"
+                    data-bm="🌱 Pengurangan"
+                  >
+                    🌱 Reduce
+                  </option>
+                  <option
+                    value="Reuse"
+                    data-en="🔄 Reuse"
+                    data-bm="🔄 Guna Semula"
+                  >
+                    🔄 Reuse
+                  </option>
+                  <option
+                    value="Recycle"
+                    data-en="♻️ Recycle"
+                    data-bm="♻️ Kitar Semula"
+                  >
+                    ♻️ Recycle
+                  </option>
+                  <option
+                    value="Recover"
+                    data-en="🔋 Recover"
+                    data-bm="🔋 Perolehan Semula"
+                  >
+                    🔋 Recover
+                  </option>
                 </select>
               </div>
 
               <div class="input-group">
-                <label for="post-text">What did you do?</label>
+                <label
+                  for="post-text"
+                  data-en="What did you do?"
+                  data-bm="Apakah tindakan anda?"
+                  >What did you do?</label
+                >
                 <textarea
                   id="post-text"
                   rows="4"
                   placeholder="I started composting today..."
+                  data-en="I started composting today..."
+                  data-bm="Saya mula membuat kompos hari ini..."
                   required
                 ></textarea>
               </div>
 
-              <button type="submit" class="btn-primary w-100">
-                <i class="ph-bold ph-paper-plane-tilt"></i> Post to Community
+              <button type="submit" class="btn-submit-post">
+                <i class="ph-bold ph-paper-plane-tilt"></i>
+                <span data-en="Post to Community" data-bm="Hantar ke Komuniti"
+                  >Post to Community</span
+                >
               </button>
             </form>
           </div>
         </aside>
 
+        <!-- Feed Area -->
         <section class="community-feed" id="community-feed"></section>
       </div>
     </main>
 
     <!-- Global Recommended Learning Flow Guide -->
-        <section class="journey-guide-section" style="max-width: 950px; margin: 40px auto 30px auto; width: 100%;">
-            <div class="guide-header">
-                <i class="ph-fill ph-compass"></i>
-                <h2>How to Navigate the Platform</h2>
-                <p>Follow our recommended 5-step learning path to maximize your understanding and test your skills.</p>
-            </div>
+    <section
+      class="journey-guide-section"
+      style="max-width: 950px; margin: 40px auto 30px auto; width: 100%"
+    >
+      <div class="guide-header">
+        <i class="ph-fill ph-compass"></i>
+        <h2
+          data-en="How to Navigate the Platform"
+          data-bm="Panduan Navigasi Platform"
+        >
+          How to Navigate the Platform
+        </h2>
+        <p
+          data-en="Follow our recommended 5-step learning path to maximize your understanding and test your skills."
+          data-bm="Ikuti 5 langkah pembelajaran yang disyorkan bagi menguasai amalan pengurusan sisa mampan."
+        >
+          Follow our recommended 5-step learning path to maximize your
+          understanding and test your skills.
+        </p>
+      </div>
 
-            <div class="journey-steps-container">
-                
-                <a href="index.html" class="journey-step-node">
-                    <span class="step-num">1</span>
-                    <div class="step-icon"><i class="ph ph-house"></i></div>
-                    <h4>Home</h4>
-                    <p>Overview & Goals</p>
-                </a>
-                
-                <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+      <div class="journey-steps-container">
+        <a href="index.html" class="journey-step-node">
+          <span class="step-num">1</span>
+          <div class="step-icon"><i class="ph ph-house"></i></div>
+          <h4 data-en="Home" data-bm="Utama">Home</h4>
+          <p data-en="Overview & Goals" data-bm="Pengenalan & Matlamat">
+            Overview & Goals
+          </p>
+        </a>
 
-                <!-- Add class="active-node" when in learn.html -->
-                <a href="learn.html" class="journey-step-node">
-                    <span class="step-num">2</span>
-                    <div class="step-icon"><i class="ph ph-book-open"></i></div>
-                    <h4>Learn</h4>
-                    <p>Read & Watch</p>
-                </a>
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
 
-                <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+        <a href="learn.html" class="journey-step-node">
+          <span class="step-num">2</span>
+          <div class="step-icon"><i class="ph ph-book-open"></i></div>
+          <h4 data-en="Learn" data-bm="Belajar">Learn</h4>
+          <p data-en="Read & Watch" data-bm="Baca & Tonton">Read & Watch</p>
+        </a>
 
-                <!-- Add class="active-node" when in quiz.html -->
-                <a href="quiz.html" class="journey-step-node">
-                    <span class="step-num">3</span>
-                    <div class="step-icon"><i class="ph ph-graduation-cap"></i></div>
-                    <h4>Quiz</h4>
-                    <p>Check Knowledge</p>
-                </a>
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
 
-                <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+        <a href="quiz.html" class="journey-step-node">
+          <span class="step-num">3</span>
+          <div class="step-icon"><i class="ph ph-graduation-cap"></i></div>
+          <h4 data-en="Quiz" data-bm="Kuiz">Quiz</h4>
+          <p data-en="Check Knowledge" data-bm="Uji Kefahaman">
+            Check Knowledge
+          </p>
+        </a>
 
-                <!-- Add class="active-node" when in game.html -->
-                <a href="game.html" class="journey-step-node">
-                    <span class="step-num">4</span>
-                    <div class="step-icon"><i class="ph ph-game-controller"></i></div>
-                    <h4>Game</h4>
-                    <p>Reactor & Sorting</p>
-                </a>
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
 
-                <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
+        <a href="game.html" class="journey-step-node">
+          <span class="step-num">4</span>
+          <div class="step-icon"><i class="ph ph-game-controller"></i></div>
+          <h4 data-en="Game" data-bm="Permainan">Game</h4>
+          <p data-en="Reactor & Sorting" data-bm="Simulasi & Reaktor">
+            Reactor & Sorting
+          </p>
+        </a>
 
-                <!-- Add class="active-node" when in community.html -->
-                <a href="community.html" class="journey-step-node active-node">
-                    <span class="step-num">5</span>
-                    <div class="step-icon"><i class="ph ph-users"></i></div>
-                    <h4>Community</h4>
-                    <p>Share & Inspire</p>
-                </a>
+        <div class="step-connector"><i class="ph-bold ph-caret-right"></i></div>
 
-            </div>
-        </section>
+        <a href="community.html" class="journey-step-node active-node">
+          <span class="step-num">5</span>
+          <div class="step-icon"><i class="ph ph-users"></i></div>
+          <h4 data-en="Community" data-bm="Komuniti">Community</h4>
+          <p data-en="Share & Inspire" data-bm="Kongsi & Inspirasi">
+            Share & Inspire
+          </p>
+        </a>
+      </div>
+    </section>
 
+    <!-- Footer -->
     <footer>
       <div class="footer-logo">
         <i class="ph ph-recycle"></i> 4R E-Learning Platform
       </div>
-      <p class="footer-text">
+      <p
+        class="footer-text"
+        data-en="Learn about Reduce, Reuse, Recycle, and Recovery"
+        data-bm="Pelajari mengenai Reduce, Reuse, Recycle, dan Recovery"
+      >
         Learn about Reduce, Reuse, Recycle, and Recovery
       </p>
-      <p class="footer-text">
+      <p
+        class="footer-text"
+        data-en="Making the world a better place, one step at a time."
+        data-bm="Menjadikan bumi lebih lestari, selangkah demi selangkah."
+      >
         Making the world a better place, one step at a time.
       </p>
     </footer>
 
+    <!-- Mascot Script -->
+    <script src="mascot.js"></script>
+    <!-- Language Script -->
+    <script src="lang.js"></script>
+
+    <!-- Community Logic -->
     <script>
-      // DB Version forces a cache reset so Dr. Eco shows up
-      const DB_VERSION = "v2.1";
+      const DB_VERSION = "v2.2";
 
       const initialComments = [
         {
@@ -167,7 +285,7 @@
           name: "Sarah J.",
           category: "Reuse",
           text: "I finally turned my old glass pasta jars into a matching spice rack! It looks great and saved me from buying new plastic containers.",
-          date: new Date(Date.now() - 86400000).toLocaleString(),
+          date: "02/11/2026, 13:43:21",
           isDummy: true,
           likes: 12,
           likedByMe: false,
@@ -177,7 +295,7 @@
           name: "Ahmad",
           category: "Recycle",
           text: "Just learned how to properly sort my paper and plastics. My apartment block just got new bins so I'm making sure everything is clean before dropping it in.",
-          date: new Date(Date.now() - 3600000).toLocaleString(),
+          date: "03/11/2026, 12:43:21",
           isDummy: true,
           likes: 8,
           likedByMe: false,
@@ -187,7 +305,7 @@
           name: "Dr. Eco",
           category: "Recover",
           text: "Sent my old swollen laptop battery and e-waste to the specialized recovery facility today. They'll safely extract the lithium and cobalt to generate new batteries!",
-          date: new Date(Date.now() - 1800000).toLocaleString(),
+          date: "03/11/2026, 13:13:21",
           isDummy: true,
           likes: 24,
           likedByMe: false,
@@ -232,51 +350,69 @@
         }
       }
 
+      // Translates the badge label according to current language
+      function getCategoryLabel(category, lang) {
+        const labels = {
+          Reduce: { en: "REDUCE", bm: "PENGURANGAN" },
+          Reuse: { en: "REUSE", bm: "GUNA SEMULA" },
+          Recycle: { en: "RECYCLE", bm: "KITAR SEMULA" },
+          Recover: { en: "RECOVER", bm: "PEROLEHAN" },
+        };
+        return labels[category] && labels[category][lang]
+          ? labels[category][lang]
+          : category.toUpperCase();
+      }
+
       function renderFeed() {
         const comments = getComments();
+        const lang = localStorage.getItem("site_lang") || "en";
         feed.innerHTML = "";
+
+        const editTxt = lang === "bm" ? "Sunting" : "Edit";
+        const deleteTxt = lang === "bm" ? "Padam" : "Delete";
 
         [...comments].reverse().forEach((post) => {
           const card = document.createElement("div");
           card.className =
             "community-card post-card " +
-            (post.category === "Recover" ? "recover-premium-post" : "");
+            (post.category === "Recover" ? "recover-highlight-card" : "");
 
           let actionButtons = `
-                    <div class="post-actions">
-                        <div class="post-actions-left">
-                            <button class="btn-text react-btn ${post.likedByMe ? "liked" : ""}" onclick="toggleLike(${post.id})">
-                                <i class="${post.likedByMe ? "ph-fill" : "ph-bold"} ph-heart"></i> ${post.likes || 0}
-                            </button>
-                        </div>
-                        ${
-                          !post.isDummy
-                            ? `
-                        <div class="post-actions-right">
-                            <button class="btn-text edit-btn" onclick="editPost(${post.id})"><i class="ph-bold ph-pencil-simple"></i> Edit</button>
-                            <button class="btn-text delete-btn" onclick="deletePost(${post.id})"><i class="ph-bold ph-trash"></i> Delete</button>
-                        </div>`
-                            : ""
-                        }
-                    </div>
-                `;
+            <div class="post-actions">
+                <div class="post-actions-left">
+                    <button class="btn-text react-btn ${post.likedByMe ? "liked" : ""}" onclick="toggleLike(${post.id})">
+                        <i class="${post.likedByMe ? "ph-fill" : "ph-bold"} ph-heart"></i> ${post.likes || 0}
+                    </button>
+                </div>
+                ${
+                  !post.isDummy
+                    ? `
+                <div class="post-actions-right">
+                    <button class="btn-text edit-btn" onclick="editPost(${post.id})"><i class="ph-bold ph-pencil-simple"></i> ${editTxt}</button>
+                    <button class="btn-text delete-btn" onclick="deletePost(${post.id})"><i class="ph-bold ph-trash"></i> ${deleteTxt}</button>
+                </div>`
+                    : ""
+                }
+            </div>
+          `;
 
+          // Note: post.name and post.text are kept strictly in original user input
           card.innerHTML = `
-                    <div class="post-header">
-                        <div class="post-user-info">
-                            <div class="avatar"><i class="ph-fill ph-user"></i></div>
-                            <div>
-                                <h4 class="post-name">${post.name}</h4>
-                                <span class="post-date">${post.date}</span>
-                            </div>
-                        </div>
-                        <span class="category-badge ${getBadgeClass(post.category)}">${post.category}</span>
+            <div class="post-header">
+                <div class="post-user-info">
+                    <div class="avatar"><i class="ph-fill ph-user"></i></div>
+                    <div>
+                        <h4 class="post-name">${post.name}</h4>
+                        <span class="post-date">${post.date}</span>
                     </div>
-                    <div class="post-body">
-                        <p id="text-${post.id}">${post.text}</p>
-                    </div>
-                    ${actionButtons}
-                `;
+                </div>
+                <span class="category-badge ${getBadgeClass(post.category)}">${getCategoryLabel(post.category, lang)}</span>
+            </div>
+            <div class="post-body">
+                <p id="text-${post.id}">${post.text}</p>
+            </div>
+            ${actionButtons}
+          `;
           feed.appendChild(card);
         });
       }
@@ -312,7 +448,12 @@
       });
 
       window.deletePost = function (id) {
-        if (confirm("Delete this post?")) {
+        const lang = localStorage.getItem("site_lang") || "en";
+        const promptMsg =
+          lang === "bm"
+            ? "Adakah anda pasti mahu memadam catatan ini?"
+            : "Delete this post?";
+        if (confirm(promptMsg)) {
           let comments = getComments();
           saveComments(comments.filter((post) => post.id !== id));
           renderFeed();
@@ -320,10 +461,13 @@
       };
 
       window.editPost = function (id) {
+        const lang = localStorage.getItem("site_lang") || "en";
+        const promptMsg =
+          lang === "bm" ? "Sunting catatan anda:" : "Edit your post:";
         let comments = getComments();
         const post = comments.find((p) => p.id === id);
         if (post) {
-          const newText = prompt("Edit your post:", post.text);
+          const newText = prompt(promptMsg, post.text);
           if (newText && newText.trim() !== "") {
             post.text = newText.trim();
             saveComments(comments);
@@ -332,17 +476,12 @@
         }
       };
 
+      // Re-render feed labels when language toggles
+      function onLanguageChange() {
+        renderFeed();
+      }
+
       window.onload = renderFeed;
     </script>
-
-<!-- Mascot Script -->
-    <script src="mascot.js"></script>
-</body>
-</html>
-
-<!-- Language Script -->
-    <script src="lang.js"></script>
-</body>
-
   </body>
 </html>

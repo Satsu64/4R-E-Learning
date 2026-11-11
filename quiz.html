@@ -195,47 +195,18 @@
             </button>
 
             <!-- Difficulty Tier Bar -->
-            <div class="quiz-tier-bar">
-              <button
-                type="button"
-                class="tier-select-btn active-tier"
-                id="tier-btn-beginner"
-                onclick="selectQuizTier('beginner')"
-              >
-                <span
-                  class="t-txt"
-                  data-en="Beginner (Asas)"
-                  data-bm="Beginner (Asas)"
-                  >Beginner (Asas)</span
-                >
-              </button>
-              <button
-                type="button"
-                class="tier-select-btn"
-                id="tier-btn-intermediate"
-                onclick="selectQuizTier('intermediate')"
-              >
-                <span
-                  class="t-txt"
-                  data-en="Intermediate (Sederhana)"
-                  data-bm="Intermediate (Sederhana)"
-                  >Intermediate (Sederhana)</span
-                >
-              </button>
-              <button
-                type="button"
-                class="tier-select-btn"
-                id="tier-btn-hard"
-                onclick="selectQuizTier('hard')"
-              >
-                <span
-                  class="t-txt"
-                  data-en="Hard (Lanjutan)"
-                  data-bm="Hard (Lanjutan)"
-                  >Hard (Lanjutan)</span
-                >
-              </button>
-            </div>
+<!-- Objective Quiz Tier Bar -->
+<div class="quiz-tier-bar">
+    <button type="button" class="tier-select-btn active-tier" id="tier-btn-beginner" onclick="selectQuizTier('beginner')">
+        <span data-en="Beginner" data-bm="Asas">Beginner</span>
+    </button>
+    <button type="button" class="tier-select-btn" id="tier-btn-intermediate" onclick="selectQuizTier('intermediate')">
+        <span data-en="Intermediate" data-bm="Sederhana">Intermediate</span>
+    </button>
+    <button type="button" class="tier-select-btn" id="tier-btn-hard" onclick="selectQuizTier('hard')">
+        <span data-en="Hard" data-bm="Lanjutan">Hard</span>
+    </button>
+</div>
 
             <div class="quiz-progress-track">
               <span id="mcq-progress-text">Question 1 of 10</span>
@@ -381,47 +352,18 @@
               >
             </button>
 
-            <div class="quiz-tier-bar">
-              <button
-                type="button"
-                class="tier-select-btn active-tier"
-                id="case-tier-btn-beginner"
-                onclick="selectCaseTier('beginner')"
-              >
-                <span
-                  class="t-txt"
-                  data-en="Community (Asas)"
-                  data-bm="Komuniti (Asas)"
-                  >Community (Asas)</span
-                >
-              </button>
-              <button
-                type="button"
-                class="tier-select-btn"
-                id="case-tier-btn-intermediate"
-                onclick="selectCaseTier('intermediate')"
-              >
-                <span
-                  class="t-txt"
-                  data-en="Commercial (Sederhana)"
-                  data-bm="Komersial (Sederhana)"
-                  >Commercial (Sederhana)</span
-                >
-              </button>
-              <button
-                type="button"
-                class="tier-select-btn"
-                id="case-tier-btn-hard"
-                onclick="selectCaseTier('hard')"
-              >
-                <span
-                  class="t-txt"
-                  data-en="Industrial (Lanjutan)"
-                  data-bm="Industri (Lanjutan)"
-                  >Industrial (Lanjutan)</span
-                >
-              </button>
-            </div>
+            <!-- Case Study Tier Bar -->
+<div class="quiz-tier-bar">
+    <button type="button" class="tier-select-btn active-tier" id="case-tier-btn-beginner" onclick="selectCaseTier('beginner')">
+        <span data-en="Community" data-bm="Komuniti">Community</span>
+    </button>
+    <button type="button" class="tier-select-btn" id="case-tier-btn-intermediate" onclick="selectCaseTier('intermediate')">
+        <span data-en="Commercial" data-bm="Komersial">Commercial</span>
+    </button>
+    <button type="button" class="tier-select-btn" id="case-tier-btn-hard" onclick="selectCaseTier('hard')">
+        <span data-en="Industrial" data-bm="Industri">Industrial</span>
+    </button>
+</div>
 
             <div class="quiz-progress-track">
               <span id="case-progress-text">Scenario 1 of 4</span>
@@ -3022,6 +2964,89 @@
       document.addEventListener("DOMContentLoaded", () => {
         setLanguage(currentLang);
       });
+
+// Dictionaries for strict single-language tier labels
+const tierLabels = {
+    beginner: { en: "BEGINNER", bm: "ASAS" },
+    intermediate: { en: "INTERMEDIATE", bm: "SEDERHANA" },
+    hard: { en: "HARD", bm: "LANJUTAN" }
+};
+
+const caseTierLabels = {
+    beginner: { en: "COMMUNITY", bm: "KOMUNITI" },
+    intermediate: { en: "COMMERCIAL", bm: "KOMERSIAL" },
+    hard: { en: "INDUSTRIAL", bm: "INDUSTRI" }
+};
+
+function renderTieredQuestion() {
+    if (!activeTierQuestions || activeTierQuestions.length === 0) return;
+    const qData = activeTierQuestions[mcqQuizIndex];
+    const isEn = (currentLang === "en");
+
+    document.getElementById("mcq-next-btn").style.display = "none";
+    document.getElementById("mcq-explanation-box").style.display = "none";
+
+    const tierName = isEn ? tierLabels[currentTier].en : tierLabels[currentTier].bm;
+
+    // Displays strictly in active language (e.g., Question 1 of 10 (BEGINNER) or Soalan 1 daripada 10 (ASAS))
+    document.getElementById("mcq-progress-text").textContent = isEn
+        ? `Question ${mcqQuizIndex + 1} of ${activeTierQuestions.length} (${tierName})`
+        : `Soalan ${mcqQuizIndex + 1} daripada ${activeTierQuestions.length} (${tierName})`;
+
+    document.getElementById("mcq-progress-fill").style.width = `${((mcqQuizIndex + 1) / activeTierQuestions.length) * 100}%`;
+    document.getElementById("mcq-question-title").textContent = isEn ? qData.q_en : qData.q_bm;
+
+    const container = document.getElementById("mcq-options-container");
+    container.innerHTML = "";
+
+    const opts = isEn ? qData.options_en : qData.options_bm;
+    opts.forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "quiz-option-btn";
+        btn.innerHTML = `<span class="opt-letter">${String.fromCharCode(65 + idx)}</span> <span class="opt-text">${opt}</span>`;
+        btn.onclick = () => submitTierOption(idx, btn);
+        container.appendChild(btn);
+    });
+}
+
+function renderCaseScenario() {
+    if (!activeCases || activeCases.length === 0) return;
+    caseAnswered = false;
+    const current = activeCases[caseIndex];
+    const isEn = (currentLang === "en");
+
+    document.getElementById("case-debrief-box").style.display = "none";
+
+    const caseTierName = isEn ? caseTierLabels[currentCaseTier].en : caseTierLabels[currentCaseTier].bm;
+
+    // Displays strictly in active language (e.g., Scenario 1 of 4 (COMMUNITY) or Senario 1 daripada 4 (KOMUNITI))
+    document.getElementById("case-progress-text").textContent = isEn
+        ? `Scenario ${caseIndex + 1} of ${activeCases.length} (${caseTierName})`
+        : `Senario ${caseIndex + 1} daripada ${activeCases.length} (${caseTierName})`;
+    document.getElementById("case-progress-fill").style.width = `${((caseIndex + 1) / activeCases.length) * 100}%`;
+
+    document.getElementById("case-photo").src = current.photo;
+    document.getElementById("case-scenario-tag").textContent = current.tag;
+    document.getElementById("case-scenario-heading").textContent = isEn ? current.title_en : current.title_bm;
+    document.getElementById("case-scenario-body").textContent = isEn ? current.narrative_en : current.narrative_bm;
+
+    const container = document.getElementById("case-choices-container");
+    container.innerHTML = "";
+
+    const opts = isEn ? current.options_en : current.options_bm;
+    opts.forEach((opt) => {
+        const card = document.createElement("div");
+        card.className = "case-choice-card";
+        card.innerHTML = `
+            <div class="choice-title">${opt.label}</div>
+            <div class="choice-sub">${opt.sub}</div>
+        `;
+        card.onclick = () => selectCaseOption(opt, card);
+        container.appendChild(card);
+    });
+}
+
     </script>
 
 <!-- Language Script -->
